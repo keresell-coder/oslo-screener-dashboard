@@ -1,0 +1,639 @@
+{# ================================================================
+   MAKRO: Rendrer ett aksje-kort
+   (Defineres øverst slik at Jinja2 finner den ved første bruk)
+================================================================ #}
+{%- macro _render_stock(s) -%}
+<div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">{{ s.symbol }}</span>
+    <span class="signal-badge
+      {%- if s.signal == 'BUY' %} badge-buy
+      {%- elif s.signal == 'SELL' %} badge-sell
+      {%- elif s.signal == 'BUY-watch' %} badge-buy-watch
+      {%- else %} badge-sell-watch{% endif %}">
+      {{ s.signal }}
+    </span>
+    <a href="https://finance.yahoo.com/quote/{{ s.ticker }}"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer={{ s.symbol }}"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">{{ "%.2f"|format(s.close) }} NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">{{ "%.1f"|format(s.rsi14) }}</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">{{ "%.1f"|format(s.adx14) }}</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">{{ "%.1f"|format(s.mfi14) }}</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">{{ "%.4f"|format(s.macd_hist) }}</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">{{ "%+.1f"|format(s.pct_above_sma50) }}%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risiko</span>
+      <span class="ind-value
+        {%- if s.risk == 'LOW' %} ind-risk-low
+        {%- elif s.risk == 'MODERATE' %} ind-risk-mod
+        {%- else %} ind-risk-high{% endif %}">
+        {{ s.risk }}
+      </span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss: <b>{{ s.stop_loss_pct }}%</b></span>
+    <span>Posisjon: <b>{{ s.position_pct }}%</b> av portefølje</span>
+  </div>
+
+  <!-- Nyheter -->
+  <div class="news-section">
+    <div class="news-label">Nyheter siste 14 dager</div>
+
+    {% if s.news %}
+      {% for item in s.news %}
+      <div class="news-item">
+        <span class="news-age
+          {%- if item.age_label == 'NY' %} age-ny
+          {%- elif item.age_label == '14d' %} age-14d
+          {%- else %} age-ukjent{% endif %}">
+          {{ item.age_label if item.age_label else '—' }}
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a>
+          </div>
+          <div class="news-source">
+            {{ item.source }}
+            {% if item.published %}
+              · <time>{{ item.published.strftime('%d.%m.%Y') }}</time>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <p class="no-news">Ingen nyheter funnet siste 14 dager.</p>
+    {% endif %}
+
+    {% if s.news_errors %}
+      {% for source_name, err in s.news_errors.items() %}
+        <p class="news-error">⚠ {{ source_name }} utilgjengelig: {{ err }}</p>
+      {% endfor %}
+    {% endif %}
+
+    <div class="news-manual-link">
+      Søk manuelt:
+      <a href="https://newsweb.oslobors.no/search?issuer={{ s.symbol }}" target="_blank" rel="noopener">Oslo Børs ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/{{ s.symbol }}" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q={{ s.symbol }}" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div>
+{%- endmacro -%}
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Oslo Screener" />
+  <meta name="theme-color" content="#1a2332" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <title>Oslo Screener Dashboard</title>
+  <style>
+    /* ================================================================
+       Reset og base
+    ================================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f1923;
+      --surface:   #1a2332;
+      --surface2:  #223044;
+      --border:    #2e4060;
+      --text:      #e8edf3;
+      --text-dim:  #8fa3bb;
+      --buy:       #22c55e;
+      --sell:      #ef4444;
+      --watch-buy: #86efac;
+      --watch-sell:#fca5a5;
+      --neutral:   #64748b;
+      --accent:    #3b82f6;
+      --tag-new:   #22c55e;
+      --tag-14d:   #64748b;
+      --font:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    html { font-size: 16px; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: env(safe-area-inset-bottom, 16px);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ================================================================
+       Layout
+    ================================================================ */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+
+    /* ================================================================
+       Header
+    ================================================================ */
+    .header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .header h1 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+    .header-meta {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* ================================================================
+       Sammendrag-chips
+    ================================================================ */
+    .summary-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 12px 0;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+    }
+    .chip-buy   { background: rgba(34,197,94,.15);  border-color: rgba(34,197,94,.4);  color: var(--buy); }
+    .chip-sell  { background: rgba(239,68,68,.15);  border-color: rgba(239,68,68,.4);  color: var(--sell); }
+    .chip-wbuy  { background: rgba(134,239,172,.1); border-color: rgba(134,239,172,.3);color: var(--watch-buy); }
+    .chip-wsell { background: rgba(252,165,165,.1); border-color: rgba(252,165,165,.3);color: var(--watch-sell); }
+    .chip-total { background: rgba(100,116,139,.1); border-color: rgba(100,116,139,.3);color: var(--text-dim); }
+
+    /* ================================================================
+       Seksjonstitler / trekkspill
+    ================================================================ */
+    details { margin: 12px 0; }
+    summary {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      list-style: none;
+      user-select: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::before {
+      content: "▶";
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    details[open] summary::before { transform: rotate(90deg); }
+    summary .section-count {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      font-weight: 400;
+    }
+
+    .section-buy   summary { border-left: 3px solid var(--buy); }
+    .section-sell  summary { border-left: 3px solid var(--sell); }
+    .section-wbuy  summary { border-left: 3px solid var(--watch-buy); }
+    .section-wsell summary { border-left: 3px solid var(--watch-sell); }
+    .section-macro summary { border-left: 3px solid var(--accent); }
+
+    /* ================================================================
+       Aksje-kort
+    ================================================================ */
+    .stock-list { display: flex; flex-direction: column; gap: 12px; padding: 12px 0 4px; }
+
+    .stock-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .stock-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px 8px;
+      flex-wrap: wrap;
+    }
+    .stock-ticker {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .signal-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+    .badge-buy        { background: rgba(34,197,94,.2);  color: var(--buy); }
+    .badge-sell       { background: rgba(239,68,68,.2);  color: var(--sell); }
+    .badge-buy-watch  { background: rgba(134,239,172,.15);color: var(--watch-buy); }
+    .badge-sell-watch { background: rgba(252,165,165,.15);color: var(--watch-sell); }
+
+    .stock-price {
+      margin-left: auto;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* Indikator-grid */
+    .indicators {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 6px;
+      padding: 4px 14px 12px;
+    }
+    .ind {
+      background: var(--surface2);
+      border-radius: 6px;
+      padding: 6px 8px;
+      font-size: 0.72rem;
+    }
+    .ind-label { color: var(--text-dim); display: block; margin-bottom: 1px; }
+    .ind-value { font-weight: 600; font-size: 0.82rem; }
+    .ind-risk-low    { color: #86efac; }
+    .ind-risk-mod    { color: #fde68a; }
+    .ind-risk-high   { color: #fca5a5; }
+
+    /* Rsk-bar */
+    .risk-row {
+      padding: 0 14px 10px;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .risk-row span b { color: var(--text); }
+
+    /* ================================================================
+       Nyheter
+    ================================================================ */
+    .news-section { padding: 0 14px 14px; }
+    .news-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+    .news-item {
+      display: flex;
+      gap: 8px;
+      padding: 7px 0;
+      border-top: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .news-age {
+      flex-shrink: 0;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 5px;
+      border-radius: 3px;
+      margin-top: 2px;
+      letter-spacing: 0.04em;
+    }
+    .age-ny  { background: rgba(34,197,94,.2);  color: var(--tag-new); }
+    .age-14d { background: rgba(100,116,139,.2); color: var(--tag-14d); }
+    .age-ukjent { background: rgba(100,116,139,.1); color: var(--tag-14d); }
+
+    .news-body { flex: 1; min-width: 0; }
+    .news-title {
+      font-size: 0.82rem;
+      color: var(--text);
+      line-height: 1.4;
+      word-break: break-word;
+    }
+    .news-source {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+    .news-source time { color: var(--text-dim); }
+
+    .no-news {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      font-style: italic;
+      padding: 6px 0;
+    }
+    .news-error {
+      font-size: 0.72rem;
+      color: #f87171;
+      margin-top: 4px;
+    }
+    .news-manual-link {
+      font-size: 0.75rem;
+      margin-top: 6px;
+    }
+
+    /* ================================================================
+       Makro-seksjon
+    ================================================================ */
+    .macro-list { padding: 10px 0 4px; }
+    .macro-item {
+      display: flex;
+      gap: 8px;
+      padding: 8px 14px;
+      border-top: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .macro-item:first-child { border-top: none; }
+    .macro-title { font-size: 0.82rem; color: var(--text); line-height: 1.4; }
+    .macro-source { font-size: 0.7rem; color: var(--text-dim); margin-top: 1px; }
+
+    /* ================================================================
+       Kilde-status
+    ================================================================ */
+    .source-status-section {
+      margin: 20px 0 8px;
+      padding: 12px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .source-status-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+    .source-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 0;
+      font-size: 0.75rem;
+    }
+    .dot-ok   { color: var(--buy); font-size: 0.65rem; }
+    .dot-fail { color: var(--sell); font-size: 0.65rem; }
+    .source-detail { color: var(--text-dim); }
+
+    /* ================================================================
+       Footer / disclaimer
+    ================================================================ */
+    .disclaimer {
+      margin: 20px 0 32px;
+      padding: 12px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid #f59e0b;
+      border-radius: 8px;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+    .disclaimer strong { color: #fbbf24; }
+
+    /* ================================================================
+       Tom tilstand
+    ================================================================ */
+    .empty-state {
+      padding: 16px 14px;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    /* ================================================================
+       Responsiv: større skjermer
+    ================================================================ */
+    @media (min-width: 600px) {
+      .header h1 { font-size: 1.2rem; }
+      .indicators { grid-template-columns: repeat(6, 1fr); }
+      .stock-ticker { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <div>
+        <h1>Oslo Screener Dashboard</h1>
+        <div class="header-meta">
+          {%- set d = data -%}
+          {%- if d.screener_date %}
+            Screener-data: {{ d.screener_date.strftime('%d. %B %Y') }}<br>
+          {%- endif %}
+          Generert: {{ d.generated_at.strftime('%d.%m.%Y kl. %H:%M') }} UTC
+          &nbsp;·&nbsp; Kilde: {{ d.screener_source }}
+        </div>
+      </div>
+      <div class="summary-bar">
+        <span class="chip chip-buy">BUY {{ d.buy|length }}</span>
+        <span class="chip chip-sell">SELL {{ d.sell|length }}</span>
+        <span class="chip chip-wbuy">BUY-watch {{ d.buy_watch|length }}</span>
+        <span class="chip chip-wsell">SELL-watch {{ d.sell_watch|length }}</span>
+        <span class="chip chip-total">{{ d.total_screened }} screenet</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- MAKRO -->
+  {% if data.macro_news %}
+  <details class="section-macro" open>
+    <summary>Makro &amp; Geopolitikk <span class="section-count">Reuters · {{ data.macro_news|length }} nyheter</span></summary>
+    <div class="macro-list">
+      {% for item in data.macro_news %}
+      <div class="macro-item">
+        <div>
+          <div class="macro-title"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></div>
+          <div class="macro-source">
+            {{ item.source }}
+            {% if item.published %} · <time>{{ item.published.strftime('%d.%m.%Y') }}</time>{% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </details>
+  {% endif %}
+
+  <!-- ============================================================
+       BUY
+  ============================================================ -->
+  <details class="section-buy" {% if data.buy %}open{% endif %}>
+    <summary>
+      BUY-signaler
+      <span class="section-count">{{ data.buy|length }} aksje{% if data.buy|length != 1 %}r{% endif %}</span>
+    </summary>
+    {% if data.buy %}
+    <div class="stock-list">
+      {% for s in data.buy %}{{ _render_stock(s) }}{% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">Ingen BUY-signaler i dag.</div>
+    {% endif %}
+  </details>
+
+  <!-- ============================================================
+       SELL
+  ============================================================ -->
+  <details class="section-sell" {% if data.sell %}open{% endif %}>
+    <summary>
+      SELL-signaler
+      <span class="section-count">{{ data.sell|length }} aksje{% if data.sell|length != 1 %}r{% endif %}</span>
+    </summary>
+    {% if data.sell %}
+    <div class="stock-list">
+      {% for s in data.sell %}{{ _render_stock(s) }}{% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">Ingen SELL-signaler i dag.</div>
+    {% endif %}
+  </details>
+
+  <!-- ============================================================
+       BUY-WATCH
+  ============================================================ -->
+  <details class="section-wbuy">
+    <summary>
+      BUY-watch
+      <span class="section-count">
+        {{ data.buy_watch|length }} aksje{% if data.buy_watch|length != 1 %}r{% endif %}
+        — overkjøpt, snudd enda ikke opp
+      </span>
+    </summary>
+    <p style="padding:10px 14px 4px;font-size:0.78rem;color:var(--text-dim);">
+      Disse aksjene er i <strong style="color:var(--watch-buy)">underkjøpt territorium (RSI ≤ 35)</strong>,
+      men har ennå ikke bekreftet en oppgang. Dersom de snur opp med støtte fra trend-indikatorer,
+      kan de bli BUY-signaler.
+    </p>
+    {% if data.buy_watch %}
+    <div class="stock-list">
+      {% for s in data.buy_watch %}{{ _render_stock(s) }}{% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">Ingen BUY-watch-kandidater i dag.</div>
+    {% endif %}
+  </details>
+
+  <!-- ============================================================
+       SELL-WATCH
+  ============================================================ -->
+  <details class="section-wsell">
+    <summary>
+      SELL-watch
+      <span class="section-count">
+        {{ data.sell_watch|length }} aksje{% if data.sell_watch|length != 1 %}r{% endif %}
+        — overkjøpt, snudd enda ikke ned
+      </span>
+    </summary>
+    <p style="padding:10px 14px 4px;font-size:0.78rem;color:var(--text-dim);">
+      Disse aksjene er i <strong style="color:var(--watch-sell)">overkjøpt territorium (RSI ≥ 65)</strong>,
+      men har ennå ikke bekreftet en nedgang. Dersom de snur ned med støtte fra trend-indikatorer,
+      kan de bli SELL-signaler.
+    </p>
+    {% if data.sell_watch %}
+    <div class="stock-list">
+      {% for s in data.sell_watch %}{{ _render_stock(s) }}{% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">Ingen SELL-watch-kandidater i dag.</div>
+    {% endif %}
+  </details>
+
+  <!-- ============================================================
+       KILDE-STATUS
+  ============================================================ -->
+  <div class="source-status-section">
+    <div class="source-status-title">Kilde- og datakvalitet</div>
+    {% for src in data.source_statuses %}
+    <div class="source-row">
+      <span class="{% if src.ok %}dot-ok{% else %}dot-fail{% endif %}">
+        {% if src.ok %}●{% else %}✕{% endif %}
+      </span>
+      <span>{{ src.name }}</span>
+      <span class="source-detail">— {{ src.detail }}</span>
+    </div>
+    {% endfor %}
+    <p style="margin-top:8px;font-size:0.7rem;color:var(--text-dim);">
+      Nyheter hentes automatisk og er ikke redaksjonelt vurdert.
+      Verifiser alltid informasjon mot primærkilden.
+    </p>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>Viktig:</strong> Dette dashboardet er utelukkende et teknisk analyseverktøy.
+    Signalene er basert på RSI, MACD, SMA og ADX-indikatorer — de er ikke investeringsråd
+    og tar ikke hensyn til selskapsfundamentale, skattereglar eller din personlige
+    risikoprofil. Historisk ytelse er ingen garanti for fremtidig resultat.
+    Nyheter er hentet automatisk fra tredjepartskilder — sjekk alltid primærkilden.
+  </div>
+
+</main>
+
+
+</body>
+</html>
