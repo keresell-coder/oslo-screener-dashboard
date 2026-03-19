@@ -46,6 +46,7 @@ jobs:
       - name: Kopier statiske filer
         run: |
           cp manifest.json site/manifest.json
+          cp robots.txt site/robots.txt
 
       - name: Generer app-ikoner
         run: python make_icons.py
