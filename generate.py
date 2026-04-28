@@ -1,23 +1,24 @@
 """
-Oslo Screener Dashboard — daglig HTML-generator
-================================================
-Henter screener-data fra oslo-screener og nyheter fra flere kilder,
-og genererer en statisk HTML-side klar for GitHub Pages.
+Oslo Screener Dashboard — daily HTML generator
+===============================================
+Fetches screener data from oslo-screener and news from multiple sources,
+then generates a static HTML page for GitHub Pages.
 
-Kjøres daglig via GitHub Actions etter at screener-jobben er ferdig.
+Runs daily via GitHub Actions after the screener job has published latest.csv.
 
-Nyhetskilder (i prioritert rekkefølge):
-  1. Oslo Børs Newspoint (offisielle børsmeldinger)
-  2. Yahoo Finance news  (engelskspråklig, via yfinance)
-  3. Reuters RSS         (makronyheter)
-  4. E24 RSS            (norsk finanspresse)
+News sources (in priority order):
+  1. Oslo Bors Newspoint  (official exchange announcements)
+  2. Yahoo Finance news   (English-language, via yfinance)
+  3. Reuters RSS          (macro news)
+  4. E24 RSS              (Norwegian financial press)
 
-Kildestatus rapporteres åpent i HTML-siden — ingen data fabrikkeres.
+Source status is reported openly in the HTML page — no data is fabricated.
 """
 
 from __future__ import annotations
 
 import io
+import json
 import os
 import sys
 import time
@@ -39,13 +40,15 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 log = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
-# Konstanter
+# Constants
 # ---------------------------------------------------------------------------
 
 SCREENER_URLS = [
     "https://keresell-coder.github.io/oslo-screener/latest.csv",
     "https://raw.githubusercontent.com/keresell-coder/oslo-screener/main/latest.csv",
 ]
+
+VALID_TICKERS_URL = "https://raw.githubusercontent.com/keresell-coder/oslo-screener/main/valid_tickers.txt"
 
 REUTERS_RSS_URL = "https://feeds.reuters.com/reuters/businessNews"
 E24_RSS_URL = "https://e24.no/rss2/"
@@ -56,8 +59,15 @@ NEWS_NEW_THRESHOLD_DAYS = 7
 
 OSLO_TZ = ZoneInfo("Europe/Oslo")
 
+DATA_DIR = pl.Path(__file__).parent / "data"
+PREV_TICKERS_FILE = DATA_DIR / "prev_valid_tickers.txt"
+TICKER_CHANGES_FILE = DATA_DIR / "ticker_changes.json"
+
+SR_PIVOT_WINDOW = 5    # bars on each side of a pivot point
+SR_BUFFER_PCT = 1.0    # 1 % buffer beyond the S/R level
+
 # ---------------------------------------------------------------------------
-# Dataklasser
+# Data classes
 # ---------------------------------------------------------------------------
 
 
@@ -65,37 +75,45 @@ OSLO_TZ = ZoneInfo("Europe/Oslo")
 class NewsItem:
     title: str
     url: str
-    source: str           # "Oslo Børs", "Yahoo Finance", "Reuters", "E24", osv.
+    source: str
     published: Optional[dt.datetime]
-    age_label: str = ""   # "NY" eller "14d" — settes av label_age()
+    age_label: str = ""
 
     def label_age(self, reference: dt.datetime) -> None:
         if self.published is None:
             self.age_label = ""
             return
-        delta = reference - self.published.replace(tzinfo=None) if self.published.tzinfo else reference - self.published
-        if delta.days < NEWS_NEW_THRESHOLD_DAYS:
-            self.age_label = "NY"
-        else:
-            self.age_label = "14d"
+        delta = (
+            reference - self.published.replace(tzinfo=None)
+            if self.published.tzinfo
+            else reference - self.published
+        )
+        self.age_label = "NEW" if delta.days < NEWS_NEW_THRESHOLD_DAYS else "14d"
 
 
 @dataclass
 class StockResult:
-    ticker: str                   # f.eks. "EQNR.OL"
-    symbol: str                   # f.eks. "EQNR"
-    signal: str                   # BUY / SELL / BUY-watch / SELL-watch / NEUTRAL
+    ticker: str                 # e.g. "EQNR.OL"
+    symbol: str                 # e.g. "EQNR"
+    signal: str                 # BUY / SELL / BUY-watch / SELL-watch
     close: float
     rsi14: float
     adx14: float
     mfi14: float
     macd_hist: float
     pct_above_sma50: float
-    stop_loss_pct: float
-    position_pct: float
+    stop_loss_pct: float        # computed from S/R; ATR fallback from CSV
+    stop_loss_basis: str        # "S/R" or "ATR"
+    primary_count: int          # number of confirming indicators (signal strength)
     risk: str
     news: list[NewsItem] = field(default_factory=list)
     news_errors: dict[str, str] = field(default_factory=dict)
+
+
+@dataclass
+class TickerChange:
+    ticker: str
+    change_type: str            # "added" or "removed"
 
 
 @dataclass
@@ -117,10 +135,12 @@ class DashboardData:
     sell_watch: list[StockResult]
     macro_news: list[NewsItem]
     source_statuses: list[SourceStatus]
+    ticker_changes: list[TickerChange]
+    ticker_changes_date: Optional[dt.date]
 
 
 # ---------------------------------------------------------------------------
-# Screener-data
+# Screener data
 # ---------------------------------------------------------------------------
 
 
@@ -130,7 +150,7 @@ def _strip_comments(text: str) -> str:
 
 
 def fetch_screener_csv() -> tuple[pd.DataFrame, str]:
-    """Last ned latest.csv fra oslo-screener. Returnerer (DataFrame, kilde-navn)."""
+    """Download latest.csv from oslo-screener. Returns (DataFrame, source-name)."""
     token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
     headers = {"User-Agent": "oslo-screener-dashboard/1.0"}
     if token:
@@ -144,18 +164,20 @@ def fetch_screener_csv() -> tuple[pd.DataFrame, str]:
             df = pd.read_csv(io.StringIO(text))
             df.columns = [c.strip() for c in df.columns]
             if "ticker" not in df.columns:
-                raise ValueError("Mangler 'ticker'-kolonne")
-            log.info("Lastet screener-data fra %s (%d rader)", url, len(df))
+                raise ValueError("Missing 'ticker' column")
+            log.info("Loaded screener data from %s (%d rows)", url, len(df))
             source_name = "GitHub Pages" if "github.io" in url else "GitHub Raw"
             return df, source_name
         except Exception as e:
-            log.warning("Klarte ikke laste fra %s: %s", url, e)
+            log.warning("Failed to load from %s: %s", url, e)
 
-    raise RuntimeError("Ingen screener-datakilder tilgjengelig. Prøvde: " + ", ".join(SCREENER_URLS))
+    raise RuntimeError(
+        "No screener data sources available. Tried: " + ", ".join(SCREENER_URLS)
+    )
 
 
 def parse_screener_results(df: pd.DataFrame) -> tuple[list[StockResult], Optional[dt.date]]:
-    """Konverter DataFrame til StockResult-objekter."""
+    """Convert DataFrame to StockResult objects."""
     results = []
     screener_date = None
 
@@ -174,6 +196,11 @@ def parse_screener_results(df: pd.DataFrame) -> tuple[list[StockResult], Optiona
         except Exception:
             pass
 
+        try:
+            primary_count = int(row.get("primary_count", 0))
+        except (ValueError, TypeError):
+            primary_count = 0
+
         results.append(StockResult(
             ticker=ticker,
             symbol=symbol,
@@ -184,8 +211,9 @@ def parse_screener_results(df: pd.DataFrame) -> tuple[list[StockResult], Optiona
             mfi14=float(row.get("mfi14", 0)),
             macd_hist=float(row.get("macd_hist", 0)),
             pct_above_sma50=float(row.get("pct_above_sma50", 0)),
-            stop_loss_pct=float(row.get("stop_loss_pct", 0)),
-            position_pct=float(row.get("position_pct", 0)),
+            stop_loss_pct=float(row.get("stop_loss_pct", 3.0)),
+            stop_loss_basis="ATR",
+            primary_count=primary_count,
             risk=str(row.get("risk", "")).strip(),
         ))
 
@@ -193,15 +221,73 @@ def parse_screener_results(df: pd.DataFrame) -> tuple[list[StockResult], Optiona
 
 
 # ---------------------------------------------------------------------------
-# Nyheter: Oslo Børs Newspoint
+# Support/Resistance stop-loss
+# ---------------------------------------------------------------------------
+
+
+def _compute_sr_stop_loss(
+    yf_ticker,
+    signal: str,
+    close: float,
+    fallback_pct: float,
+) -> tuple[float, str]:
+    """
+    Compute stop-loss from the nearest S/R pivot using 6-month daily OHLC.
+    Returns (stop_loss_pct, basis) where basis is "S/R" or "ATR".
+    Stop-loss is expressed as the adverse-move percentage from current price.
+    """
+    N = SR_PIVOT_WINDOW
+    try:
+        df = yf_ticker.history(period="6mo", interval="1d")
+        if df is None or len(df) < N * 2 + 2:
+            return fallback_pct, "ATR"
+
+        highs = df["High"].values
+        lows = df["Low"].values
+
+        if signal in ("BUY", "BUY-watch"):
+            # Find pivot lows strictly below current price
+            pivots = [
+                lows[i]
+                for i in range(N, len(lows) - N)
+                if lows[i] < close
+                and all(lows[i] <= lows[i - k] for k in range(1, N + 1))
+                and all(lows[i] <= lows[i + k] for k in range(1, N + 1))
+            ]
+            if pivots:
+                support = max(pivots)               # nearest support below price
+                stop_price = support * (1 - SR_BUFFER_PCT / 100)
+                pct = (close - stop_price) / close * 100
+                return round(max(pct, 0.5), 1), "S/R"
+
+        elif signal in ("SELL", "SELL-watch"):
+            # Find pivot highs strictly above current price
+            pivots = [
+                highs[i]
+                for i in range(N, len(highs) - N)
+                if highs[i] > close
+                and all(highs[i] >= highs[i - k] for k in range(1, N + 1))
+                and all(highs[i] >= highs[i + k] for k in range(1, N + 1))
+            ]
+            if pivots:
+                resistance = min(pivots)            # nearest resistance above price
+                stop_price = resistance * (1 + SR_BUFFER_PCT / 100)
+                pct = (stop_price - close) / close * 100
+                return round(max(pct, 0.5), 1), "S/R"
+
+    except Exception as e:
+        log.debug("S/R stop-loss computation failed for %s: %s", signal, e)
+
+    return fallback_pct, "ATR"
+
+
+# ---------------------------------------------------------------------------
+# News: Oslo Bors Newspoint
 # ---------------------------------------------------------------------------
 
 
 def fetch_oslo_bors_news(symbol: str, days: int = NEWS_WINDOW_DAYS) -> list[NewsItem]:
-    """
-    Henter offisielle børsmeldinger fra Oslo Børs Newspoint.
-    symbol: ticker uten .OL, f.eks. "EQNR"
-    """
+    """Fetch official exchange announcements from Oslo Bors Newspoint."""
     today = dt.date.today()
     from_date = today - dt.timedelta(days=days)
 
@@ -224,7 +310,6 @@ def fetch_oslo_bors_news(symbol: str, days: int = NEWS_WINDOW_DAYS) -> list[News
 
     data = resp.json()
 
-    # Newspoint returnerer en liste direkte, eller {"messages": [...]}
     if isinstance(data, dict):
         messages = data.get("messages", data.get("items", []))
     elif isinstance(data, list):
@@ -244,14 +329,13 @@ def fetch_oslo_bors_news(symbol: str, days: int = NEWS_WINDOW_DAYS) -> list[News
         except Exception:
             published = None
 
-        # Bygg lenke til meldingen
         msg_id = msg.get("messageId") or msg.get("id") or ""
         url = f"https://newsweb.oslobors.no/message/{msg_id}" if msg_id else OSLO_BORS_API
 
         items.append(NewsItem(
             title=str(title),
             url=url,
-            source="Oslo Børs",
+            source="Oslo Bors",
             published=published,
         ))
 
@@ -259,39 +343,38 @@ def fetch_oslo_bors_news(symbol: str, days: int = NEWS_WINDOW_DAYS) -> list[News
 
 
 # ---------------------------------------------------------------------------
-# Nyheter: Yahoo Finance
+# News + S/R stop-loss: Yahoo Finance (single session per stock)
 # ---------------------------------------------------------------------------
 
 
-def fetch_yf_news(ticker: str, days: int = NEWS_WINDOW_DAYS) -> list[NewsItem]:
+def _fetch_yf_data(
+    stock: StockResult,
+    days: int = NEWS_WINDOW_DAYS,
+) -> tuple[list[NewsItem], float, str]:
     """
-    Henter nyheter fra Yahoo Finance via yfinance.
-    ticker: f.eks. "EQNR.OL"
+    Single yfinance session per stock: fetch news and compute S/R stop-loss.
+    Returns (news_items, stop_loss_pct, basis).
     """
-    import yfinance as yf  # lazy import — kreves i GitHub Actions
-    t = yf.Ticker(ticker)
-    raw_news = t.news or []
+    import yfinance as yf
 
+    t = yf.Ticker(stock.ticker)
+
+    # --- News ---
     cutoff_ts = time.time() - days * 86400
     items = []
-
-    for article in raw_news:
+    for article in (t.news or []):
         pub_ts = article.get("providerPublishTime", 0)
         if pub_ts < cutoff_ts:
             continue
-
         title = article.get("title", "")
         url = article.get("link", "")
         publisher = article.get("publisher", "Yahoo Finance")
-
         if not title or not url:
             continue
-
         try:
             published = dt.datetime.utcfromtimestamp(pub_ts)
         except Exception:
             published = None
-
         items.append(NewsItem(
             title=title,
             url=url,
@@ -299,16 +382,19 @@ def fetch_yf_news(ticker: str, days: int = NEWS_WINDOW_DAYS) -> list[NewsItem]:
             published=published,
         ))
 
-    return items
+    # --- S/R stop-loss ---
+    stop_pct, basis = _compute_sr_stop_loss(t, stock.signal, stock.close, stock.stop_loss_pct)
+
+    return items, stop_pct, basis
 
 
 # ---------------------------------------------------------------------------
-# Nyheter: RSS-feeds (Reuters, E24)
+# News: RSS feeds (Reuters, E24)
 # ---------------------------------------------------------------------------
 
 
 def _parse_rss(url: str, source_name: str, days: int = NEWS_WINDOW_DAYS) -> list[NewsItem]:
-    """Generisk RSS-parser med aldersfilter."""
+    """Generic RSS parser with age filter."""
     import feedparser  # type: ignore
 
     feed = feedparser.parse(url)
@@ -334,12 +420,7 @@ def _parse_rss(url: str, source_name: str, days: int = NEWS_WINDOW_DAYS) -> list
         if published and published < cutoff:
             continue
 
-        items.append(NewsItem(
-            title=title,
-            url=link,
-            source=source_name,
-            published=published,
-        ))
+        items.append(NewsItem(title=title, url=link, source=source_name, published=published))
 
     return items
 
@@ -349,19 +430,14 @@ def fetch_reuters_macro() -> list[NewsItem]:
 
 
 def fetch_e24_rss(symbol: str, days: int = NEWS_WINDOW_DAYS) -> list[NewsItem]:
-    """
-    Forsøker å hente E24-nyheter. E24 har ikke aksje-spesifikke RSS-feeds,
-    så vi filtrerer hoved-feeden på tickersymbol i tittel/beskrivelse.
-    """
+    """E24 does not have per-stock feeds; filter the main feed by symbol name."""
     items = _parse_rss(E24_RSS_URL, "E24", days=days)
     symbol_lower = symbol.lower()
-    # Filtrer på symbolnavn for relevans (best-effort)
-    filtered = [i for i in items if symbol_lower in i.title.lower()]
-    return filtered
+    return [i for i in items if symbol_lower in i.title.lower()]
 
 
 # ---------------------------------------------------------------------------
-# Nyheter: hent for én aksje
+# News: fetch all sources for one stock
 # ---------------------------------------------------------------------------
 
 
@@ -370,22 +446,29 @@ def _safe_fetch(fn, *args, source_label: str, errors: dict) -> list[NewsItem]:
         return fn(*args)
     except Exception as e:
         errors[source_label] = str(e)
-        log.warning("Nyheter fra %s feilet for %s: %s", source_label, args[0] if args else "?", e)
+        log.warning("News from %s failed for %s: %s", source_label, args[0] if args else "?", e)
         return []
 
 
 def fetch_news_for_stock(stock: StockResult) -> None:
-    """Henter alle nyhetskilder for en aksje og lagrer på stock-objektet."""
+    """Fetch all news sources and S/R stop-loss for one stock."""
     errors: dict[str, str] = {}
 
-    oslo_bors = _safe_fetch(fetch_oslo_bors_news, stock.symbol, source_label="Oslo Børs", errors=errors)
-    yf_news = _safe_fetch(fetch_yf_news, stock.ticker, source_label="Yahoo Finance", errors=errors)
+    oslo_bors = _safe_fetch(fetch_oslo_bors_news, stock.symbol, source_label="Oslo Bors", errors=errors)
     e24_news = _safe_fetch(fetch_e24_rss, stock.symbol, source_label="E24", errors=errors)
+
+    # Yahoo Finance: news + S/R stop-loss in one session
+    yf_news: list[NewsItem] = []
+    try:
+        yf_news, sr_pct, sr_basis = _fetch_yf_data(stock)
+        stock.stop_loss_pct = sr_pct
+        stock.stop_loss_basis = sr_basis
+    except Exception as e:
+        errors["Yahoo Finance"] = str(e)
+        log.warning("Yahoo Finance data failed for %s: %s", stock.ticker, e)
 
     now = dt.datetime.utcnow()
     all_news = oslo_bors + yf_news + e24_news
-
-    # Sorter på dato (nyeste først), sett alder-label
     all_news.sort(key=lambda n: n.published or dt.datetime.min, reverse=True)
     for item in all_news:
         item.label_age(now)
@@ -395,7 +478,7 @@ def fetch_news_for_stock(stock: StockResult) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Makronyheter (Reuters) — felles for hele dashboardet
+# Macro news (Reuters) — shared across the dashboard
 # ---------------------------------------------------------------------------
 
 
@@ -405,14 +488,110 @@ def fetch_macro_news() -> tuple[list[NewsItem], Optional[str]]:
         now = dt.datetime.utcnow()
         for item in items:
             item.label_age(now)
-        # Begrens til de 6 nyeste
         return items[:6], None
     except Exception as e:
         return [], str(e)
 
 
 # ---------------------------------------------------------------------------
-# Hoved-generator
+# Weekly ticker change tracking
+# ---------------------------------------------------------------------------
+
+
+def _fetch_valid_tickers() -> list[str]:
+    """Download the current valid_tickers.txt from oslo-screener."""
+    token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
+    headers = {"User-Agent": "oslo-screener-dashboard/1.0"}
+    if token:
+        headers["Authorization"] = f"token {token}"
+
+    resp = requests.get(VALID_TICKERS_URL, headers=headers, timeout=20)
+    resp.raise_for_status()
+    raw = resp.text.strip()
+
+    # Handle both "one per line" and comma-separated formats
+    if "\n" in raw and "," not in raw.split("\n")[0]:
+        tickers = [t.strip() for t in raw.splitlines()]
+    else:
+        tickers = [t.strip() for t in raw.replace("\n", ",").split(",")]
+
+    return sorted(t for t in tickers if t)
+
+
+def load_ticker_changes() -> tuple[list[TickerChange], Optional[dt.date]]:
+    """Read the cached ticker changes from disk (if available)."""
+    if not TICKER_CHANGES_FILE.exists():
+        return [], None
+    try:
+        data = json.loads(TICKER_CHANGES_FILE.read_text(encoding="utf-8"))
+        changes = [
+            TickerChange(ticker=t, change_type="added")
+            for t in data.get("added", [])
+        ] + [
+            TickerChange(ticker=t, change_type="removed")
+            for t in data.get("removed", [])
+        ]
+        date_str = data.get("update_date")
+        change_date = dt.date.fromisoformat(date_str) if date_str else None
+        return changes, change_date
+    except Exception as e:
+        log.warning("Could not read ticker changes cache: %s", e)
+        return [], None
+
+
+def update_ticker_cache() -> tuple[list[TickerChange], Optional[dt.date]]:
+    """
+    Fetch current valid_tickers.txt, diff against the cached previous list,
+    and persist any changes to disk.  Returns (changes, date_of_changes).
+    """
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+    try:
+        current = set(_fetch_valid_tickers())
+        log.info("Fetched %d valid tickers from oslo-screener", len(current))
+    except Exception as e:
+        log.warning("Could not fetch valid_tickers.txt: %s — using cached changes", e)
+        return load_ticker_changes()
+
+    # Read previous snapshot
+    if PREV_TICKERS_FILE.exists():
+        prev = set(PREV_TICKERS_FILE.read_text(encoding="utf-8").splitlines())
+    else:
+        prev = set()
+
+    added = sorted(current - prev)
+    removed = sorted(prev - current)
+
+    if added or removed:
+        today = dt.date.today()
+        log.info("Ticker changes detected: +%d added, -%d removed", len(added), len(removed))
+        TICKER_CHANGES_FILE.write_text(
+            json.dumps(
+                {"update_date": today.isoformat(), "added": added, "removed": removed},
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
+        PREV_TICKERS_FILE.write_text("\n".join(sorted(current)), encoding="utf-8")
+
+        changes = (
+            [TickerChange(t, "added") for t in added]
+            + [TickerChange(t, "removed") for t in removed]
+        )
+        return changes, today
+
+    elif not PREV_TICKERS_FILE.exists():
+        # First run — save snapshot, no changes to display
+        PREV_TICKERS_FILE.write_text("\n".join(sorted(current)), encoding="utf-8")
+        log.info("Saved initial ticker snapshot (%d tickers)", len(current))
+        return [], None
+
+    # No changes — return whatever is cached
+    return load_ticker_changes()
+
+
+# ---------------------------------------------------------------------------
+# Main generator
 # ---------------------------------------------------------------------------
 
 
@@ -420,13 +599,13 @@ def build_dashboard(output_path: pl.Path) -> None:
     source_statuses: list[SourceStatus] = []
     now_utc = dt.datetime.utcnow()
 
-    # 1. Last screener-data
-    log.info("Henter screener-data...")
+    # 1. Screener data
+    log.info("Fetching screener data...")
     try:
         df, screener_source = fetch_screener_csv()
         source_statuses.append(SourceStatus("Screener (oslo-screener)", ok=True, detail=screener_source))
     except RuntimeError as e:
-        log.error("Kritisk feil: %s", e)
+        log.error("Critical error: %s", e)
         source_statuses.append(SourceStatus("Screener (oslo-screener)", ok=False, detail=str(e)))
         _render_error_page(output_path, str(e), now_utc)
         return
@@ -439,40 +618,44 @@ def build_dashboard(output_path: pl.Path) -> None:
     buy_watch = [s for s in stocks if s.signal == "BUY-watch"]
     sell_watch = [s for s in stocks if s.signal == "SELL-watch"]
 
-    # 2. Hent nyheter for alle signal-aksjer
-    log.info("Henter nyheter for %d aksjer...", len(stocks))
-    for stock in stocks:
-        log.info("  → %s (%s)", stock.ticker, stock.signal)
-        fetch_news_for_stock(stock)
-        time.sleep(0.5)  # Høflighet mot nyhets-API-er
+    # 2. Weekly ticker changes
+    log.info("Checking weekly ticker changes...")
+    ticker_changes, ticker_changes_date = update_ticker_cache()
 
-    # Oppdater kilde-status basert på faktiske resultater
+    # 3. News + S/R stop-loss for all signal stocks
+    log.info("Fetching news and computing S/R stop-losses for %d stocks...", len(stocks))
+    for stock in stocks:
+        log.info("  -> %s (%s)", stock.ticker, stock.signal)
+        fetch_news_for_stock(stock)
+        time.sleep(0.5)
+
+    # Update source status from actual results
     yf_errors = [s.news_errors.get("Yahoo Finance") for s in stocks if "Yahoo Finance" in s.news_errors]
-    ob_errors = [s.news_errors.get("Oslo Børs") for s in stocks if "Oslo Børs" in s.news_errors]
+    ob_errors = [s.news_errors.get("Oslo Bors") for s in stocks if "Oslo Bors" in s.news_errors]
     e24_errors = [s.news_errors.get("E24") for s in stocks if "E24" in s.news_errors]
 
     source_statuses.append(SourceStatus(
-        "Yahoo Finance (nyheter)", ok=len(yf_errors) < len(stocks),
-        detail=f"{len(yf_errors)} av {len(stocks)} aksjer feilet" if yf_errors else "OK"
+        "Yahoo Finance (news)", ok=len(yf_errors) < len(stocks),
+        detail=f"{len(yf_errors)} of {len(stocks)} stocks failed" if yf_errors else "OK",
     ))
     source_statuses.append(SourceStatus(
-        "Oslo Børs Newspoint", ok=len(ob_errors) < len(stocks),
-        detail=f"{len(ob_errors)} av {len(stocks)} aksjer feilet" if ob_errors else "OK"
+        "Oslo Bors Newspoint", ok=len(ob_errors) < len(stocks),
+        detail=f"{len(ob_errors)} of {len(stocks)} stocks failed" if ob_errors else "OK",
     ))
     source_statuses.append(SourceStatus(
         "E24 RSS", ok=len(e24_errors) < len(stocks),
-        detail=f"{len(e24_errors)} av {len(stocks)} aksjer feilet" if e24_errors else "OK"
+        detail=f"{len(e24_errors)} of {len(stocks)} stocks failed" if e24_errors else "OK",
     ))
 
-    # 3. Makronyheter
-    log.info("Henter makronyheter...")
+    # 4. Macro news
+    log.info("Fetching macro news...")
     macro_news, macro_error = fetch_macro_news()
     source_statuses.append(SourceStatus(
-        "Reuters RSS (makro)", ok=macro_error is None,
-        detail=macro_error or f"{len(macro_news)} nyheter hentet"
+        "Reuters RSS (macro)", ok=macro_error is None,
+        detail=macro_error or f"{len(macro_news)} items fetched",
     ))
 
-    # 4. Render HTML
+    # 5. Render
     dashboard = DashboardData(
         generated_at=now_utc,
         screener_date=screener_date,
@@ -484,10 +667,12 @@ def build_dashboard(output_path: pl.Path) -> None:
         sell_watch=sell_watch,
         macro_news=macro_news,
         source_statuses=source_statuses,
+        ticker_changes=ticker_changes,
+        ticker_changes_date=ticker_changes_date,
     )
 
     _render(dashboard, output_path)
-    log.info("Dashboard generert: %s", output_path)
+    log.info("Dashboard generated: %s", output_path)
 
 
 def _render(data: DashboardData, output_path: pl.Path) -> None:
@@ -503,15 +688,14 @@ def _render(data: DashboardData, output_path: pl.Path) -> None:
 
 
 def _render_error_page(output_path: pl.Path, error: str, now_utc: dt.datetime) -> None:
-    """Skriv en enkel feilside istedenfor blank side."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
-        f"""<!DOCTYPE html><html lang="no"><head><meta charset="utf-8">
-        <title>Oslo Screener Dashboard — Feil</title></head>
-        <body><h1>Kunne ikke generere dashboard</h1>
-        <p>Tidspunkt: {now_utc.strftime('%Y-%m-%d %H:%M')} UTC</p>
-        <p>Feil: {error}</p>
-        <p>Dashboard oppdateres automatisk neste virkedag.</p>
+        f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+        <title>Oslo Screener Dashboard — Error</title></head>
+        <body><h1>Dashboard could not be generated</h1>
+        <p>Time: {now_utc.strftime('%Y-%m-%d %H:%M')} UTC</p>
+        <p>Error: {error}</p>
+        <p>Dashboard will be updated automatically next business day.</p>
         </body></html>""",
         encoding="utf-8",
     )
@@ -525,8 +709,8 @@ def _render_error_page(output_path: pl.Path, error: str, now_utc: dt.datetime) -
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description="Generer Oslo Screener Dashboard")
-    parser.add_argument("--output", default="site/index.html", help="Output HTML-fil")
+    parser = argparse.ArgumentParser(description="Generate Oslo Screener Dashboard")
+    parser.add_argument("--output", default="site/index.html", help="Output HTML file")
     args = parser.parse_args()
 
     build_dashboard(pl.Path(args.output))
