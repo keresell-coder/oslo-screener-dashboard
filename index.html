@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Oslo Screener" />
+  <meta name="theme-color" content="#1a2332" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <title>Oslo Screener Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f1923;
+      --surface:   #1a2332;
+      --surface2:  #223044;
+      --border:    #2e4060;
+      --text:      #e8edf3;
+      --text-dim:  #8fa3bb;
+      --buy:       #22c55e;
+      --sell:      #ef4444;
+      --watch-buy: #86efac;
+      --watch-sell:#fca5a5;
+      --neutral:   #64748b;
+      --accent:    #3b82f6;
+      --tag-new:   #22c55e;
+      --tag-14d:   #64748b;
+      --font:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    html { font-size: 16px; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: env(safe-area-inset-bottom, 16px);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+
+    .header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .header h1 { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.02em; color: var(--text); }
+    .header-meta { font-size: 0.75rem; color: var(--text-dim); line-height: 1.6; }
+
+    .summary-bar { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 0; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 4px 10px; border-radius: 20px;
+      font-size: 0.8rem; font-weight: 600; border: 1px solid transparent;
+    }
+    .chip-buy   { background: rgba(34,197,94,.15);  border-color: rgba(34,197,94,.4);  color: var(--buy); }
+    .chip-sell  { background: rgba(239,68,68,.15);  border-color: rgba(239,68,68,.4);  color: var(--sell); }
+    .chip-wbuy  { background: rgba(134,239,172,.1); border-color: rgba(134,239,172,.3);color: var(--watch-buy); }
+    .chip-wsell { background: rgba(252,165,165,.1); border-color: rgba(252,165,165,.3);color: var(--watch-sell); }
+    .chip-total { background: rgba(100,116,139,.1); border-color: rgba(100,116,139,.3);color: var(--text-dim); }
+
+    details { margin: 12px 0; }
+    summary {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 14px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; cursor: pointer;
+      font-size: 0.9rem; font-weight: 600;
+      list-style: none; user-select: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::before {
+      content: "▶"; font-size: 0.65rem; color: var(--text-dim);
+      transition: transform 0.2s; flex-shrink: 0;
+    }
+    details[open] summary::before { transform: rotate(90deg); }
+    summary .section-count { margin-left: auto; font-size: 0.75rem; color: var(--text-dim); font-weight: 400; }
+
+    .section-buy   summary { border-left: 3px solid var(--buy); }
+    .section-sell  summary { border-left: 3px solid var(--sell); }
+    .section-wbuy  summary { border-left: 3px solid var(--watch-buy); }
+    .section-wsell summary { border-left: 3px solid var(--watch-sell); }
+    .section-macro summary { border-left: 3px solid var(--accent); }
+    .section-tickers summary { border-left: 3px solid #a78bfa; }
+
+    .stock-list { display: flex; flex-direction: column; gap: 12px; padding: 12px 0 4px; }
+
+    .stock-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; overflow: hidden;
+    }
+    .stock-header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 14px 8px; flex-wrap: wrap;
+    }
+    .stock-ticker { font-size: 1rem; font-weight: 700; letter-spacing: 0.05em; }
+    .signal-badge {
+      font-size: 0.7rem; font-weight: 700;
+      padding: 2px 8px; border-radius: 4px; letter-spacing: 0.05em;
+    }
+    .badge-buy        { background: rgba(34,197,94,.2);   color: var(--buy); }
+    .badge-sell       { background: rgba(239,68,68,.2);   color: var(--sell); }
+    .badge-buy-watch  { background: rgba(134,239,172,.15);color: var(--watch-buy); }
+    .badge-sell-watch { background: rgba(252,165,165,.15);color: var(--watch-sell); }
+    .stock-price { margin-left: auto; font-size: 1rem; font-weight: 600; color: var(--text); }
+
+    .indicators {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 6px; padding: 4px 14px 12px;
+    }
+    .ind { background: var(--surface2); border-radius: 6px; padding: 6px 8px; font-size: 0.72rem; }
+    .ind-label { color: var(--text-dim); display: block; margin-bottom: 1px; }
+    .ind-value { font-weight: 600; font-size: 0.82rem; }
+    .ind-risk-low  { color: #86efac; }
+    .ind-risk-mod  { color: #fde68a; }
+    .ind-risk-high { color: #fca5a5; }
+
+    .risk-row {
+      padding: 0 14px 10px; font-size: 0.75rem;
+      color: var(--text-dim); display: flex; gap: 16px; flex-wrap: wrap;
+    }
+    .risk-row span b { color: var(--text); }
+    .sl-basis {
+      font-size: 0.65rem; font-weight: 700;
+      padding: 1px 5px; border-radius: 3px; margin-left: 4px;
+      letter-spacing: 0.04em;
+    }
+    .sl-basis-s\/r { background: rgba(34,197,94,.15); color: #86efac; }
+    .sl-basis-atr  { background: rgba(100,116,139,.2); color: var(--text-dim); }
+
+    .news-section { padding: 0 14px 14px; }
+    .news-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-dim); margin-bottom: 6px;
+    }
+    .news-item {
+      display: flex; gap: 8px; padding: 7px 0;
+      border-top: 1px solid var(--border); align-items: flex-start;
+    }
+    .news-age {
+      flex-shrink: 0; font-size: 0.65rem; font-weight: 700;
+      padding: 2px 5px; border-radius: 3px; margin-top: 2px; letter-spacing: 0.04em;
+    }
+    .age-new     { background: rgba(34,197,94,.2);  color: var(--tag-new); }
+    .age-14d     { background: rgba(100,116,139,.2); color: var(--tag-14d); }
+    .age-unknown { background: rgba(100,116,139,.1); color: var(--tag-14d); }
+
+    .news-body { flex: 1; min-width: 0; }
+    .news-title { font-size: 0.82rem; color: var(--text); line-height: 1.4; word-break: break-word; }
+    .news-source { font-size: 0.7rem; color: var(--text-dim); margin-top: 2px; }
+    .news-source time { color: var(--text-dim); }
+    .no-news { font-size: 0.78rem; color: var(--text-dim); font-style: italic; padding: 6px 0; }
+    .news-error { font-size: 0.72rem; color: #f87171; margin-top: 4px; }
+    .news-manual-link { font-size: 0.75rem; margin-top: 6px; }
+
+    .macro-list { padding: 10px 0 4px; }
+    .macro-item {
+      display: flex; gap: 8px; padding: 8px 14px;
+      border-top: 1px solid var(--border); align-items: flex-start;
+    }
+    .macro-item:first-child { border-top: none; }
+    .macro-title { font-size: 0.82rem; color: var(--text); line-height: 1.4; }
+    .macro-source { font-size: 0.7rem; color: var(--text-dim); margin-top: 1px; }
+
+    /* Weekly ticker changes */
+    .ticker-changes-list { padding: 10px 14px 14px; }
+    .ticker-changes-date { font-size: 0.72rem; color: var(--text-dim); margin-bottom: 10px; }
+    .ticker-group { margin-bottom: 10px; }
+    .ticker-group-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 6px;
+    }
+    .ticker-group-label.added   { color: var(--buy); }
+    .ticker-group-label.removed { color: var(--sell); }
+    .ticker-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .ticker-pill {
+      font-size: 0.75rem; font-weight: 600;
+      padding: 3px 9px; border-radius: 4px; letter-spacing: 0.04em;
+    }
+    .ticker-pill.added   { background: rgba(34,197,94,.15);  color: var(--buy); }
+    .ticker-pill.removed { background: rgba(239,68,68,.15);  color: var(--sell); }
+
+    .source-status-section {
+      margin: 20px 0 8px; padding: 12px 14px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+    }
+    .source-status-title {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 8px;
+    }
+    .source-row { display: flex; align-items: center; gap: 8px; padding: 3px 0; font-size: 0.75rem; }
+    .dot-ok   { color: var(--buy);  font-size: 0.65rem; }
+    .dot-fail { color: var(--sell); font-size: 0.65rem; }
+    .source-detail { color: var(--text-dim); }
+
+    .disclaimer {
+      margin: 20px 0 32px; padding: 12px 14px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-left: 3px solid #f59e0b; border-radius: 8px;
+      font-size: 0.72rem; color: var(--text-dim); line-height: 1.6;
+    }
+    .disclaimer strong { color: #fbbf24; }
+
+    .empty-state { padding: 16px 14px; font-size: 0.82rem; color: var(--text-dim); font-style: italic; }
+
+    @media (min-width: 600px) {
+      .header h1 { font-size: 1.2rem; }
+      .indicators { grid-template-columns: repeat(7, 1fr); }
+      .stock-ticker { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <div>
+        <h1>Oslo Screener Dashboard</h1>
+        <div class="header-meta">
+            Screener data: 27 April 2026<br>
+          Generated: 28 Apr 2026 05:13 UTC
+          &nbsp;·&nbsp; Source: GitHub Raw
+        </div>
+      </div>
+      <div class="summary-bar">
+        <span class="chip chip-buy">BUY 1</span>
+        <span class="chip chip-sell">SELL 2</span>
+        <span class="chip chip-wbuy">BUY-watch 5</span>
+        <span class="chip chip-wsell">SELL-watch 6</span>
+        <span class="chip chip-total">111 screened</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- MACRO NEWS -->
+  
+
+  <!-- WEEKLY TICKER CHANGES -->
+  
+  
+  
+
+  <!-- BUY SIGNALS -->
+  <details class="section-buy" open>
+    <summary>
+      BUY signals
+      <span class="section-count">1 stock</span>
+    </summary>
+    
+    <div class="stock-list"><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">TOM</span>
+    <span class="signal-badge badge-buy">
+      BUY
+    </span>
+    <a href="https://finance.yahoo.com/quote/TOM.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=TOM"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">91.40 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">26.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">23.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">28.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-2.7196</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-20.0%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=TOM&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=TOM" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/TOM" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=TOM" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div></div>
+    
+  </details>
+
+  <!-- SELL SIGNALS -->
+  <details class="section-sell" open>
+    <summary>
+      SELL signals
+      <span class="section-count">2 stocks</span>
+    </summary>
+    
+    <div class="stock-list"><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">AKSO</span>
+    <span class="signal-badge badge-sell">
+      SELL
+    </span>
+    <a href="https://finance.yahoo.com/quote/AKSO.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=AKSO"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">40.08 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">65.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">38.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">49.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.0221</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+13.0%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">3/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=AKSO&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=AKSO" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/AKSO" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=AKSO" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">NOD</span>
+    <span class="signal-badge badge-sell">
+      SELL
+    </span>
+    <a href="https://finance.yahoo.com/quote/NOD.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=NOD"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">187.60 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">73.3</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">27.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">98.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">1.6987</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+21.3%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=NOD&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=NOD" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/NOD" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=NOD" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div></div>
+    
+  </details>
+
+  <!-- BUY-WATCH -->
+  <details class="section-wbuy">
+    <summary>
+      BUY-watch
+      <span class="section-count">
+        5 stocks
+        — oversold, reversal not yet confirmed
+      </span>
+    </summary>
+    <p style="padding:10px 14px 4px;font-size:0.78rem;color:var(--text-dim);">
+      These stocks are in <strong style="color:var(--watch-buy)">oversold territory (RSI ≤ 35)</strong>
+      but have not yet confirmed an upward reversal. If they turn up with support from trend indicators
+      they may become BUY signals.
+    </p>
+    
+    <div class="stock-list"><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">LSG</span>
+    <span class="signal-badge badge-buy-watch">
+      BUY-watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/LSG.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=LSG"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">45.16 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">27.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">20.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">13.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.3706</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-7.8%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=LSG&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=LSG" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/LSG" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=LSG" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">AUSS</span>
+    <span class="signal-badge badge-buy-watch">
+      BUY-watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/AUSS.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=AUSS"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">92.90 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">28.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">27.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">15.2</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-1.0289</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-6.7%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=AUSS&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=AUSS" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/AUSS" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=AUSS" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">KOG</span>
+    <span class="signal-badge badge-buy-watch">
+      BUY-watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/KOG.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=KOG"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">307.00 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">32.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">31.6</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">29.1</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-6.9109</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-18.6%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=KOG&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=KOG" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/KOG" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=KOG" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">MOWI</span>
+    <span class="signal-badge badge-buy-watch">
+      BUY-watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/MOWI.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=MOWI"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">201.80 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">33.2</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">27.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">16.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-1.1801</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-7.6%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=MOWI&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=MOWI" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/MOWI" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=MOWI" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">PCIB</span>
+    <span class="signal-badge badge-buy-watch">
+      BUY-watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/PCIB.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=PCIB"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">0.12 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">33.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">23.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">46.3</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.0033</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-37.9%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=PCIB&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=PCIB" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/PCIB" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=PCIB" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div></div>
+    
+  </details>
+
+  <!-- SELL-WATCH -->
+  <details class="section-wsell">
+    <summary>
+      SELL-watch
+      <span class="section-count">
+        6 stocks
+        — overbought, reversal not yet confirmed
+      </span>
+    </summary>
+    <p style="padding:10px 14px 4px;font-size:0.78rem;color:var(--text-dim);">
+      These stocks are in <strong style="color:var(--watch-sell)">overbought territory (RSI ≥ 65)</strong>
+      but have not yet confirmed a downward reversal. If they turn down with support from trend indicators
+      they may become SELL signals.
+    </p>
+    
+    <div class="stock-list"><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">SUBC</span>
+    <span class="signal-badge badge-sell-watch">
+      SELL-watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/SUBC.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=SUBC"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">326.00 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">70.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">31.1</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">47.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.4999</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+18.1%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=SUBC&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=SUBC" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/SUBC" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=SUBC" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">EIOF</span>
+    <span class="signal-badge badge-sell-watch">
+      SELL-watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/EIOF.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=EIOF"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">17.25 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">70.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">24.6</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">73.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.0018</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+15.0%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=EIOF&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=EIOF" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/EIOF" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=EIOF" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">ZAL</span>
+    <span class="signal-badge badge-sell-watch">
+      SELL-watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/ZAL.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=ZAL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">98.40 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">70.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">49.2</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">69.6</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.6357</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+10.5%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=ZAL&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=ZAL" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/ZAL" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=ZAL" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">EPR</span>
+    <span class="signal-badge badge-sell-watch">
+      SELL-watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/EPR.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=EPR"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">101.20 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">71.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">26.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">67.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.7118</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+11.3%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=EPR&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=EPR" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/EPR" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=EPR" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">SOAG</span>
+    <span class="signal-badge badge-sell-watch">
+      SELL-watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/SOAG.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=SOAG"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">474.30 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">71.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">30.1</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">45.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">2.6966</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+8.9%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=SOAG&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=SOAG" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/SOAG" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=SOAG" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">BMA</span>
+    <span class="signal-badge badge-sell-watch">
+      SELL-watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/BMA.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=BMA"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price">21.80 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">75.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">42.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">91.6</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.2574</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+30.1%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Risk</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <div class="risk-row">
+    <span>Stop-loss:
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-atr">ATR</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">No news found in the last 14 days.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: 403 Client Error: Forbidden for url: https://newsweb.oslobors.no/message/search?category=&amp;issuer=BMA&amp;fromDate=2026-04-14&amp;toDate=2026-04-28&amp;market=&amp;sector=</p>
+      
+        <p class="news-error">⚠ E24 unavailable: No module named &#39;sgmllib&#39;</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=BMA" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/BMA" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=BMA" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div></div>
+    
+  </details>
+
+  <!-- SOURCE STATUS -->
+  <div class="source-status-section">
+    <div class="source-status-title">Data source quality</div>
+    
+    <div class="source-row">
+      <span class="dot-ok">
+        ●
+      </span>
+      <span>Screener (oslo-screener)</span>
+      <span class="source-detail">— GitHub Raw</span>
+    </div>
+    
+    <div class="source-row">
+      <span class="dot-ok">
+        ●
+      </span>
+      <span>Yahoo Finance (news)</span>
+      <span class="source-detail">— OK</span>
+    </div>
+    
+    <div class="source-row">
+      <span class="dot-fail">
+        ✕
+      </span>
+      <span>Oslo Bors Newspoint</span>
+      <span class="source-detail">— 14 of 14 stocks failed</span>
+    </div>
+    
+    <div class="source-row">
+      <span class="dot-fail">
+        ✕
+      </span>
+      <span>E24 RSS</span>
+      <span class="source-detail">— 14 of 14 stocks failed</span>
+    </div>
+    
+    <div class="source-row">
+      <span class="dot-fail">
+        ✕
+      </span>
+      <span>Reuters RSS (macro)</span>
+      <span class="source-detail">— No module named &#39;sgmllib&#39;</span>
+    </div>
+    
+    <p style="margin-top:8px;font-size:0.7rem;color:var(--text-dim);">
+      News is fetched automatically and is not editorially reviewed.
+      Always verify information against the primary source.
+    </p>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>Important:</strong> This dashboard is purely a technical analysis tool.
+    Signals are based on RSI, MACD, SMA and ADX indicators — they are not investment advice
+    and do not account for company fundamentals, tax rules or your personal risk profile.
+    Stop-loss levels marked <em>S/R</em> are derived from recent pivot support/resistance;
+    levels marked <em>ATR</em> use the ADX-based fallback from the screener.
+    Past performance is no guarantee of future results.
+    News is fetched automatically from third-party sources — always check the primary source.
+  </div>
+
+</main>
+</body>
+</html>
