@@ -8,9 +8,9 @@ Runs daily via GitHub Actions after the screener job has published latest.csv.
 
 News sources (in priority order):
   1. Oslo Bors Newspoint  (official exchange announcements)
-  2. Yahoo Finance news   (English-language, via yfinance)
-  3. Reuters RSS          (macro news)
-  4. E24 RSS              (Norwegian financial press)
+  2. Yahoo Finance RSS    (English-language headlines)
+  3. Google News RSS      (broad fallback, includes Norwegian press)
+  4. Reuters RSS          (macro news, dashboard-wide)
 
 Source status is reported openly in the HTML page — no data is fabricated.
 """
@@ -51,8 +51,18 @@ SCREENER_URLS = [
 VALID_TICKERS_URL = "https://raw.githubusercontent.com/keresell-coder/oslo-screener/main/valid_tickers.txt"
 
 REUTERS_RSS_URL = "https://feeds.reuters.com/reuters/businessNews"
-E24_RSS_URL = "https://e24.no/rss2/"
 OSLO_BORS_API = "https://newsweb.oslobors.no/message/search"
+YAHOO_RSS_TPL = "https://feeds.finance.yahoo.com/rss/2.0/headline?s={ticker}&region=US&lang=en-US"
+GOOGLE_NEWS_TPL = "https://news.google.com/rss/search?q={query}&hl=en&gl=US&ceid=US:en"
+
+BROWSER_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9,no;q=0.8",
+}
 
 NEWS_WINDOW_DAYS = 14
 NEWS_NEW_THRESHOLD_DAYS = 7
@@ -300,10 +310,7 @@ def fetch_oslo_bors_news(symbol: str, days: int = NEWS_WINDOW_DAYS) -> list[News
         "sector": "",
     }
 
-    headers = {
-        "Accept": "application/json",
-        "User-Agent": "oslo-screener-dashboard/1.0",
-    }
+    headers = {**BROWSER_HEADERS, "Accept": "application/json"}
 
     resp = requests.get(OSLO_BORS_API, params=params, headers=headers, timeout=15)
     resp.raise_for_status()
@@ -343,80 +350,44 @@ def fetch_oslo_bors_news(symbol: str, days: int = NEWS_WINDOW_DAYS) -> list[News
 
 
 # ---------------------------------------------------------------------------
-# News + S/R stop-loss: Yahoo Finance (single session per stock)
+# RSS parser (stdlib only — no feedparser/sgmllib dependency)
 # ---------------------------------------------------------------------------
 
 
-def _fetch_yf_data(
-    stock: StockResult,
-    days: int = NEWS_WINDOW_DAYS,
-) -> tuple[list[NewsItem], float, str]:
-    """
-    Single yfinance session per stock: fetch news and compute S/R stop-loss.
-    Returns (news_items, stop_loss_pct, basis).
-    """
-    import yfinance as yf
-
-    t = yf.Ticker(stock.ticker)
-
-    # --- News ---
-    cutoff_ts = time.time() - days * 86400
-    items = []
-    for article in (t.news or []):
-        pub_ts = article.get("providerPublishTime", 0)
-        if pub_ts < cutoff_ts:
-            continue
-        title = article.get("title", "")
-        url = article.get("link", "")
-        publisher = article.get("publisher", "Yahoo Finance")
-        if not title or not url:
-            continue
-        try:
-            published = dt.datetime.utcfromtimestamp(pub_ts)
-        except Exception:
-            published = None
-        items.append(NewsItem(
-            title=title,
-            url=url,
-            source=f"Yahoo Finance ({publisher})",
-            published=published,
-        ))
-
-    # --- S/R stop-loss ---
-    stop_pct, basis = _compute_sr_stop_loss(t, stock.signal, stock.close, stock.stop_loss_pct)
-
-    return items, stop_pct, basis
-
-
-# ---------------------------------------------------------------------------
-# News: RSS feeds (Reuters, E24)
-# ---------------------------------------------------------------------------
+def _parse_rfc822(date_str: str) -> Optional[dt.datetime]:
+    try:
+        from email.utils import parsedate_to_datetime
+        d = parsedate_to_datetime(date_str)
+        return d.replace(tzinfo=None) if d.tzinfo else d
+    except Exception:
+        return None
 
 
 def _parse_rss(url: str, source_name: str, days: int = NEWS_WINDOW_DAYS) -> list[NewsItem]:
-    """Generic RSS parser with age filter."""
-    import feedparser  # type: ignore
+    """RSS 2.0 parser using requests + xml.etree.ElementTree (stdlib only)."""
+    resp = requests.get(url, headers=BROWSER_HEADERS, timeout=15)
+    resp.raise_for_status()
 
-    feed = feedparser.parse(url)
+    try:
+        root = ET.fromstring(resp.content)
+    except ET.ParseError as e:
+        log.warning("RSS parse error for %s: %s", url, e)
+        return []
+
     cutoff = dt.datetime.utcnow() - dt.timedelta(days=days)
-    items = []
+    items: list[NewsItem] = []
 
-    for entry in feed.entries:
-        title = entry.get("title", "")
-        link = entry.get("link", "")
+    for entry in root.iter("item"):
+        title_el = entry.find("title")
+        link_el = entry.find("link")
+        date_el = entry.find("pubDate") if entry.find("pubDate") is not None else entry.find("published")
+
+        title = (title_el.text or "").strip() if title_el is not None else ""
+        link = (link_el.text or "").strip() if link_el is not None else ""
         if not title or not link:
             continue
 
-        published = None
-        for key in ("published_parsed", "updated_parsed"):
-            val = entry.get(key)
-            if val:
-                try:
-                    published = dt.datetime(*val[:6])
-                    break
-                except Exception:
-                    pass
-
+        published = _parse_rfc822(date_el.text) if date_el is not None and date_el.text else None
         if published and published < cutoff:
             continue
 
@@ -429,11 +400,40 @@ def fetch_reuters_macro() -> list[NewsItem]:
     return _parse_rss(REUTERS_RSS_URL, "Reuters", days=NEWS_WINDOW_DAYS)
 
 
-def fetch_e24_rss(symbol: str, days: int = NEWS_WINDOW_DAYS) -> list[NewsItem]:
-    """E24 does not have per-stock feeds; filter the main feed by symbol name."""
-    items = _parse_rss(E24_RSS_URL, "E24", days=days)
-    symbol_lower = symbol.lower()
-    return [i for i in items if symbol_lower in i.title.lower()]
+# ---------------------------------------------------------------------------
+# News: Yahoo Finance RSS (replaces unreliable yfinance.news)
+# ---------------------------------------------------------------------------
+
+
+def fetch_yahoo_rss(ticker: str, days: int = NEWS_WINDOW_DAYS) -> list[NewsItem]:
+    """Yahoo Finance per-ticker RSS feed — far more reliable than yfinance.news."""
+    return _parse_rss(YAHOO_RSS_TPL.format(ticker=ticker), "Yahoo Finance", days=days)
+
+
+# ---------------------------------------------------------------------------
+# News: Google News RSS (broad fallback, includes Norwegian press)
+# ---------------------------------------------------------------------------
+
+
+def fetch_google_news(symbol: str, days: int = NEWS_WINDOW_DAYS) -> list[NewsItem]:
+    """Google News RSS — broad coverage, never blocks."""
+    from urllib.parse import quote
+    query = quote(f'"{symbol}" Oslo Bors stock')
+    url = GOOGLE_NEWS_TPL.format(query=query)
+    items = _parse_rss(url, "Google News", days=days)
+    return items[:8]
+
+
+# ---------------------------------------------------------------------------
+# S/R stop-loss (uses yfinance history only — news comes from RSS now)
+# ---------------------------------------------------------------------------
+
+
+def _fetch_yf_history_only(stock: StockResult) -> tuple[float, str]:
+    """Single yfinance session per stock — history only, for S/R stop-loss."""
+    import yfinance as yf
+    t = yf.Ticker(stock.ticker)
+    return _compute_sr_stop_loss(t, stock.signal, stock.close, stock.stop_loss_pct)
 
 
 # ---------------------------------------------------------------------------
@@ -455,25 +455,35 @@ def fetch_news_for_stock(stock: StockResult) -> None:
     errors: dict[str, str] = {}
 
     oslo_bors = _safe_fetch(fetch_oslo_bors_news, stock.symbol, source_label="Oslo Bors", errors=errors)
-    e24_news = _safe_fetch(fetch_e24_rss, stock.symbol, source_label="E24", errors=errors)
+    yahoo_news = _safe_fetch(fetch_yahoo_rss, stock.ticker, source_label="Yahoo Finance", errors=errors)
+    google_news = _safe_fetch(fetch_google_news, stock.symbol, source_label="Google News", errors=errors)
 
-    # Yahoo Finance: news + S/R stop-loss in one session
-    yf_news: list[NewsItem] = []
+    # S/R stop-loss (yfinance history)
     try:
-        yf_news, sr_pct, sr_basis = _fetch_yf_data(stock)
+        sr_pct, sr_basis = _fetch_yf_history_only(stock)
         stock.stop_loss_pct = sr_pct
         stock.stop_loss_basis = sr_basis
     except Exception as e:
-        errors["Yahoo Finance"] = str(e)
-        log.warning("Yahoo Finance data failed for %s: %s", stock.ticker, e)
+        log.warning("S/R stop-loss failed for %s: %s", stock.ticker, e)
 
     now = dt.datetime.utcnow()
-    all_news = oslo_bors + yf_news + e24_news
-    all_news.sort(key=lambda n: n.published or dt.datetime.min, reverse=True)
+    all_news = oslo_bors + yahoo_news + google_news
+
+    # Deduplicate by title (different sources often syndicate the same headline)
+    seen_titles: set[str] = set()
+    deduped: list[NewsItem] = []
     for item in all_news:
+        key = item.title.strip().lower()[:120]
+        if key in seen_titles:
+            continue
+        seen_titles.add(key)
+        deduped.append(item)
+
+    deduped.sort(key=lambda n: n.published or dt.datetime.min, reverse=True)
+    for item in deduped:
         item.label_age(now)
 
-    stock.news = all_news
+    stock.news = deduped[:12]
     stock.news_errors = errors
 
 
@@ -630,22 +640,21 @@ def build_dashboard(output_path: pl.Path) -> None:
         time.sleep(0.5)
 
     # Update source status from actual results
-    yf_errors = [s.news_errors.get("Yahoo Finance") for s in stocks if "Yahoo Finance" in s.news_errors]
-    ob_errors = [s.news_errors.get("Oslo Bors") for s in stocks if "Oslo Bors" in s.news_errors]
-    e24_errors = [s.news_errors.get("E24") for s in stocks if "E24" in s.news_errors]
+    def _err_count(label: str) -> int:
+        return sum(1 for s in stocks if label in s.news_errors)
 
-    source_statuses.append(SourceStatus(
-        "Yahoo Finance (news)", ok=len(yf_errors) < len(stocks),
-        detail=f"{len(yf_errors)} of {len(stocks)} stocks failed" if yf_errors else "OK",
-    ))
-    source_statuses.append(SourceStatus(
-        "Oslo Bors Newspoint", ok=len(ob_errors) < len(stocks),
-        detail=f"{len(ob_errors)} of {len(stocks)} stocks failed" if ob_errors else "OK",
-    ))
-    source_statuses.append(SourceStatus(
-        "E24 RSS", ok=len(e24_errors) < len(stocks),
-        detail=f"{len(e24_errors)} of {len(stocks)} stocks failed" if e24_errors else "OK",
-    ))
+    n = max(len(stocks), 1)
+    for label, display in [
+        ("Oslo Bors", "Oslo Bors Newspoint"),
+        ("Yahoo Finance", "Yahoo Finance RSS"),
+        ("Google News", "Google News RSS"),
+    ]:
+        c = _err_count(label)
+        source_statuses.append(SourceStatus(
+            display,
+            ok=c < n,
+            detail=f"{c} of {n} stocks failed" if c else "OK",
+        ))
 
     # 4. Macro news
     log.info("Fetching macro news...")
