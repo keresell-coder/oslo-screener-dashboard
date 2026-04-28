@@ -3,6 +3,7 @@
 #
 # Runs on weekdays at 07:00 UTC (≈ 09:00 Oslo time),
 # after oslo-screener has published the latest CSV.
+# Deploys by pushing generated site/ to the gh-pages branch.
 # ============================================================
 
 name: Daily Dashboard
@@ -14,16 +15,16 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout main
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup Python 3.11
         uses: actions/setup-python@v5
@@ -41,34 +42,26 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python generate.py --output site/index.html
 
-      - name: Commit ticker cache
+      - name: Commit ticker cache to main
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ || true
+          git add data/
           git diff --staged --quiet || git commit -m "chore: update ticker cache [skip ci]"
-          git push || true
+          git push origin main || true
 
-      - name: Copy static files
+      - name: Copy static files and generate icons
         run: |
           cp manifest.json site/manifest.json
           cp robots.txt site/robots.txt
+          python make_icons.py
+          touch site/.nojekyll
 
-      - name: Generate app icons
-        run: python make_icons.py
-
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
+          commit_message: "deploy: update dashboard [skip ci]"
+          force_orphan: false
