@@ -10,8 +10,15 @@ name: Daily Dashboard
 
 on:
   schedule:
-    - cron: "0 7 * * 1-5"   # 07:00 UTC weekdays
+    - cron: "30 9 * * 1-5"   # 09:30 UTC weekdays, after oslo-screener usually publishes
+    - cron: "30 12 * * 1-5"  # backup refresh in case GitHub Actions queues the screener run
   workflow_dispatch:          # Manual trigger from GitHub Actions
+  repository_dispatch:
+    types: [screener-updated]
+
+concurrency:
+  group: daily-dashboard-main
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -19,6 +26,7 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
 
     steps:
       - name: Checkout main
@@ -35,12 +43,35 @@ jobs:
         run: |
           python -m pip install --upgrade pip wheel
           pip install -r requirements.txt
-          pip install Pillow
 
       - name: Generate dashboard
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python generate.py --output site/index.html
+
+      - name: Verify generated dashboard
+        run: |
+          python - <<'PY'
+          import sys
+          from pathlib import Path
+
+          html = Path("site/index.html")
+          if not html.exists() or html.stat().st_size == 0:
+              sys.exit("site/index.html was not generated")
+
+          text = html.read_text(encoding="utf-8")
+          required = [
+              "Screener data:",
+              "Generated:",
+              "screened",
+              "Data source quality",
+          ]
+          missing = [item for item in required if item not in text]
+          if missing:
+              sys.exit(f"generated dashboard is missing required text: {missing}")
+
+          print("dashboard HTML verified")
+          PY
 
       - name: Commit ticker cache to main
         run: |
@@ -48,6 +79,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/
           git diff --staged --quiet || git commit -m "chore: update ticker cache [skip ci]"
+          git pull --rebase origin main
           git push origin main || true
 
       - name: Copy static files and generate icons

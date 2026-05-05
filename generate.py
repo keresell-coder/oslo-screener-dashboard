@@ -66,6 +66,7 @@ BROWSER_HEADERS = {
 
 NEWS_WINDOW_DAYS = 14
 NEWS_NEW_THRESHOLD_DAYS = 7
+MAX_SCREENER_AGE_HOURS = int(os.getenv("MAX_SCREENER_AGE_HOURS", "168"))
 
 OSLO_TZ = ZoneInfo("Europe/Oslo")
 
@@ -75,6 +76,10 @@ TICKER_CHANGES_FILE = DATA_DIR / "ticker_changes.json"
 
 SR_PIVOT_WINDOW = 5    # bars on each side of a pivot point
 SR_BUFFER_PCT = 1.0    # 1 % buffer beyond the S/R level
+
+
+def _utcnow_naive() -> dt.datetime:
+    return dt.datetime.now(dt.timezone.utc).replace(tzinfo=None)
 
 # ---------------------------------------------------------------------------
 # Data classes
@@ -138,6 +143,8 @@ class DashboardData:
     generated_at: dt.datetime
     screener_date: Optional[dt.date]
     screener_source: str
+    screener_generated_at: Optional[dt.datetime]
+    screener_freshness: str
     total_screened: int
     buy: list[StockResult]
     sell: list[StockResult]
@@ -159,8 +166,44 @@ def _strip_comments(text: str) -> str:
     return "\n".join(lines)
 
 
-def fetch_screener_csv() -> tuple[pd.DataFrame, str]:
-    """Download latest.csv from oslo-screener. Returns (DataFrame, source-name)."""
+def _parse_screener_metadata(text: str) -> dict[str, str]:
+    for line in text.splitlines():
+        line = line.strip()
+        if not line.startswith("# oslo-screener"):
+            continue
+        parts: dict[str, str] = {}
+        for token in line.lstrip("# ").split():
+            if "=" in token:
+                key, value = token.split("=", 1)
+                parts[key] = value
+        return parts
+    return {}
+
+
+def _parse_utc(value: str | None) -> Optional[dt.datetime]:
+    if not value:
+        return None
+    try:
+        parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=dt.timezone.utc)
+    return parsed.astimezone(dt.timezone.utc)
+
+
+def _freshness_label(generated_at: Optional[dt.datetime], now_utc: dt.datetime) -> str:
+    if generated_at is None:
+        return "missing generated_at metadata"
+    age_hours = (now_utc.replace(tzinfo=dt.timezone.utc) - generated_at).total_seconds() / 3600
+    age_text = f"{age_hours:.1f}h old"
+    if age_hours > MAX_SCREENER_AGE_HOURS:
+        return f"stale ({age_text}; limit {MAX_SCREENER_AGE_HOURS}h)"
+    return f"fresh ({age_text}; limit {MAX_SCREENER_AGE_HOURS}h)"
+
+
+def fetch_screener_csv() -> tuple[pd.DataFrame, str, dict[str, str]]:
+    """Download latest.csv from oslo-screener. Returns (DataFrame, source-name, metadata)."""
     token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
     headers = {"User-Agent": "oslo-screener-dashboard/1.0"}
     if token:
@@ -170,6 +213,7 @@ def fetch_screener_csv() -> tuple[pd.DataFrame, str]:
         try:
             resp = requests.get(url, headers=headers, timeout=20)
             resp.raise_for_status()
+            metadata = _parse_screener_metadata(resp.text)
             text = _strip_comments(resp.text)
             df = pd.read_csv(io.StringIO(text))
             df.columns = [c.strip() for c in df.columns]
@@ -177,7 +221,7 @@ def fetch_screener_csv() -> tuple[pd.DataFrame, str]:
                 raise ValueError("Missing 'ticker' column")
             log.info("Loaded screener data from %s (%d rows)", url, len(df))
             source_name = "GitHub Pages" if "github.io" in url else "GitHub Raw"
-            return df, source_name
+            return df, source_name, metadata
         except Exception as e:
             log.warning("Failed to load from %s: %s", url, e)
 
@@ -374,7 +418,7 @@ def _parse_rss(url: str, source_name: str, days: int = NEWS_WINDOW_DAYS) -> list
         log.warning("RSS parse error for %s: %s", url, e)
         return []
 
-    cutoff = dt.datetime.utcnow() - dt.timedelta(days=days)
+    cutoff = _utcnow_naive() - dt.timedelta(days=days)
     items: list[NewsItem] = []
 
     for entry in root.iter("item"):
@@ -466,7 +510,7 @@ def fetch_news_for_stock(stock: StockResult) -> None:
     except Exception as e:
         log.warning("S/R stop-loss failed for %s: %s", stock.ticker, e)
 
-    now = dt.datetime.utcnow()
+    now = _utcnow_naive()
     all_news = oslo_bors + yahoo_news + google_news
 
     # Deduplicate by title (different sources often syndicate the same headline)
@@ -495,7 +539,7 @@ def fetch_news_for_stock(stock: StockResult) -> None:
 def fetch_macro_news() -> tuple[list[NewsItem], Optional[str]]:
     try:
         items = fetch_reuters_macro()
-        now = dt.datetime.utcnow()
+        now = _utcnow_naive()
         for item in items:
             item.label_age(now)
         return items[:6], None
@@ -607,18 +651,25 @@ def update_ticker_cache() -> tuple[list[TickerChange], Optional[dt.date]]:
 
 def build_dashboard(output_path: pl.Path) -> None:
     source_statuses: list[SourceStatus] = []
-    now_utc = dt.datetime.utcnow()
+    now_utc = _utcnow_naive()
 
     # 1. Screener data
     log.info("Fetching screener data...")
     try:
-        df, screener_source = fetch_screener_csv()
-        source_statuses.append(SourceStatus("Screener (oslo-screener)", ok=True, detail=screener_source))
+        df, screener_source, screener_metadata = fetch_screener_csv()
     except RuntimeError as e:
         log.error("Critical error: %s", e)
         source_statuses.append(SourceStatus("Screener (oslo-screener)", ok=False, detail=str(e)))
         _render_error_page(output_path, str(e), now_utc)
         return
+
+    screener_generated_at = _parse_utc(screener_metadata.get("generated_at"))
+    screener_freshness = _freshness_label(screener_generated_at, now_utc)
+    source_statuses.append(SourceStatus(
+        "Screener (oslo-screener)",
+        ok=not screener_freshness.startswith("stale"),
+        detail=f"{screener_source}; {screener_freshness}",
+    ))
 
     stocks, screener_date = parse_screener_results(df)
     total_screened = len(df)
@@ -669,6 +720,8 @@ def build_dashboard(output_path: pl.Path) -> None:
         generated_at=now_utc,
         screener_date=screener_date,
         screener_source=screener_source,
+        screener_generated_at=screener_generated_at,
+        screener_freshness=screener_freshness,
         total_screened=total_screened,
         buy=buy,
         sell=sell,
