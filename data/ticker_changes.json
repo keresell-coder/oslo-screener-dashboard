@@ -1,7 +1,10 @@
 {
-  "update_date": "2026-05-11",
-  "added": [],
-  "removed": [
-    "SPIR.OL"
-  ]
+  "update_date": "2026-05-18",
+  "added": [
+    "HAFNI.OL",
+    "LINK.OL",
+    "PUBLI.OL",
+    "VEND.OL"
+  ],
+  "removed": []
 }
