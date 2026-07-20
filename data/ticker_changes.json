@@ -1,7 +1,8 @@
 {
-  "update_date": "2026-06-29",
+  "update_date": "2026-07-20",
   "added": [],
   "removed": [
-    "PCIB.OL"
+    "EMGS.OL",
+    "TIETO.OL"
   ]
 }
