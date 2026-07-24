@@ -9,6 +9,11 @@
 name: Daily Dashboard
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "site/hmm-regime-monitor/**"
+      - ".github/workflows/daily.yml"
   schedule:
     - cron: "30 9 * * 1-5"   # 09:30 UTC weekdays, after oslo-screener usually publishes
     - cron: "30 12 * * 1-5"  # backup refresh in case GitHub Actions queues the screener run
