@@ -1,9 +1,9 @@
 {
   "schema": "regime_monitor.v2",
   "model_version": "regime_monitor.v2",
-  "attempted_run_at": "2026-08-14T18:57:50+02:00",
+  "attempted_run_at": "2026-08-18T06:19:46+02:00",
   "market_data_date": "2026-08-14",
-  "latest_successful_publication": "2026-08-14T18:57:50+02:00",
+  "latest_successful_publication": "2026-08-18T06:19:46+02:00",
   "status": "valid",
   "universe": [
     {
@@ -119,66 +119,77 @@
   ],
   "coverage": {
     "BRG.OL": {
-      "status": "current",
-      "freshness": "Current",
-      "lag_sessions": 0,
+      "status": "delayed",
+      "freshness": "Delayed",
+      "lag_sessions": 2,
       "hard_failures": [],
-      "warnings": [],
+      "warnings": [
+        "Market data is 2 expected weekday sessions behind."
+      ],
       "date_start": "2012-10-18",
       "market_data_date": "2026-08-14",
       "price_rows": 3464,
       "source": "yahoo_finance"
     },
     "NORBT.OL": {
-      "status": "current",
-      "freshness": "Current",
-      "lag_sessions": 0,
+      "status": "delayed",
+      "freshness": "Delayed",
+      "lag_sessions": 2,
       "hard_failures": [],
-      "warnings": [],
+      "warnings": [
+        "Market data is 2 expected weekday sessions behind."
+      ],
       "date_start": "2019-06-20",
       "market_data_date": "2026-08-14",
       "price_rows": 1797,
       "source": "yahoo_finance"
     },
     "TEL.OL": {
-      "status": "current",
-      "freshness": "Current",
-      "lag_sessions": 0,
+      "status": "delayed",
+      "freshness": "Delayed",
+      "lag_sessions": 2,
       "hard_failures": [],
-      "warnings": [],
+      "warnings": [
+        "Market data is 2 expected weekday sessions behind."
+      ],
       "date_start": "2000-12-05",
       "market_data_date": "2026-08-14",
       "price_rows": 6506,
       "source": "yahoo_finance"
     },
     "PUBLI.OL": {
-      "status": "current",
-      "freshness": "Current",
-      "lag_sessions": 0,
+      "status": "delayed",
+      "freshness": "Delayed",
+      "lag_sessions": 2,
       "hard_failures": [],
-      "warnings": [],
+      "warnings": [
+        "Market data is 2 expected weekday sessions behind."
+      ],
       "date_start": "2024-04-29",
       "market_data_date": "2026-08-14",
       "price_rows": 573,
       "source": "yahoo_finance"
     },
     "COSH.OL": {
-      "status": "current",
-      "freshness": "Current",
-      "lag_sessions": 0,
+      "status": "delayed",
+      "freshness": "Delayed",
+      "lag_sessions": 2,
       "hard_failures": [],
-      "warnings": [],
+      "warnings": [
+        "Market data is 2 expected weekday sessions behind."
+      ],
       "date_start": "2025-03-06",
       "market_data_date": "2026-08-14",
       "price_rows": 359,
       "source": "yahoo_finance"
     },
     "CMBTO.OL": {
-      "status": "current",
-      "freshness": "Current",
-      "lag_sessions": 0,
+      "status": "delayed",
+      "freshness": "Delayed",
+      "lag_sessions": 2,
       "hard_failures": [],
       "warnings": [
+        "Market data is 2 expected weekday sessions behind.",
         "volatility_regime: insufficient warm-up history; no metrics produced.",
         "hybrid_trend_risk: insufficient warm-up history; no metrics produced."
       ],
@@ -188,55 +199,65 @@
       "source": "yahoo_finance"
     },
     "KIT.OL": {
-      "status": "current",
-      "freshness": "Current",
-      "lag_sessions": 0,
+      "status": "delayed",
+      "freshness": "Delayed",
+      "lag_sessions": 2,
       "hard_failures": [],
-      "warnings": [],
+      "warnings": [
+        "Market data is 2 expected weekday sessions behind."
+      ],
       "date_start": "2000-01-03",
       "market_data_date": "2026-08-14",
       "price_rows": 6747,
       "source": "yahoo_finance"
     },
     "MOWI.OL": {
-      "status": "current",
-      "freshness": "Current",
-      "lag_sessions": 0,
+      "status": "delayed",
+      "freshness": "Delayed",
+      "lag_sessions": 2,
       "hard_failures": [],
-      "warnings": [],
+      "warnings": [
+        "Market data is 2 expected weekday sessions behind."
+      ],
       "date_start": "2000-01-03",
       "market_data_date": "2026-08-14",
       "price_rows": 6747,
       "source": "yahoo_finance"
     },
     "FRO.OL": {
-      "status": "current",
-      "freshness": "Current",
-      "lag_sessions": 0,
+      "status": "delayed",
+      "freshness": "Delayed",
+      "lag_sessions": 2,
       "hard_failures": [],
-      "warnings": [],
+      "warnings": [
+        "Market data is 2 expected weekday sessions behind."
+      ],
       "date_start": "2000-01-03",
       "market_data_date": "2026-08-14",
       "price_rows": 6747,
       "source": "yahoo_finance"
     },
     "KOG.OL": {
-      "status": "current",
-      "freshness": "Current",
-      "lag_sessions": 0,
+      "status": "delayed",
+      "freshness": "Delayed",
+      "lag_sessions": 2,
       "hard_failures": [],
-      "warnings": [],
+      "warnings": [
+        "Market data is 2 expected weekday sessions behind."
+      ],
       "date_start": "2000-01-03",
       "market_data_date": "2026-08-14",
       "price_rows": 6747,
       "source": "yahoo_finance"
     },
     "OSEBX.OL": {
-      "status": "current",
-      "freshness": "Current",
-      "lag_sessions": 0,
+      "status": "delayed",
+      "freshness": "Delayed",
+      "lag_sessions": 2,
       "hard_failures": [],
-      "warnings": [],
+      "warnings": [
+        "Market data is 2 expected weekday sessions behind."
+      ],
       "date_start": "2013-03-05",
       "market_data_date": "2026-08-14",
       "price_rows": 3350,
@@ -254,11 +275,13 @@
         "Core active watchlist"
       ],
       "data": {
-        "status": "current",
-        "freshness": "Current",
-        "lag_sessions": 0,
+        "status": "delayed",
+        "freshness": "Delayed",
+        "lag_sessions": 2,
         "hard_failures": [],
-        "warnings": [],
+        "warnings": [
+          "Market data is 2 expected weekday sessions behind."
+        ],
         "date_start": "2012-10-18",
         "market_data_date": "2026-08-14",
         "price_rows": 3464,
@@ -731,11 +754,13 @@
         "Core active watchlist"
       ],
       "data": {
-        "status": "current",
-        "freshness": "Current",
-        "lag_sessions": 0,
+        "status": "delayed",
+        "freshness": "Delayed",
+        "lag_sessions": 2,
         "hard_failures": [],
-        "warnings": [],
+        "warnings": [
+          "Market data is 2 expected weekday sessions behind."
+        ],
         "date_start": "2019-06-20",
         "market_data_date": "2026-08-14",
         "price_rows": 1797,
@@ -1209,11 +1234,13 @@
         "Core active watchlist"
       ],
       "data": {
-        "status": "current",
-        "freshness": "Current",
-        "lag_sessions": 0,
+        "status": "delayed",
+        "freshness": "Delayed",
+        "lag_sessions": 2,
         "hard_failures": [],
-        "warnings": [],
+        "warnings": [
+          "Market data is 2 expected weekday sessions behind."
+        ],
         "date_start": "2000-12-05",
         "market_data_date": "2026-08-14",
         "price_rows": 6506,
@@ -1686,11 +1713,13 @@
         "Core active watchlist"
       ],
       "data": {
-        "status": "current",
-        "freshness": "Current",
-        "lag_sessions": 0,
+        "status": "delayed",
+        "freshness": "Delayed",
+        "lag_sessions": 2,
         "hard_failures": [],
-        "warnings": [],
+        "warnings": [
+          "Market data is 2 expected weekday sessions behind."
+        ],
         "date_start": "2024-04-29",
         "market_data_date": "2026-08-14",
         "price_rows": 573,
@@ -2163,11 +2192,13 @@
         "Limited listing history may constrain long-horizon coverage"
       ],
       "data": {
-        "status": "current",
-        "freshness": "Current",
-        "lag_sessions": 0,
+        "status": "delayed",
+        "freshness": "Delayed",
+        "lag_sessions": 2,
         "hard_failures": [],
-        "warnings": [],
+        "warnings": [
+          "Market data is 2 expected weekday sessions behind."
+        ],
         "date_start": "2025-03-06",
         "market_data_date": "2026-08-14",
         "price_rows": 359,
@@ -2640,11 +2671,12 @@
         "Limited listing history may constrain long-horizon coverage"
       ],
       "data": {
-        "status": "current",
-        "freshness": "Current",
-        "lag_sessions": 0,
+        "status": "delayed",
+        "freshness": "Delayed",
+        "lag_sessions": 2,
         "hard_failures": [],
         "warnings": [
+          "Market data is 2 expected weekday sessions behind.",
           "volatility_regime: insufficient warm-up history; no metrics produced.",
           "hybrid_trend_risk: insufficient warm-up history; no metrics produced."
         ],
@@ -2692,11 +2724,13 @@
         "Core active watchlist"
       ],
       "data": {
-        "status": "current",
-        "freshness": "Current",
-        "lag_sessions": 0,
+        "status": "delayed",
+        "freshness": "Delayed",
+        "lag_sessions": 2,
         "hard_failures": [],
-        "warnings": [],
+        "warnings": [
+          "Market data is 2 expected weekday sessions behind."
+        ],
         "date_start": "2000-01-03",
         "market_data_date": "2026-08-14",
         "price_rows": 6747,
@@ -2709,9 +2743,9 @@
         ],
         "outcomes": {
           "20": {
-            "downside_probability": 0.1988817891373802,
-            "relative_outperformance_probability": 0.46565495207667734,
-            "high_volatility_probability": 0.16054313099041534,
+            "downside_probability": 0.19872306464485234,
+            "relative_outperformance_probability": 0.4652833200319234,
+            "high_volatility_probability": 0.160415003990423,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -2723,9 +2757,9 @@
             }
           },
           "63": {
-            "downside_probability": 0.21048387096774193,
-            "relative_outperformance_probability": 0.5725806451612904,
-            "high_volatility_probability": 0.15806451612903225,
+            "downside_probability": 0.21031426269137793,
+            "relative_outperformance_probability": 0.572119258662369,
+            "high_volatility_probability": 0.1579371474617244,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -2742,15 +2776,15 @@
         "label_persistence": {
           "full_history": {
             "state_index": 1,
-            "probability": 0.8793402777777778,
+            "probability": 0.8794449262792715,
             "interval_95": [
-              0.8654042159100879,
-              0.8920134508829884
+              0.8655199691743702,
+              0.8921077400157318
             ],
-            "transitions": 2304,
+            "transitions": 2306,
             "episodes": 279,
             "median_run_days": 3.0,
-            "mean_run_days": 8.261648745519713,
+            "mean_run_days": 8.268817204301076,
             "classification": "Moderate"
           },
           "recent_window": {
@@ -2769,13 +2803,13 @@
           "full_detail": {
             "transition_counts": [
               [
-                2256,
+                2254,
                 159,
                 26
               ],
               [
                 160,
-                2026,
+                2028,
                 118
               ],
               [
@@ -2786,14 +2820,14 @@
             ],
             "transition_matrix": [
               [
-                0.9242113887750921,
-                0.0651372388365424,
-                0.010651372388365424
+                0.924149241492415,
+                0.06519065190651907,
+                0.01066010660106601
               ],
               [
-                0.06944444444444445,
-                0.8793402777777778,
-                0.051215277777777776
+                0.06938421509106678,
+                0.8794449262792715,
+                0.05117085862966175
               ],
               [
                 0.014459224985540775,
@@ -2804,27 +2838,27 @@
             "by_state": [
               {
                 "state_index": 0,
-                "probability": 0.9242113887750921,
+                "probability": 0.924149241492415,
                 "interval_95": [
-                  0.9130326323329209,
-                  0.9340570114296852
+                  0.9129617822843134,
+                  0.9340026709164183
                 ],
-                "transitions": 2441,
+                "transitions": 2439,
                 "episodes": 185,
-                "median_run_days": 7.0,
-                "mean_run_days": 13.194594594594594
+                "median_run_days": 6.0,
+                "mean_run_days": 13.183783783783785
               },
               {
                 "state_index": 1,
-                "probability": 0.8793402777777778,
+                "probability": 0.8794449262792715,
                 "interval_95": [
-                  0.8654042159100879,
-                  0.8920134508829884
+                  0.8655199691743702,
+                  0.8921077400157318
                 ],
-                "transitions": 2304,
+                "transitions": 2306,
                 "episodes": 279,
                 "median_run_days": 3.0,
-                "mean_run_days": 8.261648745519713,
+                "mean_run_days": 8.268817204301076,
                 "classification": "Moderate"
               },
               {
@@ -2917,8 +2951,8 @@
             ]
           }
         },
-        "downside_probability": 0.21048387096774193,
-        "relative_outperformance_probability": 0.5725806451612904,
+        "downside_probability": 0.21031426269137793,
+        "relative_outperformance_probability": 0.572119258662369,
         "probability_calibration": "descriptive_in_sample",
         "evidence_support": "Strong",
         "suggested_action": {
@@ -2937,9 +2971,9 @@
         ],
         "outcomes": {
           "126": {
-            "downside_probability": 0.18689320388349515,
-            "relative_outperformance_probability": 0.6262135922330098,
-            "high_volatility_probability": 0.1650485436893204,
+            "downside_probability": 0.18674211802748586,
+            "relative_outperformance_probability": 0.6257073565076798,
+            "high_volatility_probability": 0.16491511721907842,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -2951,9 +2985,9 @@
             }
           },
           "252": {
-            "downside_probability": 0.19561551433389546,
-            "relative_outperformance_probability": 0.7866779089376054,
-            "high_volatility_probability": 0.20404721753794267,
+            "downside_probability": 0.1954507160909857,
+            "relative_outperformance_probability": 0.7860151642796968,
+            "high_volatility_probability": 0.2038753159224937,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -2970,15 +3004,15 @@
         "label_persistence": {
           "full_history": {
             "state_index": 1,
-            "probability": 0.8793402777777778,
+            "probability": 0.8794449262792715,
             "interval_95": [
-              0.8654042159100879,
-              0.8920134508829884
+              0.8655199691743702,
+              0.8921077400157318
             ],
-            "transitions": 2304,
+            "transitions": 2306,
             "episodes": 279,
             "median_run_days": 3.0,
-            "mean_run_days": 8.261648745519713,
+            "mean_run_days": 8.268817204301076,
             "classification": "Moderate"
           },
           "recent_window": {
@@ -2997,13 +3031,13 @@
           "full_detail": {
             "transition_counts": [
               [
-                2256,
+                2254,
                 159,
                 26
               ],
               [
                 160,
-                2026,
+                2028,
                 118
               ],
               [
@@ -3014,14 +3048,14 @@
             ],
             "transition_matrix": [
               [
-                0.9242113887750921,
-                0.0651372388365424,
-                0.010651372388365424
+                0.924149241492415,
+                0.06519065190651907,
+                0.01066010660106601
               ],
               [
-                0.06944444444444445,
-                0.8793402777777778,
-                0.051215277777777776
+                0.06938421509106678,
+                0.8794449262792715,
+                0.05117085862966175
               ],
               [
                 0.014459224985540775,
@@ -3032,27 +3066,27 @@
             "by_state": [
               {
                 "state_index": 0,
-                "probability": 0.9242113887750921,
+                "probability": 0.924149241492415,
                 "interval_95": [
-                  0.9130326323329209,
-                  0.9340570114296852
+                  0.9129617822843134,
+                  0.9340026709164183
                 ],
-                "transitions": 2441,
+                "transitions": 2439,
                 "episodes": 185,
-                "median_run_days": 7.0,
-                "mean_run_days": 13.194594594594594
+                "median_run_days": 6.0,
+                "mean_run_days": 13.183783783783785
               },
               {
                 "state_index": 1,
-                "probability": 0.8793402777777778,
+                "probability": 0.8794449262792715,
                 "interval_95": [
-                  0.8654042159100879,
-                  0.8920134508829884
+                  0.8655199691743702,
+                  0.8921077400157318
                 ],
-                "transitions": 2304,
+                "transitions": 2306,
                 "episodes": 279,
                 "median_run_days": 3.0,
-                "mean_run_days": 8.261648745519713,
+                "mean_run_days": 8.268817204301076,
                 "classification": "Moderate"
               },
               {
@@ -3145,8 +3179,8 @@
             ]
           }
         },
-        "downside_probability": 0.19561551433389546,
-        "relative_outperformance_probability": 0.7866779089376054,
+        "downside_probability": 0.1954507160909857,
+        "relative_outperformance_probability": 0.7860151642796968,
         "probability_calibration": "descriptive_in_sample",
         "evidence_support": "Strong",
         "suggested_action": {
@@ -3169,11 +3203,13 @@
         "Coverage reference only"
       ],
       "data": {
-        "status": "current",
-        "freshness": "Current",
-        "lag_sessions": 0,
+        "status": "delayed",
+        "freshness": "Delayed",
+        "lag_sessions": 2,
         "hard_failures": [],
-        "warnings": [],
+        "warnings": [
+          "Market data is 2 expected weekday sessions behind."
+        ],
         "date_start": "2000-01-03",
         "market_data_date": "2026-08-14",
         "price_rows": 6747,
@@ -3646,11 +3682,13 @@
         "Proxy only"
       ],
       "data": {
-        "status": "current",
-        "freshness": "Current",
-        "lag_sessions": 0,
+        "status": "delayed",
+        "freshness": "Delayed",
+        "lag_sessions": 2,
         "hard_failures": [],
-        "warnings": [],
+        "warnings": [
+          "Market data is 2 expected weekday sessions behind."
+        ],
         "date_start": "2000-01-03",
         "market_data_date": "2026-08-14",
         "price_rows": 6747,
@@ -3682,11 +3720,11 @@
             "high_volatility_probability": 0.1174496644295302,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
-              "current": "Consider deeper entry research",
+              "current": "Watch / monitor",
               "pending": null,
               "confirmed": true,
               "reasons": [
-                "Constructive condition is confirmed with moderate-or-better validated evidence."
+                "Evidence or probabilities are mixed."
               ]
             }
           }
@@ -3880,8 +3918,7 @@
           "pending": null,
           "confirmed": true,
           "reasons": [
-            "Evidence or probabilities are mixed.",
-            "Constructive condition is confirmed with moderate-or-better validated evidence."
+            "Evidence or probabilities are mixed."
           ]
         }
       },
@@ -3897,11 +3934,11 @@
             "high_volatility_probability": 0.1366906474820144,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
-              "current": "Consider deeper entry research",
+              "current": "Watch / monitor",
               "pending": null,
               "confirmed": true,
               "reasons": [
-                "Constructive condition is confirmed with moderate-or-better validated evidence."
+                "Evidence or probabilities are mixed."
               ]
             }
           },
@@ -3911,11 +3948,11 @@
             "high_volatility_probability": 0.149519890260631,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
-              "current": "Consider deeper entry research",
+              "current": "Watch / monitor",
               "pending": null,
               "confirmed": true,
               "reasons": [
-                "Constructive condition is confirmed with moderate-or-better validated evidence."
+                "Evidence or probabilities are mixed."
               ]
             }
           }
@@ -4105,11 +4142,11 @@
         "probability_calibration": "descriptive_in_sample",
         "evidence_support": "Strong",
         "suggested_action": {
-          "current": "Consider deeper entry research",
+          "current": "Watch / monitor",
           "pending": null,
           "confirmed": true,
           "reasons": [
-            "Constructive condition is confirmed with moderate-or-better validated evidence."
+            "Evidence or probabilities are mixed."
           ]
         }
       }
@@ -4124,11 +4161,13 @@
         "Proxy only"
       ],
       "data": {
-        "status": "current",
-        "freshness": "Current",
-        "lag_sessions": 0,
+        "status": "delayed",
+        "freshness": "Delayed",
+        "lag_sessions": 2,
         "hard_failures": [],
-        "warnings": [],
+        "warnings": [
+          "Market data is 2 expected weekday sessions behind."
+        ],
         "date_start": "2000-01-03",
         "market_data_date": "2026-08-14",
         "price_rows": 6747,
@@ -4174,15 +4213,15 @@
         "label_persistence": {
           "full_history": {
             "state_index": 1,
-            "probability": 0.8957925636007827,
+            "probability": 0.8963325183374083,
             "interval_95": [
-              0.8817961918423853,
-              0.9083039799677781
+              0.8823689806489649,
+              0.9088098005706279
             ],
-            "transitions": 2044,
-            "episodes": 214,
+            "transitions": 2045,
+            "episodes": 213,
             "median_run_days": 3.0,
-            "mean_run_days": 9.55607476635514,
+            "mean_run_days": 9.605633802816902,
             "classification": "Moderate"
           },
           "recent_window": {
@@ -4207,12 +4246,12 @@
               ],
               [
                 102,
-                1831,
-                111
+                1833,
+                110
               ],
               [
                 38,
-                117,
+                116,
                 2105
               ]
             ],
@@ -4223,14 +4262,14 @@
                 0.020276497695852536
               ],
               [
-                0.049902152641878667,
-                0.8957925636007827,
-                0.05430528375733855
+                0.04987775061124694,
+                0.8963325183374083,
+                0.05378973105134474
               ],
               [
-                0.016814159292035398,
-                0.05176991150442478,
-                0.9314159292035398
+                0.016821602478972998,
+                0.051350154935812305,
+                0.9318282425852147
               ]
             ],
             "by_state": [
@@ -4248,28 +4287,28 @@
               },
               {
                 "state_index": 1,
-                "probability": 0.8957925636007827,
+                "probability": 0.8963325183374083,
                 "interval_95": [
-                  0.8817961918423853,
-                  0.9083039799677781
+                  0.8823689806489649,
+                  0.9088098005706279
                 ],
-                "transitions": 2044,
-                "episodes": 214,
+                "transitions": 2045,
+                "episodes": 213,
                 "median_run_days": 3.0,
-                "mean_run_days": 9.55607476635514,
+                "mean_run_days": 9.605633802816902,
                 "classification": "Moderate"
               },
               {
                 "state_index": 2,
-                "probability": 0.9314159292035398,
+                "probability": 0.9318282425852147,
                 "interval_95": [
-                  0.9202465594888728,
-                  0.9411211263068117
+                  0.9206844634389301,
+                  0.9415058021103685
                 ],
-                "transitions": 2260,
-                "episodes": 155,
+                "transitions": 2259,
+                "episodes": 154,
                 "median_run_days": 6.0,
-                "mean_run_days": 14.580645161290322
+                "mean_run_days": 14.668831168831169
               }
             ]
           },
@@ -4370,7 +4409,7 @@
         ],
         "outcomes": {
           "126": {
-            "downside_probability": 0.1724137931034483,
+            "downside_probability": 0.17427772600186392,
             "relative_outperformance_probability": 0.684995340167754,
             "high_volatility_probability": 0.10065237651444547,
             "probability_calibration": "descriptive_in_sample",
@@ -4403,15 +4442,15 @@
         "label_persistence": {
           "full_history": {
             "state_index": 1,
-            "probability": 0.8957925636007827,
+            "probability": 0.8963325183374083,
             "interval_95": [
-              0.8817961918423853,
-              0.9083039799677781
+              0.8823689806489649,
+              0.9088098005706279
             ],
-            "transitions": 2044,
-            "episodes": 214,
+            "transitions": 2045,
+            "episodes": 213,
             "median_run_days": 3.0,
-            "mean_run_days": 9.55607476635514,
+            "mean_run_days": 9.605633802816902,
             "classification": "Moderate"
           },
           "recent_window": {
@@ -4436,12 +4475,12 @@
               ],
               [
                 102,
-                1831,
-                111
+                1833,
+                110
               ],
               [
                 38,
-                117,
+                116,
                 2105
               ]
             ],
@@ -4452,14 +4491,14 @@
                 0.020276497695852536
               ],
               [
-                0.049902152641878667,
-                0.8957925636007827,
-                0.05430528375733855
+                0.04987775061124694,
+                0.8963325183374083,
+                0.05378973105134474
               ],
               [
-                0.016814159292035398,
-                0.05176991150442478,
-                0.9314159292035398
+                0.016821602478972998,
+                0.051350154935812305,
+                0.9318282425852147
               ]
             ],
             "by_state": [
@@ -4477,28 +4516,28 @@
               },
               {
                 "state_index": 1,
-                "probability": 0.8957925636007827,
+                "probability": 0.8963325183374083,
                 "interval_95": [
-                  0.8817961918423853,
-                  0.9083039799677781
+                  0.8823689806489649,
+                  0.9088098005706279
                 ],
-                "transitions": 2044,
-                "episodes": 214,
+                "transitions": 2045,
+                "episodes": 213,
                 "median_run_days": 3.0,
-                "mean_run_days": 9.55607476635514,
+                "mean_run_days": 9.605633802816902,
                 "classification": "Moderate"
               },
               {
                 "state_index": 2,
-                "probability": 0.9314159292035398,
+                "probability": 0.9318282425852147,
                 "interval_95": [
-                  0.9202465594888728,
-                  0.9411211263068117
+                  0.9206844634389301,
+                  0.9415058021103685
                 ],
-                "transitions": 2260,
-                "episodes": 155,
+                "transitions": 2259,
+                "episodes": 154,
                 "median_run_days": 6.0,
-                "mean_run_days": 14.580645161290322
+                "mean_run_days": 14.668831168831169
               }
             ]
           },
@@ -4602,11 +4641,13 @@
         "Benchmark only; used for relative-return outcomes and market HMM"
       ],
       "data": {
-        "status": "current",
-        "freshness": "Current",
-        "lag_sessions": 0,
+        "status": "delayed",
+        "freshness": "Delayed",
+        "lag_sessions": 2,
         "hard_failures": [],
-        "warnings": [],
+        "warnings": [
+          "Market data is 2 expected weekday sessions behind."
+        ],
         "date_start": "2013-03-05",
         "market_data_date": "2026-08-14",
         "price_rows": 3350,
@@ -5096,15 +5137,15 @@
       "label_persistence": {
         "full_history": {
           "state_index": 1,
-          "probability": 0.9186637618010167,
+          "probability": 0.918722786647315,
           "interval_95": [
-            0.9030340568780112,
-            0.9319639617216603
+            0.9031037683565966,
+            0.9320136575480804
           ],
-          "transitions": 1377,
+          "transitions": 1378,
           "episodes": 113,
           "median_run_days": 5.0,
-          "mean_run_days": 12.194690265486726,
+          "mean_run_days": 12.20353982300885,
           "classification": "High"
         },
         "recent_window": {
@@ -5123,13 +5164,13 @@
         "full_detail": {
           "transition_counts": [
             [
-              453,
+              452,
               42,
               0
             ],
             [
               42,
-              1265,
+              1266,
               70
             ],
             [
@@ -5140,14 +5181,14 @@
           ],
           "transition_matrix": [
             [
-              0.9151515151515152,
-              0.08484848484848485,
+              0.9149797570850202,
+              0.08502024291497975,
               0.0
             ],
             [
-              0.030501089324618737,
-              0.9186637618010167,
-              0.050835148874364564
+              0.030478955007256895,
+              0.918722786647315,
+              0.05079825834542816
             ],
             [
               0.0,
@@ -5158,27 +5199,27 @@
           "by_state": [
             {
               "state_index": 0,
-              "probability": 0.9151515151515152,
+              "probability": 0.9149797570850202,
               "interval_95": [
-                0.887292677896365,
-                0.9366161540855709
+                0.8870685484756811,
+                0.9364865742782229
               ],
-              "transitions": 495,
+              "transitions": 494,
               "episodes": 42,
               "median_run_days": 5.0,
-              "mean_run_days": 11.785714285714286
+              "mean_run_days": 11.761904761904763
             },
             {
               "state_index": 1,
-              "probability": 0.9186637618010167,
+              "probability": 0.918722786647315,
               "interval_95": [
-                0.9030340568780112,
-                0.9319639617216603
+                0.9031037683565966,
+                0.9320136575480804
               ],
-              "transitions": 1377,
+              "transitions": 1378,
               "episodes": 113,
               "median_run_days": 5.0,
-              "mean_run_days": 12.194690265486726,
+              "mean_run_days": 12.20353982300885,
               "classification": "High"
             },
             {
@@ -5304,83 +5345,83 @@
       "evidence_support": "Strong",
       "outcomes": {
         "20": {
-          "n": 1355,
-          "absolute_mean": 0.012594963447875297,
-          "absolute_positive_probability": 0.5424354243542435,
-          "relative_mean": 0.003612293334454524,
-          "relative_outperformance_probability": 0.48929889298892987,
+          "n": 1356,
+          "absolute_mean": 0.012528945943051288,
+          "absolute_positive_probability": 0.5420353982300885,
+          "relative_mean": 0.0035206687044424087,
+          "relative_outperformance_probability": 0.4889380530973451,
           "relative_outperformance_interval_95": [
-            0.40957564575645755,
-            0.5601845018450183
+            0.4077986725663717,
+            0.5612094395280236
           ],
-          "downside_probability": 0.21845018450184503,
+          "downside_probability": 0.21902654867256638,
           "downside_probability_interval_95": [
-            0.1564391143911439,
-            0.2827859778597785
+            0.1563053097345133,
+            0.28407079646017686
           ],
-          "high_volatility_probability": 0.21254612546125462,
-          "downside_cutoff": -0.07025562392920881,
-          "volatility_cutoff": 0.3458563421217645,
+          "high_volatility_probability": 0.21238938053097345,
+          "downside_cutoff": -0.07025555796221232,
+          "volatility_cutoff": 0.3458563299077172,
           "calibration": "descriptive_in_sample"
         },
         "63": {
-          "n": 1343,
-          "absolute_mean": 0.0423329465723074,
-          "absolute_positive_probability": 0.5785554728220402,
-          "relative_mean": 0.014602855007401548,
-          "relative_outperformance_probability": 0.5465376023827252,
+          "n": 1344,
+          "absolute_mean": 0.04224612201577801,
+          "absolute_positive_probability": 0.578125,
+          "relative_mean": 0.014532274968618208,
+          "relative_outperformance_probability": 0.5461309523809523,
           "relative_outperformance_interval_95": [
-            0.45420699925539837,
-            0.6344005956813105
+            0.4538690476190476,
+            0.6346912202380952
           ],
-          "downside_probability": 0.2516753536857781,
+          "downside_probability": 0.25148809523809523,
           "downside_probability_interval_95": [
-            0.166734921816828,
-            0.3366344005956812
+            0.16515997023809523,
+            0.33497023809523796
           ],
-          "high_volatility_probability": 0.20848845867460908,
+          "high_volatility_probability": 0.20833333333333334,
           "downside_cutoff": -0.13269228753303874,
-          "volatility_cutoff": 0.3385564366898195,
+          "volatility_cutoff": 0.3385568436174339,
           "calibration": "descriptive_in_sample"
         },
         "126": {
-          "n": 1330,
-          "absolute_mean": 0.08096428871660165,
-          "absolute_positive_probability": 0.618796992481203,
-          "relative_mean": 0.029969723974122214,
-          "relative_outperformance_probability": 0.5526315789473685,
+          "n": 1331,
+          "absolute_mean": 0.0810190071991465,
+          "absolute_positive_probability": 0.6190833959429001,
+          "relative_mean": 0.029985619709687807,
+          "relative_outperformance_probability": 0.5529676934635612,
           "relative_outperformance_interval_95": [
-            0.4541165413533835,
-            0.6535526315789472
+            0.4530428249436514,
+            0.6530803906836964
           ],
-          "downside_probability": 0.2571428571428571,
+          "downside_probability": 0.2569496619083396,
           "downside_probability_interval_95": [
-            0.16834586466165413,
-            0.3572180451127819
+            0.16602178812922613,
+            0.35694966190833954
           ],
-          "high_volatility_probability": 0.23007518796992482,
+          "high_volatility_probability": 0.2299023290758828,
           "downside_cutoff": -0.1846153532887509,
-          "volatility_cutoff": 0.33091092305363895,
+          "volatility_cutoff": 0.3309111279386621,
           "calibration": "descriptive_in_sample"
         },
         "252": {
-          "n": 1231,
-          "absolute_mean": 0.22613080996048504,
-          "absolute_positive_probability": 0.7806661251015434,
-          "relative_mean": 0.12331244151956118,
-          "relative_outperformance_probability": 0.636068237205524,
+          "n": 1232,
+          "absolute_mean": 0.22594686604089498,
+          "absolute_positive_probability": 0.7800324675324676,
+          "relative_mean": 0.12320800894445458,
+          "relative_outperformance_probability": 0.635551948051948,
           "relative_outperformance_interval_95": [
-            0.5214459788789603,
-            0.7392770105605199
+            0.5210836038961039,
+            0.7386363636363636
           ],
-          "downside_probability": 0.21852152721364745,
+          "downside_probability": 0.21834415584415584,
           "downside_probability_interval_95": [
-            0.12020714865962631,
-            0.31439886271324125
+            0.11931818181818182,
+            0.3133522727272727
           ],
-          "high_volatility_probability": 0.22502030869212022,
-          "downside_cutoff": -0.2258063693979444,
-          "volatility_cutoff": 0.33231934146860836,
+          "high_volatility_probability": 0.22483766233766234,
+          "downside_cutoff": -0.2258065084159656,
+          "volatility_cutoff": 0.33231940515010766,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -5389,10 +5430,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist"
       ]
     },
@@ -5630,9 +5672,9 @@
       "outcomes": {
         "20": {
           "n": 1020,
-          "absolute_mean": 0.014000305826973088,
+          "absolute_mean": 0.014000311494497677,
           "absolute_positive_probability": 0.5607843137254902,
-          "relative_mean": 0.0015667361615587132,
+          "relative_mean": 0.0015667418290832979,
           "relative_outperformance_probability": 0.4852941176470588,
           "relative_outperformance_interval_95": [
             0.3872549019607843,
@@ -5644,15 +5686,15 @@
             0.24806372549019606
           ],
           "high_volatility_probability": 0.14313725490196078,
-          "downside_cutoff": -0.07081116233274239,
-          "volatility_cutoff": 0.3474729601560621,
+          "downside_cutoff": -0.07081141727194344,
+          "volatility_cutoff": 0.34747325770617987,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1009,
-          "absolute_mean": 0.02546109339989589,
+          "absolute_mean": 0.02546109374572689,
           "absolute_positive_probability": 0.5639246778989098,
-          "relative_mean": -0.006455573358352855,
+          "relative_mean": -0.006455573012521858,
           "relative_outperformance_probability": 0.489593657086224,
           "relative_outperformance_interval_95": [
             0.3637016848364718,
@@ -5664,15 +5706,15 @@
             0.3350346878097125
           ],
           "high_volatility_probability": 0.12091179385530228,
-          "downside_cutoff": -0.134032637145309,
-          "volatility_cutoff": 0.34090633314638974,
+          "downside_cutoff": -0.1340324769048029,
+          "volatility_cutoff": 0.34090650116401616,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 973,
-          "absolute_mean": 0.05979959320326511,
+          "absolute_mean": 0.059799595303248895,
           "absolute_positive_probability": 0.5847893114080165,
-          "relative_mean": -0.01165602744326553,
+          "relative_mean": -0.011656025343281749,
           "relative_outperformance_probability": 0.4635149023638232,
           "relative_outperformance_interval_95": [
             0.3420863309352518,
@@ -5684,15 +5726,15 @@
             0.30421377183967113
           ],
           "high_volatility_probability": 0.08016443987667009,
-          "downside_cutoff": -0.18578639005781836,
-          "volatility_cutoff": 0.33191968447830955,
+          "downside_cutoff": -0.18578653958967017,
+          "volatility_cutoff": 0.3319195868975471,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 873,
-          "absolute_mean": 0.12222822048054247,
+          "absolute_mean": 0.1222282305416524,
           "absolute_positive_probability": 0.6494845360824743,
-          "relative_mean": 0.004792913811312705,
+          "relative_mean": 0.004792923872422649,
           "relative_outperformance_probability": 0.4639175257731959,
           "relative_outperformance_interval_95": [
             0.33903207331042384,
@@ -5704,8 +5746,8 @@
             0.3768613974799542
           ],
           "high_volatility_probability": 0.09965635738831616,
-          "downside_cutoff": -0.22935769110023518,
-          "volatility_cutoff": 0.3331017987225127,
+          "downside_cutoff": -0.2293577583860793,
+          "volatility_cutoff": 0.3331019852529628,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -5714,10 +5756,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist",
         "Expanding volatility thresholds are lagged one close to prevent look-ahead leakage."
       ]
@@ -5956,9 +5999,9 @@
       "outcomes": {
         "20": {
           "n": 904,
-          "absolute_mean": 0.006254874020035247,
+          "absolute_mean": 0.006254869417328209,
           "absolute_positive_probability": 0.5154867256637168,
-          "relative_mean": -0.0012800849408127826,
+          "relative_mean": -0.001280089543519819,
           "relative_outperformance_probability": 0.4690265486725664,
           "relative_outperformance_interval_95": [
             0.35837942477876106,
@@ -5970,15 +6013,15 @@
             0.3241980088495574
           ],
           "high_volatility_probability": 0.19800884955752213,
-          "downside_cutoff": -0.07081116233274239,
-          "volatility_cutoff": 0.3474729601560621,
+          "downside_cutoff": -0.07081141727194344,
+          "volatility_cutoff": 0.34747325770617987,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 892,
-          "absolute_mean": 0.023238296063485684,
+          "absolute_mean": 0.023238292688483524,
           "absolute_positive_probability": 0.547085201793722,
-          "relative_mean": -0.00015153484533180333,
+          "relative_mean": -0.0001515382203339605,
           "relative_outperformance_probability": 0.5033632286995515,
           "relative_outperformance_interval_95": [
             0.3834080717488789,
@@ -5990,15 +6033,15 @@
             0.35773542600896846
           ],
           "high_volatility_probability": 0.1827354260089686,
-          "downside_cutoff": -0.134032637145309,
-          "volatility_cutoff": 0.34090633314638974,
+          "downside_cutoff": -0.1340324769048029,
+          "volatility_cutoff": 0.34090650116401616,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 881,
-          "absolute_mean": 0.03927678637530706,
+          "absolute_mean": 0.039276777711169934,
           "absolute_positive_probability": 0.6004540295119183,
-          "relative_mean": -0.011473984977441063,
+          "relative_mean": -0.01147399364157819,
           "relative_outperformance_probability": 0.4767309875141884,
           "relative_outperformance_interval_95": [
             0.34724744608399544,
@@ -6010,15 +6053,15 @@
             0.3791430192962542
           ],
           "high_volatility_probability": 0.1713961407491487,
-          "downside_cutoff": -0.18578639005781836,
-          "volatility_cutoff": 0.33191968447830955,
+          "downside_cutoff": -0.18578653958967017,
+          "volatility_cutoff": 0.3319195868975471,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 785,
-          "absolute_mean": 0.16855880135575693,
+          "absolute_mean": 0.1685587954811534,
           "absolute_positive_probability": 0.732484076433121,
-          "relative_mean": 0.06754639653627911,
+          "relative_mean": 0.06754639066167557,
           "relative_outperformance_probability": 0.5299363057324841,
           "relative_outperformance_interval_95": [
             0.37703821656050956,
@@ -6030,8 +6073,8 @@
             0.3516878980891719
           ],
           "high_volatility_probability": 0.17579617834394903,
-          "downside_cutoff": -0.22935769110023518,
-          "volatility_cutoff": 0.3331017987225127,
+          "downside_cutoff": -0.2293577583860793,
+          "volatility_cutoff": 0.3331019852529628,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -6040,10 +6083,11 @@
         "parameter_stability": "Pass",
         "out_of_sample_validation": "validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist",
         "Transparent composite; the HMM cannot alter this label or the suggested action."
       ]
@@ -6282,9 +6326,9 @@
       "outcomes": {
         "20": {
           "n": 635,
-          "absolute_mean": 0.029239706205471436,
+          "absolute_mean": 0.02923970226971194,
           "absolute_positive_probability": 0.5574803149606299,
-          "relative_mean": 0.020347905847689574,
+          "relative_mean": 0.02034790191193007,
           "relative_outperformance_probability": 0.5055118110236221,
           "relative_outperformance_interval_95": [
             0.42657480314960633,
@@ -6296,15 +6340,15 @@
             0.3167322834645667
           ],
           "high_volatility_probability": 0.15905511811023623,
-          "downside_cutoff": -0.09261624054118336,
-          "volatility_cutoff": 0.4853393353710929,
+          "downside_cutoff": -0.09261629162430077,
+          "volatility_cutoff": 0.48533901483029657,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 595,
-          "absolute_mean": 0.10465757731580747,
+          "absolute_mean": 0.10465756744716792,
           "absolute_positive_probability": 0.6336134453781512,
-          "relative_mean": 0.06627183811622724,
+          "relative_mean": 0.06627182824758766,
           "relative_outperformance_probability": 0.5798319327731093,
           "relative_outperformance_interval_95": [
             0.453781512605042,
@@ -6322,9 +6366,9 @@
         },
         "126": {
           "n": 558,
-          "absolute_mean": 0.2663154414166053,
+          "absolute_mean": 0.2663154397998564,
           "absolute_positive_probability": 0.7526881720430108,
-          "relative_mean": 0.17781969924281915,
+          "relative_mean": 0.17781969762607017,
           "relative_outperformance_probability": 0.6433691756272402,
           "relative_outperformance_interval_95": [
             0.48024193548387095,
@@ -6336,15 +6380,15 @@
             0.35501792114695324
           ],
           "high_volatility_probability": 0.17562724014336917,
-          "downside_cutoff": -0.14109516594400417,
-          "volatility_cutoff": 0.43325106730907176,
+          "downside_cutoff": -0.14109512124602952,
+          "volatility_cutoff": 0.43325095003299813,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 458,
-          "absolute_mean": 0.698130799744848,
+          "absolute_mean": 0.69813077781704,
           "absolute_positive_probability": 0.9323144104803494,
-          "relative_mean": 0.5666184198801929,
+          "relative_mean": 0.5666183979523849,
           "relative_outperformance_probability": 0.8930131004366813,
           "relative_outperformance_interval_95": [
             0.8187227074235808,
@@ -6356,8 +6400,8 @@
             0.4018013100436681
           ],
           "high_volatility_probability": 0.19213973799126638,
-          "downside_cutoff": -0.14236550535683584,
-          "volatility_cutoff": 0.4316985481872683,
+          "downside_cutoff": -0.1423655000789214,
+          "volatility_cutoff": 0.4316986580860999,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -6366,10 +6410,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist"
       ]
     },
@@ -6607,9 +6652,9 @@
       "outcomes": {
         "20": {
           "n": 406,
-          "absolute_mean": 0.05368021198667611,
+          "absolute_mean": 0.053680210324256086,
           "absolute_positive_probability": 0.6822660098522167,
-          "relative_mean": 0.04201733187338362,
+          "relative_mean": 0.04201733021096361,
           "relative_outperformance_probability": 0.645320197044335,
           "relative_outperformance_interval_95": [
             0.5221059113300492,
@@ -6621,15 +6666,15 @@
             0.17493842364532014
           ],
           "high_volatility_probability": 0.17733990147783252,
-          "downside_cutoff": -0.09259248549016474,
-          "volatility_cutoff": 0.4799177624092996,
+          "downside_cutoff": -0.09259259847272594,
+          "volatility_cutoff": 0.47991731711680374,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 386,
-          "absolute_mean": 0.18100960115548173,
+          "absolute_mean": 0.1810095935275509,
           "absolute_positive_probability": 0.805699481865285,
-          "relative_mean": 0.1358118890653552,
+          "relative_mean": 0.13581188143742434,
           "relative_outperformance_probability": 0.7512953367875648,
           "relative_outperformance_interval_95": [
             0.6449481865284974,
@@ -6641,15 +6686,15 @@
             0.20731865284974085
           ],
           "high_volatility_probability": 0.16321243523316062,
-          "downside_cutoff": -0.12998198707392145,
-          "volatility_cutoff": 0.45230138083518123,
+          "downside_cutoff": -0.12998202885046733,
+          "volatility_cutoff": 0.45230146896617734,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 386,
-          "absolute_mean": 0.49226383056161094,
+          "absolute_mean": 0.49226382345244746,
           "absolute_positive_probability": 0.9300518134715026,
-          "relative_mean": 0.4012621775090821,
+          "relative_mean": 0.4012621703999186,
           "relative_outperformance_probability": 0.8730569948186528,
           "relative_outperformance_interval_95": [
             0.7849093264248704,
@@ -6661,15 +6706,15 @@
             0.20466321243523317
           ],
           "high_volatility_probability": 0.20466321243523317,
-          "downside_cutoff": -0.14239165917723942,
-          "volatility_cutoff": 0.4330231792861301,
+          "downside_cutoff": -0.14239165344907662,
+          "volatility_cutoff": 0.43302293543493475,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 364,
-          "absolute_mean": 0.8635712418594789,
+          "absolute_mean": 0.8635712262299645,
           "absolute_positive_probability": 0.9862637362637363,
-          "relative_mean": 0.7135765260772161,
+          "relative_mean": 0.7135765104477018,
           "relative_outperformance_probability": 0.9835164835164835,
           "relative_outperformance_interval_95": [
             0.9835164835164835,
@@ -6681,8 +6726,8 @@
             0.1565934065934066
           ],
           "high_volatility_probability": 0.23076923076923078,
-          "downside_cutoff": -0.1453613836088602,
-          "volatility_cutoff": 0.43597952803283174,
+          "downside_cutoff": -0.1453612798703743,
+          "volatility_cutoff": 0.43597937213684473,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -6691,10 +6736,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist",
         "Expanding volatility thresholds are lagged one close to prevent look-ahead leakage."
       ]
@@ -6933,9 +6979,9 @@
       "outcomes": {
         "20": {
           "n": 507,
-          "absolute_mean": 0.03940872992965948,
+          "absolute_mean": 0.03940872540401248,
           "absolute_positive_probability": 0.6252465483234714,
-          "relative_mean": 0.03032612494883685,
+          "relative_mean": 0.03032612042318985,
           "relative_outperformance_probability": 0.5621301775147929,
           "relative_outperformance_interval_95": [
             0.45759368836291914,
@@ -6947,15 +6993,15 @@
             0.28412228796844174
           ],
           "high_volatility_probability": 0.19723865877712032,
-          "downside_cutoff": -0.09259248549016474,
-          "volatility_cutoff": 0.4799177624092996,
+          "downside_cutoff": -0.09259259847272594,
+          "volatility_cutoff": 0.47991731711680374,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 467,
-          "absolute_mean": 0.12568634713542967,
+          "absolute_mean": 0.12568633622243952,
           "absolute_positive_probability": 0.6852248394004282,
-          "relative_mean": 0.08416614759738078,
+          "relative_mean": 0.08416613668439063,
           "relative_outperformance_probability": 0.6167023554603854,
           "relative_outperformance_interval_95": [
             0.4860813704496788,
@@ -6967,15 +7013,15 @@
             0.34475374732334046
           ],
           "high_volatility_probability": 0.1777301927194861,
-          "downside_cutoff": -0.12998198707392145,
-          "volatility_cutoff": 0.45230138083518123,
+          "downside_cutoff": -0.12998202885046733,
+          "volatility_cutoff": 0.45230146896617734,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 459,
-          "absolute_mean": 0.28325630673678587,
+          "absolute_mean": 0.28325630433512944,
           "absolute_positive_probability": 0.7450980392156863,
-          "relative_mean": 0.1934607201085488,
+          "relative_mean": 0.19346071770689238,
           "relative_outperformance_probability": 0.6557734204793029,
           "relative_outperformance_interval_95": [
             0.5139978213507626,
@@ -6987,15 +7033,15 @@
             0.34651416122004347
           ],
           "high_volatility_probability": 0.18082788671023964,
-          "downside_cutoff": -0.14239165917723942,
-          "volatility_cutoff": 0.4330231792861301,
+          "downside_cutoff": -0.14239165344907662,
+          "volatility_cutoff": 0.43302293543493475,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 372,
-          "absolute_mean": 0.745138902846027,
+          "absolute_mean": 0.7451388757597264,
           "absolute_positive_probability": 0.9327956989247311,
-          "relative_mean": 0.6205387065798512,
+          "relative_mean": 0.6205386794935506,
           "relative_outperformance_probability": 0.9327956989247311,
           "relative_outperformance_interval_95": [
             0.8790322580645161,
@@ -7007,8 +7053,8 @@
             0.3818548387096773
           ],
           "high_volatility_probability": 0.20698924731182797,
-          "downside_cutoff": -0.1453613836088602,
-          "volatility_cutoff": 0.43597952803283174,
+          "downside_cutoff": -0.1453612798703743,
+          "volatility_cutoff": 0.43597937213684473,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -7017,10 +7063,11 @@
         "parameter_stability": "Unproven",
         "out_of_sample_validation": "insufficient_history",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist",
         "Transparent composite; the HMM cannot alter this label or the suggested action."
       ]
@@ -7259,9 +7306,9 @@
       "outcomes": {
         "20": {
           "n": 504,
-          "absolute_mean": 0.012527136307438921,
+          "absolute_mean": 0.012527131075240916,
           "absolute_positive_probability": 0.5793650793650794,
-          "relative_mean": 0.005557719098894565,
+          "relative_mean": 0.005557713866696559,
           "relative_outperformance_probability": 0.5297619047619048,
           "relative_outperformance_interval_95": [
             0.4107142857142857,
@@ -7273,15 +7320,15 @@
             0.4444444444444444
           ],
           "high_volatility_probability": 0.4246031746031746,
-          "downside_cutoff": -0.05828945743574036,
-          "volatility_cutoff": 0.2490694669043495,
+          "downside_cutoff": -0.058289456840660045,
+          "volatility_cutoff": 0.2490696626978753,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 489,
-          "absolute_mean": 0.027457737944753757,
+          "absolute_mean": 0.027457730012138463,
           "absolute_positive_probability": 0.5950920245398773,
-          "relative_mean": 0.017839236076771757,
+          "relative_mean": 0.017839228144156474,
           "relative_outperformance_probability": 0.50920245398773,
           "relative_outperformance_interval_95": [
             0.35153374233128837,
@@ -7294,14 +7341,14 @@
           ],
           "high_volatility_probability": 0.5030674846625767,
           "downside_cutoff": -0.10249784799569661,
-          "volatility_cutoff": 0.23662296358437152,
+          "volatility_cutoff": 0.2366223884574726,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 489,
-          "absolute_mean": 0.05056791663351067,
+          "absolute_mean": 0.05056791404866608,
           "absolute_positive_probability": 0.6359918200408998,
-          "relative_mean": 0.004794561088090024,
+          "relative_mean": 0.004794558503245435,
           "relative_outperformance_probability": 0.4212678936605317,
           "relative_outperformance_interval_95": [
             0.24739263803680983,
@@ -7313,15 +7360,15 @@
             0.554243353783231
           ],
           "high_volatility_probability": 0.49079754601226994,
-          "downside_cutoff": -0.13014261216555745,
-          "volatility_cutoff": 0.2316756277952504,
+          "downside_cutoff": -0.1301427033700069,
+          "volatility_cutoff": 0.2316755967567373,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 475,
-          "absolute_mean": 0.10456140764960623,
+          "absolute_mean": 0.10456139764998026,
           "absolute_positive_probability": 0.7115789473684211,
-          "relative_mean": -0.03919112922986504,
+          "relative_mean": -0.039191139229491,
           "relative_outperformance_probability": 0.4063157894736842,
           "relative_outperformance_interval_95": [
             0.20205263157894737,
@@ -7333,8 +7380,8 @@
             0.40642105263157885
           ],
           "high_volatility_probability": 0.30526315789473685,
-          "downside_cutoff": -0.1974602229650262,
-          "volatility_cutoff": 0.23285228094791208,
+          "downside_cutoff": -0.19746003392832967,
+          "volatility_cutoff": 0.23285239807156427,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -7343,10 +7390,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist"
       ]
     },
@@ -7584,9 +7632,9 @@
       "outcomes": {
         "20": {
           "n": 1009,
-          "absolute_mean": 0.002295303240580328,
+          "absolute_mean": 0.0022952937031327676,
           "absolute_positive_probability": 0.5024777006937562,
-          "relative_mean": -0.007355684344244416,
+          "relative_mean": -0.0073556938816919755,
           "relative_outperformance_probability": 0.44598612487611494,
           "relative_outperformance_interval_95": [
             0.358597621407334,
@@ -7598,15 +7646,15 @@
             0.3063181367690782
           ],
           "high_volatility_probability": 0.20713577799801783,
-          "downside_cutoff": -0.05828945743574036,
-          "volatility_cutoff": 0.2490694669043495,
+          "downside_cutoff": -0.058289456840660045,
+          "volatility_cutoff": 0.2490696626978753,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1000,
-          "absolute_mean": 0.019434672482004735,
+          "absolute_mean": 0.01943466552312266,
           "absolute_positive_probability": 0.593,
-          "relative_mean": -0.00561906171027585,
+          "relative_mean": -0.005619068669157925,
           "relative_outperformance_probability": 0.453,
           "relative_outperformance_interval_95": [
             0.344975,
@@ -7619,14 +7667,14 @@
           ],
           "high_volatility_probability": 0.301,
           "downside_cutoff": -0.10249784799569661,
-          "volatility_cutoff": 0.23662296358437152,
+          "volatility_cutoff": 0.2366223884574726,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 987,
-          "absolute_mean": 0.03387721150152225,
+          "absolute_mean": 0.03387720517005466,
           "absolute_positive_probability": 0.5866261398176292,
-          "relative_mean": -0.025533424370222005,
+          "relative_mean": -0.025533430701689595,
           "relative_outperformance_probability": 0.4275582573454914,
           "relative_outperformance_interval_95": [
             0.2998480243161094,
@@ -7638,15 +7686,15 @@
             0.342451874366768
           ],
           "high_volatility_probability": 0.23606889564336372,
-          "downside_cutoff": -0.13014261216555745,
-          "volatility_cutoff": 0.2316756277952504,
+          "downside_cutoff": -0.1301427033700069,
+          "volatility_cutoff": 0.2316755967567373,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 967,
-          "absolute_mean": 0.07547138987673091,
+          "absolute_mean": 0.0754713833601481,
           "absolute_positive_probability": 0.6235780765253361,
-          "relative_mean": -0.04728996985670033,
+          "relative_mean": -0.04728997637328313,
           "relative_outperformance_probability": 0.35470527404343327,
           "relative_outperformance_interval_95": [
             0.22543950361944157,
@@ -7658,8 +7706,8 @@
             0.3197518097207857
           ],
           "high_volatility_probability": 0.2647362978283351,
-          "downside_cutoff": -0.1974602229650262,
-          "volatility_cutoff": 0.23285228094791208,
+          "downside_cutoff": -0.19746003392832967,
+          "volatility_cutoff": 0.23285239807156427,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -7668,10 +7716,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist",
         "Expanding volatility thresholds are lagged one close to prevent look-ahead leakage."
       ]
@@ -7910,9 +7959,9 @@
       "outcomes": {
         "20": {
           "n": 699,
-          "absolute_mean": 0.010031040794435323,
+          "absolute_mean": 0.010031036592035488,
           "absolute_positive_probability": 0.5536480686695279,
-          "relative_mean": 0.001908598359876427,
+          "relative_mean": 0.0019085941574765923,
           "relative_outperformance_probability": 0.4949928469241774,
           "relative_outperformance_interval_95": [
             0.40046494992846926,
@@ -7924,15 +7973,15 @@
             0.35336194563662376
           ],
           "high_volatility_probability": 0.33905579399141633,
-          "downside_cutoff": -0.05828945743574036,
-          "volatility_cutoff": 0.2490694669043495,
+          "downside_cutoff": -0.058289456840660045,
+          "volatility_cutoff": 0.2490696626978753,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 684,
-          "absolute_mean": 0.018972976152539008,
+          "absolute_mean": 0.018972971824576006,
           "absolute_positive_probability": 0.5657894736842105,
-          "relative_mean": -0.0021924427480634113,
+          "relative_mean": -0.002192447076026417,
           "relative_outperformance_probability": 0.46637426900584794,
           "relative_outperformance_interval_95": [
             0.32591374269005846,
@@ -7945,14 +7994,14 @@
           ],
           "high_volatility_probability": 0.40497076023391815,
           "downside_cutoff": -0.10249784799569661,
-          "volatility_cutoff": 0.23662296358437152,
+          "volatility_cutoff": 0.2366223884574726,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 666,
-          "absolute_mean": 0.03755793238508906,
+          "absolute_mean": 0.037557930183971716,
           "absolute_positive_probability": 0.6021021021021021,
-          "relative_mean": -0.012867631276260734,
+          "relative_mean": -0.01286763347737808,
           "relative_outperformance_probability": 0.41291291291291293,
           "relative_outperformance_interval_95": [
             0.28074324324324323,
@@ -7964,15 +8013,15 @@
             0.495533033033033
           ],
           "high_volatility_probability": 0.4294294294294294,
-          "downside_cutoff": -0.13014261216555745,
-          "volatility_cutoff": 0.2316756277952504,
+          "downside_cutoff": -0.1301427033700069,
+          "volatility_cutoff": 0.2316755967567373,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 639,
-          "absolute_mean": 0.0968926291242497,
+          "absolute_mean": 0.09689262547841107,
           "absolute_positive_probability": 0.7183098591549296,
-          "relative_mean": -0.041267959047232225,
+          "relative_mean": -0.04126796269307085,
           "relative_outperformance_probability": 0.4084507042253521,
           "relative_outperformance_interval_95": [
             0.24561815336463225,
@@ -7984,8 +8033,8 @@
             0.408489827856025
           ],
           "high_volatility_probability": 0.2676056338028169,
-          "downside_cutoff": -0.1974602229650262,
-          "volatility_cutoff": 0.23285228094791208,
+          "downside_cutoff": -0.19746003392832967,
+          "volatility_cutoff": 0.23285239807156427,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -7994,10 +8043,11 @@
         "parameter_stability": "Unproven",
         "out_of_sample_validation": "failed_validation",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist",
         "Transparent composite; the HMM cannot alter this label or the suggested action."
       ]
@@ -8236,9 +8286,9 @@
       "outcomes": {
         "20": {
           "n": 54,
-          "absolute_mean": -0.00989669523315673,
+          "absolute_mean": -0.00989669360952343,
           "absolute_positive_probability": 0.5555555555555556,
-          "relative_mean": 0.002676760546021837,
+          "relative_mean": 0.002676762169655139,
           "relative_outperformance_probability": 0.6111111111111112,
           "relative_outperformance_interval_95": [
             0.29583333333333334,
@@ -8250,15 +8300,15 @@
             0.7962962962962963
           ],
           "high_volatility_probability": 0.6111111111111112,
-          "downside_cutoff": -0.07722138593065986,
-          "volatility_cutoff": 0.38903307234499573,
+          "downside_cutoff": -0.07722132532678469,
+          "volatility_cutoff": 0.38903307955708216,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 29,
-          "absolute_mean": -0.01056630526133976,
+          "absolute_mean": -0.010566302177398887,
           "absolute_positive_probability": 0.27586206896551724,
-          "relative_mean": -0.00020865078366409326,
+          "relative_mean": -0.00020864769972322048,
           "relative_outperformance_probability": 0.4482758620689655,
           "relative_outperformance_interval_95": [
             0.20689655172413793,
@@ -8271,7 +8321,7 @@
           ],
           "high_volatility_probability": 1.0,
           "downside_cutoff": -0.14762464829826855,
-          "volatility_cutoff": 0.3484329041347786,
+          "volatility_cutoff": 0.3484330686756655,
           "calibration": "descriptive_in_sample"
         },
         "126": {
@@ -8290,8 +8340,8 @@
             null
           ],
           "high_volatility_probability": null,
-          "downside_cutoff": -0.18643413116107688,
-          "volatility_cutoff": 0.33437000109479204,
+          "downside_cutoff": -0.18643420325310311,
+          "volatility_cutoff": 0.3343699160748004,
           "calibration": "descriptive_in_sample"
         },
         "252": {
@@ -8311,7 +8361,7 @@
           ],
           "high_volatility_probability": null,
           "downside_cutoff": -0.2535705210115077,
-          "volatility_cutoff": 0.32438921235595614,
+          "volatility_cutoff": 0.324389199317069,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -8320,10 +8370,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist"
       ]
     },
@@ -8561,9 +8612,9 @@
       "outcomes": {
         "20": {
           "n": 119,
-          "absolute_mean": -0.030799679730877896,
+          "absolute_mean": -0.03079966776822531,
           "absolute_positive_probability": 0.2773109243697479,
-          "relative_mean": -0.05224215609966687,
+          "relative_mean": -0.05224214413701428,
           "relative_outperformance_probability": 0.18487394957983194,
           "relative_outperformance_interval_95": [
             0.04201680672268908,
@@ -8581,9 +8632,9 @@
         },
         "63": {
           "n": 119,
-          "absolute_mean": -0.09143605232145326,
+          "absolute_mean": -0.09143604285914103,
           "absolute_positive_probability": 0.11764705882352941,
-          "relative_mean": -0.12972119268691468,
+          "relative_mean": -0.12972118322460244,
           "relative_outperformance_probability": 0.04201680672268908,
           "relative_outperformance_interval_95": [
             0.0,
@@ -8596,14 +8647,14 @@
           ],
           "high_volatility_probability": 0.15966386554621848,
           "downside_cutoff": -0.16981134654968377,
-          "volatility_cutoff": 0.4328044851831269,
+          "volatility_cutoff": 0.43280455822310127,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 85,
-          "absolute_mean": -0.08467912421155223,
+          "absolute_mean": -0.08467912047462771,
           "absolute_positive_probability": 0.023529411764705882,
-          "relative_mean": -0.22661757732840015,
+          "relative_mean": -0.22661757359147558,
           "relative_outperformance_probability": 0.0,
           "relative_outperformance_interval_95": [
             0.0,
@@ -8615,15 +8666,15 @@
             0.24735294117647033
           ],
           "high_volatility_probability": 0.2,
-          "downside_cutoff": -0.20674055091858906,
-          "volatility_cutoff": 0.3528293567266708,
+          "downside_cutoff": -0.20674059215456023,
+          "volatility_cutoff": 0.3528293306045328,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 26,
-          "absolute_mean": -0.18110440977303408,
+          "absolute_mean": -0.18110439675374115,
           "absolute_positive_probability": 0.0,
-          "relative_mean": -0.4137690693579057,
+          "relative_mean": -0.4137690563386128,
           "relative_outperformance_probability": 0.0,
           "relative_outperformance_interval_95": [
             0.0,
@@ -8636,7 +8687,7 @@
           ],
           "high_volatility_probability": 0.38461538461538464,
           "downside_cutoff": -0.2711816806623387,
-          "volatility_cutoff": 0.3258079569483055,
+          "volatility_cutoff": 0.32580794151423687,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -8645,10 +8696,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist",
         "Expanding volatility thresholds are lagged one close to prevent look-ahead leakage."
       ]
@@ -8887,9 +8939,9 @@
       "outcomes": {
         "20": {
           "n": 100,
-          "absolute_mean": 0.004160993618808696,
+          "absolute_mean": 0.004160990421585342,
           "absolute_positive_probability": 0.6,
-          "relative_mean": -0.003624857941569819,
+          "relative_mean": -0.0036248611387931728,
           "relative_outperformance_probability": 0.48,
           "relative_outperformance_interval_95": [
             0.28975,
@@ -8907,9 +8959,9 @@
         },
         "63": {
           "n": 59,
-          "absolute_mean": 0.028916863518527826,
+          "absolute_mean": 0.028916856975132223,
           "absolute_positive_probability": 0.5932203389830508,
-          "relative_mean": -0.03040499547567245,
+          "relative_mean": -0.030405002019068053,
           "relative_outperformance_probability": 0.3559322033898305,
           "relative_outperformance_interval_95": [
             0.1016949152542373,
@@ -8922,14 +8974,14 @@
           ],
           "high_volatility_probability": 0.4915254237288136,
           "downside_cutoff": -0.16981134654968377,
-          "volatility_cutoff": 0.4328044851831269,
+          "volatility_cutoff": 0.43280455822310127,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 30,
-          "absolute_mean": -0.07207508451360672,
+          "absolute_mean": -0.07207508421447427,
           "absolute_positive_probability": 0.23333333333333334,
-          "relative_mean": -0.25227884880882223,
+          "relative_mean": -0.2522788485096898,
           "relative_outperformance_probability": 0.13333333333333333,
           "relative_outperformance_interval_95": [
             0.0,
@@ -8941,15 +8993,15 @@
             0.16666666666666666
           ],
           "high_volatility_probability": 0.0,
-          "downside_cutoff": -0.20674055091858906,
-          "volatility_cutoff": 0.3528293567266708,
+          "downside_cutoff": -0.20674059215456023,
+          "volatility_cutoff": 0.3528293306045328,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 8,
-          "absolute_mean": -0.07538681244465965,
+          "absolute_mean": -0.07538681184758035,
           "absolute_positive_probability": 0.0,
-          "relative_mean": -0.3109214183008874,
+          "relative_mean": -0.3109214177038081,
           "relative_outperformance_probability": 0.0,
           "relative_outperformance_interval_95": [
             null,
@@ -8962,7 +9014,7 @@
           ],
           "high_volatility_probability": 0.0,
           "downside_cutoff": -0.2711816806623387,
-          "volatility_cutoff": 0.3258079569483055,
+          "volatility_cutoff": 0.32580794151423687,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -8971,10 +9023,11 @@
         "parameter_stability": "Unproven",
         "out_of_sample_validation": "insufficient_history",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist",
         "Transparent composite; the HMM cannot alter this label or the suggested action."
       ]
@@ -9297,10 +9350,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Limited listing history may constrain long-horizon coverage"
       ]
     },
@@ -9622,10 +9676,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Limited listing history may constrain long-horizon coverage",
         "Expanding volatility thresholds are lagged one close to prevent look-ahead leakage."
       ]
@@ -9948,10 +10003,11 @@
         "parameter_stability": "Unproven",
         "out_of_sample_validation": "insufficient_history",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Limited listing history may constrain long-horizon coverage",
         "Transparent composite; the HMM cannot alter this label or the suggested action."
       ]
@@ -10274,10 +10330,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Limited listing history may constrain long-horizon coverage"
       ]
     },
@@ -10306,15 +10363,15 @@
       "label_persistence": {
         "full_history": {
           "state_index": 1,
-          "probability": 0.893743446347431,
+          "probability": 0.893817673768774,
           "interval_95": [
-            0.8819184111780208,
-            0.9045125035364262
+            0.8820003215204516,
+            0.9045795857893905
           ],
-          "transitions": 2861,
+          "transitions": 2863,
           "episodes": 305,
           "median_run_days": 3.0,
-          "mean_run_days": 9.38360655737705,
+          "mean_run_days": 9.39016393442623,
           "classification": "Moderate"
         },
         "recent_window": {
@@ -10333,13 +10390,13 @@
         "full_detail": {
           "transition_counts": [
             [
-              1518,
+              1516,
               165,
               0
             ],
             [
               164,
-              2557,
+              2559,
               140
             ],
             [
@@ -10350,14 +10407,14 @@
           ],
           "transition_matrix": [
             [
-              0.9019607843137255,
-              0.09803921568627451,
+              0.9018441403926234,
+              0.09815585960737656,
               0.0
             ],
             [
-              0.05732261447046487,
-              0.893743446347431,
-              0.04893393918210416
+              0.05728257073000349,
+              0.893817673768774,
+              0.0488997555012225
             ],
             [
               0.0,
@@ -10368,27 +10425,27 @@
           "by_state": [
             {
               "state_index": 0,
-              "probability": 0.9019607843137255,
+              "probability": 0.9018441403926234,
               "interval_95": [
-                0.886824877925252,
-                0.9152658459459165
+                0.8866914475400054,
+                0.9151643470937452
               ],
-              "transitions": 1683,
+              "transitions": 1681,
               "episodes": 165,
               "median_run_days": 3.0,
-              "mean_run_days": 10.2
+              "mean_run_days": 10.187878787878788
             },
             {
               "state_index": 1,
-              "probability": 0.893743446347431,
+              "probability": 0.893817673768774,
               "interval_95": [
-                0.8819184111780208,
-                0.9045125035364262
+                0.8820003215204516,
+                0.9045795857893905
               ],
-              "transitions": 2861,
+              "transitions": 2863,
               "episodes": 305,
               "median_run_days": 3.0,
-              "mean_run_days": 9.38360655737705,
+              "mean_run_days": 9.39016393442623,
               "classification": "Moderate"
             },
             {
@@ -10485,15 +10542,15 @@
         {
           "age_bucket": "1–5",
           "episodes_at_risk": 305,
-          "exited_in_bucket": 199,
-          "bucket_exit_probability": 0.6524590163934426,
+          "exited_in_bucket": 198,
+          "bucket_exit_probability": 0.6491803278688525,
           "bucket_days": 5
         },
         {
           "age_bucket": "6–20",
-          "episodes_at_risk": 106,
-          "exited_in_bucket": 60,
-          "bucket_exit_probability": 0.5660377358490566,
+          "episodes_at_risk": 107,
+          "exited_in_bucket": 61,
+          "bucket_exit_probability": 0.5700934579439252,
           "bucket_days": 15
         },
         {
@@ -10514,83 +10571,83 @@
       "evidence_support": "Strong",
       "outcomes": {
         "20": {
-          "n": 1418,
-          "absolute_mean": 0.022802462898797723,
-          "absolute_positive_probability": 0.5239774330042313,
-          "relative_mean": 0.009383782423017687,
-          "relative_outperformance_probability": 0.4767277856135402,
+          "n": 1419,
+          "absolute_mean": 0.02275284099707226,
+          "absolute_positive_probability": 0.5236081747709654,
+          "relative_mean": 0.009359849532512583,
+          "relative_outperformance_probability": 0.4763918252290345,
           "relative_outperformance_interval_95": [
-            0.39702045133991537,
-            0.55012341325811
+            0.3980267794221282,
+            0.5497004933051445
           ],
-          "downside_probability": 0.19322990126939352,
+          "downside_probability": 0.19309372797744892,
           "downside_probability_interval_95": [
-            0.13540197461212977,
-            0.2419252468265162
+            0.13458421423537703,
+            0.2396229739252995
           ],
-          "high_volatility_probability": 0.18194640338504936,
-          "downside_cutoff": -0.07671547824926177,
-          "volatility_cutoff": 0.4617579154667985,
+          "high_volatility_probability": 0.18181818181818182,
+          "downside_cutoff": -0.07671541908914116,
+          "volatility_cutoff": 0.4617583385885012,
           "calibration": "descriptive_in_sample"
         },
         "63": {
-          "n": 1402,
-          "absolute_mean": 0.09497323007123239,
-          "absolute_positive_probability": 0.5998573466476462,
-          "relative_mean": 0.062072652979609816,
-          "relative_outperformance_probability": 0.5777460770328102,
+          "n": 1403,
+          "absolute_mean": 0.09487160515474699,
+          "absolute_positive_probability": 0.5994297933000713,
+          "relative_mean": 0.0619768793694553,
+          "relative_outperformance_probability": 0.5773342836778332,
           "relative_outperformance_interval_95": [
-            0.48357703281027103,
-            0.675481455064194
+            0.48316108339272984,
+            0.675
           ],
-          "downside_probability": 0.21469329529243938,
+          "downside_probability": 0.21454027084818247,
           "downside_probability_interval_95": [
-            0.12972539229671898,
-            0.28389800285306704
+            0.13034568781183178,
+            0.2844262295081967
           ],
-          "high_volatility_probability": 0.181169757489301,
-          "downside_cutoff": -0.11937377763843482,
-          "volatility_cutoff": 0.43104184292905046,
+          "high_volatility_probability": 0.1810406272273699,
+          "downside_cutoff": -0.1193737115883916,
+          "volatility_cutoff": 0.4310415043111392,
           "calibration": "descriptive_in_sample"
         },
         "126": {
-          "n": 1396,
-          "absolute_mean": 0.21816952861725608,
-          "absolute_positive_probability": 0.6869627507163324,
-          "relative_mean": 0.16110575991650622,
-          "relative_outperformance_probability": 0.6260744985673352,
+          "n": 1397,
+          "absolute_mean": 0.21796412801331552,
+          "absolute_positive_probability": 0.686471009305655,
+          "relative_mean": 0.16085905563998054,
+          "relative_outperformance_probability": 0.6256263421617753,
           "relative_outperformance_interval_95": [
-            0.5186067335243553,
-            0.725035816618911
+            0.518217609162491,
+            0.7258768790264853
           ],
-          "downside_probability": 0.19627507163323782,
+          "downside_probability": 0.19613457408732998,
           "downside_probability_interval_95": [
-            0.11455945558739256,
-            0.28298710601719196
+            0.11451324266284897,
+            0.2849141016463851
           ],
-          "high_volatility_probability": 0.17263610315186245,
+          "high_volatility_probability": 0.1725125268432355,
           "downside_cutoff": -0.14922273607179193,
-          "volatility_cutoff": 0.420866910659588,
+          "volatility_cutoff": 0.4208668453067633,
           "calibration": "descriptive_in_sample"
         },
         "252": {
-          "n": 1346,
-          "absolute_mean": 0.47383779205550985,
-          "absolute_positive_probability": 0.8358098068350669,
-          "relative_mean": 0.37218228454742125,
-          "relative_outperformance_probability": 0.7771173848439822,
+          "n": 1347,
+          "absolute_mean": 0.4734035426152011,
+          "absolute_positive_probability": 0.8351893095768375,
+          "relative_mean": 0.371735473200672,
+          "relative_outperformance_probability": 0.7765404602821084,
           "relative_outperformance_interval_95": [
-            0.6834323922734027,
-            0.8603640416047549
+            0.6829621380846326,
+            0.8597624350408315
           ],
-          "downside_probability": 0.20059435364041606,
+          "downside_probability": 0.20044543429844097,
           "downside_probability_interval_95": [
-            0.1188335809806835,
-            0.2905274888558692
+            0.11952487008166296,
+            0.2910356347438753
           ],
-          "high_volatility_probability": 0.20282317979197623,
-          "downside_cutoff": -0.1768746510557603,
-          "volatility_cutoff": 0.41923152266172353,
+          "high_volatility_probability": 0.2026726057906459,
+          "downside_cutoff": -0.17687457951152014,
+          "volatility_cutoff": 0.4192313846873644,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -10599,10 +10656,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist"
       ]
     },
@@ -10840,9 +10898,9 @@
       "outcomes": {
         "20": {
           "n": 1798,
-          "absolute_mean": 0.03243859423660115,
+          "absolute_mean": 0.03243859779125665,
           "absolute_positive_probability": 0.5717463848720801,
-          "relative_mean": 0.023540203113488044,
+          "relative_mean": 0.023540206668143555,
           "relative_outperformance_probability": 0.5506117908787542,
           "relative_outperformance_interval_95": [
             0.48384315906562847,
@@ -10854,15 +10912,15 @@
             0.2336067853170189
           ],
           "high_volatility_probability": 0.19632925472747498,
-          "downside_cutoff": -0.07671547824926177,
-          "volatility_cutoff": 0.4617579154667985,
+          "downside_cutoff": -0.07671541908914116,
+          "volatility_cutoff": 0.4617583385885012,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1775,
-          "absolute_mean": 0.08442556551695196,
+          "absolute_mean": 0.08442556843169635,
           "absolute_positive_probability": 0.636056338028169,
-          "relative_mean": 0.05841397939412409,
+          "relative_mean": 0.058413982308868476,
           "relative_outperformance_probability": 0.5904225352112676,
           "relative_outperformance_interval_95": [
             0.4952112676056338,
@@ -10874,15 +10932,15 @@
             0.2665211267605634
           ],
           "high_volatility_probability": 0.1667605633802817,
-          "downside_cutoff": -0.11937377763843482,
-          "volatility_cutoff": 0.43104184292905046,
+          "downside_cutoff": -0.1193737115883916,
+          "volatility_cutoff": 0.4310415043111392,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1775,
-          "absolute_mean": 0.1964237590406599,
+          "absolute_mean": 0.1964237612890193,
           "absolute_positive_probability": 0.7030985915492958,
-          "relative_mean": 0.14441275073831497,
+          "relative_mean": 0.1444127529866744,
           "relative_outperformance_probability": 0.6371830985915493,
           "relative_outperformance_interval_95": [
             0.5475915492957747,
@@ -10895,14 +10953,14 @@
           ],
           "high_volatility_probability": 0.18253521126760563,
           "downside_cutoff": -0.14922273607179193,
-          "volatility_cutoff": 0.420866910659588,
+          "volatility_cutoff": 0.4208668453067633,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1716,
-          "absolute_mean": 0.422668479464836,
+          "absolute_mean": 0.4226684900180546,
           "absolute_positive_probability": 0.8228438228438228,
-          "relative_mean": 0.32020209100711716,
+          "relative_mean": 0.3202021015603357,
           "relative_outperformance_probability": 0.7319347319347319,
           "relative_outperformance_interval_95": [
             0.6561625874125875,
@@ -10914,8 +10972,8 @@
             0.33630536130536126
           ],
           "high_volatility_probability": 0.18006993006993008,
-          "downside_cutoff": -0.1768746510557603,
-          "volatility_cutoff": 0.41923152266172353,
+          "downside_cutoff": -0.17687457951152014,
+          "volatility_cutoff": 0.4192313846873644,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -10924,10 +10982,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist",
         "Expanding volatility thresholds are lagged one close to prevent look-ahead leakage."
       ]
@@ -10957,15 +11016,15 @@
       "label_persistence": {
         "full_history": {
           "state_index": 1,
-          "probability": 0.8793402777777778,
+          "probability": 0.8794449262792715,
           "interval_95": [
-            0.8654042159100879,
-            0.8920134508829884
+            0.8655199691743702,
+            0.8921077400157318
           ],
-          "transitions": 2304,
+          "transitions": 2306,
           "episodes": 279,
           "median_run_days": 3.0,
-          "mean_run_days": 8.261648745519713,
+          "mean_run_days": 8.268817204301076,
           "classification": "Moderate"
         },
         "recent_window": {
@@ -10984,13 +11043,13 @@
         "full_detail": {
           "transition_counts": [
             [
-              2256,
+              2254,
               159,
               26
             ],
             [
               160,
-              2026,
+              2028,
               118
             ],
             [
@@ -11001,14 +11060,14 @@
           ],
           "transition_matrix": [
             [
-              0.9242113887750921,
-              0.0651372388365424,
-              0.010651372388365424
+              0.924149241492415,
+              0.06519065190651907,
+              0.01066010660106601
             ],
             [
-              0.06944444444444445,
-              0.8793402777777778,
-              0.051215277777777776
+              0.06938421509106678,
+              0.8794449262792715,
+              0.05117085862966175
             ],
             [
               0.014459224985540775,
@@ -11019,27 +11078,27 @@
           "by_state": [
             {
               "state_index": 0,
-              "probability": 0.9242113887750921,
+              "probability": 0.924149241492415,
               "interval_95": [
-                0.9130326323329209,
-                0.9340570114296852
+                0.9129617822843134,
+                0.9340026709164183
               ],
-              "transitions": 2441,
+              "transitions": 2439,
               "episodes": 185,
-              "median_run_days": 7.0,
-              "mean_run_days": 13.194594594594594
+              "median_run_days": 6.0,
+              "mean_run_days": 13.183783783783785
             },
             {
               "state_index": 1,
-              "probability": 0.8793402777777778,
+              "probability": 0.8794449262792715,
               "interval_95": [
-                0.8654042159100879,
-                0.8920134508829884
+                0.8655199691743702,
+                0.8921077400157318
               ],
-              "transitions": 2304,
+              "transitions": 2306,
               "episodes": 279,
               "median_run_days": 3.0,
-              "mean_run_days": 8.261648745519713,
+              "mean_run_days": 8.268817204301076,
               "classification": "Moderate"
             },
             {
@@ -11136,15 +11195,15 @@
         {
           "age_bucket": "1–5",
           "episodes_at_risk": 279,
-          "exited_in_bucket": 182,
-          "bucket_exit_probability": 0.6523297491039427,
+          "exited_in_bucket": 181,
+          "bucket_exit_probability": 0.6487455197132617,
           "bucket_days": 5
         },
         {
           "age_bucket": "6–20",
-          "episodes_at_risk": 97,
-          "exited_in_bucket": 65,
-          "bucket_exit_probability": 0.6701030927835051,
+          "episodes_at_risk": 98,
+          "exited_in_bucket": 66,
+          "bucket_exit_probability": 0.673469387755102,
           "bucket_days": 15
         },
         {
@@ -11165,83 +11224,83 @@
       "evidence_support": "Strong",
       "outcomes": {
         "20": {
-          "n": 1252,
-          "absolute_mean": 0.017041473570464025,
-          "absolute_positive_probability": 0.5111821086261981,
-          "relative_mean": 0.005515974524308229,
-          "relative_outperformance_probability": 0.46565495207667734,
+          "n": 1253,
+          "absolute_mean": 0.016989875667333697,
+          "absolute_positive_probability": 0.5107741420590582,
+          "relative_mean": 0.005491958046151618,
+          "relative_outperformance_probability": 0.4652833200319234,
           "relative_outperformance_interval_95": [
-            0.38736022364217254,
-            0.552755591054313
+            0.3870710295291301,
+            0.5538906624102155
           ],
-          "downside_probability": 0.1988817891373802,
+          "downside_probability": 0.19872306464485234,
           "downside_probability_interval_95": [
-            0.13093051118210863,
-            0.2581469648562299
+            0.1316440542697526,
+            0.25949720670391047
           ],
-          "high_volatility_probability": 0.16054313099041534,
-          "downside_cutoff": -0.07671547824926177,
-          "volatility_cutoff": 0.4617579154667985,
+          "high_volatility_probability": 0.160415003990423,
+          "downside_cutoff": -0.07671541908914116,
+          "volatility_cutoff": 0.4617583385885012,
           "calibration": "descriptive_in_sample"
         },
         "63": {
-          "n": 1240,
-          "absolute_mean": 0.0851634941489893,
-          "absolute_positive_probability": 0.5943548387096774,
-          "relative_mean": 0.055778095626579115,
-          "relative_outperformance_probability": 0.5725806451612904,
+          "n": 1241,
+          "absolute_mean": 0.08505650693422734,
+          "absolute_positive_probability": 0.5938759065269944,
+          "relative_mean": 0.05567489100989372,
+          "relative_outperformance_probability": 0.572119258662369,
           "relative_outperformance_interval_95": [
-            0.47901209677419354,
-            0.6782258064516129
+            0.47856567284448026,
+            0.679311039484287
           ],
-          "downside_probability": 0.21048387096774193,
+          "downside_probability": 0.21031426269137793,
           "downside_probability_interval_95": [
-            0.12086693548387098,
-            0.2911491935483871
+            0.11919822723609992,
+            0.2901289282836422
           ],
-          "high_volatility_probability": 0.15806451612903225,
-          "downside_cutoff": -0.11937377763843482,
-          "volatility_cutoff": 0.43104184292905046,
+          "high_volatility_probability": 0.1579371474617244,
+          "downside_cutoff": -0.1193737115883916,
+          "volatility_cutoff": 0.4310415043111392,
           "calibration": "descriptive_in_sample"
         },
         "126": {
-          "n": 1236,
-          "absolute_mean": 0.196158516279869,
-          "absolute_positive_probability": 0.6836569579288025,
-          "relative_mean": 0.14285518054991633,
-          "relative_outperformance_probability": 0.6262135922330098,
+          "n": 1237,
+          "absolute_mean": 0.19594434105254482,
+          "absolute_positive_probability": 0.683104284559418,
+          "relative_mean": 0.14259131925664864,
+          "relative_outperformance_probability": 0.6257073565076798,
           "relative_outperformance_interval_95": [
-            0.5298543689320387,
-            0.7411610032362459
+            0.5278698464025869,
+            0.7381770412287793
           ],
-          "downside_probability": 0.18689320388349515,
+          "downside_probability": 0.18674211802748586,
           "downside_probability_interval_95": [
-            0.11970064724919094,
-            0.26941747572815533
+            0.11960388035569927,
+            0.2700080840743735
           ],
-          "high_volatility_probability": 0.1650485436893204,
+          "high_volatility_probability": 0.16491511721907842,
           "downside_cutoff": -0.14922273607179193,
-          "volatility_cutoff": 0.420866910659588,
+          "volatility_cutoff": 0.4208668453067633,
           "calibration": "descriptive_in_sample"
         },
         "252": {
-          "n": 1186,
-          "absolute_mean": 0.4380145718575495,
-          "absolute_positive_probability": 0.8381112984822934,
-          "relative_mean": 0.35445460302903,
-          "relative_outperformance_probability": 0.7866779089376054,
+          "n": 1187,
+          "absolute_mean": 0.4375519721128602,
+          "absolute_positive_probability": 0.8374052232518955,
+          "relative_mean": 0.35396250334613083,
+          "relative_outperformance_probability": 0.7860151642796968,
           "relative_outperformance_interval_95": [
-            0.6880059021922429,
-            0.8803541315345699
+            0.6899115417017692,
+            0.8787910699241784
           ],
-          "downside_probability": 0.19561551433389546,
+          "downside_probability": 0.1954507160909857,
           "downside_probability_interval_95": [
-            0.10621838111298482,
-            0.2900505902192243
+            0.1052653748946925,
+            0.29066975568660486
           ],
-          "high_volatility_probability": 0.20404721753794267,
-          "downside_cutoff": -0.1768746510557603,
-          "volatility_cutoff": 0.41923152266172353,
+          "high_volatility_probability": 0.2038753159224937,
+          "downside_cutoff": -0.17687457951152014,
+          "volatility_cutoff": 0.4192313846873644,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -11250,10 +11309,11 @@
         "parameter_stability": "Unproven",
         "out_of_sample_validation": "failed_validation",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Core active watchlist",
         "Transparent composite; the HMM cannot alter this label or the suggested action."
       ]
@@ -11492,9 +11552,9 @@
       "outcomes": {
         "20": {
           "n": 1505,
-          "absolute_mean": 0.015612820770138295,
+          "absolute_mean": 0.015612825114012388,
           "absolute_positive_probability": 0.6006644518272425,
-          "relative_mean": 0.006629349628087143,
+          "relative_mean": 0.006629353971961234,
           "relative_outperformance_probability": 0.5521594684385382,
           "relative_outperformance_interval_95": [
             0.4677740863787375,
@@ -11506,15 +11566,15 @@
             0.2605813953488371
           ],
           "high_volatility_probability": 0.21727574750830564,
-          "downside_cutoff": -0.066415835140751,
-          "volatility_cutoff": 0.29215845914431543,
+          "downside_cutoff": -0.06641610217351916,
+          "volatility_cutoff": 0.29215849061614796,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1504,
-          "absolute_mean": 0.05157566614954274,
+          "absolute_mean": 0.05157565992053789,
           "absolute_positive_probability": 0.7340425531914894,
-          "relative_mean": 0.01862093762166407,
+          "relative_mean": 0.018620931392659214,
           "relative_outperformance_probability": 0.6103723404255319,
           "relative_outperformance_interval_95": [
             0.5212267287234043,
@@ -11526,15 +11586,15 @@
             0.26003989361702123
           ],
           "high_volatility_probability": 0.18218085106382978,
-          "downside_cutoff": -0.11040274525055627,
-          "volatility_cutoff": 0.29095454244262237,
+          "downside_cutoff": -0.11040283059584066,
+          "volatility_cutoff": 0.29095431111556436,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1452,
-          "absolute_mean": 0.08888385866979903,
+          "absolute_mean": 0.08888385684019433,
           "absolute_positive_probability": 0.7520661157024794,
-          "relative_mean": 0.03348287087697168,
+          "relative_mean": 0.033482869047367005,
           "relative_outperformance_probability": 0.6026170798898072,
           "relative_outperformance_interval_95": [
             0.5013601928374656,
@@ -11546,15 +11606,15 @@
             0.24597107438016522
           ],
           "high_volatility_probability": 0.18181818181818182,
-          "downside_cutoff": -0.13585878916945418,
-          "volatility_cutoff": 0.28744758944877596,
+          "downside_cutoff": -0.13585867382476804,
+          "volatility_cutoff": 0.2874475096513163,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1406,
-          "absolute_mean": 0.16361063744631812,
+          "absolute_mean": 0.16361064111678866,
           "absolute_positive_probability": 0.8015647226173542,
-          "relative_mean": 0.04375993498856147,
+          "relative_mean": 0.043759938659031994,
           "relative_outperformance_probability": 0.4779516358463727,
           "relative_outperformance_interval_95": [
             0.36342460881934563,
@@ -11566,8 +11626,8 @@
             0.2937766714082503
           ],
           "high_volatility_probability": 0.20056899004267426,
-          "downside_cutoff": -0.1591201853578208,
-          "volatility_cutoff": 0.29565781435900773,
+          "downside_cutoff": -0.15912037485116204,
+          "volatility_cutoff": 0.2956579476105347,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -11576,10 +11636,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Coverage reference only"
       ]
     },
@@ -11817,9 +11878,9 @@
       "outcomes": {
         "20": {
           "n": 2577,
-          "absolute_mean": 0.012791678343307512,
+          "absolute_mean": 0.012791682346537991,
           "absolute_positive_probability": 0.5774155995343423,
-          "relative_mean": 0.006731646380245131,
+          "relative_mean": 0.006731650383475612,
           "relative_outperformance_probability": 0.563057819169577,
           "relative_outperformance_interval_95": [
             0.4966918897943345,
@@ -11831,15 +11892,15 @@
             0.2343907644547924
           ],
           "high_volatility_probability": 0.16880093131548313,
-          "downside_cutoff": -0.066415835140751,
-          "volatility_cutoff": 0.29215845914431543,
+          "downside_cutoff": -0.06641610217351916,
+          "volatility_cutoff": 0.29215849061614796,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 2541,
-          "absolute_mean": 0.0422000026972772,
+          "absolute_mean": 0.04220000445592096,
           "absolute_positive_probability": 0.6737504919323101,
-          "relative_mean": 0.01744976592258331,
+          "relative_mean": 0.017449767681227066,
           "relative_outperformance_probability": 0.5710350255804801,
           "relative_outperformance_interval_95": [
             0.49188311688311687,
@@ -11851,15 +11912,15 @@
             0.2396694214876033
           ],
           "high_volatility_probability": 0.15899252262888627,
-          "downside_cutoff": -0.11040274525055627,
-          "volatility_cutoff": 0.29095454244262237,
+          "downside_cutoff": -0.11040283059584066,
+          "volatility_cutoff": 0.29095431111556436,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 2517,
-          "absolute_mean": 0.08327052045774046,
+          "absolute_mean": 0.08327052540073653,
           "absolute_positive_probability": 0.7250695272149384,
-          "relative_mean": 0.027310921726614444,
+          "relative_mean": 0.027310926669610505,
           "relative_outperformance_probability": 0.567342073897497,
           "relative_outperformance_interval_95": [
             0.4926301152165276,
@@ -11871,15 +11932,15 @@
             0.23679976162097735
           ],
           "high_volatility_probability": 0.13984902661899087,
-          "downside_cutoff": -0.13585878916945418,
-          "volatility_cutoff": 0.28744758944877596,
+          "downside_cutoff": -0.13585867382476804,
+          "volatility_cutoff": 0.2874475096513163,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 2408,
-          "absolute_mean": 0.16777562805957974,
+          "absolute_mean": 0.1677756288049978,
           "absolute_positive_probability": 0.8027408637873754,
-          "relative_mean": 0.06509185718387778,
+          "relative_mean": 0.0650918579292958,
           "relative_outperformance_probability": 0.5602159468438538,
           "relative_outperformance_interval_95": [
             0.48328488372093026,
@@ -11891,8 +11952,8 @@
             0.23216362126245846
           ],
           "high_volatility_probability": 0.15863787375415284,
-          "downside_cutoff": -0.1591201853578208,
-          "volatility_cutoff": 0.29565781435900773,
+          "downside_cutoff": -0.15912037485116204,
+          "volatility_cutoff": 0.2956579476105347,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -11901,10 +11962,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Coverage reference only",
         "Expanding volatility thresholds are lagged one close to prevent look-ahead leakage."
       ]
@@ -12143,9 +12205,9 @@
       "outcomes": {
         "20": {
           "n": 1495,
-          "absolute_mean": 0.015591285024466845,
+          "absolute_mean": 0.015591289002994725,
           "absolute_positive_probability": 0.6,
-          "relative_mean": 0.006800457533301091,
+          "relative_mean": 0.006800461511828972,
           "relative_outperformance_probability": 0.5531772575250836,
           "relative_outperformance_interval_95": [
             0.4681939799331104,
@@ -12157,15 +12219,15 @@
             0.26021739130434784
           ],
           "high_volatility_probability": 0.21739130434782608,
-          "downside_cutoff": -0.066415835140751,
-          "volatility_cutoff": 0.29215845914431543,
+          "downside_cutoff": -0.06641610217351916,
+          "volatility_cutoff": 0.29215849061614796,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1494,
-          "absolute_mean": 0.0506274934964854,
+          "absolute_mean": 0.05062748736173024,
           "absolute_positive_probability": 0.7322623828647925,
-          "relative_mean": 0.018312278022359314,
+          "relative_mean": 0.018312271887604165,
           "relative_outperformance_probability": 0.607764390896921,
           "relative_outperformance_interval_95": [
             0.523326639892905,
@@ -12177,15 +12239,15 @@
             0.2644243641231593
           ],
           "high_volatility_probability": 0.18340026773761714,
-          "downside_cutoff": -0.11040274525055627,
-          "volatility_cutoff": 0.29095454244262237,
+          "downside_cutoff": -0.11040283059584066,
+          "volatility_cutoff": 0.29095431111556436,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1442,
-          "absolute_mean": 0.08755613045972867,
+          "absolute_mean": 0.0875561280771017,
           "absolute_positive_probability": 0.7503467406380028,
-          "relative_mean": 0.03337740604051474,
+          "relative_mean": 0.033377403657887786,
           "relative_outperformance_probability": 0.6012482662968099,
           "relative_outperformance_interval_95": [
             0.5013349514563107,
@@ -12197,15 +12259,15 @@
             0.25038141470180303
           ],
           "high_volatility_probability": 0.18307905686546463,
-          "downside_cutoff": -0.13585878916945418,
-          "volatility_cutoff": 0.28744758944877596,
+          "downside_cutoff": -0.13585867382476804,
+          "volatility_cutoff": 0.2874475096513163,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1396,
-          "absolute_mean": 0.16358748858544567,
+          "absolute_mean": 0.16358749104470735,
           "absolute_positive_probability": 0.8001432664756447,
-          "relative_mean": 0.044940686404277376,
+          "relative_mean": 0.04494068886353909,
           "relative_outperformance_probability": 0.4813753581661891,
           "relative_outperformance_interval_95": [
             0.36387893982808023,
@@ -12217,8 +12279,8 @@
             0.2894340974212034
           ],
           "high_volatility_probability": 0.2020057306590258,
-          "downside_cutoff": -0.1591201853578208,
-          "volatility_cutoff": 0.29565781435900773,
+          "downside_cutoff": -0.15912037485116204,
+          "volatility_cutoff": 0.2956579476105347,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -12227,10 +12289,11 @@
         "parameter_stability": "Pass",
         "out_of_sample_validation": "validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Coverage reference only",
         "Transparent composite; the HMM cannot alter this label or the suggested action."
       ]
@@ -12469,9 +12532,9 @@
       "outcomes": {
         "20": {
           "n": 1190,
-          "absolute_mean": 0.026198718777917664,
+          "absolute_mean": 0.026198722354725652,
           "absolute_positive_probability": 0.5563025210084034,
-          "relative_mean": 0.02157964254065693,
+          "relative_mean": 0.021579646117464917,
           "relative_outperformance_probability": 0.5352941176470588,
           "relative_outperformance_interval_95": [
             0.4596008403361344,
@@ -12483,15 +12546,15 @@
             0.23697478991596638
           ],
           "high_volatility_probability": 0.15378151260504203,
-          "downside_cutoff": -0.14347262031115993,
-          "volatility_cutoff": 0.6478096722713644,
+          "downside_cutoff": -0.14347256047282533,
+          "volatility_cutoff": 0.6478097147484004,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1159,
-          "absolute_mean": 0.062990618738868,
+          "absolute_mean": 0.06299061748713682,
           "absolute_positive_probability": 0.6169111302847282,
-          "relative_mean": 0.0564821756534241,
+          "relative_mean": 0.05648217440169289,
           "relative_outperformance_probability": 0.6151855047454702,
           "relative_outperformance_interval_95": [
             0.49680759275237274,
@@ -12503,15 +12566,15 @@
             0.26488352027610007
           ],
           "high_volatility_probability": 0.17601380500431407,
-          "downside_cutoff": -0.2261431544351914,
-          "volatility_cutoff": 0.6404021108739184,
+          "downside_cutoff": -0.22614342388454012,
+          "volatility_cutoff": 0.6404021459134286,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1099,
-          "absolute_mean": 0.11995541649907433,
+          "absolute_mean": 0.11995542182898022,
           "absolute_positive_probability": 0.6769790718835305,
-          "relative_mean": 0.09139671427955524,
+          "relative_mean": 0.09139671960946118,
           "relative_outperformance_probability": 0.6223839854413102,
           "relative_outperformance_interval_95": [
             0.5176296633303002,
@@ -12523,15 +12586,15 @@
             0.28669244767970875
           ],
           "high_volatility_probability": 0.18926296633303002,
-          "downside_cutoff": -0.3215947905811245,
-          "volatility_cutoff": 0.6638544992050507,
+          "downside_cutoff": -0.32159475624394573,
+          "volatility_cutoff": 0.6638545691521001,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 994,
-          "absolute_mean": 0.13992220385678653,
+          "absolute_mean": 0.13992220636917213,
           "absolute_positive_probability": 0.5352112676056338,
-          "relative_mean": 0.10134861784279506,
+          "relative_mean": 0.10134862035518072,
           "relative_outperformance_probability": 0.5362173038229376,
           "relative_outperformance_interval_95": [
             0.4124496981891348,
@@ -12543,8 +12606,8 @@
             0.38329979879275655
           ],
           "high_volatility_probability": 0.2022132796780684,
-          "downside_cutoff": -0.43269526653568147,
-          "volatility_cutoff": 0.6889120657229116,
+          "downside_cutoff": -0.43269522331408666,
+          "volatility_cutoff": 0.688912005784947,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -12553,10 +12616,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Proxy only"
       ]
     },
@@ -12794,9 +12858,9 @@
       "outcomes": {
         "20": {
           "n": 1347,
-          "absolute_mean": 0.03762141637865314,
+          "absolute_mean": 0.037621410068499776,
           "absolute_positive_probability": 0.5872308834446919,
-          "relative_mean": 0.03200008333040423,
+          "relative_mean": 0.032000077020250865,
           "relative_outperformance_probability": 0.5553080920564217,
           "relative_outperformance_interval_95": [
             0.48775055679287305,
@@ -12808,15 +12872,15 @@
             0.21902375649591685
           ],
           "high_volatility_probability": 0.2100965107646622,
-          "downside_cutoff": -0.14347262031115993,
-          "volatility_cutoff": 0.6478096722713644,
+          "downside_cutoff": -0.14347256047282533,
+          "volatility_cutoff": 0.6478097147484004,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1330,
-          "absolute_mean": 0.10020773504955817,
+          "absolute_mean": 0.10020773647355512,
           "absolute_positive_probability": 0.6593984962406015,
-          "relative_mean": 0.07836662058989208,
+          "relative_mean": 0.07836662201388905,
           "relative_outperformance_probability": 0.6090225563909775,
           "relative_outperformance_interval_95": [
             0.5150375939849624,
@@ -12828,15 +12892,15 @@
             0.21430451127819547
           ],
           "high_volatility_probability": 0.1593984962406015,
-          "downside_cutoff": -0.2261431544351914,
-          "volatility_cutoff": 0.6404021108739184,
+          "downside_cutoff": -0.22614342388454012,
+          "volatility_cutoff": 0.6404021459134286,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1285,
-          "absolute_mean": 0.19193089491018517,
+          "absolute_mean": 0.19193088831606336,
           "absolute_positive_probability": 0.7299610894941634,
-          "relative_mean": 0.14517333275347574,
+          "relative_mean": 0.14517332615935397,
           "relative_outperformance_probability": 0.68715953307393,
           "relative_outperformance_interval_95": [
             0.5773735408560311,
@@ -12848,15 +12912,15 @@
             0.2031517509727626
           ],
           "high_volatility_probability": 0.15719844357976653,
-          "downside_cutoff": -0.3215947905811245,
-          "volatility_cutoff": 0.6638544992050507,
+          "downside_cutoff": -0.32159475624394573,
+          "volatility_cutoff": 0.6638545691521001,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1249,
-          "absolute_mean": 0.3631622579545434,
+          "absolute_mean": 0.36316226011541847,
           "absolute_positive_probability": 0.7133706965572458,
-          "relative_mean": 0.2646390869131609,
+          "relative_mean": 0.264639089074036,
           "relative_outperformance_probability": 0.633306645316253,
           "relative_outperformance_interval_95": [
             0.5171737389911929,
@@ -12868,8 +12932,8 @@
             0.22510008006405113
           ],
           "high_volatility_probability": 0.16413130504403523,
-          "downside_cutoff": -0.43269526653568147,
-          "volatility_cutoff": 0.6889120657229116,
+          "downside_cutoff": -0.43269522331408666,
+          "volatility_cutoff": 0.688912005784947,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -12878,10 +12942,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Proxy only",
         "Expanding volatility thresholds are lagged one close to prevent look-ahead leakage."
       ]
@@ -13120,9 +13185,9 @@
       "outcomes": {
         "20": {
           "n": 923,
-          "absolute_mean": 0.03294288537209665,
+          "absolute_mean": 0.032942885191020635,
           "absolute_positive_probability": 0.5926327193932828,
-          "relative_mean": 0.02879251854326254,
+          "relative_mean": 0.028792518362186523,
           "relative_outperformance_probability": 0.5655471289274107,
           "relative_outperformance_interval_95": [
             0.4896803900325027,
@@ -13134,15 +13199,15 @@
             0.19176598049837487
           ],
           "high_volatility_probability": 0.09534127843986999,
-          "downside_cutoff": -0.14347262031115993,
-          "volatility_cutoff": 0.6478096722713644,
+          "downside_cutoff": -0.14347256047282533,
+          "volatility_cutoff": 0.6478097147484004,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 894,
-          "absolute_mean": 0.06664620039220759,
+          "absolute_mean": 0.06664619485003731,
           "absolute_positive_probability": 0.6331096196868009,
-          "relative_mean": 0.06508573438234205,
+          "relative_mean": 0.06508572884017177,
           "relative_outperformance_probability": 0.6387024608501118,
           "relative_outperformance_interval_95": [
             0.5335290827740492,
@@ -13154,15 +13219,15 @@
             0.2450223713646532
           ],
           "high_volatility_probability": 0.1174496644295302,
-          "downside_cutoff": -0.2261431544351914,
-          "volatility_cutoff": 0.6404021108739184,
+          "downside_cutoff": -0.22614342388454012,
+          "volatility_cutoff": 0.6404021459134286,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 834,
-          "absolute_mean": 0.1540774578753116,
+          "absolute_mean": 0.15407745080259483,
           "absolute_positive_probability": 0.7194244604316546,
-          "relative_mean": 0.12289435118487241,
+          "relative_mean": 0.1228943441121556,
           "relative_outperformance_probability": 0.6666666666666666,
           "relative_outperformance_interval_95": [
             0.5371103117505995,
@@ -13174,15 +13239,15 @@
             0.2374700239808153
           ],
           "high_volatility_probability": 0.1366906474820144,
-          "downside_cutoff": -0.3215947905811245,
-          "volatility_cutoff": 0.6638544992050507,
+          "downside_cutoff": -0.32159475624394573,
+          "volatility_cutoff": 0.6638545691521001,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 729,
-          "absolute_mean": 0.18940633635451257,
+          "absolute_mean": 0.18940633798981477,
           "absolute_positive_probability": 0.6049382716049383,
-          "relative_mean": 0.1451464645591872,
+          "relative_mean": 0.1451464661944894,
           "relative_outperformance_probability": 0.6063100137174211,
           "relative_outperformance_interval_95": [
             0.45809327846364883,
@@ -13194,8 +13259,8 @@
             0.3333333333333333
           ],
           "high_volatility_probability": 0.149519890260631,
-          "downside_cutoff": -0.43269526653568147,
-          "volatility_cutoff": 0.6889120657229116,
+          "downside_cutoff": -0.43269522331408666,
+          "volatility_cutoff": 0.688912005784947,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -13204,10 +13269,11 @@
         "parameter_stability": "Pass",
         "out_of_sample_validation": "validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Proxy only",
         "Transparent composite; the HMM cannot alter this label or the suggested action."
       ]
@@ -13237,15 +13303,15 @@
       "label_persistence": {
         "full_history": {
           "state_index": 1,
-          "probability": 0.9133071708883339,
+          "probability": 0.9136947218259629,
           "interval_95": [
-            0.9023162235765279,
-            0.9231667676973652
+            0.9027263348953121,
+            0.9235311007093174
           ],
-          "transitions": 2803,
-          "episodes": 244,
+          "transitions": 2804,
+          "episodes": 243,
           "median_run_days": 3.0,
-          "mean_run_days": 11.491803278688524,
+          "mean_run_days": 11.54320987654321,
           "classification": "High"
         },
         "recent_window": {
@@ -13270,12 +13336,12 @@
             ],
             [
               99,
-              2560,
-              144
+              2562,
+              143
             ],
             [
               0,
-              144,
+              143,
               2666
             ]
           ],
@@ -13286,14 +13352,14 @@
               0.0
             ],
             [
-              0.035319300749197285,
-              0.9133071708883339,
-              0.051373528362468786
+              0.03530670470756063,
+              0.9136947218259629,
+              0.05099857346647646
             ],
             [
               0.0,
-              0.05124555160142349,
-              0.9487544483985765
+              0.050907796368814526,
+              0.9490922036311855
             ]
           ],
           "by_state": [
@@ -13311,28 +13377,28 @@
             },
             {
               "state_index": 1,
-              "probability": 0.9133071708883339,
+              "probability": 0.9136947218259629,
               "interval_95": [
-                0.9023162235765279,
-                0.9231667676973652
+                0.9027263348953121,
+                0.9235311007093174
               ],
-              "transitions": 2803,
-              "episodes": 244,
+              "transitions": 2804,
+              "episodes": 243,
               "median_run_days": 3.0,
-              "mean_run_days": 11.491803278688524,
+              "mean_run_days": 11.54320987654321,
               "classification": "High"
             },
             {
               "state_index": 2,
-              "probability": 0.9487544483985765,
+              "probability": 0.9490922036311855,
               "interval_95": [
-                0.9399715289001415,
-                0.9563120429967272
+                0.94033249061988,
+                0.9566252335548477
               ],
-              "transitions": 2810,
-              "episodes": 144,
+              "transitions": 2809,
+              "episodes": 143,
               "median_run_days": 7.0,
-              "mean_run_days": 19.51388888888889
+              "mean_run_days": 19.643356643356643
             }
           ]
         },
@@ -13415,9 +13481,9 @@
       "exit_hazards": [
         {
           "age_bucket": "1–5",
-          "episodes_at_risk": 244,
-          "exited_in_bucket": 145,
-          "bucket_exit_probability": 0.5942622950819673,
+          "episodes_at_risk": 243,
+          "exited_in_bucket": 144,
+          "bucket_exit_probability": 0.5925925925925926,
           "bucket_days": 5
         },
         {
@@ -13446,9 +13512,9 @@
       "outcomes": {
         "20": {
           "n": 1448,
-          "absolute_mean": 0.025213428593295263,
+          "absolute_mean": 0.025213430987803383,
           "absolute_positive_probability": 0.5904696132596685,
-          "relative_mean": 0.012399460134177396,
+          "relative_mean": 0.012399462528685512,
           "relative_outperformance_probability": 0.544889502762431,
           "relative_outperformance_interval_95": [
             0.47370511049723757,
@@ -13460,15 +13526,15 @@
             0.24395718232044183
           ],
           "high_volatility_probability": 0.20027624309392264,
-          "downside_cutoff": -0.07064182582155916,
-          "volatility_cutoff": 0.3600567145022804,
+          "downside_cutoff": -0.0706417296046991,
+          "volatility_cutoff": 0.3600568862826181,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1412,
-          "absolute_mean": 0.05286249939990947,
+          "absolute_mean": 0.05286250222907697,
           "absolute_positive_probability": 0.6274787535410765,
-          "relative_mean": 0.019599427192141507,
+          "relative_mean": 0.019599430021309004,
           "relative_outperformance_probability": 0.5368271954674221,
           "relative_outperformance_interval_95": [
             0.4546742209631728,
@@ -13480,35 +13546,35 @@
             0.2982294617563739
           ],
           "high_volatility_probability": 0.1678470254957507,
-          "downside_cutoff": -0.12087594413344205,
-          "volatility_cutoff": 0.36207376423227283,
+          "downside_cutoff": -0.12087588685508721,
+          "volatility_cutoff": 0.3620737044517741,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1383,
-          "absolute_mean": 0.14637663113629176,
+          "absolute_mean": 0.14637663169291582,
           "absolute_positive_probability": 0.7295733911785972,
-          "relative_mean": 0.08478561229070428,
+          "relative_mean": 0.08478561284732834,
           "relative_outperformance_probability": 0.6326825741142444,
           "relative_outperformance_interval_95": [
             0.5457519884309473,
             0.7310737527114967
           ],
-          "downside_probability": 0.2010122921185828,
+          "downside_probability": 0.2024584237165582,
           "downside_probability_interval_95": [
-            0.11563629790310918,
-            0.2856109906001446
+            0.11641359363702097,
+            0.29067245119305857
           ],
           "high_volatility_probability": 0.1540130151843818,
-          "downside_cutoff": -0.14893619878870978,
-          "volatility_cutoff": 0.37976207120845384,
+          "downside_cutoff": -0.14893606869862708,
+          "volatility_cutoff": 0.3797621380771367,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1309,
-          "absolute_mean": 0.3222525648469447,
+          "absolute_mean": 0.3222525651438072,
           "absolute_positive_probability": 0.8029029793735676,
-          "relative_mean": 0.19427637623828115,
+          "relative_mean": 0.19427637653514368,
           "relative_outperformance_probability": 0.6508785332314744,
           "relative_outperformance_interval_95": [
             0.55,
@@ -13520,8 +13586,8 @@
             0.2139610389610389
           ],
           "high_volatility_probability": 0.0932009167303285,
-          "downside_cutoff": -0.1637630074349138,
-          "volatility_cutoff": 0.36465471443661907,
+          "downside_cutoff": -0.1637628996637972,
+          "volatility_cutoff": 0.36465483884960087,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -13530,10 +13596,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Proxy only"
       ]
     },
@@ -13771,9 +13838,9 @@
       "outcomes": {
         "20": {
           "n": 1285,
-          "absolute_mean": 0.02228987362975406,
+          "absolute_mean": 0.022289873076725305,
           "absolute_positive_probability": 0.598443579766537,
-          "relative_mean": 0.014712084256148677,
+          "relative_mean": 0.014712083703119926,
           "relative_outperformance_probability": 0.556420233463035,
           "relative_outperformance_interval_95": [
             0.47468871595330736,
@@ -13785,15 +13852,15 @@
             0.2319844357976653
           ],
           "high_volatility_probability": 0.08793774319066149,
-          "downside_cutoff": -0.07064182582155916,
-          "volatility_cutoff": 0.3600567145022804,
+          "downside_cutoff": -0.0706417296046991,
+          "volatility_cutoff": 0.3600568862826181,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1285,
-          "absolute_mean": 0.06888154710786817,
+          "absolute_mean": 0.06888154292001059,
           "absolute_positive_probability": 0.709727626459144,
-          "relative_mean": 0.04783426279879164,
+          "relative_mean": 0.04783425861093405,
           "relative_outperformance_probability": 0.6591439688715953,
           "relative_outperformance_interval_95": [
             0.5788132295719844,
@@ -13805,15 +13872,15 @@
             0.22568093385214008
           ],
           "high_volatility_probability": 0.06381322957198443,
-          "downside_cutoff": -0.12087594413344205,
-          "volatility_cutoff": 0.36207376423227283,
+          "downside_cutoff": -0.12087588685508721,
+          "volatility_cutoff": 0.3620737044517741,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1285,
-          "absolute_mean": 0.15629441145841505,
+          "absolute_mean": 0.1562944049136139,
           "absolute_positive_probability": 0.7626459143968871,
-          "relative_mean": 0.10319752902418673,
+          "relative_mean": 0.10319752247938557,
           "relative_outperformance_probability": 0.7058365758754864,
           "relative_outperformance_interval_95": [
             0.6069844357976654,
@@ -13821,19 +13888,19 @@
           ],
           "downside_probability": 0.20311284046692607,
           "downside_probability_interval_95": [
-            0.11589494163424126,
-            0.2942412451361867
+            0.11437743190661478,
+            0.29503891050583647
           ],
           "high_volatility_probability": 0.08171206225680934,
-          "downside_cutoff": -0.14893619878870978,
-          "volatility_cutoff": 0.37976207120845384,
+          "downside_cutoff": -0.14893606869862708,
+          "volatility_cutoff": 0.3797621380771367,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1278,
-          "absolute_mean": 0.3043356241190231,
+          "absolute_mean": 0.30433561337918275,
           "absolute_positive_probability": 0.7918622848200313,
-          "relative_mean": 0.2050116273431172,
+          "relative_mean": 0.20501161660327683,
           "relative_outperformance_probability": 0.7018779342723005,
           "relative_outperformance_interval_95": [
             0.6032668231611894,
@@ -13845,8 +13912,8 @@
             0.2832746478873239
           ],
           "high_volatility_probability": 0.12910798122065728,
-          "downside_cutoff": -0.1637630074349138,
-          "volatility_cutoff": 0.36465471443661907,
+          "downside_cutoff": -0.1637628996637972,
+          "volatility_cutoff": 0.36465483884960087,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -13855,10 +13922,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Proxy only",
         "Expanding volatility thresholds are lagged one close to prevent look-ahead leakage."
       ]
@@ -13888,15 +13956,15 @@
       "label_persistence": {
         "full_history": {
           "state_index": 1,
-          "probability": 0.8957925636007827,
+          "probability": 0.8963325183374083,
           "interval_95": [
-            0.8817961918423853,
-            0.9083039799677781
+            0.8823689806489649,
+            0.9088098005706279
           ],
-          "transitions": 2044,
-          "episodes": 214,
+          "transitions": 2045,
+          "episodes": 213,
           "median_run_days": 3.0,
-          "mean_run_days": 9.55607476635514,
+          "mean_run_days": 9.605633802816902,
           "classification": "Moderate"
         },
         "recent_window": {
@@ -13921,12 +13989,12 @@
             ],
             [
               102,
-              1831,
-              111
+              1833,
+              110
             ],
             [
               38,
-              117,
+              116,
               2105
             ]
           ],
@@ -13937,14 +14005,14 @@
               0.020276497695852536
             ],
             [
-              0.049902152641878667,
-              0.8957925636007827,
-              0.05430528375733855
+              0.04987775061124694,
+              0.8963325183374083,
+              0.05378973105134474
             ],
             [
-              0.016814159292035398,
-              0.05176991150442478,
-              0.9314159292035398
+              0.016821602478972998,
+              0.051350154935812305,
+              0.9318282425852147
             ]
           ],
           "by_state": [
@@ -13962,28 +14030,28 @@
             },
             {
               "state_index": 1,
-              "probability": 0.8957925636007827,
+              "probability": 0.8963325183374083,
               "interval_95": [
-                0.8817961918423853,
-                0.9083039799677781
+                0.8823689806489649,
+                0.9088098005706279
               ],
-              "transitions": 2044,
-              "episodes": 214,
+              "transitions": 2045,
+              "episodes": 213,
               "median_run_days": 3.0,
-              "mean_run_days": 9.55607476635514,
+              "mean_run_days": 9.605633802816902,
               "classification": "Moderate"
             },
             {
               "state_index": 2,
-              "probability": 0.9314159292035398,
+              "probability": 0.9318282425852147,
               "interval_95": [
-                0.9202465594888728,
-                0.9411211263068117
+                0.9206844634389301,
+                0.9415058021103685
               ],
-              "transitions": 2260,
-              "episodes": 155,
+              "transitions": 2259,
+              "episodes": 154,
               "median_run_days": 6.0,
-              "mean_run_days": 14.580645161290322
+              "mean_run_days": 14.668831168831169
             }
           ]
         },
@@ -14066,9 +14134,9 @@
       "exit_hazards": [
         {
           "age_bucket": "1–5",
-          "episodes_at_risk": 214,
-          "exited_in_bucket": 130,
-          "bucket_exit_probability": 0.6074766355140186,
+          "episodes_at_risk": 213,
+          "exited_in_bucket": 129,
+          "bucket_exit_probability": 0.6056338028169014,
           "bucket_days": 5
         },
         {
@@ -14097,9 +14165,9 @@
       "outcomes": {
         "20": {
           "n": 1073,
-          "absolute_mean": 0.024409798922067422,
+          "absolute_mean": 0.024409800494371466,
           "absolute_positive_probability": 0.5936626281453867,
-          "relative_mean": 0.015000245769624351,
+          "relative_mean": 0.015000247341928395,
           "relative_outperformance_probability": 0.5619757688723206,
           "relative_outperformance_interval_95": [
             0.48646318732525634,
@@ -14111,15 +14179,15 @@
             0.23115097856477165
           ],
           "high_volatility_probability": 0.11276794035414725,
-          "downside_cutoff": -0.07064182582155916,
-          "volatility_cutoff": 0.3600567145022804,
+          "downside_cutoff": -0.0706417296046991,
+          "volatility_cutoff": 0.3600568862826181,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1073,
-          "absolute_mean": 0.0622165600940068,
+          "absolute_mean": 0.06221656250008132,
           "absolute_positive_probability": 0.6533084808946877,
-          "relative_mean": 0.03554161980067217,
+          "relative_mean": 0.03554162220674669,
           "relative_outperformance_probability": 0.6001863932898416,
           "relative_outperformance_interval_95": [
             0.5003960857409133,
@@ -14131,35 +14199,35 @@
             0.2917287977632805
           ],
           "high_volatility_probability": 0.07921714818266543,
-          "downside_cutoff": -0.12087594413344205,
-          "volatility_cutoff": 0.36207376423227283,
+          "downside_cutoff": -0.12087588685508721,
+          "volatility_cutoff": 0.3620737044517741,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1073,
-          "absolute_mean": 0.1608803447612021,
+          "absolute_mean": 0.1608803405646771,
           "absolute_positive_probability": 0.7530288909599254,
-          "relative_mean": 0.09941350640078472,
+          "relative_mean": 0.09941350220425972,
           "relative_outperformance_probability": 0.684995340167754,
           "relative_outperformance_interval_95": [
             0.5917986952469712,
             0.783807082945014
           ],
-          "downside_probability": 0.1724137931034483,
+          "downside_probability": 0.17427772600186392,
           "downside_probability_interval_95": [
-            0.09960391425908668,
-            0.26656570363466914
+            0.09962721342031688,
+            0.267497670083877
           ],
           "high_volatility_probability": 0.10065237651444547,
-          "downside_cutoff": -0.14893619878870978,
-          "volatility_cutoff": 0.37976207120845384,
+          "downside_cutoff": -0.14893606869862708,
+          "volatility_cutoff": 0.3797621380771367,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1022,
-          "absolute_mean": 0.32612556421963534,
+          "absolute_mean": 0.3261255704882731,
           "absolute_positive_probability": 0.8101761252446184,
-          "relative_mean": 0.21214348650371295,
+          "relative_mean": 0.21214349277235078,
           "relative_outperformance_probability": 0.6565557729941291,
           "relative_outperformance_interval_95": [
             0.5400929549902153,
@@ -14171,8 +14239,8 @@
             0.18202054794520545
           ],
           "high_volatility_probability": 0.0821917808219178,
-          "downside_cutoff": -0.1637630074349138,
-          "volatility_cutoff": 0.36465471443661907,
+          "downside_cutoff": -0.1637628996637972,
+          "volatility_cutoff": 0.36465483884960087,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -14181,10 +14249,11 @@
         "parameter_stability": "Unproven",
         "out_of_sample_validation": "failed_validation",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Proxy only",
         "Transparent composite; the HMM cannot alter this label or the suggested action."
       ]
@@ -14507,10 +14576,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Benchmark only; used for relative-return outcomes and market HMM"
       ]
     },
@@ -14832,10 +14902,11 @@
         "parameter_stability": "Pending walk-forward validation",
         "out_of_sample_validation": "Not validated",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Benchmark only; used for relative-return outcomes and market HMM",
         "Expanding volatility thresholds are lagged one close to prevent look-ahead leakage."
       ]
@@ -15158,10 +15229,11 @@
         "parameter_stability": "Unproven",
         "out_of_sample_validation": "failed_validation",
         "data_quality": "Pass",
-        "freshness": "Current"
+        "freshness": "Delayed"
       },
       "warnings": [
         "Data source is Yahoo Finance via yfinance; validate adjusted prices before capital decisions.",
+        "Market data is 2 expected weekday sessions behind.",
         "Benchmark only; used for relative-return outcomes and market HMM",
         "Transparent composite; the HMM cannot alter this label or the suggested action."
       ]
@@ -15190,14 +15262,14 @@
           },
           "downside_risk": {
             "n": 91,
-            "brier": 0.1694992013395435,
-            "log_loss": 0.5243039478919247,
-            "baseline_brier": 0.16534158334600152,
-            "brier_skill": -0.004157617993541973,
+            "brier": 0.16950017596937275,
+            "log_loss": 0.5243040352793386,
+            "baseline_brier": 0.16534338131029422,
+            "brier_skill": -0.004156794659078533,
             "holdout_n": 23,
-            "holdout_brier": 0.16740843658630378,
-            "holdout_baseline_brier": 0.17042560461443568,
-            "holdout_brier_skill": 0.0030171680281319
+            "holdout_brier": 0.16741229273041094,
+            "holdout_baseline_brier": 0.1704263477733763,
+            "holdout_brier_skill": 0.003014055042965369
           }
         },
         "63": {
@@ -15214,14 +15286,14 @@
           },
           "downside_risk": {
             "n": 89,
-            "brier": 0.15699560388239192,
-            "log_loss": 0.49316560613661375,
-            "baseline_brier": 0.15463202690125658,
-            "brier_skill": -0.0023635769811353458,
+            "brier": 0.15700363519941238,
+            "log_loss": 0.4931898217350803,
+            "baseline_brier": 0.15464725982773547,
+            "brier_skill": -0.0023563753716769054,
             "holdout_n": 21,
-            "holdout_brier": 0.2038455215340907,
-            "holdout_baseline_brier": 0.2113888092199836,
-            "holdout_brier_skill": 0.007543287685892908
+            "holdout_brier": 0.2038795590205107,
+            "holdout_baseline_brier": 0.21141601273579372,
+            "holdout_brier_skill": 0.007536453715283026
           }
         },
         "126": {
@@ -15262,10 +15334,10 @@
           },
           "downside_risk": {
             "n": 80,
-            "brier": 0.16232997512099115,
-            "log_loss": 0.5064050015596834,
-            "baseline_brier": 0.16006707214651988,
-            "brier_skill": -0.0022629029744712648,
+            "brier": 0.1623896502553815,
+            "log_loss": 0.5065560607998719,
+            "baseline_brier": 0.1601055787802471,
+            "brier_skill": -0.0022840714751344027,
             "holdout_n": 12,
             "holdout_brier": 0.1958437383963326,
             "holdout_baseline_brier": 0.19000118122374254,
@@ -15409,97 +15481,97 @@
         "20": {
           "relative_return": {
             "n": 99,
-            "brier": 0.24557261131271968,
-            "log_loss": 0.6843498623375025,
+            "brier": 0.24560796245502534,
+            "log_loss": 0.6844216952938982,
             "baseline_brier": 0.24973940623461224,
-            "brier_skill": 0.004166794921892564,
+            "brier_skill": 0.0041314437795869074,
             "holdout_n": 23,
-            "holdout_brier": 0.23895320010167054,
+            "holdout_brier": 0.23890192035713415,
             "holdout_baseline_brier": 0.24203233117446457,
-            "holdout_brier_skill": 0.0030791310727940335
+            "holdout_brier_skill": 0.0031304108173304257
           },
           "downside_risk": {
             "n": 99,
-            "brier": 0.194073977602994,
-            "log_loss": 0.5822756845640995,
-            "baseline_brier": 0.19149791124984084,
-            "brier_skill": -0.0025760663531531613,
+            "brier": 0.19404560410469204,
+            "log_loss": 0.5821880375104859,
+            "baseline_brier": 0.19148695089446807,
+            "brier_skill": -0.002558653210223971,
             "holdout_n": 23,
-            "holdout_brier": 0.18981517063805348,
-            "holdout_baseline_brier": 0.19652650261087903,
-            "holdout_brier_skill": 0.006711331972825557
+            "holdout_brier": 0.1898409972444972,
+            "holdout_baseline_brier": 0.19653256540148484,
+            "holdout_brier_skill": 0.006691568156987626
           }
         },
         "63": {
           "relative_return": {
             "n": 97,
-            "brier": 0.24541851250594482,
-            "log_loss": 0.6850836108875012,
+            "brier": 0.24544508741976995,
+            "log_loss": 0.6851400498018879,
             "baseline_brier": 0.2395671941019333,
-            "brier_skill": -0.005851318404011513,
+            "brier_skill": -0.005877893317836641,
             "holdout_n": 21,
-            "holdout_brier": 0.2137865912943657,
+            "holdout_brier": 0.21379674861177037,
             "holdout_baseline_brier": 0.2093820344973658,
-            "holdout_brier_skill": -0.004404556796999887
+            "holdout_brier_skill": -0.004414714114404555
           },
           "downside_risk": {
             "n": 97,
-            "brier": 0.1978494196587015,
-            "log_loss": 0.6022846505573572,
-            "baseline_brier": 0.18846380737722948,
-            "brier_skill": -0.009385612281472028,
+            "brier": 0.19798921766172678,
+            "log_loss": 0.6030278301296769,
+            "baseline_brier": 0.18848448666310702,
+            "brier_skill": -0.00950473099861976,
             "holdout_n": 21,
-            "holdout_brier": 0.16523526414227013,
+            "holdout_brier": 0.16519631774905882,
             "holdout_baseline_brier": 0.15432867517776647,
-            "holdout_brier_skill": -0.010906588964503666
+            "holdout_brier_skill": -0.010867642571292357
           }
         },
         "126": {
           "relative_return": {
             "n": 94,
-            "brier": 0.2692278327175748,
-            "log_loss": 0.7383747647718485,
+            "brier": 0.26910693796022905,
+            "log_loss": 0.7381184248371346,
             "baseline_brier": 0.25544106332381816,
-            "brier_skill": -0.013786769393756615,
+            "brier_skill": -0.01366587463641089,
             "holdout_n": 18,
-            "holdout_brier": 0.16971370679253492,
+            "holdout_brier": 0.16965799540587087,
             "holdout_baseline_brier": 0.16972361084050017,
-            "holdout_brier_skill": 9.904047965247909e-06
+            "holdout_brier_skill": 6.561543462929587e-05
           },
           "downside_risk": {
             "n": 94,
-            "brier": 0.22125446832961274,
-            "log_loss": 0.6762807104406283,
+            "brier": 0.22125608362793156,
+            "log_loss": 0.6762256236906703,
             "baseline_brier": 0.2123206792654538,
-            "brier_skill": -0.008933789064158926,
+            "brier_skill": -0.00893540436247775,
             "holdout_n": 18,
-            "holdout_brier": 0.11843407965572651,
+            "holdout_brier": 0.1184104403364225,
             "holdout_baseline_brier": 0.10683782226462492,
-            "holdout_brier_skill": -0.011596257391101594
+            "holdout_brier_skill": -0.011572618071797589
           }
         },
         "252": {
           "relative_return": {
             "n": 88,
-            "brier": 0.20499828839150958,
-            "log_loss": 0.6103590312542352,
+            "brier": 0.20493750260947766,
+            "log_loss": 0.6101691398689166,
             "baseline_brier": 0.19777023688455495,
-            "brier_skill": -0.00722805150695463,
+            "brier_skill": -0.007167265724922711,
             "holdout_n": 12,
-            "holdout_brier": 0.09015142518161356,
+            "holdout_brier": 0.09003891401553747,
             "holdout_baseline_brier": 0.07925263186450185,
-            "holdout_brier_skill": -0.010898793317111716
+            "holdout_brier_skill": -0.010786282151035623
           },
           "downside_risk": {
             "n": 88,
-            "brier": 0.2388553193354982,
-            "log_loss": 0.7011559758099506,
+            "brier": 0.23889530289216523,
+            "log_loss": 0.7012077772404438,
             "baseline_brier": 0.23724172586406567,
-            "brier_skill": -0.0016135934714325284,
+            "brier_skill": -0.0016535770280995676,
             "holdout_n": 12,
-            "holdout_brier": 0.049747504633631985,
+            "holdout_brier": 0.049747179134440093,
             "holdout_baseline_brier": 0.04010124389566295,
-            "holdout_brier_skill": -0.009646260737969037
+            "holdout_brier_skill": -0.009645935238777145
           }
         }
       }
@@ -15632,10 +15704,10 @@
           },
           "downside_risk": {
             "n": 99,
-            "brier": 0.11166881434212372,
-            "log_loss": 0.38789934483701066,
-            "baseline_brier": 0.11275328504036071,
-            "brier_skill": 0.0010844706982369862,
+            "brier": 0.11165845586316278,
+            "log_loss": 0.38786241240061564,
+            "baseline_brier": 0.11275607633019126,
+            "brier_skill": 0.001097620467028479,
             "holdout_n": 23,
             "holdout_brier": 0.13326760394158293,
             "holdout_baseline_brier": 0.14435182453419482,
@@ -15656,14 +15728,14 @@
           },
           "downside_risk": {
             "n": 97,
-            "brier": 0.11785544912443251,
-            "log_loss": 0.40182580434863796,
-            "baseline_brier": 0.10810249733434983,
-            "brier_skill": -0.009752951790082676,
+            "brier": 0.11785195539373812,
+            "log_loss": 0.40181628955483784,
+            "baseline_brier": 0.10810110160191848,
+            "brier_skill": -0.009750853791819641,
             "holdout_n": 21,
-            "holdout_brier": 0.1761018926562868,
-            "holdout_baseline_brier": 0.18288811030404478,
-            "holdout_brier_skill": 0.006786217647757969
+            "holdout_brier": 0.1760857549478414,
+            "holdout_baseline_brier": 0.18288166334948103,
+            "holdout_brier_skill": 0.006795908401639628
           }
         },
         "126": {
@@ -15682,12 +15754,12 @@
             "n": 94,
             "brier": 0.13398430354415772,
             "log_loss": 0.43874663540498854,
-            "baseline_brier": 0.11030155488753927,
-            "brier_skill": -0.023682748656618444,
+            "baseline_brier": 0.11030477949028052,
+            "brier_skill": -0.0236795240538772,
             "holdout_n": 18,
             "holdout_brier": 0.17052398952644487,
-            "holdout_baseline_brier": 0.1733776855594829,
-            "holdout_brier_skill": 0.0028536960330380334
+            "holdout_baseline_brier": 0.17338505483378155,
+            "holdout_brier_skill": 0.00286106530733668
           }
         },
         "252": {
@@ -15764,8 +15836,8 @@
             "n": 97,
             "brier": 0.19668455381736066,
             "log_loss": 0.6113440809886821,
-            "baseline_brier": 0.18841032735394983,
-            "brier_skill": -0.008274226463410833,
+            "baseline_brier": 0.18841182330258285,
+            "brier_skill": -0.00827273051477781,
             "holdout_n": 21,
             "holdout_brier": 0.2989924030829681,
             "holdout_baseline_brier": 0.297022100357567,
@@ -15944,26 +16016,26 @@
       "current_label": "Constructive",
       "current_probabilities": {
         "Constructive": 0.9998855529277751,
-        "Neutral": 0.00011442077759343699,
+        "Neutral": 0.00011442077759406138,
         "Defensive": 2.6294352415282212e-08
       },
       "identified": true,
       "high_conviction": true,
       "transition_matrix": [
         [
-          0.9777930717692771,
-          1.2278000824226813e-15,
-          0.022206928230721658
+          0.9777930717691036,
+          1.227800082872212e-15,
+          0.02220692823089521
         ],
         [
-          1.1220352045412803e-20,
-          0.96940246074433,
-          0.030597539255669996
+          1.1220352037477194e-20,
+          0.9694024607447422,
+          0.03059753925525776
         ],
         [
-          0.024158356463187897,
-          0.01683455998551904,
-          0.959007083551293
+          0.024158356462719716,
+          0.016834559985382684,
+          0.9590070835518976
         ]
       ],
       "label_stability_across_converged_fits": 0.7,
@@ -15998,16 +16070,16 @@
           "components": 2,
           "seed": 11,
           "converged": true,
-          "log_likelihood": -11189.44191472913,
-          "bic": 22508.447518636887,
+          "log_likelihood": -11189.441914729565,
+          "bic": 22508.447518637757,
           "current_mapped_label": "Constructive"
         },
         {
           "components": 2,
           "seed": 29,
           "converged": true,
-          "log_likelihood": -11189.44185414693,
-          "bic": 22508.447397472486,
+          "log_likelihood": -11189.441854146116,
+          "bic": 22508.44739747086,
           "current_mapped_label": "Constructive"
         },
         {
@@ -16030,8 +16102,8 @@
           "components": 2,
           "seed": 101,
           "converged": true,
-          "log_likelihood": -11189.441863546474,
-          "bic": 22508.447416271574,
+          "log_likelihood": -11189.441863546439,
+          "bic": 22508.447416271505,
           "current_mapped_label": "Constructive"
         },
         {
@@ -16046,32 +16118,32 @@
           "components": 3,
           "seed": 29,
           "converged": true,
-          "log_likelihood": -10032.568948827056,
-          "bic": 20283.776623143047,
+          "log_likelihood": -10032.568948827598,
+          "bic": 20283.77662314413,
           "current_mapped_label": "Neutral"
         },
         {
           "components": 3,
           "seed": 47,
           "converged": true,
-          "log_likelihood": -10032.568960427017,
-          "bic": 20283.77664634297,
+          "log_likelihood": -10032.568960427656,
+          "bic": 20283.776646344246,
           "current_mapped_label": "Neutral"
         },
         {
           "components": 3,
           "seed": 71,
           "converged": true,
-          "log_likelihood": -10032.569000726724,
-          "bic": 20283.776726942382,
+          "log_likelihood": -10032.569000726518,
+          "bic": 20283.77672694197,
           "current_mapped_label": "Neutral"
         },
         {
           "components": 3,
           "seed": 101,
           "converged": true,
-          "log_likelihood": -9866.186938673352,
-          "bic": 19951.01260283564,
+          "log_likelihood": -9866.186938673123,
+          "bic": 19951.01260283518,
           "current_mapped_label": "Constructive"
         }
       ],
