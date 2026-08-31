@@ -1,9 +1,9 @@
 {
   "schema": "regime_monitor.v2",
   "model_version": "regime_monitor.v2",
-  "attempted_run_at": "2026-08-28T18:16:13+02:00",
-  "market_data_date": "2026-08-28",
-  "latest_successful_publication": "2026-08-28T18:16:13+02:00",
+  "attempted_run_at": "2026-08-31T18:35:50+02:00",
+  "market_data_date": "2026-08-31",
+  "latest_successful_publication": "2026-08-31T18:35:50+02:00",
   "status": "valid",
   "universe": [
     {
@@ -125,7 +125,7 @@
       "hard_failures": [],
       "warnings": [],
       "date_start": "2012-10-18",
-      "market_data_date": "2026-08-28",
+      "market_data_date": "2026-08-31",
       "price_rows": 3475,
       "source": "yahoo_finance"
     },
@@ -136,7 +136,7 @@
       "hard_failures": [],
       "warnings": [],
       "date_start": "2019-06-20",
-      "market_data_date": "2026-08-28",
+      "market_data_date": "2026-08-31",
       "price_rows": 1808,
       "source": "yahoo_finance"
     },
@@ -147,7 +147,7 @@
       "hard_failures": [],
       "warnings": [],
       "date_start": "2000-12-05",
-      "market_data_date": "2026-08-28",
+      "market_data_date": "2026-08-31",
       "price_rows": 6517,
       "source": "yahoo_finance"
     },
@@ -158,7 +158,7 @@
       "hard_failures": [],
       "warnings": [],
       "date_start": "2024-04-29",
-      "market_data_date": "2026-08-28",
+      "market_data_date": "2026-08-31",
       "price_rows": 584,
       "source": "yahoo_finance"
     },
@@ -169,7 +169,7 @@
       "hard_failures": [],
       "warnings": [],
       "date_start": "2025-03-06",
-      "market_data_date": "2026-08-28",
+      "market_data_date": "2026-08-31",
       "price_rows": 370,
       "source": "yahoo_finance"
     },
@@ -183,7 +183,7 @@
         "hybrid_trend_risk: insufficient warm-up history; no metrics produced."
       ],
       "date_start": "2025-08-20",
-      "market_data_date": "2026-08-28",
+      "market_data_date": "2026-08-31",
       "price_rows": 257,
       "source": "yahoo_finance"
     },
@@ -194,7 +194,7 @@
       "hard_failures": [],
       "warnings": [],
       "date_start": "2000-01-03",
-      "market_data_date": "2026-08-28",
+      "market_data_date": "2026-08-31",
       "price_rows": 6758,
       "source": "yahoo_finance"
     },
@@ -205,7 +205,7 @@
       "hard_failures": [],
       "warnings": [],
       "date_start": "2000-01-03",
-      "market_data_date": "2026-08-28",
+      "market_data_date": "2026-08-31",
       "price_rows": 6758,
       "source": "yahoo_finance"
     },
@@ -216,7 +216,7 @@
       "hard_failures": [],
       "warnings": [],
       "date_start": "2000-01-03",
-      "market_data_date": "2026-08-28",
+      "market_data_date": "2026-08-31",
       "price_rows": 6758,
       "source": "yahoo_finance"
     },
@@ -227,7 +227,7 @@
       "hard_failures": [],
       "warnings": [],
       "date_start": "2000-01-03",
-      "market_data_date": "2026-08-28",
+      "market_data_date": "2026-08-31",
       "price_rows": 6758,
       "source": "yahoo_finance"
     },
@@ -238,8 +238,8 @@
       "hard_failures": [],
       "warnings": [],
       "date_start": "2013-03-05",
-      "market_data_date": "2026-08-28",
-      "price_rows": 3361,
+      "market_data_date": "2026-08-31",
+      "price_rows": 3362,
       "source": "yahoo_finance"
     }
   },
@@ -260,7 +260,7 @@
         "hard_failures": [],
         "warnings": [],
         "date_start": "2012-10-18",
-        "market_data_date": "2026-08-28",
+        "market_data_date": "2026-08-31",
         "price_rows": 3475,
         "source": "yahoo_finance"
       },
@@ -737,7 +737,7 @@
         "hard_failures": [],
         "warnings": [],
         "date_start": "2019-06-20",
-        "market_data_date": "2026-08-28",
+        "market_data_date": "2026-08-31",
         "price_rows": 1808,
         "source": "yahoo_finance"
       },
@@ -1214,7 +1214,7 @@
         "hard_failures": [],
         "warnings": [],
         "date_start": "2000-12-05",
-        "market_data_date": "2026-08-28",
+        "market_data_date": "2026-08-31",
         "price_rows": 6517,
         "source": "yahoo_finance"
       },
@@ -1691,7 +1691,7 @@
         "hard_failures": [],
         "warnings": [],
         "date_start": "2024-04-29",
-        "market_data_date": "2026-08-28",
+        "market_data_date": "2026-08-31",
         "price_rows": 584,
         "source": "yahoo_finance"
       },
@@ -2168,7 +2168,7 @@
         "hard_failures": [],
         "warnings": [],
         "date_start": "2025-03-06",
-        "market_data_date": "2026-08-28",
+        "market_data_date": "2026-08-31",
         "price_rows": 370,
         "source": "yahoo_finance"
       },
@@ -2648,7 +2648,7 @@
           "hybrid_trend_risk: insufficient warm-up history; no metrics produced."
         ],
         "date_start": "2025-08-20",
-        "market_data_date": "2026-08-28",
+        "market_data_date": "2026-08-31",
         "price_rows": 257,
         "source": "yahoo_finance"
       },
@@ -2697,7 +2697,7 @@
         "hard_failures": [],
         "warnings": [],
         "date_start": "2000-01-03",
-        "market_data_date": "2026-08-28",
+        "market_data_date": "2026-08-31",
         "price_rows": 6758,
         "source": "yahoo_finance"
       },
@@ -2708,9 +2708,9 @@
         ],
         "outcomes": {
           "20": {
-            "downside_probability": 0.19872306464485234,
-            "relative_outperformance_probability": 0.4652833200319234,
-            "high_volatility_probability": 0.16201117318435754,
+            "downside_probability": 0.1988817891373802,
+            "relative_outperformance_probability": 0.46565495207667734,
+            "high_volatility_probability": 0.1621405750798722,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -2722,9 +2722,9 @@
             }
           },
           "63": {
-            "downside_probability": 0.20709105560032232,
-            "relative_outperformance_probability": 0.572119258662369,
-            "high_volatility_probability": 0.1579371474617244,
+            "downside_probability": 0.20725806451612902,
+            "relative_outperformance_probability": 0.5725806451612904,
+            "high_volatility_probability": 0.15806451612903225,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -2741,15 +2741,15 @@
         "label_persistence": {
           "full_history": {
             "state_index": 1,
-            "probability": 0.8800172637030643,
+            "probability": 0.8799654576856649,
             "interval_95": [
-              0.8661530710451981,
-              0.8926234003865445
+              0.8660957626862957,
+              0.8925767259870689
             ],
-            "transitions": 2317,
+            "transitions": 2316,
             "episodes": 279,
             "median_run_days": 3.0,
-            "mean_run_days": 8.308243727598565,
+            "mean_run_days": 8.304659498207885,
             "classification": "Moderate"
           },
           "recent_window": {
@@ -2768,13 +2768,13 @@
           "full_detail": {
             "transition_counts": [
               [
-                2254,
+                2255,
                 159,
                 26
               ],
               [
                 160,
-                2039,
+                2038,
                 118
               ],
               [
@@ -2785,14 +2785,14 @@
             ],
             "transition_matrix": [
               [
-                0.924149241492415,
-                0.06519065190651907,
-                0.01066010660106601
+                0.9241803278688525,
+                0.0651639344262295,
+                0.010655737704918032
               ],
               [
-                0.06905481225722918,
-                0.8800172637030643,
-                0.050927924039706515
+                0.0690846286701209,
+                0.8799654576856649,
+                0.05094991364421416
               ],
               [
                 0.014459224985540775,
@@ -2803,27 +2803,27 @@
             "by_state": [
               {
                 "state_index": 0,
-                "probability": 0.924149241492415,
+                "probability": 0.9241803278688525,
                 "interval_95": [
-                  0.9129617822843134,
-                  0.9340026709164183
+                  0.9129972217307258,
+                  0.9340298523644204
                 ],
-                "transitions": 2439,
+                "transitions": 2440,
                 "episodes": 185,
-                "median_run_days": 6.0,
-                "mean_run_days": 13.183783783783785
+                "median_run_days": 7.0,
+                "mean_run_days": 13.18918918918919
               },
               {
                 "state_index": 1,
-                "probability": 0.8800172637030643,
+                "probability": 0.8799654576856649,
                 "interval_95": [
-                  0.8661530710451981,
-                  0.8926234003865445
+                  0.8660957626862957,
+                  0.8925767259870689
                 ],
-                "transitions": 2317,
+                "transitions": 2316,
                 "episodes": 279,
                 "median_run_days": 3.0,
-                "mean_run_days": 8.308243727598565,
+                "mean_run_days": 8.304659498207885,
                 "classification": "Moderate"
               },
               {
@@ -2916,8 +2916,8 @@
             ]
           }
         },
-        "downside_probability": 0.20709105560032232,
-        "relative_outperformance_probability": 0.572119258662369,
+        "downside_probability": 0.20725806451612902,
+        "relative_outperformance_probability": 0.5725806451612904,
         "probability_calibration": "descriptive_in_sample",
         "evidence_support": "Strong",
         "suggested_action": {
@@ -2936,9 +2936,9 @@
         ],
         "outcomes": {
           "126": {
-            "downside_probability": 0.185125303152789,
-            "relative_outperformance_probability": 0.6257073565076798,
-            "high_volatility_probability": 0.1608730800323363,
+            "downside_probability": 0.18527508090614886,
+            "relative_outperformance_probability": 0.6262135922330098,
+            "high_volatility_probability": 0.1610032362459547,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -2950,9 +2950,9 @@
             }
           },
           "252": {
-            "downside_probability": 0.1956521739130435,
-            "relative_outperformance_probability": 0.7876254180602007,
-            "high_volatility_probability": 0.20652173913043478,
+            "downside_probability": 0.19581589958158996,
+            "relative_outperformance_probability": 0.7882845188284519,
+            "high_volatility_probability": 0.20669456066945607,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -2969,15 +2969,15 @@
         "label_persistence": {
           "full_history": {
             "state_index": 1,
-            "probability": 0.8800172637030643,
+            "probability": 0.8799654576856649,
             "interval_95": [
-              0.8661530710451981,
-              0.8926234003865445
+              0.8660957626862957,
+              0.8925767259870689
             ],
-            "transitions": 2317,
+            "transitions": 2316,
             "episodes": 279,
             "median_run_days": 3.0,
-            "mean_run_days": 8.308243727598565,
+            "mean_run_days": 8.304659498207885,
             "classification": "Moderate"
           },
           "recent_window": {
@@ -2996,13 +2996,13 @@
           "full_detail": {
             "transition_counts": [
               [
-                2254,
+                2255,
                 159,
                 26
               ],
               [
                 160,
-                2039,
+                2038,
                 118
               ],
               [
@@ -3013,14 +3013,14 @@
             ],
             "transition_matrix": [
               [
-                0.924149241492415,
-                0.06519065190651907,
-                0.01066010660106601
+                0.9241803278688525,
+                0.0651639344262295,
+                0.010655737704918032
               ],
               [
-                0.06905481225722918,
-                0.8800172637030643,
-                0.050927924039706515
+                0.0690846286701209,
+                0.8799654576856649,
+                0.05094991364421416
               ],
               [
                 0.014459224985540775,
@@ -3031,27 +3031,27 @@
             "by_state": [
               {
                 "state_index": 0,
-                "probability": 0.924149241492415,
+                "probability": 0.9241803278688525,
                 "interval_95": [
-                  0.9129617822843134,
-                  0.9340026709164183
+                  0.9129972217307258,
+                  0.9340298523644204
                 ],
-                "transitions": 2439,
+                "transitions": 2440,
                 "episodes": 185,
-                "median_run_days": 6.0,
-                "mean_run_days": 13.183783783783785
+                "median_run_days": 7.0,
+                "mean_run_days": 13.18918918918919
               },
               {
                 "state_index": 1,
-                "probability": 0.8800172637030643,
+                "probability": 0.8799654576856649,
                 "interval_95": [
-                  0.8661530710451981,
-                  0.8926234003865445
+                  0.8660957626862957,
+                  0.8925767259870689
                 ],
-                "transitions": 2317,
+                "transitions": 2316,
                 "episodes": 279,
                 "median_run_days": 3.0,
-                "mean_run_days": 8.308243727598565,
+                "mean_run_days": 8.304659498207885,
                 "classification": "Moderate"
               },
               {
@@ -3144,8 +3144,8 @@
             ]
           }
         },
-        "downside_probability": 0.1956521739130435,
-        "relative_outperformance_probability": 0.7876254180602007,
+        "downside_probability": 0.19581589958158996,
+        "relative_outperformance_probability": 0.7882845188284519,
         "probability_calibration": "descriptive_in_sample",
         "evidence_support": "Strong",
         "suggested_action": {
@@ -3174,7 +3174,7 @@
         "hard_failures": [],
         "warnings": [],
         "date_start": "2000-01-03",
-        "market_data_date": "2026-08-28",
+        "market_data_date": "2026-08-31",
         "price_rows": 6758,
         "source": "yahoo_finance"
       },
@@ -3186,7 +3186,7 @@
         "outcomes": {
           "20": {
             "downside_probability": 0.18779031187790313,
-            "relative_outperformance_probability": 0.5500995355009953,
+            "relative_outperformance_probability": 0.5494359654943597,
             "high_volatility_probability": 0.21698739216987392,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
@@ -3651,7 +3651,7 @@
         "hard_failures": [],
         "warnings": [],
         "date_start": "2000-01-03",
-        "market_data_date": "2026-08-28",
+        "market_data_date": "2026-08-31",
         "price_rows": 6758,
         "source": "yahoo_finance"
       },
@@ -4129,7 +4129,7 @@
         "hard_failures": [],
         "warnings": [],
         "date_start": "2000-01-03",
-        "market_data_date": "2026-08-28",
+        "market_data_date": "2026-08-31",
         "price_rows": 6758,
         "source": "yahoo_finance"
       },
@@ -4140,9 +4140,9 @@
         ],
         "outcomes": {
           "20": {
-            "downside_probability": 0.17148182665424044,
-            "relative_outperformance_probability": 0.5619757688723206,
-            "high_volatility_probability": 0.11369990680335508,
+            "downside_probability": 0.17164179104477612,
+            "relative_outperformance_probability": 0.5615671641791045,
+            "high_volatility_probability": 0.11380597014925373,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -4154,9 +4154,9 @@
             }
           },
           "63": {
-            "downside_probability": 0.19944082013047532,
-            "relative_outperformance_probability": 0.6001863932898416,
-            "high_volatility_probability": 0.07921714818266543,
+            "downside_probability": 0.19962686567164178,
+            "relative_outperformance_probability": 0.6007462686567164,
+            "high_volatility_probability": 0.07929104477611941,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -4173,15 +4173,15 @@
         "label_persistence": {
           "full_history": {
             "state_index": 1,
-            "probability": 0.8963503649635036,
+            "probability": 0.8958130477117819,
             "interval_95": [
-              0.8824236490601015,
-              0.9087979777032201
+              0.8818537318456708,
+              0.90829454778868
             ],
-            "transitions": 2055,
-            "episodes": 214,
+            "transitions": 2054,
+            "episodes": 215,
             "median_run_days": 3.0,
-            "mean_run_days": 9.607476635514018,
+            "mean_run_days": 9.55813953488372,
             "classification": "Moderate"
           },
           "recent_window": {
@@ -4201,12 +4201,12 @@
             "transition_counts": [
               [
                 2029,
-                97,
+                98,
                 44
               ],
               [
-                102,
-                1842,
+                103,
+                1840,
                 111
               ],
               [
@@ -4217,14 +4217,14 @@
             ],
             "transition_matrix": [
               [
-                0.9350230414746544,
-                0.04470046082949309,
-                0.020276497695852536
+                0.9345923537540304,
+                0.04514048825426071,
+                0.02026715799170889
               ],
               [
-                0.049635036496350364,
-                0.8963503649635036,
-                0.05401459854014599
+                0.0501460564751704,
+                0.8958130477117819,
+                0.05404089581304771
               ],
               [
                 0.016814159292035398,
@@ -4235,27 +4235,27 @@
             "by_state": [
               {
                 "state_index": 0,
-                "probability": 0.9350230414746544,
+                "probability": 0.9345923537540304,
                 "interval_95": [
-                  0.9238640450928689,
-                  0.9446444975718774
+                  0.9234051350142718,
+                  0.9442442606934431
                 ],
-                "transitions": 2170,
-                "episodes": 141,
+                "transitions": 2171,
+                "episodes": 142,
                 "median_run_days": 7.0,
-                "mean_run_days": 15.390070921985815
+                "mean_run_days": 15.288732394366198
               },
               {
                 "state_index": 1,
-                "probability": 0.8963503649635036,
+                "probability": 0.8958130477117819,
                 "interval_95": [
-                  0.8824236490601015,
-                  0.9087979777032201
+                  0.8818537318456708,
+                  0.90829454778868
                 ],
-                "transitions": 2055,
-                "episodes": 214,
+                "transitions": 2054,
+                "episodes": 215,
                 "median_run_days": 3.0,
-                "mean_run_days": 9.607476635514018,
+                "mean_run_days": 9.55813953488372,
                 "classification": "Moderate"
               },
               {
@@ -4348,8 +4348,8 @@
             ]
           }
         },
-        "downside_probability": 0.19944082013047532,
-        "relative_outperformance_probability": 0.6001863932898416,
+        "downside_probability": 0.19962686567164178,
+        "relative_outperformance_probability": 0.6007462686567164,
         "probability_calibration": "descriptive_in_sample",
         "evidence_support": "Strong",
         "suggested_action": {
@@ -4369,9 +4369,9 @@
         ],
         "outcomes": {
           "126": {
-            "downside_probability": 0.16868592730661697,
-            "relative_outperformance_probability": 0.684995340167754,
-            "high_volatility_probability": 0.09506057781919851,
+            "downside_probability": 0.16884328358208955,
+            "relative_outperformance_probability": 0.6856343283582089,
+            "high_volatility_probability": 0.09514925373134328,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -4383,9 +4383,9 @@
             }
           },
           "252": {
-            "downside_probability": 0.11798839458413926,
-            "relative_outperformance_probability": 0.648936170212766,
-            "high_volatility_probability": 0.09187620889748549,
+            "downside_probability": 0.1181026137463698,
+            "relative_outperformance_probability": 0.6495643756050339,
+            "high_volatility_probability": 0.09196515004840271,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -4402,15 +4402,15 @@
         "label_persistence": {
           "full_history": {
             "state_index": 1,
-            "probability": 0.8963503649635036,
+            "probability": 0.8958130477117819,
             "interval_95": [
-              0.8824236490601015,
-              0.9087979777032201
+              0.8818537318456708,
+              0.90829454778868
             ],
-            "transitions": 2055,
-            "episodes": 214,
+            "transitions": 2054,
+            "episodes": 215,
             "median_run_days": 3.0,
-            "mean_run_days": 9.607476635514018,
+            "mean_run_days": 9.55813953488372,
             "classification": "Moderate"
           },
           "recent_window": {
@@ -4430,12 +4430,12 @@
             "transition_counts": [
               [
                 2029,
-                97,
+                98,
                 44
               ],
               [
-                102,
-                1842,
+                103,
+                1840,
                 111
               ],
               [
@@ -4446,14 +4446,14 @@
             ],
             "transition_matrix": [
               [
-                0.9350230414746544,
-                0.04470046082949309,
-                0.020276497695852536
+                0.9345923537540304,
+                0.04514048825426071,
+                0.02026715799170889
               ],
               [
-                0.049635036496350364,
-                0.8963503649635036,
-                0.05401459854014599
+                0.0501460564751704,
+                0.8958130477117819,
+                0.05404089581304771
               ],
               [
                 0.016814159292035398,
@@ -4464,27 +4464,27 @@
             "by_state": [
               {
                 "state_index": 0,
-                "probability": 0.9350230414746544,
+                "probability": 0.9345923537540304,
                 "interval_95": [
-                  0.9238640450928689,
-                  0.9446444975718774
+                  0.9234051350142718,
+                  0.9442442606934431
                 ],
-                "transitions": 2170,
-                "episodes": 141,
+                "transitions": 2171,
+                "episodes": 142,
                 "median_run_days": 7.0,
-                "mean_run_days": 15.390070921985815
+                "mean_run_days": 15.288732394366198
               },
               {
                 "state_index": 1,
-                "probability": 0.8963503649635036,
+                "probability": 0.8958130477117819,
                 "interval_95": [
-                  0.8824236490601015,
-                  0.9087979777032201
+                  0.8818537318456708,
+                  0.90829454778868
                 ],
-                "transitions": 2055,
-                "episodes": 214,
+                "transitions": 2054,
+                "episodes": 215,
                 "median_run_days": 3.0,
-                "mean_run_days": 9.607476635514018,
+                "mean_run_days": 9.55813953488372,
                 "classification": "Moderate"
               },
               {
@@ -4577,8 +4577,8 @@
             ]
           }
         },
-        "downside_probability": 0.11798839458413926,
-        "relative_outperformance_probability": 0.648936170212766,
+        "downside_probability": 0.1181026137463698,
+        "relative_outperformance_probability": 0.6495643756050339,
         "probability_calibration": "descriptive_in_sample",
         "evidence_support": "Strong",
         "suggested_action": {
@@ -4607,8 +4607,8 @@
         "hard_failures": [],
         "warnings": [],
         "date_start": "2013-03-05",
-        "market_data_date": "2026-08-28",
-        "price_rows": 3361,
+        "market_data_date": "2026-08-31",
+        "price_rows": 3362,
         "source": "yahoo_finance"
       },
       "swing": {
@@ -4618,9 +4618,9 @@
         ],
         "outcomes": {
           "20": {
-            "downside_probability": 0.13513513513513514,
+            "downside_probability": 0.13503086419753085,
             "relative_outperformance_probability": 0.0,
-            "high_volatility_probability": 0.077992277992278,
+            "high_volatility_probability": 0.0779320987654321,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -4647,19 +4647,19 @@
           }
         },
         "regime": "Constructive",
-        "state_age_days": 28,
+        "state_age_days": 29,
         "label_persistence": {
           "full_history": {
             "state_index": 2,
-            "probability": 0.9307458143074582,
+            "probability": 0.9307984790874525,
             "interval_95": [
-              0.9157251193842134,
-              0.9432552011641743
+              0.9157886352956146,
+              0.9432986121797455
             ],
-            "transitions": 1314,
+            "transitions": 1315,
             "episodes": 92,
             "median_run_days": 5.0,
-            "mean_run_days": 14.293478260869565,
+            "mean_run_days": 14.304347826086957,
             "classification": "High"
           },
           "recent_window": {
@@ -4690,7 +4690,7 @@
               [
                 23,
                 68,
-                1223
+                1224
               ]
             ],
             "transition_matrix": [
@@ -4705,9 +4705,9 @@
                 0.08111702127659574
               ],
               [
-                0.01750380517503805,
-                0.0517503805175038,
-                0.9307458143074582
+                0.01749049429657795,
+                0.05171102661596958,
+                0.9307984790874525
               ]
             ],
             "by_state": [
@@ -4737,15 +4737,15 @@
               },
               {
                 "state_index": 2,
-                "probability": 0.9307458143074582,
+                "probability": 0.9307984790874525,
                 "interval_95": [
-                  0.9157251193842134,
-                  0.9432552011641743
+                  0.9157886352956146,
+                  0.9432986121797455
                 ],
-                "transitions": 1314,
+                "transitions": 1315,
                 "episodes": 92,
                 "median_run_days": 5.0,
-                "mean_run_days": 14.293478260869565,
+                "mean_run_days": 14.304347826086957,
                 "classification": "High"
               }
             ]
@@ -4846,9 +4846,9 @@
         ],
         "outcomes": {
           "126": {
-            "downside_probability": 0.1664,
+            "downside_probability": 0.16626698641087131,
             "relative_outperformance_probability": 0.0,
-            "high_volatility_probability": 0.0968,
+            "high_volatility_probability": 0.09672262190247802,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -4860,9 +4860,9 @@
             }
           },
           "252": {
-            "downside_probability": 0.1316695352839931,
+            "downside_probability": 0.13155631986242478,
             "relative_outperformance_probability": 0.0,
-            "high_volatility_probability": 0.12048192771084337,
+            "high_volatility_probability": 0.12037833190025796,
             "probability_calibration": "descriptive_in_sample",
             "suggested_action": {
               "current": "Watch / monitor",
@@ -4875,19 +4875,19 @@
           }
         },
         "regime": "Constructive",
-        "state_age_days": 28,
+        "state_age_days": 29,
         "label_persistence": {
           "full_history": {
             "state_index": 2,
-            "probability": 0.9307458143074582,
+            "probability": 0.9307984790874525,
             "interval_95": [
-              0.9157251193842134,
-              0.9432552011641743
+              0.9157886352956146,
+              0.9432986121797455
             ],
-            "transitions": 1314,
+            "transitions": 1315,
             "episodes": 92,
             "median_run_days": 5.0,
-            "mean_run_days": 14.293478260869565,
+            "mean_run_days": 14.304347826086957,
             "classification": "High"
           },
           "recent_window": {
@@ -4918,7 +4918,7 @@
               [
                 23,
                 68,
-                1223
+                1224
               ]
             ],
             "transition_matrix": [
@@ -4933,9 +4933,9 @@
                 0.08111702127659574
               ],
               [
-                0.01750380517503805,
-                0.0517503805175038,
-                0.9307458143074582
+                0.01749049429657795,
+                0.05171102661596958,
+                0.9307984790874525
               ]
             ],
             "by_state": [
@@ -4965,15 +4965,15 @@
               },
               {
                 "state_index": 2,
-                "probability": 0.9307458143074582,
+                "probability": 0.9307984790874525,
                 "interval_95": [
-                  0.9157251193842134,
-                  0.9432552011641743
+                  0.9157886352956146,
+                  0.9432986121797455
                 ],
-                "transitions": 1314,
+                "transitions": 1315,
                 "episodes": 92,
                 "median_run_days": 5.0,
-                "mean_run_days": 14.293478260869565,
+                "mean_run_days": 14.304347826086957,
                 "classification": "High"
               }
             ]
@@ -5054,7 +5054,7 @@
             ]
           }
         },
-        "downside_probability": 0.1316695352839931,
+        "downside_probability": 0.13155631986242478,
         "relative_outperformance_probability": 0.0,
         "probability_calibration": "descriptive_in_sample",
         "evidence_support": "Strong",
@@ -5079,9 +5079,9 @@
         "Constructive"
       ],
       "date_start": "2013-08-09",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 3276,
-      "history_years": 13.051334702258726,
+      "history_years": 13.059548254620124,
       "current_state": "Neutral",
       "current_state_index": 1,
       "recent_states": [
@@ -5304,9 +5304,9 @@
       "outcomes": {
         "20": {
           "n": 1367,
-          "absolute_mean": 0.012375030127587647,
-          "absolute_positive_probability": 0.5398683247988295,
-          "relative_mean": 0.0030710928743998395,
+          "absolute_mean": 0.012379660207421041,
+          "absolute_positive_probability": 0.5405998536942209,
+          "relative_mean": 0.003069103927700811,
           "relative_outperformance_probability": 0.48500365764447695,
           "relative_outperformance_interval_95": [
             0.4044806144842721,
@@ -5318,15 +5318,15 @@
             0.2831016825164594
           ],
           "high_volatility_probability": 0.2121433796634967,
-          "downside_cutoff": -0.06990979734293887,
-          "volatility_cutoff": 0.3457057580763102,
+          "downside_cutoff": -0.06990977197824264,
+          "volatility_cutoff": 0.34570610131389634,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1343,
-          "absolute_mean": 0.042332948753707834,
+          "absolute_mean": 0.042332942512001,
           "absolute_positive_probability": 0.5785554728220402,
-          "relative_mean": 0.014602857188801978,
+          "relative_mean": 0.014602850947095151,
           "relative_outperformance_probability": 0.5465376023827252,
           "relative_outperformance_interval_95": [
             0.45420699925539837,
@@ -5338,15 +5338,15 @@
             0.3366344005956812
           ],
           "high_volatility_probability": 0.20848845867460908,
-          "downside_cutoff": -0.1325354584945202,
-          "volatility_cutoff": 0.3385157128751561,
+          "downside_cutoff": -0.13253553864770184,
+          "volatility_cutoff": 0.3385152936954092,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1332,
-          "absolute_mean": 0.08073836246478219,
+          "absolute_mean": 0.08073835710791512,
           "absolute_positive_probability": 0.6178678678678678,
-          "relative_mean": 0.02964948750327442,
+          "relative_mean": 0.029649482146407332,
           "relative_outperformance_probability": 0.5518018018018018,
           "relative_outperformance_interval_95": [
             0.45480480480480484,
@@ -5358,15 +5358,15 @@
             0.35157657657657637
           ],
           "high_volatility_probability": 0.23048048048048048,
-          "downside_cutoff": -0.18490218341406456,
-          "volatility_cutoff": 0.3308030201228803,
+          "downside_cutoff": -0.1849021507534127,
+          "volatility_cutoff": 0.33080295467580595,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1231,
-          "absolute_mean": 0.2261308085744124,
+          "absolute_mean": 0.22613080672115726,
           "absolute_positive_probability": 0.7806661251015434,
-          "relative_mean": 0.1233124401334886,
+          "relative_mean": 0.1233124382802334,
           "relative_outperformance_probability": 0.636068237205524,
           "relative_outperformance_interval_95": [
             0.5214459788789603,
@@ -5378,8 +5378,8 @@
             0.3079000812347685
           ],
           "high_volatility_probability": 0.2258326563769293,
-          "downside_cutoff": -0.22682021653386075,
-          "volatility_cutoff": 0.3322200833636291,
+          "downside_cutoff": -0.22682028864990814,
+          "volatility_cutoff": 0.3322200160793591,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -5404,9 +5404,9 @@
         "High risk"
       ],
       "date_start": "2013-11-20",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 3203,
-      "history_years": 12.76933607118412,
+      "history_years": 12.777549623545516,
       "current_state": "Low risk",
       "current_state_index": 0,
       "recent_states": [
@@ -5629,9 +5629,9 @@
       "outcomes": {
         "20": {
           "n": 1020,
-          "absolute_mean": 0.014008128631512174,
+          "absolute_mean": 0.014008126738322867,
           "absolute_positive_probability": 0.5607843137254902,
-          "relative_mean": 0.0016125522421105716,
+          "relative_mean": 0.0016125503489212573,
           "relative_outperformance_probability": 0.48627450980392156,
           "relative_outperformance_interval_95": [
             0.3872549019607843,
@@ -5643,15 +5643,15 @@
             0.24806372549019606
           ],
           "high_volatility_probability": 0.14313725490196078,
-          "downside_cutoff": -0.07079657436504605,
-          "volatility_cutoff": 0.34705819831784196,
+          "downside_cutoff": -0.07079627149463041,
+          "volatility_cutoff": 0.34705788667592713,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1011,
-          "absolute_mean": 0.02565243739939,
+          "absolute_mean": 0.025659535888004514,
           "absolute_positive_probability": 0.5647873392680515,
-          "relative_mean": -0.006286138817140032,
+          "relative_mean": -0.0062880367198364555,
           "relative_outperformance_probability": 0.49060336300692386,
           "relative_outperformance_interval_95": [
             0.3630069238377844,
@@ -5663,15 +5663,15 @@
             0.3402818991097923
           ],
           "high_volatility_probability": 0.12166172106824925,
-          "downside_cutoff": -0.1339573220378377,
-          "volatility_cutoff": 0.3404100880995213,
+          "downside_cutoff": -0.13395735814162865,
+          "volatility_cutoff": 0.34040979654536013,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 973,
-          "absolute_mean": 0.05979432373431955,
+          "absolute_mean": 0.05979433111038254,
           "absolute_positive_probability": 0.5847893114080165,
-          "relative_mean": -0.011656657444475292,
+          "relative_mean": -0.011656650068412322,
           "relative_outperformance_probability": 0.4635149023638232,
           "relative_outperformance_interval_95": [
             0.3420863309352518,
@@ -5683,15 +5683,15 @@
             0.30321171634121274
           ],
           "high_volatility_probability": 0.08016443987667009,
-          "downside_cutoff": -0.18709730918787779,
-          "volatility_cutoff": 0.33183752408396755,
+          "downside_cutoff": -0.18709690147089764,
+          "volatility_cutoff": 0.3318374143981782,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 882,
-          "absolute_mean": 0.11872397448076957,
+          "absolute_mean": 0.1187294801456789,
           "absolute_positive_probability": 0.6428571428571429,
-          "relative_mean": -0.00028329533560259295,
+          "relative_mean": -0.000290247374170363,
           "relative_outperformance_probability": 0.45918367346938777,
           "relative_outperformance_interval_95": [
             0.3356009070294785,
@@ -5703,8 +5703,8 @@
             0.3673469387755102
           ],
           "high_volatility_probability": 0.09863945578231292,
-          "downside_cutoff": -0.2328767186186511,
-          "volatility_cutoff": 0.3328267768326612,
+          "downside_cutoff": -0.23287665131689805,
+          "volatility_cutoff": 0.3328268308959162,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -5730,9 +5730,9 @@
         "Constructive"
       ],
       "date_start": "2013-11-20",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 3203,
-      "history_years": 12.76933607118412,
+      "history_years": 12.777549623545516,
       "current_state": "Neutral",
       "current_state_index": 1,
       "recent_states": [
@@ -5955,9 +5955,9 @@
       "outcomes": {
         "20": {
           "n": 916,
-          "absolute_mean": 0.006009715873474535,
-          "absolute_positive_probability": 0.5120087336244541,
-          "relative_mean": -0.002023654347081356,
+          "absolute_mean": 0.006016624767908506,
+          "absolute_positive_probability": 0.5131004366812227,
+          "relative_mean": -0.0020266234103655375,
           "relative_outperformance_probability": 0.462882096069869,
           "relative_outperformance_interval_95": [
             0.36342794759825325,
@@ -5969,15 +5969,15 @@
             0.32317139737991263
           ],
           "high_volatility_probability": 0.1965065502183406,
-          "downside_cutoff": -0.07079657436504605,
-          "volatility_cutoff": 0.34705819831784196,
+          "downside_cutoff": -0.07079627149463041,
+          "volatility_cutoff": 0.34705788667592713,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 892,
-          "absolute_mean": 0.023238300315058445,
+          "absolute_mean": 0.0232382923008054,
           "absolute_positive_probability": 0.547085201793722,
-          "relative_mean": -0.00015153059375904132,
+          "relative_mean": -0.00015153860801209125,
           "relative_outperformance_probability": 0.5033632286995515,
           "relative_outperformance_interval_95": [
             0.3834080717488789,
@@ -5989,15 +5989,15 @@
             0.35773542600896846
           ],
           "high_volatility_probability": 0.1827354260089686,
-          "downside_cutoff": -0.1339573220378377,
-          "volatility_cutoff": 0.3404100880995213,
+          "downside_cutoff": -0.13395735814162865,
+          "volatility_cutoff": 0.34040979654536013,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 881,
-          "absolute_mean": 0.03928767516034549,
+          "absolute_mean": 0.03928767083172052,
           "absolute_positive_probability": 0.6004540295119183,
-          "relative_mean": -0.011448632034212909,
+          "relative_mean": -0.011448636362837876,
           "relative_outperformance_probability": 0.4767309875141884,
           "relative_outperformance_interval_95": [
             0.34724744608399544,
@@ -6009,15 +6009,15 @@
             0.37687287173666284
           ],
           "high_volatility_probability": 0.17253121452894438,
-          "downside_cutoff": -0.18709730918787779,
-          "volatility_cutoff": 0.33183752408396755,
+          "downside_cutoff": -0.18709690147089764,
+          "volatility_cutoff": 0.3318374143981782,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 785,
-          "absolute_mean": 0.1685588011215785,
+          "absolute_mean": 0.16855879629723983,
           "absolute_positive_probability": 0.732484076433121,
-          "relative_mean": 0.06754639630210067,
+          "relative_mean": 0.06754639147776201,
           "relative_outperformance_probability": 0.5299363057324841,
           "relative_outperformance_interval_95": [
             0.37703821656050956,
@@ -6029,8 +6029,8 @@
             0.35038216560509544
           ],
           "high_volatility_probability": 0.1770700636942675,
-          "downside_cutoff": -0.2328767186186511,
-          "volatility_cutoff": 0.3328267768326612,
+          "downside_cutoff": -0.23287665131689805,
+          "volatility_cutoff": 0.3328268308959162,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -6056,9 +6056,9 @@
         "Constructive"
       ],
       "date_start": "2020-04-01",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 1609,
-      "history_years": 6.406570841889117,
+      "history_years": 6.414784394250513,
       "current_state": "Defensive",
       "current_state_index": 0,
       "recent_states": [
@@ -6281,9 +6281,9 @@
       "outcomes": {
         "20": {
           "n": 152,
-          "absolute_mean": 0.05245549069711039,
+          "absolute_mean": 0.05245547704109776,
           "absolute_positive_probability": 0.7368421052631579,
-          "relative_mean": 0.018792574018033126,
+          "relative_mean": 0.018792560362020493,
           "relative_outperformance_probability": 0.6447368421052632,
           "relative_outperformance_interval_95": [
             0.5328947368421053,
@@ -6295,15 +6295,15 @@
             0.2236842105263158
           ],
           "high_volatility_probability": 0.2894736842105263,
-          "downside_cutoff": -0.09259267785452585,
-          "volatility_cutoff": 0.48324863310497174,
+          "downside_cutoff": -0.09259248549016474,
+          "volatility_cutoff": 0.48324864610877827,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 139,
-          "absolute_mean": 0.12413132801795364,
+          "absolute_mean": 0.12413131369924028,
           "absolute_positive_probability": 0.8273381294964028,
-          "relative_mean": 0.070485563027864,
+          "relative_mean": 0.07048554870915061,
           "relative_outperformance_probability": 0.7841726618705036,
           "relative_outperformance_interval_95": [
             0.6327338129496403,
@@ -6315,15 +6315,15 @@
             0.050359712230215826
           ],
           "high_volatility_probability": 0.3237410071942446,
-          "downside_cutoff": -0.1294654838202748,
-          "volatility_cutoff": 0.45587776565439014,
+          "downside_cutoff": -0.12946553144935483,
+          "volatility_cutoff": 0.4558777356915755,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 139,
-          "absolute_mean": 0.2817096422664071,
+          "absolute_mean": 0.28170964897821477,
           "absolute_positive_probability": 0.9496402877697842,
-          "relative_mean": 0.1957346260527144,
+          "relative_mean": 0.19573463276452205,
           "relative_outperformance_probability": 0.8201438848920863,
           "relative_outperformance_interval_95": [
             0.697841726618705,
@@ -6335,15 +6335,15 @@
             0.0
           ],
           "high_volatility_probability": 0.14388489208633093,
-          "downside_cutoff": -0.14237291817922004,
-          "volatility_cutoff": 0.4331616362181644,
+          "downside_cutoff": -0.14237292835407922,
+          "volatility_cutoff": 0.43316154534410245,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 137,
-          "absolute_mean": 0.8648896053414792,
+          "absolute_mean": 0.8648895761508627,
           "absolute_positive_probability": 1.0,
-          "relative_mean": 0.63998215867384,
+          "relative_mean": 0.6399821294832237,
           "relative_outperformance_probability": 0.8613138686131386,
           "relative_outperformance_interval_95": [
             0.7445255474452555,
@@ -6355,8 +6355,8 @@
             0.0
           ],
           "high_volatility_probability": 0.0,
-          "downside_cutoff": -0.14264072237773784,
-          "volatility_cutoff": 0.4313602793767054,
+          "downside_cutoff": -0.14264065476095178,
+          "volatility_cutoff": 0.4313603640301476,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -6381,9 +6381,9 @@
         "High risk"
       ],
       "date_start": "2020-07-21",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 1536,
-      "history_years": 6.102669404517454,
+      "history_years": 6.11088295687885,
       "current_state": "Normal risk",
       "current_state_index": 1,
       "recent_states": [
@@ -6606,9 +6606,9 @@
       "outcomes": {
         "20": {
           "n": 781,
-          "absolute_mean": 0.0357604302374077,
+          "absolute_mean": 0.035765541769695125,
           "absolute_positive_probability": 0.6030729833546735,
-          "relative_mean": 0.02218485440328089,
+          "relative_mean": 0.022178380520370078,
           "relative_outperformance_probability": 0.5313700384122919,
           "relative_outperformance_interval_95": [
             0.43658770806658126,
@@ -6620,15 +6620,15 @@
             0.3022727272727272
           ],
           "high_volatility_probability": 0.21254801536491677,
-          "downside_cutoff": -0.09174818784204315,
-          "volatility_cutoff": 0.4795730398598672,
+          "downside_cutoff": -0.09174818820678543,
+          "volatility_cutoff": 0.4795725049245073,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 758,
-          "absolute_mean": 0.11650410166419883,
+          "absolute_mean": 0.11650926253240644,
           "absolute_positive_probability": 0.6569920844327177,
-          "relative_mean": 0.0786949096972589,
+          "relative_mean": 0.0786880714208552,
           "relative_outperformance_probability": 0.5646437994722955,
           "relative_outperformance_interval_95": [
             0.46428100263852246,
@@ -6640,15 +6640,15 @@
             0.33258575197889173
           ],
           "high_volatility_probability": 0.18997361477572558,
-          "downside_cutoff": -0.12997803341058636,
-          "volatility_cutoff": 0.45216581165317954,
+          "downside_cutoff": -0.12997804733609947,
+          "volatility_cutoff": 0.45216562164753404,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 715,
-          "absolute_mean": 0.24412112928079144,
+          "absolute_mean": 0.24412112601086303,
           "absolute_positive_probability": 0.772027972027972,
-          "relative_mean": 0.16692134906777575,
+          "relative_mean": 0.16692134579784734,
           "relative_outperformance_probability": 0.6195804195804195,
           "relative_outperformance_interval_95": [
             0.48930069930069936,
@@ -6660,15 +6660,15 @@
             0.32454545454545447
           ],
           "high_volatility_probability": 0.17342657342657342,
-          "downside_cutoff": -0.14369975418683095,
-          "volatility_cutoff": 0.4328246302670692,
+          "downside_cutoff": -0.1436997056386691,
+          "volatility_cutoff": 0.4328245101008638,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 631,
-          "absolute_mean": 0.7290798388164043,
+          "absolute_mean": 0.7290798343389014,
           "absolute_positive_probability": 0.8700475435816165,
-          "relative_mean": 0.6018909126975989,
+          "relative_mean": 0.6018909082200962,
           "relative_outperformance_probability": 0.8637083993660856,
           "relative_outperformance_interval_95": [
             0.7844294770206023,
@@ -6680,8 +6680,8 @@
             0.33759904912836763
           ],
           "high_volatility_probability": 0.19334389857369255,
-          "downside_cutoff": -0.14545449869145177,
-          "volatility_cutoff": 0.435467368496432,
+          "downside_cutoff": -0.14545457662994132,
+          "volatility_cutoff": 0.4354673266601577,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -6707,9 +6707,9 @@
         "Constructive"
       ],
       "date_start": "2020-07-21",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 1536,
-      "history_years": 6.102669404517454,
+      "history_years": 6.11088295687885,
       "current_state": "Defensive",
       "current_state_index": 0,
       "recent_states": [
@@ -6932,9 +6932,9 @@
       "outcomes": {
         "20": {
           "n": 408,
-          "absolute_mean": 0.03840483293988922,
+          "absolute_mean": 0.03840482658911111,
           "absolute_positive_probability": 0.5686274509803921,
-          "relative_mean": 0.024445051271171626,
+          "relative_mean": 0.024445044920393517,
           "relative_outperformance_probability": 0.5367647058823529,
           "relative_outperformance_interval_95": [
             0.4068627450980392,
@@ -6946,15 +6946,15 @@
             0.36764705882352944
           ],
           "high_volatility_probability": 0.18382352941176472,
-          "downside_cutoff": -0.09174818784204315,
-          "volatility_cutoff": 0.4795730398598672,
+          "downside_cutoff": -0.09174818820678543,
+          "volatility_cutoff": 0.4795725049245073,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 395,
-          "absolute_mean": 0.12298922664703504,
+          "absolute_mean": 0.12298922807646256,
           "absolute_positive_probability": 0.6582278481012658,
-          "relative_mean": 0.09241691816409946,
+          "relative_mean": 0.09241691959352695,
           "relative_outperformance_probability": 0.640506329113924,
           "relative_outperformance_interval_95": [
             0.49873417721518987,
@@ -6966,15 +6966,15 @@
             0.29879746835443033
           ],
           "high_volatility_probability": 0.25063291139240507,
-          "downside_cutoff": -0.12997803341058636,
-          "volatility_cutoff": 0.45216581165317954,
+          "downside_cutoff": -0.12997804733609947,
+          "volatility_cutoff": 0.45216562164753404,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 375,
-          "absolute_mean": 0.22445262411182512,
+          "absolute_mean": 0.22446141613399306,
           "absolute_positive_probability": 0.7066666666666667,
-          "relative_mean": 0.16447804745789577,
+          "relative_mean": 0.16446097425228504,
           "relative_outperformance_probability": 0.6346666666666667,
           "relative_outperformance_interval_95": [
             0.48533333333333334,
@@ -6986,15 +6986,15 @@
             0.376
           ],
           "high_volatility_probability": 0.20533333333333334,
-          "downside_cutoff": -0.14369975418683095,
-          "volatility_cutoff": 0.4328246302670692,
+          "downside_cutoff": -0.1436997056386691,
+          "volatility_cutoff": 0.4328245101008638,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 350,
-          "absolute_mean": 0.5896030612795912,
+          "absolute_mean": 0.589613382860383,
           "absolute_positive_probability": 0.8085714285714286,
-          "relative_mean": 0.4571363833322431,
+          "relative_mean": 0.4571153115002726,
           "relative_outperformance_probability": 0.7714285714285715,
           "relative_outperformance_interval_95": [
             0.6085714285714285,
@@ -7006,8 +7006,8 @@
             0.37714285714285717
           ],
           "high_volatility_probability": 0.14,
-          "downside_cutoff": -0.14545449869145177,
-          "volatility_cutoff": 0.435467368496432,
+          "downside_cutoff": -0.14545457662994132,
+          "volatility_cutoff": 0.4354673266601577,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -7033,9 +7033,9 @@
         "Constructive"
       ],
       "date_start": "2001-09-10",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6318,
-      "history_years": 24.9637234770705,
+      "history_years": 24.971937029431896,
       "current_state": "Defensive",
       "current_state_index": 0,
       "recent_states": [
@@ -7258,9 +7258,9 @@
       "outcomes": {
         "20": {
           "n": 516,
-          "absolute_mean": 0.012530946849983756,
+          "absolute_mean": 0.012536745315422645,
           "absolute_positive_probability": 0.5891472868217055,
-          "relative_mean": 0.0046636009303540425,
+          "relative_mean": 0.004651864106510321,
           "relative_outperformance_probability": 0.5174418604651163,
           "relative_outperformance_interval_95": [
             0.3953488372093023,
@@ -7278,9 +7278,9 @@
         },
         "63": {
           "n": 489,
-          "absolute_mean": 0.02745773066066271,
+          "absolute_mean": 0.02745773956648957,
           "absolute_positive_probability": 0.5950920245398773,
-          "relative_mean": 0.017839228792680725,
+          "relative_mean": 0.017839237698507576,
           "relative_outperformance_probability": 0.50920245398773,
           "relative_outperformance_interval_95": [
             0.35153374233128837,
@@ -7292,15 +7292,15 @@
             0.5031697341513292
           ],
           "high_volatility_probability": 0.4948875255623722,
-          "downside_cutoff": -0.10302446193414451,
-          "volatility_cutoff": 0.23701557762340345,
+          "downside_cutoff": -0.10302445381748548,
+          "volatility_cutoff": 0.23701501613001605,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 489,
-          "absolute_mean": 0.05056791658510049,
+          "absolute_mean": 0.05056791661741197,
           "absolute_positive_probability": 0.6359918200408998,
-          "relative_mean": 0.004794561039679863,
+          "relative_mean": 0.004794561071991331,
           "relative_outperformance_probability": 0.4212678936605317,
           "relative_outperformance_interval_95": [
             0.24739263803680983,
@@ -7312,15 +7312,15 @@
             0.5440184049079754
           ],
           "high_volatility_probability": 0.4867075664621677,
-          "downside_cutoff": -0.1310638367178459,
-          "volatility_cutoff": 0.23194059176204318,
+          "downside_cutoff": -0.13106398373767134,
+          "volatility_cutoff": 0.23194103273541633,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 475,
-          "absolute_mean": 0.10456140384303216,
+          "absolute_mean": 0.10456141262539104,
           "absolute_positive_probability": 0.7115789473684211,
-          "relative_mean": -0.039191133036439105,
+          "relative_mean": -0.039191124254080216,
           "relative_outperformance_probability": 0.4063157894736842,
           "relative_outperformance_interval_95": [
             0.20205263157894737,
@@ -7332,8 +7332,8 @@
             0.40642105263157885
           ],
           "high_volatility_probability": 0.2905263157894737,
-          "downside_cutoff": -0.19711565127529673,
-          "volatility_cutoff": 0.23298032310902514,
+          "downside_cutoff": -0.19711550608369827,
+          "volatility_cutoff": 0.23298020650032888,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -7358,9 +7358,9 @@
         "High risk"
       ],
       "date_start": "2001-12-20",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6245,
-      "history_years": 24.687200547570157,
+      "history_years": 24.695414099931554,
       "current_state": "Low risk",
       "current_state_index": 0,
       "recent_states": [
@@ -7583,9 +7583,9 @@
       "outcomes": {
         "20": {
           "n": 2025,
-          "absolute_mean": 0.008590656746138488,
+          "absolute_mean": 0.00859065720608476,
           "absolute_positive_probability": 0.5693827160493827,
-          "relative_mean": 0.001609558860636378,
+          "relative_mean": 0.0016095593205826498,
           "relative_outperformance_probability": 0.5096296296296297,
           "relative_outperformance_interval_95": [
             0.44640740740740736,
@@ -7603,9 +7603,9 @@
         },
         "63": {
           "n": 1994,
-          "absolute_mean": 0.025847795876603945,
+          "absolute_mean": 0.025849124393942487,
           "absolute_positive_probability": 0.6083249749247743,
-          "relative_mean": -0.0011393360323700764,
+          "relative_mean": -0.0011425688749188787,
           "relative_outperformance_probability": 0.5140421263791374,
           "relative_outperformance_interval_95": [
             0.4388039117352056,
@@ -7617,15 +7617,15 @@
             0.26079488465396183
           ],
           "high_volatility_probability": 0.13941825476429287,
-          "downside_cutoff": -0.10302446193414451,
-          "volatility_cutoff": 0.23701557762340345,
+          "downside_cutoff": -0.10302445381748548,
+          "volatility_cutoff": 0.23701501613001605,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1959,
-          "absolute_mean": 0.05364102856999825,
+          "absolute_mean": 0.05364103036897183,
           "absolute_positive_probability": 0.6579887697805002,
-          "relative_mean": -0.0023901260627633863,
+          "relative_mean": -0.0023901242637898064,
           "relative_outperformance_probability": 0.5298621745788668,
           "relative_outperformance_interval_95": [
             0.4414880040837162,
@@ -7637,15 +7637,15 @@
             0.2400331801939764
           ],
           "high_volatility_probability": 0.15671260847371107,
-          "downside_cutoff": -0.1310638367178459,
-          "volatility_cutoff": 0.23194059176204318,
+          "downside_cutoff": -0.13106398373767134,
+          "volatility_cutoff": 0.23194103273541633,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1878,
-          "absolute_mean": 0.10104182449713409,
+          "absolute_mean": 0.1010431872124626,
           "absolute_positive_probability": 0.694888178913738,
-          "relative_mean": -0.0011637470680469452,
+          "relative_mean": -0.0011682350952460243,
           "relative_outperformance_probability": 0.48136315228966986,
           "relative_outperformance_interval_95": [
             0.37800851970181043,
@@ -7657,8 +7657,8 @@
             0.2928647497337593
           ],
           "high_volatility_probability": 0.17412140575079874,
-          "downside_cutoff": -0.19711565127529673,
-          "volatility_cutoff": 0.23298032310902514,
+          "downside_cutoff": -0.19711550608369827,
+          "volatility_cutoff": 0.23298020650032888,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -7684,9 +7684,9 @@
         "Constructive"
       ],
       "date_start": "2001-12-20",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6245,
-      "history_years": 24.687200547570157,
+      "history_years": 24.695414099931554,
       "current_state": "Defensive",
       "current_state_index": 0,
       "recent_states": [
@@ -7909,9 +7909,9 @@
       "outcomes": {
         "20": {
           "n": 711,
-          "absolute_mean": 0.01007593487991675,
+          "absolute_mean": 0.010080145927765185,
           "absolute_positive_probability": 0.5611814345991561,
-          "relative_mean": 0.0013212914436590228,
+          "relative_mean": 0.0013127764587791502,
           "relative_outperformance_probability": 0.4866385372714487,
           "relative_outperformance_interval_95": [
             0.40362165963431784,
@@ -7929,9 +7929,9 @@
         },
         "63": {
           "n": 684,
-          "absolute_mean": 0.01897297001935079,
+          "absolute_mean": 0.018972977265109308,
           "absolute_positive_probability": 0.5657894736842105,
-          "relative_mean": -0.002192448881251634,
+          "relative_mean": -0.0021924416354931133,
           "relative_outperformance_probability": 0.46637426900584794,
           "relative_outperformance_interval_95": [
             0.32591374269005846,
@@ -7943,15 +7943,15 @@
             0.4328581871345028
           ],
           "high_volatility_probability": 0.3991228070175439,
-          "downside_cutoff": -0.10302446193414451,
-          "volatility_cutoff": 0.23701557762340345,
+          "downside_cutoff": -0.10302445381748548,
+          "volatility_cutoff": 0.23701501613001605,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 678,
-          "absolute_mean": 0.03323044900088857,
+          "absolute_mean": 0.033233978017418495,
           "absolute_positive_probability": 0.5914454277286135,
-          "relative_mean": -0.018496342703862287,
+          "relative_mean": -0.018507119676148015,
           "relative_outperformance_probability": 0.4056047197640118,
           "relative_outperformance_interval_95": [
             0.2507005899705015,
@@ -7963,15 +7963,15 @@
             0.48823746312684363
           ],
           "high_volatility_probability": 0.4336283185840708,
-          "downside_cutoff": -0.1310638367178459,
-          "volatility_cutoff": 0.23194059176204318,
+          "downside_cutoff": -0.13106398373767134,
+          "volatility_cutoff": 0.23194103273541633,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 639,
-          "absolute_mean": 0.09689263527689936,
+          "absolute_mean": 0.09689263595813283,
           "absolute_positive_probability": 0.7183098591549296,
-          "relative_mean": -0.041267952894582564,
+          "relative_mean": -0.04126795221334908,
           "relative_outperformance_probability": 0.4084507042253521,
           "relative_outperformance_interval_95": [
             0.24561815336463225,
@@ -7983,8 +7983,8 @@
             0.408489827856025
           ],
           "high_volatility_probability": 0.2566510172143975,
-          "downside_cutoff": -0.19711565127529673,
-          "volatility_cutoff": 0.23298032310902514,
+          "downside_cutoff": -0.19711550608369827,
+          "volatility_cutoff": 0.23298020650032888,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -8010,9 +8010,9 @@
         "Constructive"
       ],
       "date_start": "2025-02-13",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 385,
-      "history_years": 1.5359342915811087,
+      "history_years": 1.5441478439425051,
       "current_state": "Defensive",
       "current_state_index": 0,
       "recent_states": [
@@ -8235,9 +8235,9 @@
       "outcomes": {
         "20": {
           "n": 57,
-          "absolute_mean": -0.012726665514280394,
+          "absolute_mean": -0.012681097742978917,
           "absolute_positive_probability": 0.5263157894736842,
-          "relative_mean": -0.002950520954735843,
+          "relative_mean": -0.0030636936969400943,
           "relative_outperformance_probability": 0.5789473684210527,
           "relative_outperformance_interval_95": [
             0.3333333333333333,
@@ -8250,14 +8250,14 @@
           ],
           "high_volatility_probability": 0.5789473684210527,
           "downside_cutoff": -0.07555552019617084,
-          "volatility_cutoff": 0.38699620845374927,
+          "volatility_cutoff": 0.38699657218340794,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 40,
-          "absolute_mean": -0.004883167789042406,
+          "absolute_mean": -0.004817814920950489,
           "absolute_positive_probability": 0.35,
-          "relative_mean": -0.0036165602534717566,
+          "relative_mean": -0.003778591175763929,
           "relative_outperformance_probability": 0.45,
           "relative_outperformance_interval_95": [
             0.275,
@@ -8270,7 +8270,7 @@
           ],
           "high_volatility_probability": 1.0,
           "downside_cutoff": -0.14757458869357376,
-          "volatility_cutoff": 0.3596224496675293,
+          "volatility_cutoff": 0.35962257043593904,
           "calibration": "descriptive_in_sample"
         },
         "126": {
@@ -8290,7 +8290,7 @@
           ],
           "high_volatility_probability": null,
           "downside_cutoff": -0.19576491640365729,
-          "volatility_cutoff": 0.3496964912606355,
+          "volatility_cutoff": 0.34969652561323583,
           "calibration": "descriptive_in_sample"
         },
         "252": {
@@ -8310,7 +8310,7 @@
           ],
           "high_volatility_probability": null,
           "downside_cutoff": -0.26126566341442603,
-          "volatility_cutoff": 0.32490569462096214,
+          "volatility_cutoff": 0.32490578146249033,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -8335,9 +8335,9 @@
         "High risk"
       ],
       "date_start": "2025-06-03",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 312,
-      "history_years": 1.2347707049965777,
+      "history_years": 1.242984257357974,
       "current_state": "Normal risk",
       "current_state_index": 1,
       "recent_states": [
@@ -8560,9 +8560,9 @@
       "outcomes": {
         "20": {
           "n": 102,
-          "absolute_mean": -0.0024744813580567728,
+          "absolute_mean": -0.002449021324876518,
           "absolute_positive_probability": 0.43137254901960786,
-          "relative_mean": -0.017082040359957258,
+          "relative_mean": -0.01714528826079491,
           "relative_outperformance_probability": 0.39215686274509803,
           "relative_outperformance_interval_95": [
             0.16642156862745097,
@@ -8580,9 +8580,9 @@
         },
         "63": {
           "n": 91,
-          "absolute_mean": -0.012538555005015873,
+          "absolute_mean": -0.012538551633775905,
           "absolute_positive_probability": 0.42857142857142855,
-          "relative_mean": -0.07164861359286293,
+          "relative_mean": -0.07164861022162297,
           "relative_outperformance_probability": 0.27472527472527475,
           "relative_outperformance_interval_95": [
             0.04395604395604396,
@@ -8595,14 +8595,14 @@
           ],
           "high_volatility_probability": 0.3626373626373626,
           "downside_cutoff": -0.1679306736554501,
-          "volatility_cutoff": 0.43312686268549455,
+          "volatility_cutoff": 0.4331268626854946,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 58,
-          "absolute_mean": -0.0888820263269165,
+          "absolute_mean": -0.08888202143471367,
           "absolute_positive_probability": 0.05172413793103448,
-          "relative_mean": -0.24081400561744196,
+          "relative_mean": -0.24081400072523917,
           "relative_outperformance_probability": 0.05172413793103448,
           "relative_outperformance_interval_95": [
             0.0,
@@ -8615,14 +8615,14 @@
           ],
           "high_volatility_probability": 0.22413793103448276,
           "downside_cutoff": -0.2216586580301558,
-          "volatility_cutoff": 0.359675743059957,
+          "volatility_cutoff": 0.35967574305995687,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 13,
-          "absolute_mean": -0.13275158512901253,
+          "absolute_mean": -0.13275157197531662,
           "absolute_positive_probability": 0.0,
-          "relative_mean": -0.3175763834164171,
+          "relative_mean": -0.3175763702627213,
           "relative_outperformance_probability": 0.0,
           "relative_outperformance_interval_95": [
             null,
@@ -8635,7 +8635,7 @@
           ],
           "high_volatility_probability": 0.0,
           "downside_cutoff": -0.2758942302970983,
-          "volatility_cutoff": 0.32609659085542786,
+          "volatility_cutoff": 0.3260966811091651,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -8661,9 +8661,9 @@
         "Constructive"
       ],
       "date_start": "2025-06-03",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 312,
-      "history_years": 1.2347707049965777,
+      "history_years": 1.242984257357974,
       "current_state": "Defensive",
       "current_state_index": 0,
       "recent_states": [
@@ -8886,9 +8886,9 @@
       "outcomes": {
         "20": {
           "n": 105,
-          "absolute_mean": 0.0010851781366426605,
+          "absolute_mean": 0.00110991757436064,
           "absolute_positive_probability": 0.5714285714285714,
-          "relative_mean": -0.008338574186410194,
+          "relative_mean": -0.00840000817030961,
           "relative_outperformance_probability": 0.45714285714285713,
           "relative_outperformance_interval_95": [
             0.2571428571428571,
@@ -8906,9 +8906,9 @@
         },
         "63": {
           "n": 71,
-          "absolute_mean": 0.023950400338155785,
+          "absolute_mean": 0.02398722299540489,
           "absolute_positive_probability": 0.5774647887323944,
-          "relative_mean": -0.029524887941189747,
+          "relative_mean": -0.029616168827819006,
           "relative_outperformance_probability": 0.36619718309859156,
           "relative_outperformance_interval_95": [
             0.14084507042253522,
@@ -8921,14 +8921,14 @@
           ],
           "high_volatility_probability": 0.4647887323943662,
           "downside_cutoff": -0.1679306736554501,
-          "volatility_cutoff": 0.43312686268549455,
+          "volatility_cutoff": 0.4331268626854946,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 30,
-          "absolute_mean": -0.07207508451360672,
+          "absolute_mean": -0.0720750725764183,
           "absolute_positive_probability": 0.23333333333333334,
-          "relative_mean": -0.25227884880882223,
+          "relative_mean": -0.2522788368716338,
           "relative_outperformance_probability": 0.13333333333333333,
           "relative_outperformance_interval_95": [
             0.0,
@@ -8941,14 +8941,14 @@
           ],
           "high_volatility_probability": 0.0,
           "downside_cutoff": -0.2216586580301558,
-          "volatility_cutoff": 0.359675743059957,
+          "volatility_cutoff": 0.35967574305995687,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 8,
-          "absolute_mean": -0.07538681244465965,
+          "absolute_mean": -0.07538679047526735,
           "absolute_positive_probability": 0.0,
-          "relative_mean": -0.3109214183008874,
+          "relative_mean": -0.31092139633149507,
           "relative_outperformance_probability": 0.0,
           "relative_outperformance_interval_95": [
             null,
@@ -8961,7 +8961,7 @@
           ],
           "high_volatility_probability": 0.0,
           "downside_cutoff": -0.2758942302970983,
-          "volatility_cutoff": 0.32609659085542786,
+          "volatility_cutoff": 0.3260966811091651,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -8987,9 +8987,9 @@
         "Constructive"
       ],
       "date_start": "2025-12-18",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 171,
-      "history_years": 0.6926762491444216,
+      "history_years": 0.7008898015058179,
       "current_state": "Constructive",
       "current_state_index": 2,
       "recent_states": [
@@ -9212,9 +9212,9 @@
       "outcomes": {
         "20": {
           "n": 125,
-          "absolute_mean": 0.02573717522940546,
+          "absolute_mean": 0.025795481861568662,
           "absolute_positive_probability": 0.664,
-          "relative_mean": 0.0023157487252307503,
+          "relative_mean": 0.0023016696832353443,
           "relative_outperformance_probability": 0.48,
           "relative_outperformance_interval_95": [
             0.3598,
@@ -9227,14 +9227,14 @@
           ],
           "high_volatility_probability": 0.24,
           "downside_cutoff": -0.03656374466400769,
-          "volatility_cutoff": 0.26752050325499604,
+          "volatility_cutoff": 0.26752087125371166,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 106,
-          "absolute_mean": 0.0846877348206631,
+          "absolute_mean": 0.08475322321278513,
           "absolute_positive_probability": 0.7169811320754716,
-          "relative_mean": 0.022685857600436107,
+          "relative_mean": 0.022665540788639617,
           "relative_outperformance_probability": 0.5660377358490566,
           "relative_outperformance_interval_95": [
             0.4049528301886793,
@@ -9246,15 +9246,15 @@
             0.37735849056603776
           ],
           "high_volatility_probability": 0.19811320754716982,
-          "downside_cutoff": -0.057815085144601874,
-          "volatility_cutoff": 0.25327437596702357,
+          "downside_cutoff": -0.05781508907082744,
+          "volatility_cutoff": 0.2532745505194526,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 43,
-          "absolute_mean": 0.16634371247131252,
+          "absolute_mean": 0.16653321906430332,
           "absolute_positive_probability": 1.0,
-          "relative_mean": 0.02334502661368607,
+          "relative_mean": 0.023308964359769476,
           "relative_outperformance_probability": 0.7209302325581395,
           "relative_outperformance_interval_95": [
             0.6040697674418605,
@@ -9266,8 +9266,8 @@
             0.7441860465116279
           ],
           "high_volatility_probability": 0.20930232558139536,
-          "downside_cutoff": -0.03647054900725355,
-          "volatility_cutoff": 0.24295990810649215,
+          "downside_cutoff": -0.03647055148397049,
+          "volatility_cutoff": 0.24295993079965567,
           "calibration": "descriptive_in_sample"
         },
         "252": {
@@ -9312,9 +9312,9 @@
         "High risk"
       ],
       "date_start": "2026-04-10",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 98,
-      "history_years": 0.38329911019849416,
+      "history_years": 0.3915126625598905,
       "current_state": "Low risk",
       "current_state_index": 0,
       "recent_states": [
@@ -9537,9 +9537,9 @@
       "outcomes": {
         "20": {
           "n": 78,
-          "absolute_mean": -0.0025311347334316205,
+          "absolute_mean": -0.0024377033542902285,
           "absolute_positive_probability": 0.5512820512820513,
-          "relative_mean": -0.010733461039451523,
+          "relative_mean": -0.010756032343256625,
           "relative_outperformance_probability": 0.358974358974359,
           "relative_outperformance_interval_95": [
             0.1794871794871795,
@@ -9557,9 +9557,9 @@
         },
         "63": {
           "n": 35,
-          "absolute_mean": -0.015393078675347477,
+          "absolute_mean": -0.015194775349477599,
           "absolute_positive_probability": 0.2571428571428571,
-          "relative_mean": -0.024531753305448066,
+          "relative_mean": -0.024593317168588574,
           "relative_outperformance_probability": 0.11428571428571428,
           "relative_outperformance_interval_95": [
             0.05714285714285714,
@@ -9572,7 +9572,7 @@
           ],
           "high_volatility_probability": 0.2,
           "downside_cutoff": -0.0748129069853739,
-          "volatility_cutoff": 0.21771193779030415,
+          "volatility_cutoff": 0.21771193779030418,
           "calibration": "descriptive_in_sample"
         },
         "126": {
@@ -9638,9 +9638,9 @@
         "Constructive"
       ],
       "date_start": "2026-04-10",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 98,
-      "history_years": 0.38329911019849416,
+      "history_years": 0.3915126625598905,
       "current_state": "Constructive",
       "current_state_index": 2,
       "recent_states": [
@@ -9863,9 +9863,9 @@
       "outcomes": {
         "20": {
           "n": 54,
-          "absolute_mean": -0.014484428045265238,
+          "absolute_mean": -0.014349471608727671,
           "absolute_positive_probability": 0.42592592592592593,
-          "relative_mean": -0.007765443203103443,
+          "relative_mean": -0.00779804619748859,
           "relative_outperformance_probability": 0.4074074074074074,
           "relative_outperformance_interval_95": [
             0.18472222222222223,
@@ -9883,9 +9883,9 @@
         },
         "63": {
           "n": 35,
-          "absolute_mean": -0.015393078675347477,
+          "absolute_mean": -0.015194775349477599,
           "absolute_positive_probability": 0.2571428571428571,
-          "relative_mean": -0.024531753305448066,
+          "relative_mean": -0.024593317168588574,
           "relative_outperformance_probability": 0.11428571428571428,
           "relative_outperformance_interval_95": [
             0.05714285714285714,
@@ -9898,7 +9898,7 @@
           ],
           "high_volatility_probability": 0.2,
           "downside_cutoff": -0.0748129069853739,
-          "volatility_cutoff": 0.21771193779030415,
+          "volatility_cutoff": 0.21771193779030418,
           "calibration": "descriptive_in_sample"
         },
         "126": {
@@ -9964,9 +9964,9 @@
         "Constructive"
       ],
       "date_start": "2026-06-10",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 58,
-      "history_years": 0.216290212183436,
+      "history_years": 0.2245037645448323,
       "current_state": "Constructive",
       "current_state_index": 2,
       "recent_states": [
@@ -10189,9 +10189,9 @@
       "outcomes": {
         "20": {
           "n": 38,
-          "absolute_mean": 0.06324897812411653,
+          "absolute_mean": 0.06359074162377477,
           "absolute_positive_probability": 0.9473684210526315,
-          "relative_mean": 0.02990520937679078,
+          "relative_mean": 0.03000886210619043,
           "relative_outperformance_probability": 0.6842105263157895,
           "relative_outperformance_interval_95": [
             0.3684210526315789,
@@ -10289,9 +10289,9 @@
         "Constructive"
       ],
       "date_start": "2000-10-06",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6559,
-      "history_years": 25.89185489390828,
+      "history_years": 25.900068446269678,
       "current_state": "Neutral",
       "current_state_index": 1,
       "recent_states": [
@@ -10305,15 +10305,15 @@
       "label_persistence": {
         "full_history": {
           "state_index": 1,
-          "probability": 0.8942240779401531,
+          "probability": 0.8941872607030978,
           "interval_95": [
-            0.8824488052589275,
-            0.9049468596032387
+            0.8824081749020856,
+            0.9049135879645249
           ],
-          "transitions": 2874,
+          "transitions": 2873,
           "episodes": 305,
           "median_run_days": 3.0,
-          "mean_run_days": 9.426229508196721,
+          "mean_run_days": 9.422950819672131,
           "classification": "Moderate"
         },
         "recent_window": {
@@ -10332,13 +10332,13 @@
         "full_detail": {
           "transition_counts": [
             [
-              1516,
+              1517,
               165,
               0
             ],
             [
               164,
-              2570,
+              2569,
               140
             ],
             [
@@ -10349,14 +10349,14 @@
           ],
           "transition_matrix": [
             [
-              0.9018441403926234,
-              0.09815585960737656,
+              0.9019024970273484,
+              0.0980975029726516,
               0.0
             ],
             [
-              0.05706332637439109,
-              0.8942240779401531,
-              0.04871259568545581
+              0.05708318830490776,
+              0.8941872607030978,
+              0.04872955099199443
             ],
             [
               0.0,
@@ -10367,27 +10367,27 @@
           "by_state": [
             {
               "state_index": 0,
-              "probability": 0.9018441403926234,
+              "probability": 0.9019024970273484,
               "interval_95": [
-                0.8866914475400054,
-                0.9151643470937452
+                0.8867582020273499,
+                0.9152151269022482
               ],
-              "transitions": 1681,
+              "transitions": 1682,
               "episodes": 165,
               "median_run_days": 3.0,
-              "mean_run_days": 10.187878787878788
+              "mean_run_days": 10.193939393939393
             },
             {
               "state_index": 1,
-              "probability": 0.8942240779401531,
+              "probability": 0.8941872607030978,
               "interval_95": [
-                0.8824488052589275,
-                0.9049468596032387
+                0.8824081749020856,
+                0.9049135879645249
               ],
-              "transitions": 2874,
+              "transitions": 2873,
               "episodes": 305,
               "median_run_days": 3.0,
-              "mean_run_days": 9.426229508196721,
+              "mean_run_days": 9.422950819672131,
               "classification": "Moderate"
             },
             {
@@ -10513,83 +10513,83 @@
       "evidence_support": "Strong",
       "outcomes": {
         "20": {
-          "n": 1431,
-          "absolute_mean": 0.02286772809118379,
-          "absolute_positive_probability": 0.5248078266946191,
-          "relative_mean": 0.00920482165538172,
-          "relative_outperformance_probability": 0.47658979734451434,
+          "n": 1430,
+          "absolute_mean": 0.022911784100725627,
+          "absolute_positive_probability": 0.5251748251748252,
+          "relative_mean": 0.009216888055027376,
+          "relative_outperformance_probability": 0.47692307692307695,
           "relative_outperformance_interval_95": [
-            0.39760656883298395,
-            0.5535115303983228
+            0.3958041958041958,
+            0.5559615384615384
           ],
-          "downside_probability": 0.1914744933612858,
+          "downside_probability": 0.1916083916083916,
           "downside_probability_interval_95": [
-            0.13483577917540182,
-            0.2494933612858141
+            0.13424825174825175,
+            0.25034965034965034
           ],
-          "high_volatility_probability": 0.1816911250873515,
+          "high_volatility_probability": 0.18181818181818182,
           "downside_cutoff": -0.07661292631507532,
           "volatility_cutoff": 0.46145601617021165,
           "calibration": "descriptive_in_sample"
         },
         "63": {
-          "n": 1403,
-          "absolute_mean": 0.09487160692796683,
-          "absolute_positive_probability": 0.5994297933000713,
-          "relative_mean": 0.06197688114267514,
-          "relative_outperformance_probability": 0.5773342836778332,
+          "n": 1402,
+          "absolute_mean": 0.0949732310675889,
+          "absolute_positive_probability": 0.5998573466476462,
+          "relative_mean": 0.06207265397596634,
+          "relative_outperformance_probability": 0.5777460770328102,
           "relative_outperformance_interval_95": [
-            0.48316108339272984,
-            0.675
+            0.48357703281027103,
+            0.675481455064194
           ],
-          "downside_probability": 0.21168923734853884,
+          "downside_probability": 0.21184022824536378,
           "downside_probability_interval_95": [
-            0.12824305060584462,
-            0.2815395580898076
+            0.12692582025677604,
+            0.28034950071326675
           ],
-          "high_volatility_probability": 0.1810406272273699,
-          "downside_cutoff": -0.1213381950480786,
-          "volatility_cutoff": 0.43099442963143464,
+          "high_volatility_probability": 0.181169757489301,
+          "downside_cutoff": -0.12133800434570138,
+          "volatility_cutoff": 0.43099446699585714,
           "calibration": "descriptive_in_sample"
         },
         "126": {
-          "n": 1397,
-          "absolute_mean": 0.2179641309793597,
-          "absolute_positive_probability": 0.686471009305655,
-          "relative_mean": 0.16085905860602473,
-          "relative_outperformance_probability": 0.6256263421617753,
+          "n": 1396,
+          "absolute_mean": 0.21816953119036148,
+          "absolute_positive_probability": 0.6869627507163324,
+          "relative_mean": 0.16110576248961156,
+          "relative_outperformance_probability": 0.6260744985673352,
           "relative_outperformance_interval_95": [
-            0.518217609162491,
-            0.7258768790264853
+            0.5186067335243553,
+            0.725035816618911
           ],
-          "downside_probability": 0.19470293486041518,
+          "downside_probability": 0.19484240687679083,
           "downside_probability_interval_95": [
-            0.11381531853972798,
-            0.2834824624194703
+            0.11386103151862464,
+            0.2815365329512894
           ],
-          "high_volatility_probability": 0.16893342877594847,
-          "downside_cutoff": -0.15045148954497514,
-          "volatility_cutoff": 0.42144142610574964,
+          "high_volatility_probability": 0.16905444126074498,
+          "downside_cutoff": -0.15045150637656615,
+          "volatility_cutoff": 0.4214414777584783,
           "calibration": "descriptive_in_sample"
         },
         "252": {
-          "n": 1356,
-          "absolute_mean": 0.47396750891690925,
-          "absolute_positive_probability": 0.8362831858407079,
-          "relative_mean": 0.37115522231167347,
-          "relative_outperformance_probability": 0.778023598820059,
+          "n": 1355,
+          "absolute_mean": 0.4743907869307707,
+          "absolute_positive_probability": 0.83690036900369,
+          "relative_mean": 0.37158202535462087,
+          "relative_outperformance_probability": 0.7785977859778598,
           "relative_outperformance_interval_95": [
-            0.687278761061947,
-            0.8628502949852507
+            0.6884686346863469,
+            0.8642250922509225
           ],
-          "downside_probability": 0.20058997050147492,
+          "downside_probability": 0.2007380073800738,
           "downside_probability_interval_95": [
-            0.12088864306784661,
-            0.2891408554572271
+            0.11808118081180811,
+            0.2893173431734317
           ],
-          "high_volatility_probability": 0.20501474926253688,
-          "downside_cutoff": -0.17599269978767745,
-          "volatility_cutoff": 0.41975801884678277,
+          "high_volatility_probability": 0.2051660516605166,
+          "downside_cutoff": -0.1759926181343544,
+          "volatility_cutoff": 0.41975808368514195,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -10614,9 +10614,9 @@
         "High risk"
       ],
       "date_start": "2001-01-17",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6486,
-      "history_years": 25.609856262833677,
+      "history_years": 25.61806981519507,
       "current_state": "Normal risk",
       "current_state_index": 1,
       "recent_states": [
@@ -10839,9 +10839,9 @@
       "outcomes": {
         "20": {
           "n": 1117,
-          "absolute_mean": 0.025851042514957817,
+          "absolute_mean": 0.025851044931183995,
           "absolute_positive_probability": 0.5846016114592659,
-          "relative_mean": 0.015020510565778024,
+          "relative_mean": 0.015020512982004202,
           "relative_outperformance_probability": 0.5183527305282005,
           "relative_outperformance_interval_95": [
             0.4422112802148612,
@@ -10859,9 +10859,9 @@
         },
         "63": {
           "n": 1110,
-          "absolute_mean": 0.11936198697084291,
+          "absolute_mean": 0.11935667925291803,
           "absolute_positive_probability": 0.6828828828828829,
-          "relative_mean": 0.08479581204778121,
+          "relative_mean": 0.08478231031939201,
           "relative_outperformance_probability": 0.6495495495495496,
           "relative_outperformance_interval_95": [
             0.5603378378378379,
@@ -10873,15 +10873,15 @@
             0.20281531531531521
           ],
           "high_volatility_probability": 0.22612612612612612,
-          "downside_cutoff": -0.1213381950480786,
-          "volatility_cutoff": 0.43099442963143464,
+          "downside_cutoff": -0.12133800434570138,
+          "volatility_cutoff": 0.43099446699585714,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1081,
-          "absolute_mean": 0.2142523812098232,
+          "absolute_mean": 0.21424689017920842,
           "absolute_positive_probability": 0.7363552266419982,
-          "relative_mean": 0.14495357892363053,
+          "relative_mean": 0.14493911521917946,
           "relative_outperformance_probability": 0.61054579093432,
           "relative_outperformance_interval_95": [
             0.5041165587419056,
@@ -10893,15 +10893,15 @@
             0.18038852913968548
           ],
           "high_volatility_probability": 0.19518963922294172,
-          "downside_cutoff": -0.15045148954497514,
-          "volatility_cutoff": 0.42144142610574964,
+          "downside_cutoff": -0.15045150637656615,
+          "volatility_cutoff": 0.4214414777584783,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1028,
-          "absolute_mean": 0.4772024345920336,
+          "absolute_mean": 0.4771912279859852,
           "absolute_positive_probability": 0.8861867704280155,
-          "relative_mean": 0.357358150839867,
+          "relative_mean": 0.35733625581507666,
           "relative_outperformance_probability": 0.7782101167315175,
           "relative_outperformance_interval_95": [
             0.6750243190661479,
@@ -10913,8 +10913,8 @@
             0.18487354085603108
           ],
           "high_volatility_probability": 0.2169260700389105,
-          "downside_cutoff": -0.17599269978767745,
-          "volatility_cutoff": 0.41975801884678277,
+          "downside_cutoff": -0.1759926181343544,
+          "volatility_cutoff": 0.41975808368514195,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -10940,9 +10940,9 @@
         "Constructive"
       ],
       "date_start": "2001-01-17",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6486,
-      "history_years": 25.609856262833677,
+      "history_years": 25.61806981519507,
       "current_state": "Neutral",
       "current_state_index": 1,
       "recent_states": [
@@ -10956,15 +10956,15 @@
       "label_persistence": {
         "full_history": {
           "state_index": 1,
-          "probability": 0.8800172637030643,
+          "probability": 0.8799654576856649,
           "interval_95": [
-            0.8661530710451981,
-            0.8926234003865445
+            0.8660957626862957,
+            0.8925767259870689
           ],
-          "transitions": 2317,
+          "transitions": 2316,
           "episodes": 279,
           "median_run_days": 3.0,
-          "mean_run_days": 8.308243727598565,
+          "mean_run_days": 8.304659498207885,
           "classification": "Moderate"
         },
         "recent_window": {
@@ -10983,13 +10983,13 @@
         "full_detail": {
           "transition_counts": [
             [
-              2254,
+              2255,
               159,
               26
             ],
             [
               160,
-              2039,
+              2038,
               118
             ],
             [
@@ -11000,14 +11000,14 @@
           ],
           "transition_matrix": [
             [
-              0.924149241492415,
-              0.06519065190651907,
-              0.01066010660106601
+              0.9241803278688525,
+              0.0651639344262295,
+              0.010655737704918032
             ],
             [
-              0.06905481225722918,
-              0.8800172637030643,
-              0.050927924039706515
+              0.0690846286701209,
+              0.8799654576856649,
+              0.05094991364421416
             ],
             [
               0.014459224985540775,
@@ -11018,27 +11018,27 @@
           "by_state": [
             {
               "state_index": 0,
-              "probability": 0.924149241492415,
+              "probability": 0.9241803278688525,
               "interval_95": [
-                0.9129617822843134,
-                0.9340026709164183
+                0.9129972217307258,
+                0.9340298523644204
               ],
-              "transitions": 2439,
+              "transitions": 2440,
               "episodes": 185,
-              "median_run_days": 6.0,
-              "mean_run_days": 13.183783783783785
+              "median_run_days": 7.0,
+              "mean_run_days": 13.18918918918919
             },
             {
               "state_index": 1,
-              "probability": 0.8800172637030643,
+              "probability": 0.8799654576856649,
               "interval_95": [
-                0.8661530710451981,
-                0.8926234003865445
+                0.8660957626862957,
+                0.8925767259870689
               ],
-              "transitions": 2317,
+              "transitions": 2316,
               "episodes": 279,
               "median_run_days": 3.0,
-              "mean_run_days": 8.308243727598565,
+              "mean_run_days": 8.304659498207885,
               "classification": "Moderate"
             },
             {
@@ -11164,83 +11164,83 @@
       "evidence_support": "Strong",
       "outcomes": {
         "20": {
-          "n": 1253,
-          "absolute_mean": 0.01697377421937583,
-          "absolute_positive_probability": 0.5107741420590582,
-          "relative_mean": 0.00547908782133603,
-          "relative_outperformance_probability": 0.4652833200319234,
+          "n": 1252,
+          "absolute_mean": 0.017025364941097507,
+          "absolute_positive_probability": 0.5111821086261981,
+          "relative_mean": 0.005503099698933147,
+          "relative_outperformance_probability": 0.46565495207667734,
           "relative_outperformance_interval_95": [
-            0.3870710295291301,
-            0.5538906624102155
+            0.38736022364217254,
+            0.552755591054313
           ],
-          "downside_probability": 0.19872306464485234,
+          "downside_probability": 0.1988817891373802,
           "downside_probability_interval_95": [
-            0.1316440542697526,
-            0.25949720670391047
+            0.13093051118210863,
+            0.2581469648562299
           ],
-          "high_volatility_probability": 0.16201117318435754,
+          "high_volatility_probability": 0.1621405750798722,
           "downside_cutoff": -0.07661292631507532,
           "volatility_cutoff": 0.46145601617021165,
           "calibration": "descriptive_in_sample"
         },
         "63": {
-          "n": 1241,
-          "absolute_mean": 0.08505650600403326,
-          "absolute_positive_probability": 0.5938759065269944,
-          "relative_mean": 0.05567489007969965,
-          "relative_outperformance_probability": 0.572119258662369,
+          "n": 1240,
+          "absolute_mean": 0.085163495542131,
+          "absolute_positive_probability": 0.5943548387096774,
+          "relative_mean": 0.05577809701972082,
+          "relative_outperformance_probability": 0.5725806451612904,
           "relative_outperformance_interval_95": [
-            0.47856567284448026,
-            0.679311039484287
+            0.47901209677419354,
+            0.6782258064516129
           ],
-          "downside_probability": 0.20709105560032232,
+          "downside_probability": 0.20725806451612902,
           "downside_probability_interval_95": [
-            0.1168412570507655,
-            0.2852538275584206
+            0.11842741935483872,
+            0.2855040322580645
           ],
-          "high_volatility_probability": 0.1579371474617244,
-          "downside_cutoff": -0.1213381950480786,
-          "volatility_cutoff": 0.43099442963143464,
+          "high_volatility_probability": 0.15806451612903225,
+          "downside_cutoff": -0.12133800434570138,
+          "volatility_cutoff": 0.43099446699585714,
           "calibration": "descriptive_in_sample"
         },
         "126": {
-          "n": 1237,
-          "absolute_mean": 0.19594434177433984,
-          "absolute_positive_probability": 0.683104284559418,
-          "relative_mean": 0.14259131997844363,
-          "relative_outperformance_probability": 0.6257073565076798,
+          "n": 1236,
+          "absolute_mean": 0.1961585210246556,
+          "absolute_positive_probability": 0.6836569579288025,
+          "relative_mean": 0.14285518529470295,
+          "relative_outperformance_probability": 0.6262135922330098,
           "relative_outperformance_interval_95": [
-            0.5278698464025869,
-            0.7381770412287793
+            0.5298543689320387,
+            0.7411610032362459
           ],
-          "downside_probability": 0.185125303152789,
+          "downside_probability": 0.18527508090614886,
           "downside_probability_interval_95": [
-            0.11719886822958772,
-            0.2675828617623282
+            0.11729368932038835,
+            0.2670105177993527
           ],
-          "high_volatility_probability": 0.1608730800323363,
-          "downside_cutoff": -0.15045148954497514,
-          "volatility_cutoff": 0.42144142610574964,
+          "high_volatility_probability": 0.1610032362459547,
+          "downside_cutoff": -0.15045150637656615,
+          "volatility_cutoff": 0.4214414777584783,
           "calibration": "descriptive_in_sample"
         },
         "252": {
-          "n": 1196,
-          "absolute_mean": 0.4384611710867532,
-          "absolute_positive_probability": 0.8386287625418061,
-          "relative_mean": 0.35343836961398006,
-          "relative_outperformance_probability": 0.7876254180602007,
+          "n": 1195,
+          "absolute_mean": 0.43891141214784973,
+          "absolute_positive_probability": 0.8393305439330544,
+          "relative_mean": 0.3539074942730212,
+          "relative_outperformance_probability": 0.7882845188284519,
           "relative_outperformance_interval_95": [
-            0.68810618729097,
-            0.8829640468227424
+            0.6886610878661088,
+            0.882928870292887
           ],
-          "downside_probability": 0.1956521739130435,
+          "downside_probability": 0.19581589958158996,
           "downside_probability_interval_95": [
-            0.11034698996655518,
-            0.29853678929765887
+            0.11127615062761508,
+            0.300418410041841
           ],
-          "high_volatility_probability": 0.20652173913043478,
-          "downside_cutoff": -0.17599269978767745,
-          "volatility_cutoff": 0.41975801884678277,
+          "high_volatility_probability": 0.20669456066945607,
+          "downside_cutoff": -0.1759926181343544,
+          "volatility_cutoff": 0.41975808368514195,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -11266,9 +11266,9 @@
         "Constructive"
       ],
       "date_start": "2000-10-06",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6559,
-      "history_years": 25.89185489390828,
+      "history_years": 25.900068446269678,
       "current_state": "Neutral",
       "current_state_index": 1,
       "recent_states": [
@@ -11282,15 +11282,15 @@
       "label_persistence": {
         "full_history": {
           "state_index": 1,
-          "probability": 0.9079512893982808,
+          "probability": 0.907984246330111,
           "interval_95": [
-            0.8966599193375048,
-            0.9181215761520823
+            0.8966966743023723,
+            0.9181510453539714
           ],
-          "transitions": 2792,
+          "transitions": 2793,
           "episodes": 258,
           "median_run_days": 3.0,
-          "mean_run_days": 10.825581395348838,
+          "mean_run_days": 10.829457364341085,
           "classification": "High"
         },
         "recent_window": {
@@ -11309,13 +11309,13 @@
         "full_detail": {
           "transition_counts": [
             [
-              1255,
+              1254,
               91,
               0
             ],
             [
               91,
-              2535,
+              2536,
               166
             ],
             [
@@ -11326,14 +11326,14 @@
           ],
           "transition_matrix": [
             [
-              0.9323922734026746,
-              0.0676077265973254,
+              0.9323420074349442,
+              0.06765799256505577,
               0.0
             ],
             [
-              0.03259312320916905,
-              0.9079512893982808,
-              0.05945558739255014
+              0.03258145363408521,
+              0.907984246330111,
+              0.05943430003580379
             ],
             [
               0.0,
@@ -11344,27 +11344,27 @@
           "by_state": [
             {
               "state_index": 0,
-              "probability": 0.9323922734026746,
+              "probability": 0.9323420074349442,
               "interval_95": [
-                0.9177112326745093,
-                0.9446121688268224
+                0.9176505844585652,
+                0.9445707467933773
               ],
-              "transitions": 1346,
+              "transitions": 1345,
               "episodes": 91,
               "median_run_days": 3.0,
-              "mean_run_days": 14.791208791208792
+              "mean_run_days": 14.780219780219781
             },
             {
               "state_index": 1,
-              "probability": 0.9079512893982808,
+              "probability": 0.907984246330111,
               "interval_95": [
-                0.8966599193375048,
-                0.9181215761520823
+                0.8966966743023723,
+                0.9181510453539714
               ],
-              "transitions": 2792,
+              "transitions": 2793,
               "episodes": 258,
               "median_run_days": 3.0,
-              "mean_run_days": 10.825581395348838,
+              "mean_run_days": 10.829457364341085,
               "classification": "High"
             },
             {
@@ -11491,10 +11491,10 @@
       "outcomes": {
         "20": {
           "n": 1517,
-          "absolute_mean": 0.015669368094138453,
+          "absolute_mean": 0.015657522292800843,
           "absolute_positive_probability": 0.6025049439683586,
-          "relative_mean": 0.0063771552213311745,
-          "relative_outperformance_probability": 0.5491100856954515,
+          "relative_mean": 0.006359344878615962,
+          "relative_outperformance_probability": 0.5484508899143046,
           "relative_outperformance_interval_95": [
             0.4712261041529334,
             0.6255932762030323
@@ -11505,15 +11505,15 @@
             0.2611074489123269
           ],
           "high_volatility_probability": 0.2168754119973632,
-          "downside_cutoff": -0.06625213271630992,
-          "volatility_cutoff": 0.29198271857993885,
+          "downside_cutoff": -0.06625213862893753,
+          "volatility_cutoff": 0.29198122416208533,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1504,
-          "absolute_mean": 0.05158981972884832,
+          "absolute_mean": 0.05158982946185799,
           "absolute_positive_probability": 0.7347074468085106,
-          "relative_mean": 0.01864267963534244,
+          "relative_mean": 0.018642689368352127,
           "relative_outperformance_probability": 0.6110372340425532,
           "relative_outperformance_interval_95": [
             0.5212267287234043,
@@ -11525,15 +11525,15 @@
             0.26003989361702123
           ],
           "high_volatility_probability": 0.18351063829787234,
-          "downside_cutoff": -0.11037078544659934,
-          "volatility_cutoff": 0.29029902596518475,
+          "downside_cutoff": -0.11037074443236136,
+          "volatility_cutoff": 0.2902991710812262,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1461,
-          "absolute_mean": 0.08777682260999688,
+          "absolute_mean": 0.08776568319183665,
           "absolute_positive_probability": 0.7474332648870636,
-          "relative_mean": 0.03194074085326544,
+          "relative_mean": 0.03192296251627085,
           "relative_outperformance_probability": 0.5989048596851472,
           "relative_outperformance_interval_95": [
             0.5017111567419575,
@@ -11545,15 +11545,15 @@
             0.2513347022587268
           ],
           "high_volatility_probability": 0.1806981519507187,
-          "downside_cutoff": -0.13715061302500853,
-          "volatility_cutoff": 0.28736730486987266,
+          "downside_cutoff": -0.13715050274399443,
+          "volatility_cutoff": 0.28736770473828893,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1418,
-          "absolute_mean": 0.1625226888233324,
+          "absolute_mean": 0.16250987922223678,
           "absolute_positive_probability": 0.8032440056417489,
-          "relative_mean": 0.04139294357834552,
+          "relative_mean": 0.04137238525054553,
           "relative_outperformance_probability": 0.47390691114245415,
           "relative_outperformance_interval_95": [
             0.36385754583921015,
@@ -11565,8 +11565,8 @@
             0.28988011283497883
           ],
           "high_volatility_probability": 0.1995768688293371,
-          "downside_cutoff": -0.15898754994226094,
-          "volatility_cutoff": 0.29555188073734556,
+          "downside_cutoff": -0.1589877314229633,
+          "volatility_cutoff": 0.29555184608448654,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -11591,9 +11591,9 @@
         "High risk"
       ],
       "date_start": "2001-01-17",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6486,
-      "history_years": 25.609856262833677,
+      "history_years": 25.61806981519507,
       "current_state": "Low risk",
       "current_state_index": 0,
       "recent_states": [
@@ -11816,10 +11816,10 @@
       "outcomes": {
         "20": {
           "n": 2581,
-          "absolute_mean": 0.01280425041067706,
+          "absolute_mean": 0.01279729295202898,
           "absolute_positive_probability": 0.5780705153041457,
-          "relative_mean": 0.0066965413777096095,
-          "relative_outperformance_probability": 0.5625726462611391,
+          "relative_mean": 0.006686078220003089,
+          "relative_outperformance_probability": 0.562185199535064,
           "relative_outperformance_interval_95": [
             0.5009201859744286,
             0.6218713676869431
@@ -11830,16 +11830,16 @@
             0.23443432777993023
           ],
           "high_volatility_probability": 0.16892677256877178,
-          "downside_cutoff": -0.06625213271630992,
-          "volatility_cutoff": 0.29198271857993885,
+          "downside_cutoff": -0.06625213862893753,
+          "volatility_cutoff": 0.29198122416208533,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 2553,
-          "absolute_mean": 0.0420884950588067,
+          "absolute_mean": 0.04208131346350194,
           "absolute_positive_probability": 0.6745005875440658,
-          "relative_mean": 0.017338355054234474,
-          "relative_outperformance_probability": 0.5699177438307873,
+          "relative_mean": 0.01732761084568437,
+          "relative_outperformance_probability": 0.5695260477869174,
           "relative_outperformance_interval_95": [
             0.49784567175871525,
             0.6365256560908734
@@ -11850,15 +11850,15 @@
             0.2408930669800235
           ],
           "high_volatility_probability": 0.15902859381120252,
-          "downside_cutoff": -0.11037078544659934,
-          "volatility_cutoff": 0.29029902596518475,
+          "downside_cutoff": -0.11037074443236136,
+          "volatility_cutoff": 0.2902991710812262,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 2525,
-          "absolute_mean": 0.082706365404449,
+          "absolute_mean": 0.08270637178996997,
           "absolute_positive_probability": 0.7227722772277227,
-          "relative_mean": 0.02652517948214773,
+          "relative_mean": 0.026525185867668704,
           "relative_outperformance_probability": 0.5655445544554455,
           "relative_outperformance_interval_95": [
             0.4862871287128713,
@@ -11870,15 +11870,15 @@
             0.23568316831683164
           ],
           "high_volatility_probability": 0.1401980198019802,
-          "downside_cutoff": -0.13715061302500853,
-          "volatility_cutoff": 0.28736730486987266,
+          "downside_cutoff": -0.13715050274399443,
+          "volatility_cutoff": 0.28736770473828893,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 2420,
-          "absolute_mean": 0.16711413727642088,
+          "absolute_mean": 0.16710663936534692,
           "absolute_positive_probability": 0.8037190082644629,
-          "relative_mean": 0.0635973272396183,
+          "relative_mean": 0.06358528895893,
           "relative_outperformance_probability": 0.5574380165289257,
           "relative_outperformance_interval_95": [
             0.4813636363636364,
@@ -11890,8 +11890,8 @@
             0.23429752066115703
           ],
           "high_volatility_probability": 0.15867768595041323,
-          "downside_cutoff": -0.15898754994226094,
-          "volatility_cutoff": 0.29555188073734556,
+          "downside_cutoff": -0.1589877314229633,
+          "volatility_cutoff": 0.29555184608448654,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -11917,9 +11917,9 @@
         "Constructive"
       ],
       "date_start": "2001-01-17",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6486,
-      "history_years": 25.609856262833677,
+      "history_years": 25.61806981519507,
       "current_state": "Neutral",
       "current_state_index": 1,
       "recent_states": [
@@ -12142,10 +12142,10 @@
       "outcomes": {
         "20": {
           "n": 1507,
-          "absolute_mean": 0.015648378615337563,
+          "absolute_mean": 0.015636454371829152,
           "absolute_positive_probability": 0.6018579960185799,
-          "relative_mean": 0.006545226685308062,
-          "relative_outperformance_probability": 0.5500995355009953,
+          "relative_mean": 0.006527298321514437,
+          "relative_outperformance_probability": 0.5494359654943597,
           "relative_outperformance_interval_95": [
             0.4678002654280026,
             0.6251161247511613
@@ -12156,15 +12156,15 @@
             0.2581453218314532
           ],
           "high_volatility_probability": 0.21698739216987392,
-          "downside_cutoff": -0.06625213271630992,
-          "volatility_cutoff": 0.29198271857993885,
+          "downside_cutoff": -0.06625213862893753,
+          "volatility_cutoff": 0.29198122416208533,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1494,
-          "absolute_mean": 0.050641742191198366,
+          "absolute_mean": 0.05064175219450928,
           "absolute_positive_probability": 0.7329317269076305,
-          "relative_mean": 0.018334165944178492,
+          "relative_mean": 0.01833417594748942,
           "relative_outperformance_probability": 0.608433734939759,
           "relative_outperformance_interval_95": [
             0.5233433734939759,
@@ -12176,15 +12176,15 @@
             0.2644243641231593
           ],
           "high_volatility_probability": 0.18473895582329317,
-          "downside_cutoff": -0.11037078544659934,
-          "volatility_cutoff": 0.29029902596518475,
+          "downside_cutoff": -0.11037074443236136,
+          "volatility_cutoff": 0.2902991710812262,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1451,
-          "absolute_mean": 0.08644970077261549,
+          "absolute_mean": 0.08643848478120109,
           "absolute_positive_probability": 0.7456926257753274,
-          "relative_mean": 0.03182530257557495,
+          "relative_mean": 0.03180740191123359,
           "relative_outperformance_probability": 0.5975189524465886,
           "relative_outperformance_interval_95": [
             0.5017057201929704,
@@ -12196,15 +12196,15 @@
             0.25573742246726394
           ],
           "high_volatility_probability": 0.1819434872501723,
-          "downside_cutoff": -0.13715061302500853,
-          "volatility_cutoff": 0.28736730486987266,
+          "downside_cutoff": -0.13715050274399443,
+          "volatility_cutoff": 0.28736770473828893,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1408,
-          "absolute_mean": 0.1624920092948106,
+          "absolute_mean": 0.16247910943715285,
           "absolute_positive_probability": 0.8018465909090909,
-          "relative_mean": 0.042546819701986434,
+          "relative_mean": 0.04252611608405401,
           "relative_outperformance_probability": 0.4772727272727273,
           "relative_outperformance_interval_95": [
             0.36274857954545453,
@@ -12216,8 +12216,8 @@
             0.28842329545454537
           ],
           "high_volatility_probability": 0.20099431818181818,
-          "downside_cutoff": -0.15898754994226094,
-          "volatility_cutoff": 0.29555188073734556,
+          "downside_cutoff": -0.1589877314229633,
+          "volatility_cutoff": 0.29555184608448654,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -12243,9 +12243,9 @@
         "Constructive"
       ],
       "date_start": "2000-10-06",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6559,
-      "history_years": 25.89185489390828,
+      "history_years": 25.900068446269678,
       "current_state": "Constructive",
       "current_state_index": 2,
       "recent_states": [
@@ -12468,9 +12468,9 @@
       "outcomes": {
         "20": {
           "n": 1201,
-          "absolute_mean": 0.026665398210886457,
+          "absolute_mean": 0.026650551992278167,
           "absolute_positive_probability": 0.5587010824313072,
-          "relative_mean": 0.02168531082933259,
+          "relative_mean": 0.02166293071457957,
           "relative_outperformance_probability": 0.5387177352206495,
           "relative_outperformance_interval_95": [
             0.4554329725228976,
@@ -12482,15 +12482,15 @@
             0.22982930890924227
           ],
           "high_volatility_probability": 0.15320566194837634,
-          "downside_cutoff": -0.14327903937796527,
-          "volatility_cutoff": 0.6475783213388272,
+          "downside_cutoff": -0.14327918447878984,
+          "volatility_cutoff": 0.647577959634433,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1166,
-          "absolute_mean": 0.06342771617664339,
+          "absolute_mean": 0.06342772061637429,
           "absolute_positive_probability": 0.6192109777015438,
-          "relative_mean": 0.05688651678631472,
+          "relative_mean": 0.0568865212260456,
           "relative_outperformance_probability": 0.6166380789022299,
           "relative_outperformance_interval_95": [
             0.48955831903945113,
@@ -12502,15 +12502,15 @@
             0.2641509433962264
           ],
           "high_volatility_probability": 0.17667238421955403,
-          "downside_cutoff": -0.22574216002534056,
-          "volatility_cutoff": 0.6386872053782335,
+          "downside_cutoff": -0.2257422241195712,
+          "volatility_cutoff": 0.6386875366015919,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1111,
-          "absolute_mean": 0.12203903674582674,
+          "absolute_mean": 0.12202127464917388,
           "absolute_positive_probability": 0.6804680468046804,
-          "relative_mean": 0.09245006004320425,
+          "relative_mean": 0.09242356755913736,
           "relative_outperformance_probability": 0.6264626462646264,
           "relative_outperformance_interval_95": [
             0.5057155715571557,
@@ -12522,15 +12522,15 @@
             0.28994149414941484
           ],
           "high_volatility_probability": 0.18721872187218722,
-          "downside_cutoff": -0.3213759566113838,
-          "volatility_cutoff": 0.6635135586121907,
+          "downside_cutoff": -0.3213759303372637,
+          "volatility_cutoff": 0.6635127710208111,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1006,
-          "absolute_mean": 0.1510171811696675,
+          "absolute_mean": 0.15098469892047175,
           "absolute_positive_probability": 0.5407554671968191,
-          "relative_mean": 0.10962537910263663,
+          "relative_mean": 0.10958197469194303,
           "relative_outperformance_probability": 0.5417495029821073,
           "relative_outperformance_interval_95": [
             0.40551689860834994,
@@ -12542,8 +12542,8 @@
             0.379821073558648
           ],
           "high_volatility_probability": 0.20079522862823063,
-          "downside_cutoff": -0.4311576563964319,
-          "volatility_cutoff": 0.688366006462513,
+          "downside_cutoff": -0.43115777094665453,
+          "volatility_cutoff": 0.6883661489272437,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -12568,9 +12568,9 @@
         "High risk"
       ],
       "date_start": "2001-01-17",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6486,
-      "history_years": 25.609856262833677,
+      "history_years": 25.61806981519507,
       "current_state": "Normal risk",
       "current_state_index": 1,
       "recent_states": [
@@ -12793,9 +12793,9 @@
       "outcomes": {
         "20": {
           "n": 1356,
-          "absolute_mean": 0.03793949453046644,
+          "absolute_mean": 0.03792633719406458,
           "absolute_positive_probability": 0.588495575221239,
-          "relative_mean": 0.03208509297392573,
+          "relative_mean": 0.032065262916823406,
           "relative_outperformance_probability": 0.5589970501474927,
           "relative_outperformance_interval_95": [
             0.4822271386430678,
@@ -12807,15 +12807,15 @@
             0.22123893805309736
           ],
           "high_volatility_probability": 0.21017699115044247,
-          "downside_cutoff": -0.14327903937796527,
-          "volatility_cutoff": 0.6475783213388272,
+          "downside_cutoff": -0.14327918447878984,
+          "volatility_cutoff": 0.647577959634433,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1335,
-          "absolute_mean": 0.10023355152284392,
+          "absolute_mean": 0.10023354900643217,
           "absolute_positive_probability": 0.6606741573033708,
-          "relative_mean": 0.07844084357361576,
+          "relative_mean": 0.078440841057204,
           "relative_outperformance_probability": 0.6097378277153558,
           "relative_outperformance_interval_95": [
             0.5212921348314606,
@@ -12827,15 +12827,15 @@
             0.21129213483146064
           ],
           "high_volatility_probability": 0.15880149812734082,
-          "downside_cutoff": -0.22574216002534056,
-          "volatility_cutoff": 0.6386872053782335,
+          "downside_cutoff": -0.2257422241195712,
+          "volatility_cutoff": 0.6386875366015919,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1285,
-          "absolute_mean": 0.19193590310725892,
+          "absolute_mean": 0.1919358925059718,
           "absolute_positive_probability": 0.7299610894941634,
-          "relative_mean": 0.1451787619420785,
+          "relative_mean": 0.14517875134079133,
           "relative_outperformance_probability": 0.68715953307393,
           "relative_outperformance_interval_95": [
             0.5773735408560311,
@@ -12847,15 +12847,15 @@
             0.2031517509727626
           ],
           "high_volatility_probability": 0.15719844357976653,
-          "downside_cutoff": -0.3213759566113838,
-          "volatility_cutoff": 0.6635135586121907,
+          "downside_cutoff": -0.3213759303372637,
+          "volatility_cutoff": 0.6635127710208111,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1249,
-          "absolute_mean": 0.3631622577303462,
+          "absolute_mean": 0.36316225563362065,
           "absolute_positive_probability": 0.7133706965572458,
-          "relative_mean": 0.26463908668896385,
+          "relative_mean": 0.26463908459223817,
           "relative_outperformance_probability": 0.633306645316253,
           "relative_outperformance_interval_95": [
             0.5171737389911929,
@@ -12867,8 +12867,8 @@
             0.22510008006405113
           ],
           "high_volatility_probability": 0.16493194555644516,
-          "downside_cutoff": -0.4311576563964319,
-          "volatility_cutoff": 0.688366006462513,
+          "downside_cutoff": -0.43115777094665453,
+          "volatility_cutoff": 0.6883661489272437,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -12894,9 +12894,9 @@
         "Constructive"
       ],
       "date_start": "2001-01-17",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6486,
-      "history_years": 25.609856262833677,
+      "history_years": 25.61806981519507,
       "current_state": "Constructive",
       "current_state_index": 2,
       "recent_states": [
@@ -13119,9 +13119,9 @@
       "outcomes": {
         "20": {
           "n": 932,
-          "absolute_mean": 0.033427643510269396,
+          "absolute_mean": 0.03340851042619829,
           "absolute_positive_probability": 0.5944206008583691,
-          "relative_mean": 0.028920660520008832,
+          "relative_mean": 0.02889181905689284,
           "relative_outperformance_probability": 0.5708154506437768,
           "relative_outperformance_interval_95": [
             0.4849517167381974,
@@ -13133,15 +13133,15 @@
             0.18672210300429182
           ],
           "high_volatility_probability": 0.09549356223175966,
-          "downside_cutoff": -0.14327903937796527,
-          "volatility_cutoff": 0.6475783213388272,
+          "downside_cutoff": -0.14327918447878984,
+          "volatility_cutoff": 0.647577959634433,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 901,
-          "absolute_mean": 0.06718345560638939,
+          "absolute_mean": 0.0671834623538095,
           "absolute_positive_probability": 0.6359600443951166,
-          "relative_mean": 0.06554215753101363,
+          "relative_mean": 0.06554216427843373,
           "relative_outperformance_probability": 0.6403995560488346,
           "relative_outperformance_interval_95": [
             0.5281908990011098,
@@ -13153,15 +13153,15 @@
             0.23318534961154264
           ],
           "high_volatility_probability": 0.11653718091009989,
-          "downside_cutoff": -0.22574216002534056,
-          "volatility_cutoff": 0.6386872053782335,
+          "downside_cutoff": -0.2257422241195712,
+          "volatility_cutoff": 0.6386875366015919,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 846,
-          "absolute_mean": 0.15632974376673162,
+          "absolute_mean": 0.15630641140283502,
           "absolute_positive_probability": 0.723404255319149,
-          "relative_mean": 0.12383086627596518,
+          "relative_mean": 0.12379606882883336,
           "relative_outperformance_probability": 0.6713947990543735,
           "relative_outperformance_interval_95": [
             0.5342494089834515,
@@ -13173,15 +13173,15 @@
             0.23176713947990535
           ],
           "high_volatility_probability": 0.1347517730496454,
-          "downside_cutoff": -0.3213759566113838,
-          "volatility_cutoff": 0.6635135586121907,
+          "downside_cutoff": -0.3213759303372637,
+          "volatility_cutoff": 0.6635127710208111,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 741,
-          "absolute_mean": 0.20366778373929262,
+          "absolute_mean": 0.20362368750533144,
           "absolute_positive_probability": 0.611336032388664,
-          "relative_mean": 0.1556739174500649,
+          "relative_mean": 0.15561499301844264,
           "relative_outperformance_probability": 0.6126855600539811,
           "relative_outperformance_interval_95": [
             0.4520580296896086,
@@ -13193,8 +13193,8 @@
             0.3481781376518219
           ],
           "high_volatility_probability": 0.14709851551956815,
-          "downside_cutoff": -0.4311576563964319,
-          "volatility_cutoff": 0.688366006462513,
+          "downside_cutoff": -0.43115777094665453,
+          "volatility_cutoff": 0.6883661489272437,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -13220,9 +13220,9 @@
         "Constructive"
       ],
       "date_start": "2000-10-06",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6559,
-      "history_years": 25.89185489390828,
+      "history_years": 25.900068446269678,
       "current_state": "Neutral",
       "current_state_index": 1,
       "recent_states": [
@@ -13236,15 +13236,15 @@
       "label_persistence": {
         "full_history": {
           "state_index": 1,
-          "probability": 0.9135846372688478,
+          "probability": 0.9131981501245109,
           "interval_95": [
-            0.9026268690706136,
-            0.9234139139052469
+            0.902217931539659,
+            0.9230505311688644
           ],
-          "transitions": 2812,
-          "episodes": 244,
+          "transitions": 2811,
+          "episodes": 245,
           "median_run_days": 3.0,
-          "mean_run_days": 11.528688524590164,
+          "mean_run_days": 11.477551020408164,
           "classification": "High"
         },
         "recent_window": {
@@ -13264,12 +13264,12 @@
           "transition_counts": [
             [
               836,
-              100,
+              101,
               0
             ],
             [
-              99,
-              2569,
+              100,
+              2567,
               144
             ],
             [
@@ -13280,14 +13280,14 @@
           ],
           "transition_matrix": [
             [
-              0.8931623931623932,
-              0.10683760683760683,
+              0.8922091782283885,
+              0.10779082177161152,
               0.0
             ],
             [
-              0.03520625889046942,
-              0.9135846372688478,
-              0.051209103840682786
+              0.03557452863749555,
+              0.9131981501245109,
+              0.051227321237993596
             ],
             [
               0.0,
@@ -13298,27 +13298,27 @@
           "by_state": [
             {
               "state_index": 0,
-              "probability": 0.8931623931623932,
+              "probability": 0.8922091782283885,
               "interval_95": [
-                0.8717405700566747,
-                0.9113701158291172
+                0.8707268466954076,
+                0.9104886097640009
               ],
-              "transitions": 936,
-              "episodes": 100,
+              "transitions": 937,
+              "episodes": 101,
               "median_run_days": 3.0,
-              "mean_run_days": 9.36
+              "mean_run_days": 9.277227722772277
             },
             {
               "state_index": 1,
-              "probability": 0.9135846372688478,
+              "probability": 0.9131981501245109,
               "interval_95": [
-                0.9026268690706136,
-                0.9234139139052469
+                0.902217931539659,
+                0.9230505311688644
               ],
-              "transitions": 2812,
-              "episodes": 244,
+              "transitions": 2811,
+              "episodes": 245,
               "median_run_days": 3.0,
-              "mean_run_days": 11.528688524590164,
+              "mean_run_days": 11.477551020408164,
               "classification": "High"
             },
             {
@@ -13414,9 +13414,9 @@
       "exit_hazards": [
         {
           "age_bucket": "1–5",
-          "episodes_at_risk": 244,
-          "exited_in_bucket": 145,
-          "bucket_exit_probability": 0.5942622950819673,
+          "episodes_at_risk": 245,
+          "exited_in_bucket": 146,
+          "bucket_exit_probability": 0.5959183673469388,
           "bucket_days": 5
         },
         {
@@ -13444,83 +13444,83 @@
       "evidence_support": "Strong",
       "outcomes": {
         "20": {
-          "n": 1448,
-          "absolute_mean": 0.02518297862576362,
-          "absolute_positive_probability": 0.5904696132596685,
-          "relative_mean": 0.012371806245787513,
-          "relative_outperformance_probability": 0.544889502762431,
+          "n": 1447,
+          "absolute_mean": 0.025153004455778883,
+          "absolute_positive_probability": 0.590186592950933,
+          "relative_mean": 0.0123310651532789,
+          "relative_outperformance_probability": 0.544574982722875,
           "relative_outperformance_interval_95": [
-            0.47370511049723757,
-            0.6174205801104973
+            0.4733068417415342,
+            0.616534208707671
           ],
-          "downside_probability": 0.19475138121546962,
+          "downside_probability": 0.19488597097442986,
           "downside_probability_interval_95": [
-            0.1360324585635359,
-            0.2453383977900551
+            0.13681755355908776,
+            0.24682100898410494
           ],
-          "high_volatility_probability": 0.20096685082872928,
-          "downside_cutoff": -0.07032604161759892,
-          "volatility_cutoff": 0.3597382406457281,
+          "high_volatility_probability": 0.20110573600552867,
+          "downside_cutoff": -0.07032587694861703,
+          "volatility_cutoff": 0.3597382406457283,
           "calibration": "descriptive_in_sample"
         },
         "63": {
-          "n": 1424,
-          "absolute_mean": 0.05248370712046566,
-          "absolute_positive_probability": 0.6264044943820225,
-          "relative_mean": 0.01929254578300493,
-          "relative_outperformance_probability": 0.535814606741573,
+          "n": 1423,
+          "absolute_mean": 0.05257750402270165,
+          "absolute_positive_probability": 0.6275474349964862,
+          "relative_mean": 0.01937539240809925,
+          "relative_outperformance_probability": 0.5361911454673226,
           "relative_outperformance_interval_95": [
-            0.45712780898876404,
-            0.6327247191011236
+            0.4574666198172874,
+            0.6317990161630358
           ],
-          "downside_probability": 0.22191011235955055,
+          "downside_probability": 0.22206605762473647,
           "downside_probability_interval_95": [
-            0.14325842696629212,
-            0.2914676966292134
+            0.1447118763176388,
+            0.29024947294448344
           ],
-          "high_volatility_probability": 0.17485955056179775,
-          "downside_cutoff": -0.12100787021620878,
-          "volatility_cutoff": 0.362841967305591,
+          "high_volatility_probability": 0.17498243148278286,
+          "downside_cutoff": -0.12100776787464898,
+          "volatility_cutoff": 0.36284209868577183,
           "calibration": "descriptive_in_sample"
         },
         "126": {
-          "n": 1392,
-          "absolute_mean": 0.14445795509789228,
-          "absolute_positive_probability": 0.7241379310344828,
-          "relative_mean": 0.08244485555135177,
-          "relative_outperformance_probability": 0.6285919540229885,
+          "n": 1391,
+          "absolute_mean": 0.1444980320680988,
+          "absolute_positive_probability": 0.723939611790079,
+          "relative_mean": 0.08252880682630627,
+          "relative_outperformance_probability": 0.6290438533429188,
           "relative_outperformance_interval_95": [
-            0.5229705459770114,
-            0.7256285919540229
+            0.5226276060388211,
+            0.7240294751976993
           ],
-          "downside_probability": 0.20186781609195403,
+          "downside_probability": 0.20201294033069733,
           "downside_probability_interval_95": [
-            0.12067169540229886,
-            0.2845186781609195
+            0.1221782890007189,
+            0.28402228612508984
           ],
-          "high_volatility_probability": 0.15517241379310345,
-          "downside_cutoff": -0.14999249775023543,
-          "volatility_cutoff": 0.38282303946620994,
+          "high_volatility_probability": 0.1552839683680805,
+          "downside_cutoff": -0.1499924841825919,
+          "volatility_cutoff": 0.38282306390880416,
           "calibration": "descriptive_in_sample"
         },
         "252": {
-          "n": 1321,
-          "absolute_mean": 0.32018090489794365,
-          "absolute_positive_probability": 0.8039364118092355,
-          "relative_mean": 0.19090839096220383,
-          "relative_outperformance_probability": 0.6449659348978047,
+          "n": 1320,
+          "absolute_mean": 0.32037184260547463,
+          "absolute_positive_probability": 0.8037878787878788,
+          "relative_mean": 0.19113269656867984,
+          "relative_outperformance_probability": 0.6454545454545455,
           "relative_outperformance_interval_95": [
-            0.5465367146101439,
-            0.7487130961392884
+            0.5477272727272727,
+            0.7500378787878788
           ],
-          "downside_probability": 0.1514004542013626,
+          "downside_probability": 0.15151515151515152,
           "downside_probability_interval_95": [
-            0.07038228614685844,
-            0.22108251324753972
+            0.0719128787878788,
+            0.22198863636363636
           ],
-          "high_volatility_probability": 0.10068130204390613,
-          "downside_cutoff": -0.1642855599200762,
-          "volatility_cutoff": 0.3651511350946125,
+          "high_volatility_probability": 0.10075757575757575,
+          "downside_cutoff": -0.16428565807649398,
+          "volatility_cutoff": 0.36515105902946005,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -13545,9 +13545,9 @@
         "High risk"
       ],
       "date_start": "2001-01-17",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6486,
-      "history_years": 25.609856262833677,
+      "history_years": 25.61806981519507,
       "current_state": "Normal risk",
       "current_state_index": 1,
       "recent_states": [
@@ -13770,9 +13770,9 @@
       "outcomes": {
         "20": {
           "n": 1208,
-          "absolute_mean": 0.02177855601251416,
+          "absolute_mean": 0.021778551778287948,
           "absolute_positive_probability": 0.5629139072847682,
-          "relative_mean": 0.013846933884490747,
+          "relative_mean": 0.013846929650264529,
           "relative_outperformance_probability": 0.5289735099337748,
           "relative_outperformance_interval_95": [
             0.4527938741721854,
@@ -13784,15 +13784,15 @@
             0.26158940397350994
           ],
           "high_volatility_probability": 0.17880794701986755,
-          "downside_cutoff": -0.07032604161759892,
-          "volatility_cutoff": 0.3597382406457281,
+          "downside_cutoff": -0.07032587694861703,
+          "volatility_cutoff": 0.3597382406457283,
           "calibration": "descriptive_in_sample"
         },
         "63": {
           "n": 1208,
-          "absolute_mean": 0.09024760081437831,
+          "absolute_mean": 0.09024759598037005,
           "absolute_positive_probability": 0.6961920529801324,
-          "relative_mean": 0.06252577661428779,
+          "relative_mean": 0.06252577178027956,
           "relative_outperformance_probability": 0.6432119205298014,
           "relative_outperformance_interval_95": [
             0.5653559602649006,
@@ -13804,15 +13804,15 @@
             0.2789942052980132
           ],
           "high_volatility_probability": 0.15894039735099338,
-          "downside_cutoff": -0.12100787021620878,
-          "volatility_cutoff": 0.362841967305591,
+          "downside_cutoff": -0.12100776787464898,
+          "volatility_cutoff": 0.36284209868577183,
           "calibration": "descriptive_in_sample"
         },
         "126": {
           "n": 1205,
-          "absolute_mean": 0.19159511748926353,
+          "absolute_mean": 0.19159511172023494,
           "absolute_positive_probability": 0.7535269709543568,
-          "relative_mean": 0.1293764388613201,
+          "relative_mean": 0.12937643309229152,
           "relative_outperformance_probability": 0.7020746887966804,
           "relative_outperformance_interval_95": [
             0.6081950207468879,
@@ -13824,15 +13824,15 @@
             0.2672406639004149
           ],
           "high_volatility_probability": 0.20580912863070538,
-          "downside_cutoff": -0.14999249775023543,
-          "volatility_cutoff": 0.38282303946620994,
+          "downside_cutoff": -0.1499924841825919,
+          "volatility_cutoff": 0.38282306390880416,
           "calibration": "descriptive_in_sample"
         },
         "252": {
           "n": 1154,
-          "absolute_mean": 0.41402898216152273,
+          "absolute_mean": 0.41404451188794333,
           "absolute_positive_probability": 0.8266897746967071,
-          "relative_mean": 0.30862831797994317,
+          "relative_mean": 0.3086343263073457,
           "relative_outperformance_probability": 0.6975736568457539,
           "relative_outperformance_interval_95": [
             0.5875,
@@ -13844,8 +13844,8 @@
             0.22798960138648172
           ],
           "high_volatility_probability": 0.2296360485268631,
-          "downside_cutoff": -0.1642855599200762,
-          "volatility_cutoff": 0.3651511350946125,
+          "downside_cutoff": -0.16428565807649398,
+          "volatility_cutoff": 0.36515105902946005,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -13871,9 +13871,9 @@
         "Constructive"
       ],
       "date_start": "2001-01-17",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "label_rows": 6486,
-      "history_years": 25.609856262833677,
+      "history_years": 25.61806981519507,
       "current_state": "Neutral",
       "current_state_index": 1,
       "recent_states": [
@@ -13887,15 +13887,15 @@
       "label_persistence": {
         "full_history": {
           "state_index": 1,
-          "probability": 0.8963503649635036,
+          "probability": 0.8958130477117819,
           "interval_95": [
-            0.8824236490601015,
-            0.9087979777032201
+            0.8818537318456708,
+            0.90829454778868
           ],
-          "transitions": 2055,
-          "episodes": 214,
+          "transitions": 2054,
+          "episodes": 215,
           "median_run_days": 3.0,
-          "mean_run_days": 9.607476635514018,
+          "mean_run_days": 9.55813953488372,
           "classification": "Moderate"
         },
         "recent_window": {
@@ -13915,12 +13915,12 @@
           "transition_counts": [
             [
               2029,
-              97,
+              98,
               44
             ],
             [
-              102,
-              1842,
+              103,
+              1840,
               111
             ],
             [
@@ -13931,14 +13931,14 @@
           ],
           "transition_matrix": [
             [
-              0.9350230414746544,
-              0.04470046082949309,
-              0.020276497695852536
+              0.9345923537540304,
+              0.04514048825426071,
+              0.02026715799170889
             ],
             [
-              0.049635036496350364,
-              0.8963503649635036,
-              0.05401459854014599
+              0.0501460564751704,
+              0.8958130477117819,
+              0.05404089581304771
             ],
             [
               0.016814159292035398,
@@ -13949,27 +13949,27 @@
           "by_state": [
             {
               "state_index": 0,
-              "probability": 0.9350230414746544,
+              "probability": 0.9345923537540304,
               "interval_95": [
-                0.9238640450928689,
-                0.9446444975718774
+                0.9234051350142718,
+                0.9442442606934431
               ],
-              "transitions": 2170,
-              "episodes": 141,
+              "transitions": 2171,
+              "episodes": 142,
               "median_run_days": 7.0,
-              "mean_run_days": 15.390070921985815
+              "mean_run_days": 15.288732394366198
             },
             {
               "state_index": 1,
-              "probability": 0.8963503649635036,
+              "probability": 0.8958130477117819,
               "interval_95": [
-                0.8824236490601015,
-                0.9087979777032201
+                0.8818537318456708,
+                0.90829454778868
               ],
-              "transitions": 2055,
-              "episodes": 214,
+              "transitions": 2054,
+              "episodes": 215,
               "median_run_days": 3.0,
-              "mean_run_days": 9.607476635514018,
+              "mean_run_days": 9.55813953488372,
               "classification": "Moderate"
             },
             {
@@ -14065,9 +14065,9 @@
       "exit_hazards": [
         {
           "age_bucket": "1–5",
-          "episodes_at_risk": 214,
-          "exited_in_bucket": 129,
-          "bucket_exit_probability": 0.602803738317757,
+          "episodes_at_risk": 215,
+          "exited_in_bucket": 130,
+          "bucket_exit_probability": 0.6046511627906976,
           "bucket_days": 5
         },
         {
@@ -14095,83 +14095,83 @@
       "evidence_support": "Strong",
       "outcomes": {
         "20": {
-          "n": 1073,
-          "absolute_mean": 0.024409798736662935,
-          "absolute_positive_probability": 0.5936626281453867,
-          "relative_mean": 0.01500024558421987,
-          "relative_outperformance_probability": 0.5619757688723206,
+          "n": 1072,
+          "absolute_mean": 0.024368617364496987,
+          "absolute_positive_probability": 0.5932835820895522,
+          "relative_mean": 0.014947704027665374,
+          "relative_outperformance_probability": 0.5615671641791045,
           "relative_outperformance_interval_95": [
-            0.48646318732525634,
-            0.6449207828518173
+            0.4869169776119403,
+            0.6419076492537312
           ],
-          "downside_probability": 0.17148182665424044,
+          "downside_probability": 0.17164179104477612,
           "downside_probability_interval_95": [
-            0.10531220876048462,
-            0.23299161230195714
+            0.10541044776119403,
+            0.2332089552238806
           ],
-          "high_volatility_probability": 0.11369990680335508,
-          "downside_cutoff": -0.07032604161759892,
-          "volatility_cutoff": 0.3597382406457281,
+          "high_volatility_probability": 0.11380597014925373,
+          "downside_cutoff": -0.07032587694861703,
+          "volatility_cutoff": 0.3597382406457283,
           "calibration": "descriptive_in_sample"
         },
         "63": {
-          "n": 1073,
-          "absolute_mean": 0.06221655711140828,
-          "absolute_positive_probability": 0.6533084808946877,
-          "relative_mean": 0.03554161681807365,
-          "relative_outperformance_probability": 0.6001863932898416,
+          "n": 1072,
+          "absolute_mean": 0.062334773543296106,
+          "absolute_positive_probability": 0.6539179104477612,
+          "relative_mean": 0.03565986060843805,
+          "relative_outperformance_probability": 0.6007462686567164,
           "relative_outperformance_interval_95": [
-            0.5003960857409133,
-            0.7074091332712021
+            0.5017024253731344,
+            0.7099113805970149
           ],
-          "downside_probability": 0.19944082013047532,
+          "downside_probability": 0.19962686567164178,
           "downside_probability_interval_95": [
-            0.12581547064305684,
-            0.28245573159366255
+            0.12957089552238807,
+            0.2817630597014925
           ],
-          "high_volatility_probability": 0.07921714818266543,
-          "downside_cutoff": -0.12100787021620878,
-          "volatility_cutoff": 0.362841967305591,
+          "high_volatility_probability": 0.07929104477611941,
+          "downside_cutoff": -0.12100776787464898,
+          "volatility_cutoff": 0.36284209868577183,
           "calibration": "descriptive_in_sample"
         },
         "126": {
-          "n": 1073,
-          "absolute_mean": 0.1608803416232884,
-          "absolute_positive_probability": 0.7530288909599254,
-          "relative_mean": 0.09941350326287102,
-          "relative_outperformance_probability": 0.684995340167754,
+          "n": 1072,
+          "absolute_mean": 0.16094766156290483,
+          "absolute_positive_probability": 0.7527985074626866,
+          "relative_mean": 0.0995382629591017,
+          "relative_outperformance_probability": 0.6856343283582089,
           "relative_outperformance_interval_95": [
-            0.5917986952469712,
-            0.783807082945014
+            0.5932369402985075,
+            0.7836054104477612
           ],
-          "downside_probability": 0.16868592730661697,
+          "downside_probability": 0.16884328358208955,
           "downside_probability_interval_95": [
-            0.09410531220876048,
-            0.2628378378378378
+            0.09326026119402986,
+            0.26401585820895523
           ],
-          "high_volatility_probability": 0.09506057781919851,
-          "downside_cutoff": -0.14999249775023543,
-          "volatility_cutoff": 0.38282303946620994,
+          "high_volatility_probability": 0.09514925373134328,
+          "downside_cutoff": -0.1499924841825919,
+          "volatility_cutoff": 0.38282306390880416,
           "calibration": "descriptive_in_sample"
         },
         "252": {
-          "n": 1034,
-          "absolute_mean": 0.3235424213082474,
-          "absolute_positive_probability": 0.8123791102514507,
-          "relative_mean": 0.20771555807802922,
-          "relative_outperformance_probability": 0.648936170212766,
+          "n": 1033,
+          "absolute_mean": 0.32378965418899947,
+          "absolute_positive_probability": 0.8121974830590513,
+          "relative_mean": 0.20801844563188207,
+          "relative_outperformance_probability": 0.6495643756050339,
           "relative_outperformance_interval_95": [
-            0.5512088974854932,
-            0.762137330754352
+            0.5527347531461761,
+            0.7638189738625363
           ],
-          "downside_probability": 0.11798839458413926,
+          "downside_probability": 0.1181026137463698,
           "downside_probability_interval_95": [
-            0.04929883945841392,
-            0.18580754352030937
+            0.049370764762826716,
+            0.18596321393998055
           ],
-          "high_volatility_probability": 0.09187620889748549,
-          "downside_cutoff": -0.1642855599200762,
-          "volatility_cutoff": 0.3651511350946125,
+          "high_volatility_probability": 0.09196515004840271,
+          "downside_cutoff": -0.16428565807649398,
+          "volatility_cutoff": 0.36515105902946005,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -14197,9 +14197,9 @@
         "Constructive"
       ],
       "date_start": "2013-12-27",
-      "date_end": "2026-08-28",
-      "label_rows": 3162,
-      "history_years": 12.668035592060233,
+      "date_end": "2026-08-31",
+      "label_rows": 3163,
+      "history_years": 12.676249144421629,
       "current_state": "Constructive",
       "current_state_index": 2,
       "recent_states": [
@@ -14209,19 +14209,19 @@
         "Constructive",
         "Constructive"
       ],
-      "state_age_days": 28,
+      "state_age_days": 29,
       "label_persistence": {
         "full_history": {
           "state_index": 2,
-          "probability": 0.940677966101695,
+          "probability": 0.940713853599516,
           "interval_95": [
-            0.9282314976616485,
-            0.9510796635025597
+            0.928274598576123,
+            0.9511094053020991
           ],
-          "transitions": 1652,
+          "transitions": 1653,
           "episodes": 99,
           "median_run_days": 7.0,
-          "mean_run_days": 16.696969696969695,
+          "mean_run_days": 16.707070707070706,
           "classification": "High"
         },
         "recent_window": {
@@ -14252,7 +14252,7 @@
             [
               0,
               98,
-              1554
+              1555
             ]
           ],
           "transition_matrix": [
@@ -14268,8 +14268,8 @@
             ],
             [
               0.0,
-              0.059322033898305086,
-              0.940677966101695
+              0.05928614640048397,
+              0.940713853599516
             ]
           ],
           "by_state": [
@@ -14299,15 +14299,15 @@
             },
             {
               "state_index": 2,
-              "probability": 0.940677966101695,
+              "probability": 0.940713853599516,
               "interval_95": [
-                0.9282314976616485,
-                0.9510796635025597
+                0.928274598576123,
+                0.9511094053020991
               ],
-              "transitions": 1652,
+              "transitions": 1653,
               "episodes": 99,
               "median_run_days": 7.0,
-              "mean_run_days": 16.696969696969695,
+              "mean_run_days": 16.707070707070706,
               "classification": "High"
             }
           ]
@@ -14421,23 +14421,23 @@
       "evidence_support": "Strong",
       "outcomes": {
         "20": {
-          "n": 1633,
-          "absolute_mean": 0.005644278415486222,
-          "absolute_positive_probability": 0.5854255970606246,
+          "n": 1634,
+          "absolute_mean": 0.0056695555448847005,
+          "absolute_positive_probability": 0.5856793145654835,
           "relative_mean": 0.0,
           "relative_outperformance_probability": 0.0,
           "relative_outperformance_interval_95": [
             0.0,
             0.0
           ],
-          "downside_probability": 0.16717697489283528,
+          "downside_probability": 0.16707466340269278,
           "downside_probability_interval_95": [
-            0.11938150642988365,
-            0.21924372320881813
+            0.1211138310893513,
+            0.22031823745410037
           ],
-          "high_volatility_probability": 0.1041028781383956,
-          "downside_cutoff": -0.03854147998924031,
-          "volatility_cutoff": 0.1804441308589994,
+          "high_volatility_probability": 0.10403916768665851,
+          "downside_cutoff": -0.03853751234547313,
+          "volatility_cutoff": 0.18043044994723076,
           "calibration": "descriptive_in_sample"
         },
         "63": {
@@ -14456,48 +14456,48 @@
             0.23509230769230768
           ],
           "high_volatility_probability": 0.10584615384615384,
-          "downside_cutoff": -0.06847806015168836,
-          "volatility_cutoff": 0.18916923239579836,
+          "downside_cutoff": -0.06846640255408394,
+          "volatility_cutoff": 0.1891264681851718,
           "calibration": "descriptive_in_sample"
         },
         "126": {
-          "n": 1567,
-          "absolute_mean": 0.05165343275096766,
-          "absolute_positive_probability": 0.7549457562220804,
+          "n": 1568,
+          "absolute_mean": 0.05170306575180784,
+          "absolute_positive_probability": 0.7551020408163265,
           "relative_mean": 0.0,
           "relative_outperformance_probability": 0.0,
           "relative_outperformance_interval_95": [
             0.0,
             0.0
           ],
-          "downside_probability": 0.19719208679004468,
+          "downside_probability": 0.19706632653061223,
           "downside_probability_interval_95": [
-            0.1206126356094448,
-            0.28149329929802164
+            0.1211734693877551,
+            0.2806760204081632
           ],
-          "high_volatility_probability": 0.14167198468410977,
-          "downside_cutoff": -0.10377643142083692,
-          "volatility_cutoff": 0.18606257349709737,
+          "high_volatility_probability": 0.14158163265306123,
+          "downside_cutoff": -0.1037752466660163,
+          "volatility_cutoff": 0.18604915235133168,
           "calibration": "descriptive_in_sample"
         },
         "252": {
-          "n": 1479,
-          "absolute_mean": 0.11092535043544158,
-          "absolute_positive_probability": 0.7964841108857336,
+          "n": 1480,
+          "absolute_mean": 0.11103710600557183,
+          "absolute_positive_probability": 0.7966216216216216,
           "relative_mean": 0.0,
           "relative_outperformance_probability": 0.0,
           "relative_outperformance_interval_95": [
             0.0,
             0.0
           ],
-          "downside_probability": 0.1643002028397566,
+          "downside_probability": 0.16486486486486487,
           "downside_probability_interval_95": [
-            0.08923258958755916,
-            0.24683908045977007
+            0.08846283783783784,
+            0.24734797297297292
           ],
-          "high_volatility_probability": 0.1271129141311697,
-          "downside_cutoff": -0.13442672036809705,
-          "volatility_cutoff": 0.19376051081729578,
+          "high_volatility_probability": 0.1277027027027027,
+          "downside_cutoff": -0.13441417662378097,
+          "volatility_cutoff": 0.19375908254039476,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -14522,9 +14522,9 @@
         "High risk"
       ],
       "date_start": "2014-04-14",
-      "date_end": "2026-08-28",
-      "label_rows": 3089,
-      "history_years": 12.372347707049967,
+      "date_end": "2026-08-31",
+      "label_rows": 3090,
+      "history_years": 12.380561259411362,
       "current_state": "Low risk",
       "current_state_index": 0,
       "recent_states": [
@@ -14534,38 +14534,38 @@
         "Low risk",
         "Low risk"
       ],
-      "state_age_days": 17,
+      "state_age_days": 18,
       "label_persistence": {
         "full_history": {
           "state_index": 0,
-          "probability": 0.9251396648044693,
+          "probability": 0.9252232142857143,
           "interval_95": [
-            0.9060223786754126,
-            0.9406229034299106
+            0.9061260482326023,
+            0.940689657998361
           ],
-          "transitions": 895,
+          "transitions": 896,
           "episodes": 68,
           "median_run_days": 8.5,
-          "mean_run_days": 13.176470588235293,
+          "mean_run_days": 13.191176470588236,
           "classification": "High"
         },
         "recent_window": {
           "state_index": 0,
-          "probability": 0.9350961538461539,
+          "probability": 0.935251798561151,
           "interval_95": [
-            0.9072155446507564,
-            0.9550144011192674
+            0.9074341067470552,
+            0.9551232069785841
           ],
-          "transitions": 416,
+          "transitions": 417,
           "episodes": 28,
           "median_run_days": 6.5,
-          "mean_run_days": 14.892857142857142,
+          "mean_run_days": 14.928571428571429,
           "classification": "High"
         },
         "full_detail": {
           "transition_counts": [
             [
-              828,
+              829,
               67,
               0
             ],
@@ -14582,8 +14582,8 @@
           ],
           "transition_matrix": [
             [
-              0.9251396648044693,
-              0.07486033519553073,
+              0.9252232142857143,
+              0.07477678571428571,
               0.0
             ],
             [
@@ -14600,15 +14600,15 @@
           "by_state": [
             {
               "state_index": 0,
-              "probability": 0.9251396648044693,
+              "probability": 0.9252232142857143,
               "interval_95": [
-                0.9060223786754126,
-                0.9406229034299106
+                0.9061260482326023,
+                0.940689657998361
               ],
-              "transitions": 895,
+              "transitions": 896,
               "episodes": 68,
               "median_run_days": 8.5,
-              "mean_run_days": 13.176470588235293,
+              "mean_run_days": 13.191176470588236,
               "classification": "High"
             },
             {
@@ -14640,13 +14640,13 @@
         "recent_detail": {
           "transition_counts": [
             [
-              389,
+              390,
               27,
               0
             ],
             [
               26,
-              232,
+              231,
               7
             ],
             [
@@ -14657,14 +14657,14 @@
           ],
           "transition_matrix": [
             [
-              0.9350961538461539,
-              0.06490384615384616,
+              0.935251798561151,
+              0.06474820143884892,
               0.0
             ],
             [
-              0.09811320754716982,
-              0.8754716981132076,
-              0.026415094339622643
+              0.09848484848484848,
+              0.875,
+              0.026515151515151516
             ],
             [
               0.02702702702702703,
@@ -14675,28 +14675,28 @@
           "by_state": [
             {
               "state_index": 0,
-              "probability": 0.9350961538461539,
+              "probability": 0.935251798561151,
               "interval_95": [
-                0.9072155446507564,
-                0.9550144011192674
+                0.9074341067470552,
+                0.9551232069785841
               ],
-              "transitions": 416,
+              "transitions": 417,
               "episodes": 28,
               "median_run_days": 6.5,
-              "mean_run_days": 14.892857142857142,
+              "mean_run_days": 14.928571428571429,
               "classification": "High"
             },
             {
               "state_index": 1,
-              "probability": 0.8754716981132076,
+              "probability": 0.875,
               "interval_95": [
-                0.8302737992629625,
-                0.9099390249428152
+                0.8296505436697722,
+                0.9095923521313282
               ],
-              "transitions": 265,
+              "transitions": 264,
               "episodes": 33,
               "median_run_days": 4.0,
-              "mean_run_days": 8.030303030303031
+              "mean_run_days": 8.0
             },
             {
               "state_index": 2,
@@ -14746,23 +14746,23 @@
       "evidence_support": "Strong",
       "outcomes": {
         "20": {
-          "n": 877,
-          "absolute_mean": 0.006919680987870053,
-          "absolute_positive_probability": 0.5667046750285063,
+          "n": 878,
+          "absolute_mean": 0.0069652703123173525,
+          "absolute_positive_probability": 0.5671981776765376,
           "relative_mean": 0.0,
           "relative_outperformance_probability": 0.0,
           "relative_outperformance_interval_95": [
             0.0,
             0.0
           ],
-          "downside_probability": 0.14367160775370583,
+          "downside_probability": 0.14350797266514806,
           "downside_probability_interval_95": [
-            0.08095781071835804,
-            0.217787913340935
+            0.0808371298405467,
+            0.21867881548974943
           ],
-          "high_volatility_probability": 0.05815279361459521,
-          "downside_cutoff": -0.03863512273617196,
-          "volatility_cutoff": 0.1820342391779078,
+          "high_volatility_probability": 0.05808656036446469,
+          "downside_cutoff": -0.03862894892961148,
+          "volatility_cutoff": 0.1819892313083058,
           "calibration": "descriptive_in_sample"
         },
         "63": {
@@ -14781,8 +14781,8 @@
             0.22468317972350227
           ],
           "high_volatility_probability": 0.07373271889400922,
-          "downside_cutoff": -0.06999380512318876,
-          "volatility_cutoff": 0.19039839648507642,
+          "downside_cutoff": -0.06998379415589746,
+          "volatility_cutoff": 0.19039702258998234,
           "calibration": "descriptive_in_sample"
         },
         "126": {
@@ -14801,28 +14801,28 @@
             0.24139722863741336
           ],
           "high_volatility_probability": 0.06928406466512702,
-          "downside_cutoff": -0.10519121776814785,
-          "volatility_cutoff": 0.18677742875546505,
+          "downside_cutoff": -0.10518134991850017,
+          "volatility_cutoff": 0.18676068419699401,
           "calibration": "descriptive_in_sample"
         },
         "252": {
-          "n": 782,
-          "absolute_mean": 0.0991856756143617,
-          "absolute_positive_probability": 0.7710997442455243,
+          "n": 783,
+          "absolute_mean": 0.09941190539547774,
+          "absolute_positive_probability": 0.7713920817369093,
           "relative_mean": 0.0,
           "relative_outperformance_probability": 0.0,
           "relative_outperformance_interval_95": [
             0.0,
             0.0
           ],
-          "downside_probability": 0.1649616368286445,
+          "downside_probability": 0.16475095785440613,
           "downside_probability_interval_95": [
-            0.0741687979539642,
-            0.27244245524296673
+            0.07404214559386973,
+            0.27330779054916987
           ],
-          "high_volatility_probability": 0.1483375959079284,
-          "downside_cutoff": -0.13543767597648285,
-          "volatility_cutoff": 0.1940517911967287,
+          "high_volatility_probability": 0.14814814814814814,
+          "downside_cutoff": -0.13543591000341387,
+          "volatility_cutoff": 0.1940486726775691,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -14848,9 +14848,9 @@
         "Constructive"
       ],
       "date_start": "2014-04-14",
-      "date_end": "2026-08-28",
-      "label_rows": 3089,
-      "history_years": 12.372347707049967,
+      "date_end": "2026-08-31",
+      "label_rows": 3090,
+      "history_years": 12.380561259411362,
       "current_state": "Constructive",
       "current_state_index": 2,
       "recent_states": [
@@ -14860,19 +14860,19 @@
         "Constructive",
         "Constructive"
       ],
-      "state_age_days": 28,
+      "state_age_days": 29,
       "label_persistence": {
         "full_history": {
           "state_index": 2,
-          "probability": 0.9307458143074582,
+          "probability": 0.9307984790874525,
           "interval_95": [
-            0.9157251193842134,
-            0.9432552011641743
+            0.9157886352956146,
+            0.9432986121797455
           ],
-          "transitions": 1314,
+          "transitions": 1315,
           "episodes": 92,
           "median_run_days": 5.0,
-          "mean_run_days": 14.293478260869565,
+          "mean_run_days": 14.304347826086957,
           "classification": "High"
         },
         "recent_window": {
@@ -14903,7 +14903,7 @@
             [
               23,
               68,
-              1223
+              1224
             ]
           ],
           "transition_matrix": [
@@ -14918,9 +14918,9 @@
               0.08111702127659574
             ],
             [
-              0.01750380517503805,
-              0.0517503805175038,
-              0.9307458143074582
+              0.01749049429657795,
+              0.05171102661596958,
+              0.9307984790874525
             ]
           ],
           "by_state": [
@@ -14950,15 +14950,15 @@
             },
             {
               "state_index": 2,
-              "probability": 0.9307458143074582,
+              "probability": 0.9307984790874525,
               "interval_95": [
-                0.9157251193842134,
-                0.9432552011641743
+                0.9157886352956146,
+                0.9432986121797455
               ],
-              "transitions": 1314,
+              "transitions": 1315,
               "episodes": 92,
               "median_run_days": 5.0,
-              "mean_run_days": 14.293478260869565,
+              "mean_run_days": 14.304347826086957,
               "classification": "High"
             }
           ]
@@ -15072,23 +15072,23 @@
       "evidence_support": "Strong",
       "outcomes": {
         "20": {
-          "n": 1295,
-          "absolute_mean": 0.00819956796292239,
-          "absolute_positive_probability": 0.6069498069498069,
+          "n": 1296,
+          "absolute_mean": 0.008229465756047142,
+          "absolute_positive_probability": 0.6072530864197531,
           "relative_mean": 0.0,
           "relative_outperformance_probability": 0.0,
           "relative_outperformance_interval_95": [
             0.0,
             0.0
           ],
-          "downside_probability": 0.13513513513513514,
+          "downside_probability": 0.13503086419753085,
           "downside_probability_interval_95": [
-            0.0856949806949807,
-            0.18538610038610032
+            0.08636188271604939,
+            0.18599537037037034
           ],
-          "high_volatility_probability": 0.077992277992278,
-          "downside_cutoff": -0.03863512273617196,
-          "volatility_cutoff": 0.1820342391779078,
+          "high_volatility_probability": 0.0779320987654321,
+          "downside_cutoff": -0.03862894892961148,
+          "volatility_cutoff": 0.1819892313083058,
           "calibration": "descriptive_in_sample"
         },
         "63": {
@@ -15107,48 +15107,48 @@
             0.22845765345765345
           ],
           "high_volatility_probability": 0.08003108003108003,
-          "downside_cutoff": -0.06999380512318876,
-          "volatility_cutoff": 0.19039839648507642,
+          "downside_cutoff": -0.06998379415589746,
+          "volatility_cutoff": 0.19039702258998234,
           "calibration": "descriptive_in_sample"
         },
         "126": {
-          "n": 1250,
-          "absolute_mean": 0.052849175035701954,
-          "absolute_positive_probability": 0.7832,
+          "n": 1251,
+          "absolute_mean": 0.052910429074896716,
+          "absolute_positive_probability": 0.7833733013589129,
           "relative_mean": 0.0,
           "relative_outperformance_probability": 0.0,
           "relative_outperformance_interval_95": [
             0.0,
             0.0
           ],
-          "downside_probability": 0.1664,
+          "downside_probability": 0.16626698641087131,
           "downside_probability_interval_95": [
-            0.08228,
-            0.2528
+            0.08303357314148682,
+            0.2533972821742606
           ],
-          "high_volatility_probability": 0.0968,
-          "downside_cutoff": -0.10519121776814785,
-          "volatility_cutoff": 0.18677742875546505,
+          "high_volatility_probability": 0.09672262190247802,
+          "downside_cutoff": -0.10518134991850017,
+          "volatility_cutoff": 0.18676068419699401,
           "calibration": "descriptive_in_sample"
         },
         "252": {
-          "n": 1162,
-          "absolute_mean": 0.11672040283885093,
-          "absolute_positive_probability": 0.814974182444062,
+          "n": 1163,
+          "absolute_mean": 0.11685763688131814,
+          "absolute_positive_probability": 0.8151332760103182,
           "relative_mean": 0.0,
           "relative_outperformance_probability": 0.0,
           "relative_outperformance_interval_95": [
             0.0,
             0.0
           ],
-          "downside_probability": 0.1316695352839931,
+          "downside_probability": 0.13155631986242478,
           "downside_probability_interval_95": [
-            0.05505593803786575,
-            0.21430722891566262
+            0.055008598452278595,
+            0.21328460877042127
           ],
-          "high_volatility_probability": 0.12048192771084337,
-          "downside_cutoff": -0.13543767597648285,
-          "volatility_cutoff": 0.1940517911967287,
+          "high_volatility_probability": 0.12037833190025796,
+          "downside_cutoff": -0.13543591000341387,
+          "volatility_cutoff": 0.1940486726775691,
           "calibration": "descriptive_in_sample"
         }
       },
@@ -15189,14 +15189,14 @@
           },
           "downside_risk": {
             "n": 91,
-            "brier": 0.16950577153591165,
-            "log_loss": 0.5243250267107245,
-            "baseline_brier": 0.16532419668106899,
-            "brier_skill": -0.004181574854842662,
+            "brier": 0.1694992013395435,
+            "log_loss": 0.5243039478919247,
+            "baseline_brier": 0.16534158334600152,
+            "brier_skill": -0.004157617993541973,
             "holdout_n": 23,
-            "holdout_brier": 0.16741229273041094,
-            "holdout_baseline_brier": 0.1704263477733763,
-            "holdout_brier_skill": 0.003014055042965369
+            "holdout_brier": 0.16740843658630378,
+            "holdout_baseline_brier": 0.17042560461443568,
+            "holdout_brier_skill": 0.0030171680281319
           }
         },
         "63": {
@@ -15213,14 +15213,14 @@
           },
           "downside_risk": {
             "n": 89,
-            "brier": 0.15699560388239192,
-            "log_loss": 0.49316560613661375,
-            "baseline_brier": 0.15464397406160404,
-            "brier_skill": -0.002351629820787876,
+            "brier": 0.15700363519941238,
+            "log_loss": 0.4931898217350803,
+            "baseline_brier": 0.154635312667388,
+            "brier_skill": -0.002368322532024375,
             "holdout_n": 21,
-            "holdout_brier": 0.2038455215340907,
-            "holdout_baseline_brier": 0.21140208734599866,
-            "holdout_brier_skill": 0.007556565811907973
+            "holdout_brier": 0.2038795590205107,
+            "holdout_baseline_brier": 0.21140273460977865,
+            "holdout_brier_skill": 0.007523175589267961
           }
         },
         "126": {
@@ -15263,8 +15263,8 @@
             "n": 80,
             "brier": 0.16232997512099115,
             "log_loss": 0.5064050015596834,
-            "baseline_brier": 0.1600890443887127,
-            "brier_skill": -0.002240930732278462,
+            "baseline_brier": 0.16006707214651988,
+            "brier_skill": -0.0022629029744712648,
             "holdout_n": 12,
             "holdout_brier": 0.1958437383963326,
             "holdout_baseline_brier": 0.19000118122374254,
@@ -15508,97 +15508,97 @@
         "20": {
           "relative_return": {
             "n": 100,
-            "brier": 0.244903234053828,
-            "log_loss": 0.6829987749666064,
+            "brier": 0.24487415530023782,
+            "log_loss": 0.6829398183959837,
             "baseline_brier": 0.24937818415348467,
-            "brier_skill": 0.004474950099656677,
+            "brier_skill": 0.004504028853246855,
             "holdout_n": 23,
-            "holdout_brier": 0.2320451762549125,
+            "holdout_brier": 0.23212219024854627,
             "holdout_baseline_brier": 0.23957499063176685,
-            "holdout_brier_skill": 0.007529814376854349
+            "holdout_brier_skill": 0.007452800383220576
           },
           "downside_risk": {
             "n": 100,
-            "brier": 0.1923147282816168,
-            "log_loss": 0.5779299921678361,
-            "baseline_brier": 0.18997232245829176,
-            "brier_skill": -0.002342405823325039,
+            "brier": 0.1923112381110338,
+            "log_loss": 0.5779242078084496,
+            "baseline_brier": 0.1899709280164524,
+            "brier_skill": -0.0023403100945813826,
             "holdout_n": 23,
-            "holdout_brier": 0.18833679893227237,
-            "holdout_baseline_brier": 0.19652255782472255,
-            "holdout_brier_skill": 0.008185758892450185
+            "holdout_brier": 0.18830875928878507,
+            "holdout_baseline_brier": 0.19651649503411672,
+            "holdout_brier_skill": 0.008207735745331651
           }
         },
         "63": {
           "relative_return": {
             "n": 98,
-            "brier": 0.24729698577841797,
-            "log_loss": 0.6889608956688316,
+            "brier": 0.2472706820371829,
+            "log_loss": 0.6889050326617346,
             "baseline_brier": 0.24103694607415566,
-            "brier_skill": -0.00626003970426231,
+            "brier_skill": -0.0062337359630272315,
             "holdout_n": 21,
-            "holdout_brier": 0.2149190506877672,
+            "holdout_brier": 0.21490889337036256,
             "holdout_baseline_brier": 0.21076686056787375,
-            "holdout_brier_skill": -0.004152190119893456
+            "holdout_brier_skill": -0.004142032802488815
           },
           "downside_risk": {
             "n": 98,
-            "brier": 0.20219103834967234,
-            "log_loss": 0.6124089412662997,
-            "baseline_brier": 0.193073220235481,
-            "brier_skill": -0.009117818114191323,
+            "brier": 0.20220419432721767,
+            "log_loss": 0.6120768509708153,
+            "baseline_brier": 0.1930958316352689,
+            "brier_skill": -0.009108362691948785,
             "holdout_n": 21,
-            "holdout_brier": 0.1663813944401683,
+            "holdout_brier": 0.1664203408333796,
             "holdout_baseline_brier": 0.1543348741745701,
-            "holdout_brier_skill": -0.012046520265598215
+            "holdout_brier_skill": -0.012085466658809496
           }
         },
         "126": {
           "relative_return": {
             "n": 95,
-            "brier": 0.2707419956383322,
-            "log_loss": 0.7414443823118123,
+            "brier": 0.2708616178192848,
+            "log_loss": 0.7416980239314239,
             "baseline_brier": 0.2568661691817981,
-            "brier_skill": -0.013875826456534068,
+            "brier_skill": -0.013995448637486696,
             "holdout_n": 18,
-            "holdout_brier": 0.1848926531516525,
+            "holdout_brier": 0.1849483645383165,
             "holdout_baseline_brier": 0.18282189017170197,
-            "holdout_brier_skill": -0.0020707629799505134
+            "holdout_brier_skill": -0.0021264743666145336
           },
           "downside_risk": {
             "n": 95,
-            "brier": 0.22460863890836577,
-            "log_loss": 0.6830738127539957,
+            "brier": 0.22460704061318715,
+            "log_loss": 0.6831283196434278,
             "baseline_brier": 0.21681498245407943,
-            "brier_skill": -0.007793656454286341,
+            "brier_skill": -0.007792058159107718,
             "holdout_n": 18,
-            "holdout_brier": 0.11960279803154172,
+            "holdout_brier": 0.11962643735084572,
             "holdout_baseline_brier": 0.10679779349711865,
-            "holdout_brier_skill": -0.01280500453442307
+            "holdout_brier_skill": -0.012828643853727062
           }
         },
         "252": {
           "relative_return": {
             "n": 89,
-            "brier": 0.20322211958195485,
-            "log_loss": 0.6062299121292867,
+            "brier": 0.20327865751440855,
+            "log_loss": 0.6064075519784415,
             "baseline_brier": 0.19640562597778202,
-            "brier_skill": -0.00681649360417283,
+            "brier_skill": -0.006873031536626523,
             "holdout_n": 12,
-            "holdout_brier": 0.08650506876111497,
+            "holdout_brier": 0.08659114052465532,
             "holdout_baseline_brier": 0.07971056556209792,
-            "holdout_brier_skill": -0.006794503199017046
+            "holdout_brier_skill": -0.006880574962557395
           },
           "downside_risk": {
             "n": 89,
-            "brier": 0.23660871170667563,
-            "log_loss": 0.6956706254689444,
+            "brier": 0.23656989416888063,
+            "log_loss": 0.6956217517749853,
             "baseline_brier": 0.23502678650919623,
-            "brier_skill": -0.0015819251974794057,
+            "brier_skill": -0.0015431076596844062,
             "holdout_n": 12,
-            "holdout_brier": 0.04691839833884093,
+            "holdout_brier": 0.046924039848278136,
             "holdout_baseline_brier": 0.04009520882229863,
-            "holdout_brier_skill": -0.006823189516542295
+            "holdout_brier_skill": -0.006828831025979504
           }
         }
       }
@@ -15638,14 +15638,14 @@
         "63": {
           "relative_return": {
             "n": 98,
-            "brier": 0.28654693656601354,
-            "log_loss": 0.8039698793684498,
-            "baseline_brier": 0.26558130129215307,
-            "brier_skill": -0.020965635273860472,
+            "brier": 0.2880775488109115,
+            "log_loss": 0.8070543780610308,
+            "baseline_brier": 0.26649632407306506,
+            "brier_skill": -0.02158122473784646,
             "holdout_n": 21,
-            "holdout_brier": 0.2557091743626878,
-            "holdout_baseline_brier": 0.2596402959114731,
-            "holdout_brier_skill": 0.003931121548785277
+            "holdout_brier": 0.2628520315055449,
+            "holdout_baseline_brier": 0.2639104022223957,
+            "holdout_brier_skill": 0.001058370716850776
           },
           "downside_risk": {
             "n": 98,
@@ -15731,10 +15731,10 @@
           },
           "downside_risk": {
             "n": 100,
-            "brier": 0.11073703599295107,
-            "log_loss": 0.3854858200361232,
-            "baseline_brier": 0.11202875663965772,
-            "brier_skill": 0.0012917206467066566,
+            "brier": 0.11074133883766818,
+            "log_loss": 0.3855001855807712,
+            "baseline_brier": 0.11202599326272548,
+            "brier_skill": 0.001284654425057305,
             "holdout_n": 23,
             "holdout_brier": 0.1328068158058502,
             "holdout_baseline_brier": 0.1443479633483107,
@@ -15755,14 +15755,14 @@
           },
           "downside_risk": {
             "n": 98,
-            "brier": 0.11689872554141782,
-            "log_loss": 0.39944688373028214,
-            "baseline_brier": 0.10740782635126607,
-            "brier_skill": -0.009490899190151753,
+            "brier": 0.11689526746103665,
+            "log_loss": 0.39943746602621466,
+            "baseline_brier": 0.10740644486100238,
+            "brier_skill": -0.009488822600034266,
             "holdout_n": 21,
-            "holdout_brier": 0.17630707858178973,
-            "holdout_baseline_brier": 0.18288655956162717,
-            "holdout_brier_skill": 0.006579480979837432
+            "holdout_brier": 0.17629094087334435,
+            "holdout_baseline_brier": 0.18288011260706338,
+            "holdout_brier_skill": 0.006589171733719035
           }
         },
         "126": {
@@ -15781,12 +15781,12 @@
             "n": 95,
             "brier": 0.13279815528725142,
             "log_loss": 0.43578888968547663,
-            "baseline_brier": 0.10956527124949023,
-            "brier_skill": -0.023232884037761192,
+            "baseline_brier": 0.10956208058993572,
+            "brier_skill": -0.0232360746973157,
             "holdout_n": 18,
             "holdout_brier": 0.13393950614113942,
-            "holdout_baseline_brier": 0.140054582423515,
-            "holdout_brier_skill": 0.006115076282375592
+            "holdout_baseline_brier": 0.1400472131492164,
+            "holdout_brier_skill": 0.0061077070080769735
           }
         },
         "252": {
@@ -15826,97 +15826,97 @@
         "20": {
           "relative_return": {
             "n": 100,
-            "brier": 0.25120670889890667,
-            "log_loss": 0.6955912655083942,
+            "brier": 0.25113743678265044,
+            "log_loss": 0.6954519165031843,
             "baseline_brier": 0.24727356949398346,
-            "brier_skill": -0.003933139404923208,
+            "brier_skill": -0.0038638672886669723,
             "holdout_n": 23,
-            "holdout_brier": 0.24632356565511038,
+            "holdout_brier": 0.24630155736960638,
             "holdout_baseline_brier": 0.24708195213425582,
-            "holdout_brier_skill": 0.0007583864791454453
+            "holdout_brier_skill": 0.0007803947646494447
           },
           "downside_risk": {
             "n": 100,
-            "brier": 0.19390526515272705,
-            "log_loss": 0.5772358748000275,
+            "brier": 0.19382715064710548,
+            "log_loss": 0.5770083651311706,
             "baseline_brier": 0.19592653214797148,
-            "brier_skill": 0.002021266995244436,
+            "brier_skill": 0.002099381500865999,
             "holdout_n": 23,
-            "holdout_brier": 0.2420125439795024,
+            "holdout_brier": 0.24208395929262339,
             "holdout_baseline_brier": 0.24867526454956004,
-            "holdout_brier_skill": 0.006662720570057651
+            "holdout_brier_skill": 0.006591305256936658
           }
         },
         "63": {
           "relative_return": {
             "n": 98,
-            "brier": 0.24952581076418423,
-            "log_loss": 0.6926632417712155,
+            "brier": 0.2494399053301867,
+            "log_loss": 0.6924668599933735,
             "baseline_brier": 0.23756793995674294,
-            "brier_skill": -0.01195787080744129,
+            "brier_skill": -0.01187196537344376,
             "holdout_n": 21,
-            "holdout_brier": 0.268369627168799,
+            "holdout_brier": 0.26821517127883093,
             "holdout_baseline_brier": 0.2751677559646639,
-            "holdout_brier_skill": 0.006798128795864944
+            "holdout_brier_skill": 0.006952584685832985
           },
           "downside_risk": {
             "n": 98,
-            "brier": 0.20107625265823073,
-            "log_loss": 0.6211225256932229,
+            "brier": 0.20107809573756488,
+            "log_loss": 0.6212309873971552,
             "baseline_brier": 0.19301885628066026,
-            "brier_skill": -0.00805739637757047,
+            "brier_skill": -0.008059239456904621,
             "holdout_n": 21,
-            "holdout_brier": 0.3275201566775587,
+            "holdout_brier": 0.32755206655419816,
             "holdout_baseline_brier": 0.32557925762644,
-            "holdout_brier_skill": -0.0019408990511186608
+            "holdout_brier_skill": -0.0019728089277581407
           }
         },
         "126": {
           "relative_return": {
             "n": 95,
-            "brier": 0.21740978307118222,
-            "log_loss": 0.626338302431061,
+            "brier": 0.21733314259547487,
+            "log_loss": 0.6261650612756294,
             "baseline_brier": 0.21435286757667452,
-            "brier_skill": -0.003056915494507706,
+            "brier_skill": -0.0029802750188003546,
             "holdout_n": 18,
-            "holdout_brier": 0.24765011067783593,
+            "holdout_brier": 0.24725781671548067,
             "holdout_baseline_brier": 0.2639468733820986,
-            "holdout_brier_skill": 0.01629676270426267
+            "holdout_brier_skill": 0.016689056666617935
           },
           "downside_risk": {
             "n": 95,
-            "brier": 0.20841624732183786,
-            "log_loss": 0.6560065851501161,
+            "brier": 0.20840465479706513,
+            "log_loss": 0.6560719129236288,
             "baseline_brier": 0.19137946279644102,
-            "brier_skill": -0.017036784525396836,
+            "brier_skill": -0.017025192000624106,
             "holdout_n": 18,
-            "holdout_brier": 0.3563767505573658,
+            "holdout_brier": 0.3564323909543481,
             "holdout_baseline_brier": 0.3398013474641745,
-            "holdout_brier_skill": -0.016575403093191277
+            "holdout_brier_skill": -0.01663104349017358
           }
         },
         "252": {
           "relative_return": {
             "n": 89,
-            "brier": 0.23049674641243384,
-            "log_loss": 0.6553109139968576,
+            "brier": 0.23039828859618766,
+            "log_loss": 0.6550761138284825,
             "baseline_brier": 0.22113127348693276,
-            "brier_skill": -0.009365472925501078,
+            "brier_skill": -0.0092670151092549,
             "holdout_n": 12,
-            "holdout_brier": 0.3854930933676303,
+            "holdout_brier": 0.38486927824073885,
             "holdout_baseline_brier": 0.364131287809154,
-            "holdout_brier_skill": -0.021361805558476332
+            "holdout_brier_skill": -0.020737990431584863
           },
           "downside_risk": {
             "n": 89,
-            "brier": 0.19645842649154424,
-            "log_loss": 0.6255175659760127,
+            "brier": 0.19645186746204382,
+            "log_loss": 0.6256047978988194,
             "baseline_brier": 0.17478436823216717,
-            "brier_skill": -0.02167405825937707,
+            "brier_skill": -0.021667499229876652,
             "holdout_n": 12,
-            "holdout_brier": 0.38566284248177346,
+            "holdout_brier": 0.3857762842522789,
             "holdout_baseline_brier": 0.3396199947385987,
-            "holdout_brier_skill": -0.04604284774317474
+            "holdout_brier_skill": -0.04615628951368017
           }
         }
       }
@@ -16036,36 +16036,36 @@
       "can_affect_suggested_action": false,
       "available": true,
       "eligible": true,
-      "usable_rows": 3298,
+      "usable_rows": 3299,
       "date_start": "2013-06-11",
-      "date_end": "2026-08-28",
+      "date_end": "2026-08-31",
       "selected_components": 3,
       "current_label": "Constructive",
       "current_probabilities": {
-        "Constructive": 0.9999975430503751,
-        "Neutral": 1.8655155595901312e-06,
-        "Defensive": 5.914332168461795e-07
+        "Constructive": 0.9999967603069035,
+        "Neutral": 2.38985146259588e-06,
+        "Defensive": 8.498418377089129e-07
       },
       "identified": true,
       "high_conviction": true,
       "transition_matrix": [
         [
-          0.9592189838115837,
-          0.024114369395303144,
-          0.01666664679311314
+          0.9592242988621884,
+          0.024107082741763628,
+          0.016668618396048055
         ],
         [
-          0.02189687623908805,
-          0.9779590023315937,
-          0.0001441214293180942
+          0.021880172052286314,
+          0.9779795949397915,
+          0.00014023300792224857
         ],
         [
-          0.03058321069468869,
-          7.920431474502898e-26,
-          0.9694167893053113
+          0.03058323602488556,
+          1.9822918992162823e-26,
+          0.9694167639751144
         ]
       ],
-      "label_stability_across_converged_fits": 0.9,
+      "label_stability_across_converged_fits": 1.0,
       "state_profiles": [
         {
           "latent_state": 0,
@@ -16077,10 +16077,10 @@
         },
         {
           "latent_state": 1,
-          "observations": 1343,
-          "mean_daily_log_return": 0.0005744904283829159,
-          "mean_realized_volatility": 0.10004815361677462,
-          "mean_momentum_63d": 0.04555024095413141,
+          "observations": 1344,
+          "mean_daily_log_return": 0.0005805051469792698,
+          "mean_realized_volatility": 0.10002481076418539,
+          "mean_momentum_63d": 0.04555496702232557,
           "mapped_label": "Constructive"
         },
         {
@@ -16097,80 +16097,80 @@
           "components": 2,
           "seed": 11,
           "converged": true,
-          "log_likelihood": -11233.989704932683,
-          "bic": 22597.59655391528,
+          "log_likelihood": -11238.435383733582,
+          "bic": 22606.49276220682,
           "current_mapped_label": "Constructive"
         },
         {
           "components": 2,
           "seed": 29,
           "converged": true,
-          "log_likelihood": -11233.989631669834,
-          "bic": 22597.59640738958,
+          "log_likelihood": -11238.435311391791,
+          "bic": 22606.49261752324,
           "current_mapped_label": "Constructive"
         },
         {
           "components": 2,
           "seed": 47,
           "converged": true,
-          "log_likelihood": -11233.989594636383,
-          "bic": 22597.59633332268,
+          "log_likelihood": -11238.435276431172,
+          "bic": 22606.492547602,
           "current_mapped_label": "Constructive"
         },
         {
           "components": 2,
           "seed": 71,
           "converged": true,
-          "log_likelihood": -11233.989848779505,
-          "bic": 22597.596841608924,
+          "log_likelihood": -11238.435524019475,
+          "bic": 22606.493042778606,
           "current_mapped_label": "Constructive"
         },
         {
           "components": 2,
           "seed": 101,
           "converged": true,
-          "log_likelihood": -11233.98965311634,
-          "bic": 22597.596450282592,
+          "log_likelihood": -11238.435332903899,
+          "bic": 22606.492660547454,
           "current_mapped_label": "Constructive"
         },
         {
           "components": 3,
           "seed": 11,
           "converged": true,
-          "log_likelihood": -9904.175287196247,
-          "bic": 20027.079504976722,
+          "log_likelihood": -9908.527023715493,
+          "bic": 20035.791163554157,
           "current_mapped_label": "Constructive"
         },
         {
           "components": 3,
           "seed": 29,
           "converged": true,
-          "log_likelihood": -9904.172249136682,
-          "bic": 20027.07342885759,
+          "log_likelihood": -10082.123831527424,
+          "bic": 20382.98477917802,
           "current_mapped_label": "Constructive"
         },
         {
           "components": 3,
           "seed": 47,
           "converged": true,
-          "log_likelihood": -9904.17081034471,
-          "bic": 20027.07055127365,
+          "log_likelihood": -9908.522256690749,
+          "bic": 20035.78162950467,
           "current_mapped_label": "Constructive"
         },
         {
           "components": 3,
           "seed": 71,
           "converged": true,
-          "log_likelihood": -10077.430020985525,
-          "bic": 20373.588972555277,
-          "current_mapped_label": "Neutral"
+          "log_likelihood": -10082.12364881977,
+          "bic": 20382.98441376271,
+          "current_mapped_label": "Constructive"
         },
         {
           "components": 3,
           "seed": 101,
           "converged": true,
-          "log_likelihood": -9904.175259834363,
-          "bic": 20027.079450252953,
+          "log_likelihood": -9908.527017144763,
+          "bic": 20035.791150412697,
           "current_mapped_label": "Constructive"
         }
       ],
