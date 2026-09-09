@@ -18,6 +18,7 @@ Source status is reported openly in the HTML page — no data is fabricated.
 from __future__ import annotations
 
 import io
+import hashlib
 import json
 import os
 import sys
@@ -35,6 +36,7 @@ from zoneinfo import ZoneInfo
 import pandas as pd
 import requests
 from jinja2 import Environment, FileSystemLoader
+from market_health import evaluate_snapshot, parse_metadata, parse_utc, finite
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 log = logging.getLogger(__name__)
@@ -66,7 +68,6 @@ BROWSER_HEADERS = {
 
 NEWS_WINDOW_DAYS = 14
 NEWS_NEW_THRESHOLD_DAYS = 7
-MAX_SCREENER_AGE_HOURS = int(os.getenv("MAX_SCREENER_AGE_HOURS", "168"))
 
 OSLO_TZ = ZoneInfo("Europe/Oslo")
 
@@ -78,8 +79,12 @@ SR_PIVOT_WINDOW = 5    # bars on each side of a pivot point
 SR_BUFFER_PCT = 1.0    # 1 % buffer beyond the S/R level
 
 
+def _now_utc() -> dt.datetime:
+    return dt.datetime.now(dt.timezone.utc)
+
+
 def _utcnow_naive() -> dt.datetime:
-    return dt.datetime.now(dt.timezone.utc).replace(tzinfo=None)
+    return _now_utc().replace(tzinfo=None)
 
 # ---------------------------------------------------------------------------
 # Data classes
@@ -117,10 +122,11 @@ class StockResult:
     mfi14: float
     macd_hist: float
     pct_above_sma50: float
-    stop_loss_pct: float        # computed from S/R; ATR fallback from CSV
-    stop_loss_basis: str        # "S/R" or "ATR"
+    stop_loss_pct: float        # computed from S/R; fixed-percentage fallback from CSV
+    stop_loss_basis: str        # "S/R" or "Fixed percentage"
     primary_count: int          # number of confirming indicators (signal strength)
     risk: str
+    market_data_as_of: str = ""
     news: list[NewsItem] = field(default_factory=list)
     news_errors: dict[str, str] = field(default_factory=dict)
 
@@ -154,6 +160,7 @@ class DashboardData:
     source_statuses: list[SourceStatus]
     ticker_changes: list[TickerChange]
     ticker_changes_date: Optional[dt.date]
+    health: dict = field(default_factory=dict)
 
 
 # ---------------------------------------------------------------------------
@@ -166,76 +173,48 @@ def _strip_comments(text: str) -> str:
     return "\n".join(lines)
 
 
-def _parse_screener_metadata(text: str) -> dict[str, str]:
-    for line in text.splitlines():
-        line = line.strip()
-        if not line.startswith("# oslo-screener"):
-            continue
-        parts: dict[str, str] = {}
-        for token in line.lstrip("# ").split():
-            if "=" in token:
-                key, value = token.split("=", 1)
-                parts[key] = value
-        return parts
-    return {}
+def _freshness_label(health: dict) -> str:
+    coverage = health["coverage"]
+    return (f"{health['status']}; completed session {health['expected_session']}; "
+            f"current observations {coverage['current']}/{coverage['universe_count']}")
 
 
-def _parse_utc(value: str | None) -> Optional[dt.datetime]:
-    if not value:
-        return None
-    try:
-        parsed = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
-    except ValueError:
-        return None
-    if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=dt.timezone.utc)
-    return parsed.astimezone(dt.timezone.utc)
-
-
-def _freshness_label(generated_at: Optional[dt.datetime], now_utc: dt.datetime) -> str:
-    if generated_at is None:
-        return "missing generated_at metadata"
-    age_hours = (now_utc.replace(tzinfo=dt.timezone.utc) - generated_at).total_seconds() / 3600
-    age_text = f"{age_hours:.1f}h old"
-    if age_hours > MAX_SCREENER_AGE_HOURS:
-        return f"stale ({age_text}; limit {MAX_SCREENER_AGE_HOURS}h)"
-    return f"fresh ({age_text}; limit {MAX_SCREENER_AGE_HOURS}h)"
-
-
-def fetch_screener_csv() -> tuple[pd.DataFrame, str, dict[str, str]]:
-    """Download latest.csv from oslo-screener. Returns (DataFrame, source-name, metadata)."""
-    token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
-    headers = {"User-Agent": "oslo-screener-dashboard/1.0"}
-    if token:
-        headers["Authorization"] = f"token {token}"
-
+def fetch_screener_csv() -> tuple[pd.DataFrame, str, dict, dict]:
+    """Fetch CSV and manifest from the same host; reject mixed publications."""
+    headers = {"User-Agent": "oslo-screener-dashboard/1.0", "Cache-Control": "no-cache"}
+    errors = []
     for url in SCREENER_URLS:
         try:
             resp = requests.get(url, headers=headers, timeout=20)
             resp.raise_for_status()
-            metadata = _parse_screener_metadata(resp.text)
-            text = _strip_comments(resp.text)
-            df = pd.read_csv(io.StringIO(text))
-            df.columns = [c.strip() for c in df.columns]
+            manifest_url = url.rsplit("/", 1)[0] + "/health.json"
+            manifest_resp = requests.get(manifest_url, headers=headers, timeout=20)
+            manifest_resp.raise_for_status()
+            manifest = manifest_resp.json()
+            metadata = parse_metadata(resp.text)
+            if not metadata.get("snapshot_id") or metadata["snapshot_id"] != manifest.get("snapshot_id"):
+                raise ValueError("CSV/health snapshot mismatch")
+            if hashlib.sha256(resp.content).hexdigest() != manifest.get("artifacts", {}).get("latest.csv"):
+                raise ValueError("CSV/health checksum mismatch")
+            df = pd.read_csv(io.StringIO(_strip_comments(resp.text)), keep_default_na=False)
             if "ticker" not in df.columns:
-                raise ValueError("Missing 'ticker' column")
-            log.info("Loaded screener data from %s (%d rows)", url, len(df))
-            source_name = "GitHub Pages" if "github.io" in url else "GitHub Raw"
-            return df, source_name, metadata
-        except Exception as e:
-            log.warning("Failed to load from %s: %s", url, e)
-
-    raise RuntimeError(
-        "No screener data sources available. Tried: " + ", ".join(SCREENER_URLS)
-    )
+                raise ValueError("Missing ticker column")
+            source = "GitHub Pages" if "github.io" in url else "GitHub Raw"
+            return df, source, metadata, manifest
+        except Exception as exc:
+            errors.append(f"{url}: {exc}")
+            log.warning("Unusable screener source: %s", errors[-1])
+    raise RuntimeError("No coherent screener snapshot available: " + "; ".join(errors))
 
 
-def parse_screener_results(df: pd.DataFrame) -> tuple[list[StockResult], Optional[dt.date]]:
+def parse_screener_results(df: pd.DataFrame, eligible_tickers: set[str]) -> tuple[list[StockResult], Optional[dt.date]]:
     """Convert DataFrame to StockResult objects."""
     results = []
     screener_date = None
 
     for _, row in df.iterrows():
+        if str(row.get("ticker", "")) not in eligible_tickers:
+            continue
         signal = str(row.get("signal", "NEUTRAL")).strip()
         if signal not in ("BUY", "SELL", "BUY-watch", "SELL-watch"):
             continue
@@ -262,13 +241,14 @@ def parse_screener_results(df: pd.DataFrame) -> tuple[list[StockResult], Optiona
             close=float(row.get("close", 0)),
             rsi14=float(row.get("rsi14", 0)),
             adx14=float(row.get("adx14", 0)),
-            mfi14=float(row.get("mfi14", 0)),
+            mfi14=float(row["mfi14"]) if finite(row.get("mfi14")) else float("nan"),
             macd_hist=float(row.get("macd_hist", 0)),
             pct_above_sma50=float(row.get("pct_above_sma50", 0)),
             stop_loss_pct=float(row.get("stop_loss_pct", 3.0)),
-            stop_loss_basis="ATR",
+            stop_loss_basis="Fixed percentage",
             primary_count=primary_count,
             risk=str(row.get("risk", "")).strip(),
+            market_data_as_of=str(row.get("date", "")),
         ))
 
     return results, screener_date
@@ -284,17 +264,21 @@ def _compute_sr_stop_loss(
     signal: str,
     close: float,
     fallback_pct: float,
+    as_of: str,
 ) -> tuple[float, str]:
     """
     Compute stop-loss from the nearest S/R pivot using 6-month daily OHLC.
-    Returns (stop_loss_pct, basis) where basis is "S/R" or "ATR".
+    Returns (stop_loss_pct, basis) where basis is "S/R" or "Fixed percentage".
     Stop-loss is expressed as the adverse-move percentage from current price.
     """
     N = SR_PIVOT_WINDOW
     try:
         df = yf_ticker.history(period="6mo", interval="1d")
+        if df is not None:
+            cutoff = dt.date.fromisoformat(as_of)
+            df = df.loc[[stamp.date() <= cutoff for stamp in df.index]]
         if df is None or len(df) < N * 2 + 2:
-            return fallback_pct, "ATR"
+            return fallback_pct, "Fixed percentage"
 
         highs = df["High"].values
         lows = df["Low"].values
@@ -332,7 +316,7 @@ def _compute_sr_stop_loss(
     except Exception as e:
         log.debug("S/R stop-loss computation failed for %s: %s", signal, e)
 
-    return fallback_pct, "ATR"
+    return fallback_pct, "Fixed percentage"
 
 
 # ---------------------------------------------------------------------------
@@ -361,12 +345,12 @@ def fetch_oslo_bors_news(symbol: str, days: int = NEWS_WINDOW_DAYS) -> list[News
 
     data = resp.json()
 
-    if isinstance(data, dict):
+    if isinstance(data, dict) and ("messages" in data or "items" in data):
         messages = data.get("messages", data.get("items", []))
     elif isinstance(data, list):
         messages = data
     else:
-        return []
+        raise ValueError("Unexpected exchange-announcement response schema")
 
     items = []
     for msg in messages:
@@ -376,9 +360,14 @@ def fetch_oslo_bors_news(symbol: str, days: int = NEWS_WINDOW_DAYS) -> list[News
 
         pub_str = msg.get("publishedTime") or msg.get("time") or msg.get("published") or ""
         try:
-            published = dt.datetime.fromisoformat(pub_str.replace("Z", "+00:00"))
+            parsed = parse_utc(pub_str)
+            if parsed is None:
+                raise ValueError("missing publication timezone")
+            published = parsed.replace(tzinfo=None)
         except Exception:
-            published = None
+            raise ValueError("Undated exchange announcement; recent coverage cannot be verified")
+        if published < dt.datetime.combine(from_date, dt.time.min) or published > _utcnow_naive():
+            continue
 
         msg_id = msg.get("messageId") or msg.get("id") or ""
         url = f"https://newsweb.oslobors.no/message/{msg_id}" if msg_id else OSLO_BORS_API
@@ -402,7 +391,7 @@ def _parse_rfc822(date_str: str) -> Optional[dt.datetime]:
     try:
         from email.utils import parsedate_to_datetime
         d = parsedate_to_datetime(date_str)
-        return d.replace(tzinfo=None) if d.tzinfo else d
+        return d.astimezone(dt.timezone.utc).replace(tzinfo=None) if d.tzinfo else None
     except Exception:
         return None
 
@@ -415,9 +404,10 @@ def _parse_rss(url: str, source_name: str, days: int = NEWS_WINDOW_DAYS) -> list
     try:
         root = ET.fromstring(resp.content)
     except ET.ParseError as e:
-        log.warning("RSS parse error for %s: %s", url, e)
-        return []
+        raise ValueError(f"Invalid RSS response from {source_name}") from e
 
+    if root.tag != "rss":
+        raise ValueError(f"Unexpected RSS root from {source_name}: {root.tag}")
     cutoff = _utcnow_naive() - dt.timedelta(days=days)
     items: list[NewsItem] = []
 
@@ -432,7 +422,9 @@ def _parse_rss(url: str, source_name: str, days: int = NEWS_WINDOW_DAYS) -> list
             continue
 
         published = _parse_rfc822(date_el.text) if date_el is not None and date_el.text else None
-        if published and published < cutoff:
+        if published is None:
+            raise ValueError(f"Undated RSS item from {source_name}; recent coverage cannot be verified")
+        if published < cutoff or published > _utcnow_naive():
             continue
 
         items.append(NewsItem(title=title, url=link, source=source_name, published=published))
@@ -460,7 +452,7 @@ def fetch_yahoo_rss(ticker: str, days: int = NEWS_WINDOW_DAYS) -> list[NewsItem]
 
 
 def fetch_google_news(symbol: str, days: int = NEWS_WINDOW_DAYS) -> list[NewsItem]:
-    """Google News RSS — broad coverage, never blocks."""
+    """Google News RSS discovery fallback; success is not complete issuer coverage."""
     from urllib.parse import quote
     query = quote(f'"{symbol}" Oslo Bors stock')
     url = GOOGLE_NEWS_TPL.format(query=query)
@@ -477,7 +469,7 @@ def _fetch_yf_history_only(stock: StockResult) -> tuple[float, str]:
     """Single yfinance session per stock — history only, for S/R stop-loss."""
     import yfinance as yf
     t = yf.Ticker(stock.ticker)
-    return _compute_sr_stop_loss(t, stock.signal, stock.close, stock.stop_loss_pct)
+    return _compute_sr_stop_loss(t, stock.signal, stock.close, stock.stop_loss_pct, stock.market_data_as_of)
 
 
 # ---------------------------------------------------------------------------
@@ -640,8 +632,8 @@ def update_ticker_cache() -> tuple[list[TickerChange], Optional[dt.date]]:
         log.info("Saved initial ticker snapshot (%d tickers)", len(current))
         return [], None
 
-    # No changes — return whatever is cached
-    return load_ticker_changes()
+    # A successful unchanged universe check has no current additions/removals.
+    return [], dt.date.today()
 
 
 # ---------------------------------------------------------------------------
@@ -649,92 +641,67 @@ def update_ticker_cache() -> tuple[list[TickerChange], Optional[dt.date]]:
 # ---------------------------------------------------------------------------
 
 
-def build_dashboard(output_path: pl.Path) -> None:
-    source_statuses: list[SourceStatus] = []
-    now_utc = _utcnow_naive()
-
-    # 1. Screener data
-    log.info("Fetching screener data...")
+def build_dashboard(output_path: pl.Path, now: dt.datetime | None = None) -> dict:
+    now_utc = now or _now_utc()
+    statuses = []
+    metadata = {}
     try:
-        df, screener_source, screener_metadata = fetch_screener_csv()
-    except RuntimeError as e:
-        log.error("Critical error: %s", e)
-        source_statuses.append(SourceStatus("Screener (oslo-screener)", ok=False, detail=str(e)))
-        _render_error_page(output_path, str(e), now_utc)
-        return
-
-    screener_generated_at = _parse_utc(screener_metadata.get("generated_at"))
-    screener_freshness = _freshness_label(screener_generated_at, now_utc)
-    source_statuses.append(SourceStatus(
-        "Screener (oslo-screener)",
-        ok=not screener_freshness.startswith("stale"),
-        detail=f"{screener_source}; {screener_freshness}",
-    ))
-
-    stocks, screener_date = parse_screener_results(df)
-    total_screened = len(df)
-
-    buy = [s for s in stocks if s.signal == "BUY"]
-    sell = [s for s in stocks if s.signal == "SELL"]
-    buy_watch = [s for s in stocks if s.signal == "BUY-watch"]
-    sell_watch = [s for s in stocks if s.signal == "SELL-watch"]
-
-    # 2. Weekly ticker changes
-    log.info("Checking weekly ticker changes...")
-    ticker_changes, ticker_changes_date = update_ticker_cache()
-
-    # 3. News + S/R stop-loss for all signal stocks
-    log.info("Fetching news and computing S/R stop-losses for %d stocks...", len(stocks))
+        df, source, metadata, manifest = fetch_screener_csv()
+        health = evaluate_snapshot(df.to_dict("records"), metadata, now_utc)
+        # The manifest must agree with its CSV at publication time as well as now.
+        published = evaluate_snapshot(df.to_dict("records"), metadata, parse_utc(metadata.get("generated_at")) or now_utc)
+        for key in ("status", "coverage", "market_data_as_of", "expected_session"):
+            if published[key] != manifest.get(key):
+                raise ValueError(f"Manifest {key} disagrees with CSV")
+    except (RuntimeError, ValueError, KeyError) as exc:
+        df, source = pd.DataFrame(), "unavailable"
+        health = evaluate_snapshot([], {}, now_utc)
+        health["reasons"].append("source_snapshot_unavailable")
+        health["source_error"] = str(exc)
+    statuses.append(SourceStatus("Screener (oslo-screener)", health["status"] == "current", _freshness_label(health)))
+    stocks, _ = parse_screener_results(df, set(health["eligible_tickers"]))
+    changes, change_date = update_ticker_cache()
     for stock in stocks:
-        log.info("  -> %s (%s)", stock.ticker, stock.signal)
         fetch_news_for_stock(stock)
         time.sleep(0.5)
-
-    # Update source status from actual results
-    def _err_count(label: str) -> int:
-        return sum(1 for s in stocks if label in s.news_errors)
-
-    n = max(len(stocks), 1)
-    for label, display in [
-        ("Oslo Bors", "Oslo Bors Newspoint"),
-        ("Yahoo Finance", "Yahoo Finance RSS"),
-        ("Google News", "Google News RSS"),
-    ]:
-        c = _err_count(label)
-        source_statuses.append(SourceStatus(
-            display,
-            ok=c < n,
-            detail=f"{c} of {n} stocks failed" if c else "OK",
-        ))
-
-    # 4. Macro news
-    log.info("Fetching macro news...")
+    news_coverage = {}
+    for label, display in [("Oslo Bors", "Oslo Bors Newspoint"), ("Yahoo Finance", "Yahoo Finance RSS"),
+                           ("Google News", "Google News RSS")]:
+        failed = sum(label in stock.news_errors for stock in stocks)
+        items = sum(any(item.source == label for item in stock.news) for stock in stocks)
+        news_coverage[label] = dict(attempted=len(stocks), failed=failed, stocks_with_items=items)
+        detail = f"{failed}/{len(stocks)} failed; {items} with dated items" if stocks else "not checked: no eligible signal rows"
+        statuses.append(SourceStatus(display, bool(stocks) and failed == 0, detail))
     macro_news, macro_error = fetch_macro_news()
-    source_statuses.append(SourceStatus(
-        "Reuters RSS (macro)", ok=macro_error is None,
-        detail=macro_error or f"{len(macro_news)} items fetched",
-    ))
-
-    # 5. Render
-    dashboard = DashboardData(
-        generated_at=now_utc,
-        screener_date=screener_date,
-        screener_source=screener_source,
-        screener_generated_at=screener_generated_at,
-        screener_freshness=screener_freshness,
-        total_screened=total_screened,
-        buy=buy,
-        sell=sell,
-        buy_watch=buy_watch,
-        sell_watch=sell_watch,
-        macro_news=macro_news,
-        source_statuses=source_statuses,
-        ticker_changes=ticker_changes,
-        ticker_changes_date=ticker_changes_date,
-    )
-
-    _render(dashboard, output_path)
-    log.info("Dashboard generated: %s", output_path)
+    statuses.append(SourceStatus("Reuters RSS (macro)", macro_error is None, macro_error or f"{len(macro_news)} dated items"))
+    health["market_status"] = health["status"]
+    health["news_coverage"] = news_coverage
+    health["macro_news_status"] = "unavailable" if macro_error else "available"
+    if health["status"] != "blocked" and (macro_error or any(item["failed"] for item in news_coverage.values())):
+        health["status"] = "degraded"
+        health["reasons"].append("news_coverage_incomplete")
+    health["dashboard_generated_at"] = now_utc.isoformat()
+    health["source"] = source
+    health["signal_counts"] = {signal: sum(stock.signal == signal for stock in stocks)
+                               for signal in ("BUY", "SELL", "BUY-watch", "SELL-watch")}
+    # Rechecking at the end also closes the boundary if fetching news spans session close.
+    checked_at = now or _now_utc()
+    if checked_at >= dt.datetime.fromisoformat(health["valid_until"]):
+        health.update(evaluate_snapshot(df.to_dict("records"), metadata, checked_at))
+        health["market_status"] = health["status"]
+        health["reasons"].append("session_expired_during_generation")
+        stocks = []
+        health["signal_counts"] = dict.fromkeys(health["signal_counts"], 0)
+    data = DashboardData(generated_at=now_utc, screener_date=dt.date.fromisoformat(health["market_data_as_of"]) if health["market_data_as_of"] else None,
+                         screener_source=source, screener_generated_at=parse_utc(health.get("generated_at")),
+                         screener_freshness=_freshness_label(health), total_screened=health["coverage"]["current"],
+                         buy=[s for s in stocks if s.signal == "BUY"], sell=[s for s in stocks if s.signal == "SELL"],
+                         buy_watch=[s for s in stocks if s.signal == "BUY-watch"], sell_watch=[s for s in stocks if s.signal == "SELL-watch"],
+                         macro_news=macro_news, source_statuses=statuses, ticker_changes=changes,
+                         ticker_changes_date=change_date, health=health)
+    _render(data, output_path)
+    output_path.with_name("health.json").write_text(json.dumps(health, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    return health
 
 
 def _render(data: DashboardData, output_path: pl.Path) -> None:
