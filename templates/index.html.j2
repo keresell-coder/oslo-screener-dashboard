@@ -18,7 +18,7 @@
     <a href="https://newsweb.oslobors.no/search?issuer={{ s.symbol }}"
        target="_blank" rel="noopener"
        style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
-    <span class="stock-price">{{ "%.2f"|format(s.close) }} NOK</span>
+    <span class="stock-price"><small>As of {{ s.market_data_as_of }} · </small>{{ "%.2f"|format(s.close) }} NOK</span>
   </div>
 
   <div class="indicators">
@@ -32,7 +32,7 @@
     </div>
     <div class="ind">
       <span class="ind-label">MFI 14</span>
-      <span class="ind-value">{{ "%.1f"|format(s.mfi14) }}</span>
+      <span class="ind-value">{{ "%.1f"|format(s.mfi14) if s.mfi14 == s.mfi14 else "unavailable" }}</span>
     </div>
     <div class="ind">
       <span class="ind-label">MACD hist</span>
@@ -43,7 +43,7 @@
       <span class="ind-value">{{ "%+.1f"|format(s.pct_above_sma50) }}%</span>
     </div>
     <div class="ind">
-      <span class="ind-label">Risk</span>
+      <span class="ind-label">ADX band</span>
       <span class="ind-value
         {%- if s.risk == 'LOW' %} ind-risk-low
         {%- elif s.risk == 'MODERATE' %} ind-risk-mod
@@ -58,7 +58,7 @@
   </div>
 
   <div class="risk-row">
-    <span>Stop-loss:
+    <span>Indicative stop distance:
       <b>{{ s.stop_loss_pct }}%</b>
       <span class="sl-basis sl-basis-{{ s.stop_loss_basis|lower }}">{{ s.stop_loss_basis }}</span>
     </span>
@@ -89,8 +89,10 @@
         </div>
       </div>
       {% endfor %}
+    {% elif s.news_errors %}
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
     {% else %}
-      <p class="no-news">No news found in the last 14 days.</p>
+      <p class="no-news">No dated headlines returned by the checked feeds. Verify issuer announcements before acting.</p>
     {% endif %}
 
     {% if s.news_errors %}
@@ -215,6 +217,7 @@
 
     .stock-list { display: flex; flex-direction: column; gap: 12px; padding: 12px 0 4px; }
 
+    .awaiting-health .stock-card, .awaiting-health .summary-bar { display: none; }
     .stock-card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 8px; overflow: hidden;
@@ -341,7 +344,7 @@
     }
   </style>
 </head>
-<body>
+<body class="awaiting-health">
 
 <header class="header">
   <div class="container">
@@ -372,6 +375,16 @@
 </header>
 
 <main class="container">
+  <div id="trust-banner" role="status" class="source-status-section">
+    <strong>{{ data.health.status|upper }}</strong> · expected completed session {{ data.health.expected_session }}.
+    Current observations {{ data.health.coverage.current }}/{{ data.health.coverage.universe_count }};
+    excluded {{ data.health.coverage.stale + data.health.coverage.missing + data.health.coverage.invalid }}.
+    {% if data.health.status == 'blocked' %}Signals withheld: {{ data.health.reasons|join(', ') }}.{% endif %}
+    {% if 'news_coverage_incomplete' in data.health.reasons %}News coverage incomplete; check issuer announcements before any decision.{% endif %}
+    <p>Checking observation freshness for this visit… <a href="health.json">Source health</a></p>
+  </div>
+  <noscript><p>Enable JavaScript to verify source health before displaying technical candidates.</p></noscript>
+
 
   <!-- MACRO NEWS -->
   {% if data.macro_news %}
@@ -414,7 +427,7 @@
       {% endif %}
       {% if added %}
       <div class="ticker-group">
-        <div class="ticker-group-label added">New listings</div>
+        <div class="ticker-group-label added">Added to screener universe</div>
         <div class="ticker-pills">
           {% for c in added %}
           <span class="ticker-pill added">{{ c.ticker }}</span>
@@ -445,7 +458,7 @@
     {% if data.buy %}
     <div class="stock-list">{% for s in data.buy %}{{ _render_stock(s) }}{% endfor %}</div>
     {% else %}
-    <div class="empty-state">No BUY signals today.</div>
+    <div class="empty-state">{{ 'Signals withheld because source data is blocked.' if data.health.market_status == 'blocked' else 'No BUY setups in the verified snapshot.' }}</div>
     {% endif %}
   </details>
 
@@ -458,7 +471,7 @@
     {% if data.sell %}
     <div class="stock-list">{% for s in data.sell %}{{ _render_stock(s) }}{% endfor %}</div>
     {% else %}
-    <div class="empty-state">No SELL signals today.</div>
+    <div class="empty-state">{{ 'Signals withheld because source data is blocked.' if data.health.market_status == 'blocked' else 'No SELL setups in the verified snapshot.' }}</div>
     {% endif %}
   </details>
 
@@ -473,13 +486,13 @@
     </summary>
     <p style="padding:10px 14px 4px;font-size:0.78rem;color:var(--text-dim);">
       These stocks are in <strong style="color:var(--watch-buy)">oversold territory (RSI ≤ 35)</strong>
-      but have not yet confirmed an upward reversal. If they turn up with support from trend indicators
-      they may become BUY signals.
+      but have not yet closed above the previous completed session. An up-day satisfies the BUY rule;
+      SMA50/MACD support changes the confirmation count, not that rule.
     </p>
     {% if data.buy_watch %}
     <div class="stock-list">{% for s in data.buy_watch %}{{ _render_stock(s) }}{% endfor %}</div>
     {% else %}
-    <div class="empty-state">No BUY-watch candidates today.</div>
+    <div class="empty-state">{{ 'Candidates withheld because source data is blocked.' if data.health.market_status == 'blocked' else 'No BUY-watch candidates in the verified snapshot.' }}</div>
     {% endif %}
   </details>
 
@@ -494,13 +507,13 @@
     </summary>
     <p style="padding:10px 14px 4px;font-size:0.78rem;color:var(--text-dim);">
       These stocks are in <strong style="color:var(--watch-sell)">overbought territory (RSI ≥ 65)</strong>
-      but have not yet confirmed a downward reversal. If they turn down with support from trend indicators
-      they may become SELL signals.
+      but have not yet closed below the previous completed session. A down-day satisfies the SELL rule;
+      SMA50/MACD support changes the confirmation count, not that rule.
     </p>
     {% if data.sell_watch %}
     <div class="stock-list">{% for s in data.sell_watch %}{{ _render_stock(s) }}{% endfor %}</div>
     {% else %}
-    <div class="empty-state">No SELL-watch candidates today.</div>
+    <div class="empty-state">{{ 'Candidates withheld because source data is blocked.' if data.health.market_status == 'blocked' else 'No SELL-watch candidates in the verified snapshot.' }}</div>
     {% endif %}
   </details>
 
@@ -528,11 +541,39 @@
     Signals are based on RSI, MACD, SMA and ADX indicators — they are not investment advice
     and do not account for company fundamentals, tax rules or your personal risk profile.
     Stop-loss levels marked <em>S/R</em> are derived from recent pivot support/resistance;
-    levels marked <em>ATR</em> use the ADX-based fallback from the screener.
+    levels marked <em>Fixed percentage</em> use configured ADX-band percentages, not a volatility calculation.
+    The ADX band measures trend strength, not total investment risk. BUY/SELL labels denote technical setups, not validated trade instructions.
     Past performance is no guarantee of future results.
     News is fetched automatically from third-party sources — always check the primary source.
   </div>
 
 </main>
+<script>
+const renderedSnapshot = {{ data.health.snapshot_id|tojson }};
+const banner = document.getElementById('trust-banner');
+const initialBanner = banner.innerHTML;
+async function verifyObservationHealth() {
+  const abort = new AbortController();
+  const timer = setTimeout(() => abort.abort(), 8000);
+  try {
+    const response = await fetch('health.json', {cache: 'no-store', signal: abort.signal});
+    if (!response.ok) throw new Error('source health unavailable');
+    const health = await response.json();
+    const expires = Date.parse(health.valid_until);
+    if (!renderedSnapshot || health.snapshot_id !== renderedSnapshot || health.market_status === 'blocked' ||
+        health.status === 'blocked' || !['current','degraded'].includes(health.status) ||
+        !Number.isFinite(expires) || Date.now() >= expires) {
+      throw new Error('snapshot is blocked, expired, or has been replaced; refresh after the next validated publication');
+    }
+    document.body.classList.remove('awaiting-health');
+    banner.innerHTML = initialBanner.replace('Checking observation freshness for this visit…', 'Observation freshness verified for this visit.');
+  } catch (error) {
+    document.body.classList.add('awaiting-health');
+    banner.textContent = 'BLOCKED — technical candidates hidden: ' + error.message;
+  } finally { clearTimeout(timer); }
+}
+verifyObservationHealth();
+setInterval(verifyObservationHealth, 30000);
+</script>
 </body>
 </html>

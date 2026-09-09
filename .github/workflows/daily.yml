@@ -1,8 +1,7 @@
 # ============================================================
 # Oslo Screener Dashboard — Daily update
 #
-# Runs on weekdays at 07:00 UTC (≈ 09:00 Oslo time),
-# after oslo-screener has published the latest CSV.
+# Runs on weekdays after morning and completed-session producer snapshots.
 # Deploys by pushing generated site/ to the gh-pages branch.
 # ============================================================
 
@@ -14,8 +13,13 @@ on:
     paths:
       - "site/hmm-regime-monitor/**"
       - ".github/workflows/daily.yml"
+      - "generate.py"
+      - "market_health.py"
+      - "templates/**"
+      - "requirements*.txt"
   schedule:
     - cron: "30 9 * * 1-5"   # 09:30 UTC weekdays, after oslo-screener usually publishes
+    - cron: "30 17 * * 1-5"  # refresh after completed-session producer run
     - cron: "30 12 * * 1-5"  # backup refresh in case GitHub Actions queues the screener run
   workflow_dispatch:          # Manual trigger from GitHub Actions
   repository_dispatch:
@@ -47,36 +51,18 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip wheel
-          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Regression tests
+        run: python -m pytest -q
 
       - name: Generate dashboard
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python generate.py --output site/index.html
 
-      - name: Verify generated dashboard
-        run: |
-          python - <<'PY'
-          import sys
-          from pathlib import Path
-
-          html = Path("site/index.html")
-          if not html.exists() or html.stat().st_size == 0:
-              sys.exit("site/index.html was not generated")
-
-          text = html.read_text(encoding="utf-8")
-          required = [
-              "Screener data:",
-              "Generated:",
-              "screened",
-              "Data source quality",
-          ]
-          missing = [item for item in required if item not in text]
-          if missing:
-              sys.exit(f"generated dashboard is missing required text: {missing}")
-
-          print("dashboard HTML verified")
-          PY
+      - name: Verify dashboard and observation health
+        run: python validate_dashboard.py
 
       - name: Commit ticker cache to main
         run: |
@@ -102,3 +88,12 @@ jobs:
           publish_branch: gh-pages
           commit_message: "deploy: update dashboard [skip ci]"
           force_orphan: false
+
+      - name: Fail run when source health is blocked
+        run: |
+          python - <<'PYCODE'
+          import json, sys
+          health = json.load(open("site/health.json"))
+          if health["status"] == "blocked":
+              sys.exit("Published safe blocked dashboard: " + ", ".join(health["reasons"]))
+          PYCODE
