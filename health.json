@@ -2,28 +2,131 @@
   "schema": "oslo_screener.health.v1",
   "snapshot_id": "6891aa4d18cf46119ecb819f325d5fdd",
   "generated_at": "2026-09-18T11:09:23Z",
-  "evaluated_at": "2026-09-18T13:42:12.855883+00:00",
+  "evaluated_at": "2026-09-18T16:22:24.948137+00:00",
   "market_data_as_of": "2026-09-17",
-  "expected_session": "2026-09-17",
-  "valid_until": "2026-09-18T16:45:00+02:00",
+  "expected_session": "2026-09-18",
+  "valid_until": "2026-09-21T16:45:00+02:00",
   "status": "blocked",
   "actionable": false,
   "reasons": [
-    "current_coverage_below_minimum"
+    "current_coverage_below_minimum",
+    "snapshot_session_is_not_current"
   ],
   "coverage": {
     "universe_count": 202,
     "received_count": 202,
-    "current": 17,
-    "stale": 185,
+    "current": 0,
+    "stale": 202,
     "missing": 0,
     "invalid": 0,
-    "current_ratio": 0.08415841584158416,
+    "current_ratio": 0.0,
     "min_current_ratio": 0.9,
     "actionable_count": 0
   },
   "eligible_tickers": [],
   "excluded": [
+    {
+      "ticker": "APR.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "STECH.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "GENO.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BOHUS.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "CAVEN.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SWON.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HGSB.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "TRSB.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "DELIA.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HERMA.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "MORLD.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "COSH.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SOMA.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "PLSV.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SNTIA.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "KMAR.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "CMBTO.OL",
+      "market_data_as_of": "2026-09-17",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
     {
       "ticker": "2020.OL",
       "market_data_as_of": "2026-09-16",
@@ -1160,7 +1263,7 @@
     }
   },
   "macro_news_status": "unavailable",
-  "dashboard_generated_at": "2026-09-18T13:42:12.855883+00:00",
+  "dashboard_generated_at": "2026-09-18T16:22:24.948137+00:00",
   "source": "GitHub Pages",
   "signal_counts": {
     "BUY": 0,
