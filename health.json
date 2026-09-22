@@ -1,8 +1,8 @@
 {
   "schema": "oslo_screener.health.v1",
-  "snapshot_id": "78397fe832d8425f8545529865846ed5",
-  "generated_at": "2026-09-21T20:26:10Z",
-  "evaluated_at": "2026-09-21T21:09:42.813806+00:00",
+  "snapshot_id": "21efcfc1541e41a9af6ce6dd1026a183",
+  "generated_at": "2026-09-22T11:31:51Z",
+  "evaluated_at": "2026-09-22T14:05:56.644695+00:00",
   "market_data_as_of": "2026-09-21",
   "expected_session": "2026-09-21",
   "valid_until": "2026-09-22T16:45:00+02:00",
@@ -14,13 +14,13 @@
   "coverage": {
     "universe_count": 202,
     "received_count": 202,
-    "current": 201,
-    "stale": 1,
+    "current": 202,
+    "stale": 0,
     "missing": 0,
     "invalid": 0,
-    "current_ratio": 0.995049504950495,
+    "current_ratio": 1.0,
     "min_current_ratio": 0.9,
-    "actionable_count": 201
+    "actionable_count": 202
   },
   "eligible_tickers": [
     "TOM.OL",
@@ -54,10 +54,10 @@
     "ELMRA.OL",
     "SOFF.OL",
     "MING.OL",
-    "MPCC.OL",
     "FRO.OL",
     "SNI.OL",
     "WAWI.OL",
+    "MPCC.OL",
     "HSHP.OL",
     "ZAP.OL",
     "ODFB.OL",
@@ -161,6 +161,7 @@
     "JIN.OL",
     "HAVI.OL",
     "EQNR.OL",
+    "TRSB.OL",
     "SCATC.OL",
     "AKBM.OL",
     "HGSB.OL",
@@ -225,21 +226,13 @@
     "EIOF.OL",
     "CADLR.OL"
   ],
-  "excluded": [
-    {
-      "ticker": "TRSB.OL",
-      "market_data_as_of": "2026-09-18",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    }
-  ],
+  "excluded": [],
   "observation_dates": {
-    "2026-09-21": 201,
-    "2026-09-18": 1
+    "2026-09-21": 202
   },
   "calendar_verified_through": 2026,
   "session_policy": "Completed Oslo cash session plus 15-minute feed buffer; never intraday.",
-  "market_status": "degraded",
+  "market_status": "current",
   "news_coverage": {
     "Oslo Bors": {
       "attempted": 44,
@@ -258,7 +251,7 @@
     }
   },
   "macro_news_status": "unavailable",
-  "dashboard_generated_at": "2026-09-21T21:09:42.813806+00:00",
+  "dashboard_generated_at": "2026-09-22T14:05:56.644695+00:00",
   "source": "GitHub Pages",
   "signal_counts": {
     "BUY": 3,
