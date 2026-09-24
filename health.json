@@ -1,8 +1,8 @@
 {
   "schema": "oslo_screener.health.v1",
-  "snapshot_id": "d95cfaf9f70243c9b8f7a6e87bc7290b",
-  "generated_at": "2026-09-23T19:41:16Z",
-  "evaluated_at": "2026-09-23T20:34:09.096440+00:00",
+  "snapshot_id": "72ce9d0c2dbc4a2a9eba323884d51e9f",
+  "generated_at": "2026-09-24T11:40:26Z",
+  "evaluated_at": "2026-09-24T14:16:50.073514+00:00",
   "market_data_as_of": "2026-09-23",
   "expected_session": "2026-09-23",
   "valid_until": "2026-09-24T16:45:00+02:00",
@@ -14,13 +14,13 @@
   "coverage": {
     "universe_count": 202,
     "received_count": 202,
-    "current": 200,
-    "stale": 2,
+    "current": 202,
+    "stale": 0,
     "missing": 0,
     "invalid": 0,
-    "current_ratio": 0.9900990099009901,
+    "current_ratio": 1.0,
     "min_current_ratio": 0.0049504950495049506,
-    "actionable_count": 200
+    "actionable_count": 202
   },
   "eligible_tickers": [
     "CLOUD.OL",
@@ -66,6 +66,7 @@
     "TRMED.OL",
     "OTOVO.OL",
     "GYL.OL",
+    "INIFY.OL",
     "WSTEP.OL",
     "CAPSL.OL",
     "ENTRA.OL",
@@ -156,6 +157,7 @@
     "ELABS.OL",
     "JAREN.OL",
     "PEN.OL",
+    "TRSB.OL",
     "AKBM.OL",
     "MORG.OL",
     "SOMA.OL",
@@ -224,27 +226,13 @@
     "VEI.OL",
     "MPCC.OL"
   ],
-  "excluded": [
-    {
-      "ticker": "INIFY.OL",
-      "market_data_as_of": "2026-09-22",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "TRSB.OL",
-      "market_data_as_of": "2026-09-22",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    }
-  ],
+  "excluded": [],
   "observation_dates": {
-    "2026-09-23": 200,
-    "2026-09-22": 2
+    "2026-09-23": 202
   },
   "calendar_verified_through": 2026,
   "session_policy": "Completed Oslo cash session plus 15-minute feed buffer; never intraday.",
-  "market_status": "degraded",
+  "market_status": "current",
   "news_coverage": {
     "Oslo Bors": {
       "attempted": 35,
@@ -259,11 +247,11 @@
     "Google News": {
       "attempted": 35,
       "failed": 0,
-      "stocks_with_items": 13
+      "stocks_with_items": 14
     }
   },
   "macro_news_status": "unavailable",
-  "dashboard_generated_at": "2026-09-23T20:34:09.096440+00:00",
+  "dashboard_generated_at": "2026-09-24T14:16:50.073514+00:00",
   "source": "GitHub Pages",
   "signal_counts": {
     "BUY": 7,
