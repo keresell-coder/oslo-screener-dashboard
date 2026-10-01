@@ -1,279 +1,1273 @@
 {
   "schema": "oslo_screener.health.v1",
-  "snapshot_id": "066b10efb345486fb360ae8c76c302a2",
-  "generated_at": "2026-09-30T20:48:54Z",
-  "evaluated_at": "2026-09-30T21:28:57.407244+00:00",
+  "snapshot_id": "810982d016f24b21a01e1cf9838ecfa6",
+  "generated_at": "2026-10-01T13:06:10Z",
+  "evaluated_at": "2026-10-01T16:35:32.455623+00:00",
   "market_data_as_of": "2026-09-30",
-  "expected_session": "2026-09-30",
-  "valid_until": "2026-10-01T16:45:00+02:00",
-  "status": "degraded",
-  "actionable": true,
+  "expected_session": "2026-10-01",
+  "valid_until": "2026-10-02T16:45:00+02:00",
+  "status": "blocked",
+  "actionable": false,
   "reasons": [
-    "news_coverage_incomplete"
+    "current_coverage_below_minimum",
+    "snapshot_session_is_not_current"
   ],
   "coverage": {
     "universe_count": 202,
     "received_count": 202,
-    "current": 199,
-    "stale": 3,
+    "current": 0,
+    "stale": 202,
     "missing": 0,
     "invalid": 0,
-    "current_ratio": 0.9851485148514851,
+    "current_ratio": 0.0,
     "min_current_ratio": 0.0049504950495049506,
-    "actionable_count": 199
+    "actionable_count": 0
   },
-  "eligible_tickers": [
-    "HPUR.OL",
-    "ENH.OL",
-    "VEND.OL",
-    "ENSU.OL",
-    "NHY.OL",
-    "ARCH.OL",
-    "CONTX.OL",
-    "VOW.OL",
-    "PUBLI.OL",
-    "NOM.OL",
-    "APR.OL",
-    "GJF.OL",
-    "CADLR.OL",
-    "HYPRO.OL",
-    "PROT.OL",
-    "OTOVO.OL",
-    "PARB.OL",
-    "ENTRA.OL",
-    "ELMRA.OL",
-    "ARR.OL",
-    "SBO.OL",
-    "AKER.OL",
-    "QEC.OL",
-    "PLT.OL",
-    "HAUTO.OL",
-    "OET.OL",
-    "HAFNI.OL",
-    "WAWI.OL",
-    "ODFB.OL",
-    "MPCC.OL",
-    "ZAP.OL",
-    "ODF.OL",
-    "GOD.OL",
-    "SNI.OL",
-    "HUNT.OL",
-    "WWIB.OL",
-    "WWI.OL",
-    "LIFE.OL",
-    "TOM.OL",
-    "AKBM.OL",
-    "COSH.OL",
-    "IDEX.OL",
-    "TRMED.OL",
-    "INIFY.OL",
-    "STB.OL",
-    "CLOUD.OL",
-    "BORR.OL",
-    "SWON.OL",
-    "EPR.OL",
-    "TEL.OL",
-    "PRS.OL",
-    "STECH.OL",
-    "DELIA.OL",
-    "DFENS.OL",
-    "YAR.OL",
-    "ACR.OL",
-    "GENT.OL",
-    "EQVA.OL",
-    "SATS.OL",
-    "VOIM.OL",
-    "ONCIN.OL",
-    "WSTEP.OL",
-    "PHO.OL",
-    "NORCO.OL",
-    "PYRUM.OL",
-    "GSF.OL",
-    "LINK.OL",
-    "POL.OL",
-    "DOFG.OL",
-    "AGLX.OL",
-    "NEXT.OL",
-    "NYKD.OL",
-    "AKSO.OL",
-    "AKRBP.OL",
-    "ATEA.OL",
-    "SALME.OL",
-    "ITERA.OL",
-    "ASA.OL",
-    "MORLD.OL",
-    "CAPSL.OL",
-    "HAVI.OL",
-    "SDSD.OL",
-    "SOGN.OL",
-    "KID.OL",
-    "PLSV.OL",
-    "MULTI.OL",
-    "ELO.OL",
-    "ZLNA.OL",
-    "B2I.OL",
-    "NAS.OL",
-    "TGS.OL",
-    "VISTN.OL",
-    "AKAST.OL",
-    "CAVEN.OL",
-    "NORBT.OL",
-    "PSE.OL",
-    "ORK.OL",
-    "NSKOG.OL",
-    "BWO.OL",
-    "BAKKA.OL",
-    "NOL.OL",
-    "NAVA.OL",
-    "PEXIP.OL",
-    "IOX.OL",
-    "NKR.OL",
-    "MGN.OL",
-    "ININ.OL",
-    "OTL.OL",
-    "AUSS.OL",
-    "ELK.OL",
-    "MORG.OL",
-    "PEN.OL",
-    "NRC.OL",
-    "EQNR.OL",
-    "VAR.OL",
-    "HBC.OL",
-    "ABG.OL",
-    "AZT.OL",
-    "JIN.OL",
-    "SAGA.OL",
-    "SUBC.OL",
-    "CRNA.OL",
-    "BOR.OL",
-    "BINT.OL",
-    "STRO.OL",
-    "HSPG.OL",
-    "BNOR.OL",
-    "BOHUS.OL",
-    "HEX.OL",
-    "AKVA.OL",
-    "VVL.OL",
-    "DNB.OL",
-    "SOMA.OL",
-    "SOFF.OL",
-    "ELABS.OL",
-    "SKUE.OL",
-    "BOUV.OL",
-    "EIOF.OL",
-    "NEL.OL",
-    "AQUA.OL",
-    "AUTO.OL",
-    "ENDUR.OL",
-    "SCATC.OL",
-    "LSG.OL",
-    "ROGS.OL",
-    "2020.OL",
-    "MOWI.OL",
-    "OKEA.OL",
-    "SMOP.OL",
-    "KOMPL.OL",
-    "DNO.OL",
-    "HERMA.OL",
-    "SOAG.OL",
-    "BWE.OL",
-    "SB1NO.OL",
-    "SNOR.OL",
-    "TECH.OL",
-    "GYL.OL",
-    "BEWI.OL",
-    "PNOR.OL",
-    "ODL.OL",
-    "KOA.OL",
-    "TEKNA.OL",
-    "KCC.OL",
-    "KOG.OL",
-    "SNTIA.OL",
-    "SALM.OL",
-    "HSHP.OL",
-    "HELG.OL",
-    "GENO.OL",
-    "SPOG.OL",
-    "JAREN.OL",
-    "BRG.OL",
-    "HGSB.OL",
-    "AFG.OL",
-    "CMBTO.OL",
-    "REACH.OL",
-    "AURG.OL",
-    "AFK.OL",
-    "KMAR.OL",
-    "KIT.OL",
-    "MELG.OL",
-    "SPOL.OL",
-    "MEDI.OL",
-    "ENVIP.OL",
-    "NOD.OL",
-    "SBNOR.OL",
-    "FRO.OL",
-    "OTEC.OL",
-    "BONHR.OL",
-    "NONG.OL",
-    "VEI.OL",
-    "NAPA.OL",
-    "MING.OL",
-    "BMA.OL",
-    "SCANA.OL",
-    "IWS.OL",
-    "RING.OL",
-    "BWLPG.OL"
-  ],
+  "eligible_tickers": [],
   "excluded": [
     {
-      "ticker": "BIEN.OL",
-      "market_data_as_of": "2026-09-29",
+      "ticker": "HPUR.OL",
+      "market_data_as_of": "2026-09-30",
       "data_status": "stale",
       "reason": "missing_expected_completed_session"
     },
     {
-      "ticker": "TRSB.OL",
-      "market_data_as_of": "2026-09-29",
+      "ticker": "ENH.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "VEND.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ENSU.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NHY.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ARCH.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "CONTX.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "VOW.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "PUBLI.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NOM.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "APR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "GJF.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "CADLR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HYPRO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "PROT.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "OTOVO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "PARB.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ENTRA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ELMRA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ARR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SBO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AKER.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "QEC.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "PLT.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HAUTO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "OET.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HAFNI.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "WAWI.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ODFB.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "MPCC.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ZAP.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ODF.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "GOD.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SNI.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HUNT.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "WWIB.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "WWI.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "LIFE.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "TOM.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AKBM.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "COSH.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "IDEX.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "TRMED.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "INIFY.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "STB.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "CLOUD.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BORR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SWON.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "EPR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "TEL.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "PRS.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "STECH.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "DELIA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "DFENS.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "YAR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ACR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "GENT.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "EQVA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SATS.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "VOIM.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ONCIN.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "WSTEP.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "PHO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NORCO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "PYRUM.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "GSF.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "LINK.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "POL.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "DOFG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AGLX.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NEXT.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NYKD.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AKSO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AKRBP.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ATEA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SALME.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ITERA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ASA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "MORLD.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "CAPSL.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HAVI.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SDSD.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SOGN.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "KID.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "PLSV.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "MULTI.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ELO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ZLNA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "B2I.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NAS.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "TGS.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "VISTN.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AKAST.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "CAVEN.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NORBT.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "PSE.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ORK.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NSKOG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BWO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BAKKA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NOL.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NAVA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "PEXIP.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "IOX.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NKR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "MGN.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ININ.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "OTL.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AUSS.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ELK.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "MORG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "PEN.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NRC.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "EQNR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "VAR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HBC.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ABG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AZT.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "JIN.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SAGA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SUBC.OL",
+      "market_data_as_of": "2026-09-30",
       "data_status": "stale",
       "reason": "missing_expected_completed_session"
     },
     {
       "ticker": "ZAL.OL",
-      "market_data_as_of": "2026-09-29",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "CRNA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BOR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BINT.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "STRO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HSPG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BNOR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BOHUS.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HEX.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AKVA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "VVL.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "DNB.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SOMA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SOFF.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ELABS.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SKUE.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BOUV.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "EIOF.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NEL.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AQUA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AUTO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ENDUR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SCATC.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "LSG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ROGS.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "2020.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "MOWI.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "OKEA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SMOP.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "KOMPL.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "DNO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HERMA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SOAG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BWE.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SB1NO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SNOR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "TECH.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "GYL.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BIEN.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "TRSB.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BEWI.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "PNOR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ODL.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "KOA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "TEKNA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "KCC.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "KOG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SNTIA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SALM.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HSHP.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HELG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "GENO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SPOG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "JAREN.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BRG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "HGSB.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AFG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "CMBTO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "REACH.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AURG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "AFK.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "KMAR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "KIT.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "MELG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SPOL.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "MEDI.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "ENVIP.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NOD.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SBNOR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "FRO.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "OTEC.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BONHR.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NONG.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "VEI.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "NAPA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "MING.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BMA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "SCANA.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "IWS.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "RING.OL",
+      "market_data_as_of": "2026-09-30",
+      "data_status": "stale",
+      "reason": "missing_expected_completed_session"
+    },
+    {
+      "ticker": "BWLPG.OL",
+      "market_data_as_of": "2026-09-30",
       "data_status": "stale",
       "reason": "missing_expected_completed_session"
     }
   ],
   "observation_dates": {
-    "2026-09-30": 199,
-    "2026-09-29": 3
+    "2026-09-30": 202
   },
   "calendar_verified_through": 2026,
   "session_policy": "Completed Oslo cash session plus 15-minute feed buffer; never intraday.",
-  "market_status": "degraded",
+  "market_status": "blocked",
   "news_coverage": {
     "Oslo Bors": {
-      "attempted": 38,
-      "failed": 38,
+      "attempted": 0,
+      "failed": 0,
       "stocks_with_items": 0
     },
     "Yahoo Finance": {
-      "attempted": 38,
-      "failed": 38,
+      "attempted": 0,
+      "failed": 0,
       "stocks_with_items": 0
     },
     "Google News": {
-      "attempted": 38,
+      "attempted": 0,
       "failed": 0,
-      "stocks_with_items": 17
+      "stocks_with_items": 0
     }
   },
   "macro_news_status": "unavailable",
-  "dashboard_generated_at": "2026-09-30T21:28:57.407244+00:00",
+  "dashboard_generated_at": "2026-10-01T16:35:32.455623+00:00",
   "source": "GitHub Pages",
   "signal_counts": {
-    "BUY": 6,
-    "SELL": 2,
-    "BUY-watch": 14,
-    "SELL-watch": 16
+    "BUY": 0,
+    "SELL": 0,
+    "BUY-watch": 0,
+    "SELL-watch": 0
   }
 }
