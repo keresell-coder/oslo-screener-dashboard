@@ -2,7 +2,7 @@
   "schema": "oslo_screener.health.v1",
   "snapshot_id": "980ababddad54cd7a8cd785de3b2254c",
   "generated_at": "2026-10-09T13:10:51Z",
-  "evaluated_at": "2026-10-09T16:24:27.410854+00:00",
+  "evaluated_at": "2026-10-09T18:27:03.248435+00:00",
   "market_data_as_of": "2026-10-08",
   "expected_session": "2026-10-09",
   "valid_until": "2026-10-12T16:45:00+02:00",
@@ -1256,7 +1256,7 @@
     }
   },
   "macro_news_status": "unavailable",
-  "dashboard_generated_at": "2026-10-09T16:24:27.410854+00:00",
+  "dashboard_generated_at": "2026-10-09T18:27:03.248435+00:00",
   "source": "GitHub Pages",
   "signal_counts": {
     "BUY": 0,
