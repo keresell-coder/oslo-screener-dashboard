@@ -1,8 +1,8 @@
 {
   "schema": "oslo_screener.health.v1",
-  "snapshot_id": "c3bd4eddeb96485aa4269baeda86d5de",
-  "generated_at": "2026-10-14T20:12:31Z",
-  "evaluated_at": "2026-10-14T20:49:42.672545+00:00",
+  "snapshot_id": "ff766be8d24645e88d3276059c4a56af",
+  "generated_at": "2026-10-15T11:21:57Z",
+  "evaluated_at": "2026-10-15T14:16:20.425872+00:00",
   "market_data_as_of": "2026-10-14",
   "expected_session": "2026-10-14",
   "valid_until": "2026-10-15T16:45:00+02:00",
@@ -14,13 +14,13 @@
   "coverage": {
     "universe_count": 201,
     "received_count": 201,
-    "current": 198,
-    "stale": 3,
+    "current": 201,
+    "stale": 0,
     "missing": 0,
     "invalid": 0,
-    "current_ratio": 0.9850746268656716,
+    "current_ratio": 1.0,
     "min_current_ratio": 0.004975124378109453,
-    "actionable_count": 198
+    "actionable_count": 201
   },
   "eligible_tickers": [
     "GSF.OL",
@@ -78,6 +78,7 @@
     "APR.OL",
     "PUBLI.OL",
     "WSTEP.OL",
+    "NEXT.OL",
     "NOD.OL",
     "GJF.OL",
     "ZLNA.OL",
@@ -120,6 +121,7 @@
     "NSKOG.OL",
     "SNOR.OL",
     "SPOL.OL",
+    "ASA.OL",
     "AKSO.OL",
     "BOR.OL",
     "SALM.OL",
@@ -176,6 +178,7 @@
     "CAPSL.OL",
     "MPCC.OL",
     "NRC.OL",
+    "HSPG.OL",
     "HUNT.OL",
     "SB1NO.OL",
     "AKAST.OL",
@@ -222,33 +225,13 @@
     "IWS.OL",
     "HAFNI.OL"
   ],
-  "excluded": [
-    {
-      "ticker": "ASA.OL",
-      "market_data_as_of": "2026-10-13",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "HSPG.OL",
-      "market_data_as_of": "2026-10-13",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "NEXT.OL",
-      "market_data_as_of": "2026-10-13",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    }
-  ],
+  "excluded": [],
   "observation_dates": {
-    "2026-10-14": 198,
-    "2026-10-13": 3
+    "2026-10-14": 201
   },
   "calendar_verified_through": 2026,
   "session_policy": "Completed Oslo cash session plus 15-minute feed buffer; never intraday.",
-  "market_status": "degraded",
+  "market_status": "current",
   "news_coverage": {
     "Oslo Bors": {
       "attempted": 34,
@@ -263,11 +246,11 @@
     "Google News": {
       "attempted": 34,
       "failed": 0,
-      "stocks_with_items": 16
+      "stocks_with_items": 15
     }
   },
   "macro_news_status": "unavailable",
-  "dashboard_generated_at": "2026-10-14T20:49:42.672545+00:00",
+  "dashboard_generated_at": "2026-10-15T14:16:20.425872+00:00",
   "source": "GitHub Pages",
   "signal_counts": {
     "BUY": 4,
