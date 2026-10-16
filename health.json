@@ -1,8 +1,8 @@
 {
   "schema": "oslo_screener.health.v1",
-  "snapshot_id": "b4609b507dc44340893a0c9837e22457",
-  "generated_at": "2026-10-15T19:53:47Z",
-  "evaluated_at": "2026-10-15T20:26:08.134413+00:00",
+  "snapshot_id": "4128fba5f0354375b3af681320f43e22",
+  "generated_at": "2026-10-16T11:17:00Z",
+  "evaluated_at": "2026-10-16T14:05:07.251271+00:00",
   "market_data_as_of": "2026-10-15",
   "expected_session": "2026-10-15",
   "valid_until": "2026-10-16T16:45:00+02:00",
@@ -14,13 +14,13 @@
   "coverage": {
     "universe_count": 201,
     "received_count": 201,
-    "current": 196,
-    "stale": 5,
+    "current": 201,
+    "stale": 0,
     "missing": 0,
     "invalid": 0,
-    "current_ratio": 0.9751243781094527,
+    "current_ratio": 1.0,
     "min_current_ratio": 0.004975124378109453,
-    "actionable_count": 196
+    "actionable_count": 201
   },
   "eligible_tickers": [
     "IDEX.OL",
@@ -85,7 +85,9 @@
     "SBO.OL",
     "ZLNA.OL",
     "ELK.OL",
+    "NEXT.OL",
     "ATEA.OL",
+    "TRSB.OL",
     "VEI.OL",
     "VOIM.OL",
     "DNB.OL",
@@ -130,6 +132,7 @@
     "CONTX.OL",
     "SDSD.OL",
     "LSG.OL",
+    "GYL.OL",
     "SCANA.OL",
     "ODF.OL",
     "NEL.OL",
@@ -143,6 +146,7 @@
     "KOG.OL",
     "VVL.OL",
     "HUNT.OL",
+    "ASA.OL",
     "SALM.OL",
     "CRNA.OL",
     "ININ.OL",
@@ -207,6 +211,7 @@
     "SKUE.OL",
     "HAFNI.OL",
     "STRO.OL",
+    "JAREN.OL",
     "HSPG.OL",
     "SOFF.OL",
     "ORK.OL",
@@ -220,45 +225,13 @@
     "EQNR.OL",
     "OET.OL"
   ],
-  "excluded": [
-    {
-      "ticker": "ASA.OL",
-      "market_data_as_of": "2026-10-14",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "GYL.OL",
-      "market_data_as_of": "2026-10-14",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "JAREN.OL",
-      "market_data_as_of": "2026-10-14",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "NEXT.OL",
-      "market_data_as_of": "2026-10-14",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "TRSB.OL",
-      "market_data_as_of": "2026-10-14",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    }
-  ],
+  "excluded": [],
   "observation_dates": {
-    "2026-10-15": 196,
-    "2026-10-14": 5
+    "2026-10-15": 201
   },
   "calendar_verified_through": 2026,
   "session_policy": "Completed Oslo cash session plus 15-minute feed buffer; never intraday.",
-  "market_status": "degraded",
+  "market_status": "current",
   "news_coverage": {
     "Oslo Bors": {
       "attempted": 37,
@@ -273,11 +246,11 @@
     "Google News": {
       "attempted": 37,
       "failed": 0,
-      "stocks_with_items": 16
+      "stocks_with_items": 14
     }
   },
   "macro_news_status": "unavailable",
-  "dashboard_generated_at": "2026-10-15T20:26:08.134413+00:00",
+  "dashboard_generated_at": "2026-10-16T14:05:07.251271+00:00",
   "source": "GitHub Pages",
   "signal_counts": {
     "BUY": 0,
