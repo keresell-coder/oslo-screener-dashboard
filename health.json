@@ -1,8 +1,8 @@
 {
   "schema": "oslo_screener.health.v1",
-  "snapshot_id": "90542955c6ef4bebb7316d4d7afe0d79",
-  "generated_at": "2026-10-20T20:00:24Z",
-  "evaluated_at": "2026-10-20T20:44:58.577781+00:00",
+  "snapshot_id": "7116c5e56919482d9e697e3ad9bf4a24",
+  "generated_at": "2026-10-21T11:42:16Z",
+  "evaluated_at": "2026-10-21T14:33:31.893087+00:00",
   "market_data_as_of": "2026-10-20",
   "expected_session": "2026-10-20",
   "valid_until": "2026-10-21T16:45:00+02:00",
@@ -14,13 +14,13 @@
   "coverage": {
     "universe_count": 201,
     "received_count": 201,
-    "current": 192,
-    "stale": 9,
+    "current": 201,
+    "stale": 0,
     "missing": 0,
     "invalid": 0,
-    "current_ratio": 0.9552238805970149,
+    "current_ratio": 1.0,
     "min_current_ratio": 0.004975124378109453,
-    "actionable_count": 192
+    "actionable_count": 201
   },
   "eligible_tickers": [
     "AKER.OL",
@@ -63,8 +63,10 @@
     "HSHP.OL",
     "RING.OL",
     "ATEA.OL",
+    "JAREN.OL",
     "AGLX.OL",
     "AZT.OL",
+    "TRSB.OL",
     "NAS.OL",
     "TRMED.OL",
     "REACH.OL",
@@ -73,6 +75,7 @@
     "BEWI.OL",
     "VOIM.OL",
     "APR.OL",
+    "NEXT.OL",
     "CAPSL.OL",
     "ROGS.OL",
     "NAPA.OL",
@@ -98,12 +101,14 @@
     "ODF.OL",
     "EQVA.OL",
     "SBNOR.OL",
+    "PYRUM.OL",
     "ENH.OL",
     "HPUR.OL",
     "TECH.OL",
     "SPOG.OL",
     "KOA.OL",
     "AUTO.OL",
+    "INIFY.OL",
     "PRS.OL",
     "KIT.OL",
     "SNTIA.OL",
@@ -117,6 +122,7 @@
     "PEXIP.OL",
     "SNI.OL",
     "STB.OL",
+    "GYL.OL",
     "SBO.OL",
     "BWO.OL",
     "NORCO.OL",
@@ -127,12 +133,14 @@
     "OTL.OL",
     "BINT.OL",
     "NOD.OL",
+    "ASA.OL",
     "IOX.OL",
     "POL.OL",
     "ARR.OL",
     "SALME.OL",
     "EIOF.OL",
     "SMOP.OL",
+    "ININ.OL",
     "BRG.OL",
     "DOFG.OL",
     "GENO.OL",
@@ -176,6 +184,7 @@
     "ENSU.OL",
     "SNOR.OL",
     "PNOR.OL",
+    "HSPG.OL",
     "HAFNI.OL",
     "STECH.OL",
     "GJF.OL",
@@ -216,69 +225,13 @@
     "PEN.OL",
     "OKEA.OL"
   ],
-  "excluded": [
-    {
-      "ticker": "ASA.OL",
-      "market_data_as_of": "2026-10-19",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "GYL.OL",
-      "market_data_as_of": "2026-10-19",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "HSPG.OL",
-      "market_data_as_of": "2026-10-19",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "INIFY.OL",
-      "market_data_as_of": "2026-10-19",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "ININ.OL",
-      "market_data_as_of": "2026-10-19",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "JAREN.OL",
-      "market_data_as_of": "2026-10-19",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "NEXT.OL",
-      "market_data_as_of": "2026-10-19",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "PYRUM.OL",
-      "market_data_as_of": "2026-10-19",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "TRSB.OL",
-      "market_data_as_of": "2026-10-19",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    }
-  ],
+  "excluded": [],
   "observation_dates": {
-    "2026-10-20": 192,
-    "2026-10-19": 9
+    "2026-10-20": 201
   },
   "calendar_verified_through": 2026,
   "session_policy": "Completed Oslo cash session plus 15-minute feed buffer; never intraday.",
-  "market_status": "degraded",
+  "market_status": "current",
   "news_coverage": {
     "Oslo Bors": {
       "attempted": 33,
@@ -293,11 +246,11 @@
     "Google News": {
       "attempted": 33,
       "failed": 0,
-      "stocks_with_items": 10
+      "stocks_with_items": 9
     }
   },
   "macro_news_status": "unavailable",
-  "dashboard_generated_at": "2026-10-20T20:44:58.577781+00:00",
+  "dashboard_generated_at": "2026-10-21T14:33:31.893087+00:00",
   "source": "GitHub Pages",
   "signal_counts": {
     "BUY": 4,
