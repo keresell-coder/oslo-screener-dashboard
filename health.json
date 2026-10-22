@@ -1,8 +1,8 @@
 {
   "schema": "oslo_screener.health.v1",
-  "snapshot_id": "d2e961db95b04566b63b77abf1876c0f",
-  "generated_at": "2026-10-21T20:09:18Z",
-  "evaluated_at": "2026-10-21T20:45:21.954719+00:00",
+  "snapshot_id": "0cb8208fe39b434c8992e00252a77f45",
+  "generated_at": "2026-10-22T11:44:57Z",
+  "evaluated_at": "2026-10-22T14:35:00.387905+00:00",
   "market_data_as_of": "2026-10-21",
   "expected_session": "2026-10-21",
   "valid_until": "2026-10-22T16:45:00+02:00",
@@ -14,13 +14,13 @@
   "coverage": {
     "universe_count": 201,
     "received_count": 201,
-    "current": 195,
-    "stale": 6,
+    "current": 201,
+    "stale": 0,
     "missing": 0,
     "invalid": 0,
-    "current_ratio": 0.9701492537313433,
+    "current_ratio": 1.0,
     "min_current_ratio": 0.004975124378109453,
-    "actionable_count": 195
+    "actionable_count": 201
   },
   "eligible_tickers": [
     "AKER.OL",
@@ -68,6 +68,7 @@
     "MORG.OL",
     "PARB.OL",
     "BRG.OL",
+    "NEXT.OL",
     "WSTEP.OL",
     "NSKOG.OL",
     "NAS.OL",
@@ -95,13 +96,16 @@
     "AUTO.OL",
     "BOR.OL",
     "HSHP.OL",
+    "PYRUM.OL",
     "NAVA.OL",
     "TRMED.OL",
+    "INIFY.OL",
     "NAPA.OL",
     "SOGN.OL",
     "ELO.OL",
     "EQVA.OL",
     "PRS.OL",
+    "GYL.OL",
     "BWO.OL",
     "ZAP.OL",
     "ATEA.OL",
@@ -115,6 +119,7 @@
     "BMA.OL",
     "SALME.OL",
     "FRO.OL",
+    "ASA.OL",
     "SBNOR.OL",
     "QEC.OL",
     "SNI.OL",
@@ -166,6 +171,7 @@
     "SDSD.OL",
     "PROT.OL",
     "AFK.OL",
+    "HSPG.OL",
     "PLSV.OL",
     "SNTIA.OL",
     "VEND.OL",
@@ -219,51 +225,13 @@
     "VOW.OL",
     "PEN.OL"
   ],
-  "excluded": [
-    {
-      "ticker": "ASA.OL",
-      "market_data_as_of": "2026-10-20",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "GYL.OL",
-      "market_data_as_of": "2026-10-20",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "HSPG.OL",
-      "market_data_as_of": "2026-10-20",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "INIFY.OL",
-      "market_data_as_of": "2026-10-20",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "NEXT.OL",
-      "market_data_as_of": "2026-10-20",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "PYRUM.OL",
-      "market_data_as_of": "2026-10-20",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    }
-  ],
+  "excluded": [],
   "observation_dates": {
-    "2026-10-21": 195,
-    "2026-10-20": 6
+    "2026-10-21": 201
   },
   "calendar_verified_through": 2026,
   "session_policy": "Completed Oslo cash session plus 15-minute feed buffer; never intraday.",
-  "market_status": "degraded",
+  "market_status": "current",
   "news_coverage": {
     "Oslo Bors": {
       "attempted": 28,
@@ -278,11 +246,11 @@
     "Google News": {
       "attempted": 28,
       "failed": 0,
-      "stocks_with_items": 7
+      "stocks_with_items": 9
     }
   },
   "macro_news_status": "unavailable",
-  "dashboard_generated_at": "2026-10-21T20:45:21.954719+00:00",
+  "dashboard_generated_at": "2026-10-22T14:35:00.387905+00:00",
   "source": "GitHub Pages",
   "signal_counts": {
     "BUY": 3,
