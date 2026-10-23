@@ -1,8 +1,8 @@
 {
   "schema": "oslo_screener.health.v1",
-  "snapshot_id": "d44e60f009564fca8cbd72bfe0c48c80",
-  "generated_at": "2026-10-22T20:06:16Z",
-  "evaluated_at": "2026-10-22T20:40:42.849296+00:00",
+  "snapshot_id": "d7bc8690def9454a8c6dfe59e09a38ca",
+  "generated_at": "2026-10-23T11:32:26Z",
+  "evaluated_at": "2026-10-23T14:19:18.843586+00:00",
   "market_data_as_of": "2026-10-22",
   "expected_session": "2026-10-22",
   "valid_until": "2026-10-23T16:45:00+02:00",
@@ -14,13 +14,13 @@
   "coverage": {
     "universe_count": 201,
     "received_count": 201,
-    "current": 191,
-    "stale": 10,
+    "current": 201,
+    "stale": 0,
     "missing": 0,
     "invalid": 0,
-    "current_ratio": 0.9502487562189055,
+    "current_ratio": 1.0,
     "min_current_ratio": 0.004975124378109453,
-    "actionable_count": 191
+    "actionable_count": 201
   },
   "eligible_tickers": [
     "2020.OL",
@@ -82,13 +82,14 @@
     "ROGS.OL",
     "ENTRA.OL",
     "ODFB.OL",
+    "NEXT.OL",
     "NAVA.OL",
+    "SOAG.OL",
     "ABG.OL",
     "NOD.OL",
     "MORG.OL",
     "VOIM.OL",
     "ZAL.OL",
-    "ELO.OL",
     "CAPSL.OL",
     "KMAR.OL",
     "SBNOR.OL",
@@ -111,13 +112,16 @@
     "MPCC.OL",
     "NEL.OL",
     "SOMA.OL",
+    "PYRUM.OL",
     "ITERA.OL",
     "SAGA.OL",
     "SOFF.OL",
     "MORLD.OL",
     "WAWI.OL",
     "COSH.OL",
+    "ELO.OL",
     "SPOG.OL",
+    "INIFY.OL",
     "QEC.OL",
     "DOFG.OL",
     "NORBT.OL",
@@ -128,21 +132,25 @@
     "ENH.OL",
     "PLSV.OL",
     "JIN.OL",
+    "GYL.OL",
     "WWI.OL",
     "CONTX.OL",
     "SNTIA.OL",
     "KOG.OL",
     "HAUTO.OL",
     "KCC.OL",
+    "BINT.OL",
     "AKAST.OL",
     "SATS.OL",
     "AFG.OL",
     "MULTI.OL",
+    "ASA.OL",
     "IOX.OL",
     "TGS.OL",
     "OTL.OL",
     "VEI.OL",
     "BOR.OL",
+    "BIEN.OL",
     "AFK.OL",
     "TEKNA.OL",
     "GOD.OL",
@@ -156,6 +164,7 @@
     "VOW.OL",
     "NRC.OL",
     "HELG.OL",
+    "ININ.OL",
     "NORCO.OL",
     "REACH.OL",
     "BMA.OL",
@@ -166,6 +175,7 @@
     "HUNT.OL",
     "AZT.OL",
     "TOM.OL",
+    "MELG.OL",
     "NKR.OL",
     "HBC.OL",
     "ENSU.OL",
@@ -215,75 +225,13 @@
     "PEN.OL",
     "OKEA.OL"
   ],
-  "excluded": [
-    {
-      "ticker": "ASA.OL",
-      "market_data_as_of": "2026-10-21",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "BIEN.OL",
-      "market_data_as_of": "2026-10-21",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "BINT.OL",
-      "market_data_as_of": "2026-10-21",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "GYL.OL",
-      "market_data_as_of": "2026-10-21",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "INIFY.OL",
-      "market_data_as_of": "2026-10-21",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "ININ.OL",
-      "market_data_as_of": "2026-10-21",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "MELG.OL",
-      "market_data_as_of": "2026-10-21",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "NEXT.OL",
-      "market_data_as_of": "2026-10-21",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "PYRUM.OL",
-      "market_data_as_of": "2026-10-21",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "SOAG.OL",
-      "market_data_as_of": "2026-10-21",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    }
-  ],
+  "excluded": [],
   "observation_dates": {
-    "2026-10-22": 191,
-    "2026-10-21": 10
+    "2026-10-22": 201
   },
   "calendar_verified_through": 2026,
   "session_policy": "Completed Oslo cash session plus 15-minute feed buffer; never intraday.",
-  "market_status": "degraded",
+  "market_status": "current",
   "news_coverage": {
     "Oslo Bors": {
       "attempted": 33,
@@ -298,11 +246,11 @@
     "Google News": {
       "attempted": 33,
       "failed": 0,
-      "stocks_with_items": 11
+      "stocks_with_items": 17
     }
   },
   "macro_news_status": "unavailable",
-  "dashboard_generated_at": "2026-10-22T20:40:42.849296+00:00",
+  "dashboard_generated_at": "2026-10-23T14:19:18.843586+00:00",
   "source": "GitHub Pages",
   "signal_counts": {
     "BUY": 0,
