@@ -1,0 +1,60 @@
+{
+  "schema": "oslo_screener.health.v1",
+  "snapshot_id": "test",
+  "generated_at": "2026-09-08T18:00:00+02:00",
+  "evaluated_at": "2026-09-08T18:00:00+02:00",
+  "market_data_as_of": "2026-09-08",
+  "expected_session": "2026-09-08",
+  "valid_until": "2026-09-09T16:45:00+02:00",
+  "status": "current",
+  "actionable": true,
+  "reasons": [],
+  "coverage": {
+    "universe_count": 2,
+    "received_count": 2,
+    "current": 2,
+    "stale": 0,
+    "missing": 0,
+    "invalid": 0,
+    "current_ratio": 1.0,
+    "min_current_ratio": 0.9,
+    "actionable_count": 2
+  },
+  "eligible_tickers": [
+    "FLAT.OL",
+    "EXIT.OL"
+  ],
+  "excluded": [],
+  "observation_dates": {
+    "2026-09-08": 2
+  },
+  "calendar_verified_through": 2026,
+  "session_policy": "Completed Oslo cash session plus 15-minute feed buffer; never intraday.",
+  "market_status": "current",
+  "news_coverage": {
+    "Oslo Bors": {
+      "attempted": 2,
+      "failed": 0,
+      "stocks_with_items": 0
+    },
+    "Yahoo Finance": {
+      "attempted": 2,
+      "failed": 0,
+      "stocks_with_items": 0
+    },
+    "Google News": {
+      "attempted": 2,
+      "failed": 0,
+      "stocks_with_items": 0
+    }
+  },
+  "macro_news_status": "available",
+  "dashboard_generated_at": "2026-09-08T18:00:00+02:00",
+  "source": "fixture",
+  "signal_counts": {
+    "BUY": 0,
+    "SELL": 0,
+    "BUY-watch": 1,
+    "SELL-watch": 1
+  }
+}
