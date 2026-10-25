@@ -208,3 +208,20 @@ def test_generation_crossing_session_boundary_rechecks_coverage(tmp_path,monkeyp
     assert health['coverage']['actionable_count']==0
     assert health['signal_counts']['BUY']==0
     validate(tmp_path)
+
+
+def test_suitability_evidence_is_prominent_in_rendered_card(tmp_path, monkeypatch):
+    from liquidity import assess_liquidity, session_window
+    frame,label,metadata,health=source()
+    end=dt.date(2026,9,8)
+    history=pd.DataFrame({'RawClose':100.,'Volume':1000.},index=pd.to_datetime(session_window(end)))
+    history.iloc[0,1]=0
+    for key,value in assess_liquidity(history,end,'NOK').items():
+        frame[key]=value
+    arrange(monkeypatch,(frame,label,metadata,health))
+    generate.build_dashboard(tmp_path/'index.html',NOW)
+    page=(tmp_path/'index.html').read_text()
+    assert 'Ineligible under daily-trading requirement' in page
+    assert '100.00% / 500.00%' in page
+    assert 'Execution suitability unverified' in page
+    assert 'Rebound setup' in page
