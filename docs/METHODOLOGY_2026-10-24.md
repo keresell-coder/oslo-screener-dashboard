@@ -1,0 +1,11 @@
+# Bounded methodology correction — 2026-10-24-methodology-v2
+
+Original daily classification rules, config thresholds, stop/position arithmetic and source-health gates remain unchanged. Raw signal codes remain compatible with downstream consumers. Energy (including its original oil levels, transitions, actions and outstanding re-entry mismatch) is not touched. No liquidity/stop threshold, optimization, universe expansion or allocation recommendation is added.
+
+A rebound setup requires RSI <= configured lower threshold and the configured up-close condition. Reduction/exit review requires RSI >= configured upper threshold and the configured down-close condition. Equality qualifies the RSI gate; a flat day does not qualify either direction. Missing/stale observations remain explicitly unavailable. Day direction is determined from actual closes, never from RSI direction. SMA/MACD remain confirmations, not new gates.
+
+Watch sections list actual missing RSI/day conditions in alphabetical order. The previous comparison of RSI points, MACD currency units and SMA percentages is removed; no replacement composite distance/rank is invented. Producer CSV publishes previous close, day direction and interpretation fields with snapshot methodology metadata. Legacy feeds without previous close/direction state the limitation instead of inferring it. The consumer honors metadata thresholds; legacy defaults retain the existing 35/65 rules.
+
+BUY/SELL labels become research setup/review wording. SELL is existing-holder reduction/exit review, not a short instruction. Existing stop-distance and position-percent values are retained as unvalidated research heuristics, not executable stops, allocations or loss budgets. Liquidity capacity is not established. Existing active context counts are not validated priority rankings.
+
+Production snapshots, historical outputs and generated deployed pages are unchanged in this PR. Later approved publication will carry versioned evidence. `setup_semantics.py` is intentionally identical in producer and dashboard. Tests cover equality/flat/missing/stale, actual day versus RSI direction, metadata and the unchanged original classify boundary behavior. `review-evidence/` contains deterministic offline rendered examples; they are not live trade recommendations.

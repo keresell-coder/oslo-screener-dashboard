@@ -16,6 +16,8 @@ Source status is reported openly in the HTML page — no data is fabricated.
 """
 
 from __future__ import annotations
+from setup_semantics import describe_gates, LABELS
+
 
 import io
 import hashlib
@@ -126,6 +128,8 @@ class StockResult:
     stop_loss_basis: str        # "S/R" or "Fixed percentage"
     primary_count: int          # number of confirming indicators (signal strength)
     risk: str
+    signal_label: str = ""
+    gate_summary: str = ""
     market_data_as_of: str = ""
     news: list[NewsItem] = field(default_factory=list)
     news_errors: dict[str, str] = field(default_factory=dict)
@@ -207,7 +211,7 @@ def fetch_screener_csv() -> tuple[pd.DataFrame, str, dict, dict]:
     raise RuntimeError("No coherent screener snapshot available: " + "; ".join(errors))
 
 
-def parse_screener_results(df: pd.DataFrame, eligible_tickers: set[str]) -> tuple[list[StockResult], Optional[dt.date]]:
+def parse_screener_results(df: pd.DataFrame, eligible_tickers: set[str], metadata=None) -> tuple[list[StockResult], Optional[dt.date]]:
     """Convert DataFrame to StockResult objects."""
     results = []
     screener_date = None
@@ -238,6 +242,8 @@ def parse_screener_results(df: pd.DataFrame, eligible_tickers: set[str]) -> tupl
             ticker=ticker,
             symbol=symbol,
             signal=signal,
+            signal_label=LABELS.get(signal,signal),
+            gate_summary=describe_gates(row,metadata),
             close=float(row.get("close", 0)),
             rsi14=float(row.get("rsi14", 0)),
             adx14=float(row.get("adx14", 0)),
@@ -659,7 +665,7 @@ def build_dashboard(output_path: pl.Path, now: dt.datetime | None = None) -> dic
         health["reasons"].append("source_snapshot_unavailable")
         health["source_error"] = str(exc)
     statuses.append(SourceStatus("Screener (oslo-screener)", health["status"] == "current", _freshness_label(health)))
-    stocks, _ = parse_screener_results(df, set(health["eligible_tickers"]))
+    stocks, _ = parse_screener_results(df, set(health["eligible_tickers"]), metadata)
     changes, change_date = update_ticker_cache()
     for stock in stocks:
         fetch_news_for_stock(stock)
