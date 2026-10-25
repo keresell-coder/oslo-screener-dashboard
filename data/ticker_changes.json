@@ -1,7 +1,8 @@
 {
-  "update_date": "2026-10-05",
+  "update_date": "2026-10-25",
   "added": [],
   "removed": [
-    "AKBM.OL"
+    "ASA.OL",
+    "NEXT.OL"
   ]
 }
