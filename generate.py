@@ -16,6 +16,7 @@ Source status is reported openly in the HTML page — no data is fabricated.
 """
 
 from __future__ import annotations
+from liquidity import describe_liquidity
 from setup_semantics import describe_gates, LABELS
 
 
@@ -131,6 +132,7 @@ class StockResult:
     signal_label: str = ""
     gate_summary: str = ""
     market_data_as_of: str = ""
+    suitability_summary: str = "KE suitability: activity and order capacity unverified."
     news: list[NewsItem] = field(default_factory=list)
     news_errors: dict[str, str] = field(default_factory=dict)
 
@@ -255,6 +257,7 @@ def parse_screener_results(df: pd.DataFrame, eligible_tickers: set[str], metadat
             primary_count=primary_count,
             risk=str(row.get("risk", "")).strip(),
             market_data_as_of=str(row.get("date", "")),
+            suitability_summary=describe_liquidity(row),
         ))
 
     return results, screener_date

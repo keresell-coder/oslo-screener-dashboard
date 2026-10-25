@@ -58,6 +58,7 @@
   </div>
 
   <p class="setup-gates">{{ s.gate_summary }}</p>
+  <p class="setup-gates suitability-evidence">{{ s.suitability_summary }}</p>
   <div class="risk-row">
     <span>Research reference distance (not an executable stop):
       <b>{{ s.stop_loss_pct }}%</b>
@@ -543,7 +544,7 @@
     and do not account for company fundamentals, tax rules or your personal risk profile.
     Stop-loss levels marked <em>S/R</em> are derived from recent pivot support/resistance;
     levels marked <em>Fixed percentage</em> use configured ADX-band percentages, not a volatility calculation.
-    The ADX band measures trend strength, not total investment risk. All distances and legacy CSV position percentages are research-only heuristics, not executable stops, portfolio allocations or loss budgets. BUY means rebound review; SELL means existing-holder reduction/exit review, never a short instruction. Liquidity and order capacity are unassessed; these setups have no established trading edge.
+    The ADX band measures trend strength, not total investment risk. All distances and legacy CSV position percentages are research-only heuristics, not executable stops, portfolio allocations or loss budgets. BUY means rebound review; SELL means existing-holder reduction/exit review, never a short instruction. Separate KE-suitability evidence is shown on each card. Vendor activity and turnover proxies do not establish executable order capacity; these setups have no established trading edge.
     Past performance is no guarantee of future results.
     News is fetched automatically from third-party sources — always check the primary source.
   </div>

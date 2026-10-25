@@ -36,3 +36,9 @@ S/R stops use only history up to the screener observation date. Other stop dista
 ## Calendar maintenance
 
 The shared calendar was checked against official Euronext hours and the 2026 holiday calendar on 9 September 2026. It uses 16:30 cash trading-at-last end plus a 15-minute feed buffer, 13:10 plus that buffer on Easter Wednesday, weekends and Oslo closures including 24 and 31 December. **Review the next year's official calendar before 2027; unknown future years block signals.** Primary-source links are in `market_health.py`.
+
+
+## Separate KE activity and order-size evidence
+Technical BUY/SELL/watch classifications are unchanged. `liquidity.py` reports the last 60 expected completed Oslo open sessions, not the last 60 available bars. Explicit vendor zero volume means ineligible under the daily-trading requirement; absent, negative/nonfinite volume, duplicate dates or unverified calendars remain unknown. Positive volume on all sessions is vendor evidence, not independent exchange verification. The existing annual calendar validity boundary is preserved.
+
+Capacity is a separate descriptive comparison: NOK 100,000 and NOK 500,000 divided by the median of unadjusted close × volume on all 20 expected sessions. Confirmed NOK quote currency is required; otherwise no NOK ratio is emitted. This is a price-volume turnover proxy, not actual exchange turnover, order-book depth, execution cost or guaranteed fills. No safe participation threshold is invented, and passing activity never certifies executable capacity. Legacy snapshots show unknown evidence. No schedule, signal threshold or capture job changes.
