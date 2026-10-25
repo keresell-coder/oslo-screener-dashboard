@@ -1,8 +1,8 @@
 {
   "schema": "oslo_screener.health.v1",
-  "snapshot_id": "36af7fc30d2643f3b45a35212a5e8ca9",
-  "generated_at": "2026-10-23T19:57:37Z",
-  "evaluated_at": "2026-10-23T20:32:53.749428+00:00",
+  "snapshot_id": "1d44f8a122e64eb7b274a18b9c0542b3",
+  "generated_at": "2026-10-25T07:40:08Z",
+  "evaluated_at": "2026-10-25T07:41:41.713935+00:00",
   "market_data_as_of": "2026-10-23",
   "expected_session": "2026-10-23",
   "valid_until": "2026-10-26T16:45:00+01:00",
@@ -14,13 +14,13 @@
   "coverage": {
     "universe_count": 201,
     "received_count": 201,
-    "current": 195,
-    "stale": 6,
+    "current": 199,
+    "stale": 2,
     "missing": 0,
     "invalid": 0,
-    "current_ratio": 0.9701492537313433,
+    "current_ratio": 0.9900497512437811,
     "min_current_ratio": 0.004975124378109453,
-    "actionable_count": 195
+    "actionable_count": 199
   },
   "eligible_tickers": [
     "HYPRO.OL",
@@ -136,6 +136,7 @@
     "NRC.OL",
     "ACR.OL",
     "KOG.OL",
+    "GYL.OL",
     "PRS.OL",
     "AFK.OL",
     "POL.OL",
@@ -183,7 +184,10 @@
     "BMA.OL",
     "PUBLI.OL",
     "QEC.OL",
+    "HSPG.OL",
+    "HERMA.OL",
     "SWON.OL",
+    "VVL.OL",
     "HELG.OL",
     "SDSD.OL",
     "HUNT.OL",
@@ -227,39 +231,15 @@
       "reason": "missing_expected_completed_session"
     },
     {
-      "ticker": "GYL.OL",
-      "market_data_as_of": "2026-10-22",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "HERMA.OL",
-      "market_data_as_of": "2026-10-22",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "HSPG.OL",
-      "market_data_as_of": "2026-10-22",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
       "ticker": "NEXT.OL",
-      "market_data_as_of": "2026-10-22",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "VVL.OL",
       "market_data_as_of": "2026-10-22",
       "data_status": "stale",
       "reason": "missing_expected_completed_session"
     }
   ],
   "observation_dates": {
-    "2026-10-23": 195,
-    "2026-10-22": 6
+    "2026-10-23": 199,
+    "2026-10-22": 2
   },
   "calendar_verified_through": 2026,
   "session_policy": "Completed Oslo cash session plus 15-minute feed buffer; never intraday.",
@@ -282,7 +262,7 @@
     }
   },
   "macro_news_status": "unavailable",
-  "dashboard_generated_at": "2026-10-23T20:32:53.749428+00:00",
+  "dashboard_generated_at": "2026-10-25T07:41:41.713935+00:00",
   "source": "GitHub Pages",
   "signal_counts": {
     "BUY": 4,
