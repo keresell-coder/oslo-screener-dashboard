@@ -1,8 +1,7 @@
 {
-  "update_date": "2026-10-25",
-  "added": [],
-  "removed": [
-    "ASA.OL",
-    "NEXT.OL"
-  ]
+  "update_date": "2026-11-09",
+  "added": [
+    "OUTLT.OL"
+  ],
+  "removed": []
 }
