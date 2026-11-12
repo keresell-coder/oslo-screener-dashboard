@@ -237,18 +237,18 @@
       <div>
         <h1>Oslo Screener Dashboard</h1>
         <div class="header-meta">
-            Screener data: 11 November 2026<br>
-          Source generated: 12 Nov 2026 15:04 UTC<br>
-          Generated: 12 Nov 2026 20:14 UTC
-          &nbsp;·&nbsp; Source: GitHub Pages (blocked; completed session 2026-11-12; current observations 0/200)
+            Screener data: 12 November 2026<br>
+          Source generated: 12 Nov 2026 22:14 UTC<br>
+          Generated: 12 Nov 2026 22:48 UTC
+          &nbsp;·&nbsp; Source: GitHub Pages (degraded; completed session 2026-11-12; current observations 194/200)
         </div>
       </div>
       <div class="summary-bar">
-        <span class="chip chip-buy">BUY 0</span>
-        <span class="chip chip-sell">SELL 0</span>
-        <span class="chip chip-wbuy">BUY-watch 0</span>
-        <span class="chip chip-wsell">SELL-watch 0</span>
-        <span class="chip chip-total">0 screened</span>
+        <span class="chip chip-buy">BUY 4</span>
+        <span class="chip chip-sell">SELL 8</span>
+        <span class="chip chip-wbuy">BUY-watch 10</span>
+        <span class="chip chip-wsell">SELL-watch 14</span>
+        <span class="chip chip-total">194 screened</span>
       </div>
     </div>
   </div>
@@ -256,11 +256,11 @@
 
 <main class="container">
   <div id="trust-banner" role="status" class="source-status-section">
-    <strong>BLOCKED</strong> · expected completed session 2026-11-12.
-    Current observations 0/200;
-    excluded 200.
-    Signals withheld: current_coverage_below_minimum, snapshot_session_is_not_current.
+    <strong>DEGRADED</strong> · expected completed session 2026-11-12.
+    Current observations 194/200;
+    excluded 6.
     
+    News coverage incomplete; check issuer announcements before any decision.
     <p>Checking observation freshness for this visit… <a href="health.json">Source health</a></p>
   </div>
   <noscript><p>Enable JavaScript to verify source health before displaying technical candidates.</p></noscript>
@@ -275,24 +275,1217 @@
   
 
   <!-- BUY SIGNALS -->
-  <details class="section-buy" >
+  <details class="section-buy" open>
     <summary>
       Rebound setups — review (legacy BUY)
-      <span class="section-count">0 stocks</span>
+      <span class="section-count">4 stocks</span>
     </summary>
     
-    <div class="empty-state">Signals withheld because source data is blocked.</div>
+    <div class="stock-list"><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">ENSU</span>
+    <span class="signal-badge badge-buy">
+      Rebound setup — review
+    </span>
+    <a href="https://finance.yahoo.com/quote/ENSU.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=ENSU"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>0.49 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">28.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">26.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">22.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.0094</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-15.6%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Up-close met; SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 524,898; NOK 100k / 500k orders = 19.05% / 95.26% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=ENSU.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=ENSU" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/ENSU" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=ENSU" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">PLT</span>
+    <span class="signal-badge badge-buy">
+      Rebound setup — review
+    </span>
+    <a href="https://finance.yahoo.com/quote/PLT.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=PLT"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>11.42 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">29.1</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">33.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">23.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.4655</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-20.9%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Up-close met; SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 15,652,220; NOK 100k / 500k orders = 0.64% / 3.19% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>15.0%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPbUI0LVVOczFJdFI2cWI4OWJBcHViaWtkX0pHV3gxZy05UGItMTZsODhWMVdoZUlQUHFrRnpTN3RDcGlEOWJIRzZtV0tzTmFmSWRPRkUyOS1rYjZES1dQUEtXeWs4RWh3ZWIyNjRaSGRHMDBKS3lQUUQ0dXhNaHJUbTU5VFVNMWE4dUJHd0dCbk96aWp3NkZfM093QWRRSlhxcENIQW9DVjlEM0tpNm5zMlg2Nks?oc=5" target="_blank" rel="noopener">Mandatory notification of trades - Primary insider - TradingView</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>12 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxQN3g3bE5kZ19YVUpFOEFYeTk4OWxWZWoxb2xOcFdvekRiSkVYYXhyYXJwZGhkXzhqMmdmaFNsV1dXbm1UYnJkSndkeGkwV1JubzdOVnp3Uzd5Szk5YjR0bHpUY21BVVhQS0pDNkxWcUNLWkRtNGJ2VjVHZW9tTzd5ZWtFUWkyNl9sQ0ZCVDY2LVIxU25WbmpyeC1yLU9NWTZCZnczdjRB?oc=5" target="_blank" rel="noopener">poLight ASA Capital Markets Day Highlights Accelerating Momentum in AR|MR, Industrial Imaging and Wearable Applications – Company Announcement - FT.com - Financial Times</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>10 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxQQ0tTZ3JwVzIxQlBjN2dGa0RaRWQ3YUprYmdfZEVzQnJIY2dQUU1ycmpUX1NXd3JPeVFSMmlMamwwRFJKUW00X0c5OWM4YXI2RkVSNXRGR0p4aWNoQUdVTXdSOHk1TU9Mb2xCQnItZEYtQnB3UmZiMThLRkpwSHNTa0w4TS03WHFWQXdGWWx1LS1pYlFVRVVWWFlCNkxENjNSYVZaT3luNjNjTjBGeEp2RmZXdmRMQW9FS1Z2dlpWRG1iclVrT0N2dWJOZFRUWDA5ZXQyTVpvYw?oc=5" target="_blank" rel="noopener">poLight ASA - exercise of share options and joint sale of share option sales - TradingView</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>06 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-14d">
+          14d
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMimgJBVV95cUxNLW1UdnRuYXpmQnpqelo3RWt0bU42RkxtMENmVTdIaXFPdV9wZGxxbi1jYUh1UG1ITE45V1ctbEtLV241SFdkN0dVYXRFNjNiYjRxb1JFbjVaUWVZcWVyUWNZN0JtYmsxWHhXWkFDOVlLeUpsR2lNZExac2lYbXlLR0Q2MUZMMzJxcFpqVzFxUTBpYlJ0SVdpREFrYnQ4ckttY3VZVi1oX0pTV3pEbl9rMk9xV1lmWlRGQ3V6UnRUWjVDNmgxRUxJU0xUNXBQZEx1b29Mb192WjdzVFlGNlJ4T3VweFNTaXhXSlpUYkV0eTZEVU5OWUxWY2p4NHZVMEtwMkhHNkRGbVNNSV9NVWZDNGNvOE52b2tVemc?oc=5" target="_blank" rel="noopener">poLight ASA Receives Another Follow-on Mass Production Purchase Order from a Consumer OEM related to an AR|MR design-in case - TradingView</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>02 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=PLT.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=PLT" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/PLT" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=PLT" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">BWE</span>
+    <span class="signal-badge badge-buy">
+      Rebound setup — review
+    </span>
+    <a href="https://finance.yahoo.com/quote/BWE.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=BWE"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>47.85 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">29.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">42.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">14.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-1.2298</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-17.8%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Up-close met; SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 11,295,529; NOK 100k / 500k orders = 0.89% / 4.43% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=BWE.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=BWE" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/BWE" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=BWE" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">CRNA</span>
+    <span class="signal-badge badge-buy">
+      Rebound setup — review
+    </span>
+    <a href="https://finance.yahoo.com/quote/CRNA.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=CRNA"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>9.31 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">34.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">22.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">21.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.1047</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-15.7%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Up-close met; SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 28,062,691; NOK 100k / 500k orders = 0.36% / 1.78% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>11.3%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=CRNA.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=CRNA" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/CRNA" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=CRNA" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div></div>
     
   </details>
 
   <!-- SELL SIGNALS -->
-  <details class="section-sell" >
+  <details class="section-sell" open>
     <summary>
       Reduction/exit review — not short (legacy SELL)
-      <span class="section-count">0 stocks</span>
+      <span class="section-count">8 stocks</span>
     </summary>
     
-    <div class="empty-state">Signals withheld because source data is blocked.</div>
+    <div class="stock-list"><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">MORLD</span>
+    <span class="signal-badge badge-sell">
+      Reduction/exit review setup — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/MORLD.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=MORLD"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>26.50 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">68.2</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">22.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">81.6</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.3591</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+12.1%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Down-close met; SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 6,313,249; NOK 100k / 500k orders = 1.58% / 7.92% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOYmhKTkpKekdhSFotYWhfUDJIeVp6R1JYVDRlbXN3U3ZOYUN4ZFJKaXh4dmVkNks3bUlmT0k4TDhDclJUUW9sR09FMEVQRUt1SXdNMmdxWFFib3VOb3loZWVMRGJCdEEyT3M3T1RBN1FXSFVFUHFIQjFjNmYzcnpaazhxQ3hOR0dlZDZocHZoak1HZUs5cHRXeUtOMW02cm1hbzlRanJuMmprcHRUaWd3eA?oc=5" target="_blank" rel="noopener">Moreld ASA: Status on share buy-back programme - TradingView</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>09 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNbmJYRU5ZaVhCZ2lzSXVLT1RpTXpncUJvbVJfYWdzaEFoYk9Lc0dzQnZuck1MVmgyZ0JVMVI0bV9tVGJBZWlPWmdEY2RBelVRN1VvS2d5VHJ1T2VRaUhIWEpMZFo0aFFqa1JVNlRvSUZOZjBHMy1LeVBYX1BySFZUUHlEVlZrQURxeDJRclcycHpOQzNDTk5fN0IwZGZpZkU?oc=5" target="_blank" rel="noopener">MORLD: EX. DIVIDEND NOK 0.50 TODAY - TradingView</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>09 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-14d">
+          14d
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMiugFBVV95cUxQdXYtaFlqbGw5ZjJ2YUtCODhVdEtrT1g1Yll4NW95UlNtZ1MybFRqYVN0bTUyd3NyYmZqSFRKR0ptcmtkM0dkZEtTRm1Jd3l0RklydVFaZllTbl9rVlVuVzNxbFYyaERPeDVVdDRwSHA3SDg1cTV2T3JUNE1FcEJBMXlXVUs2LU1LSUR0YmpteFpvSDVfdC04aGluU09JZXBUZklKTmFvSEJ1OGpKUU5KT0N4bUNURTJyUkE?oc=5" target="_blank" rel="noopener">Moreld ASA: Key information relating to cash dividend - TradingView</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>05 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-14d">
+          14d
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOb3d6aUNaWDU5dFN4dzlTbE1PZlBVNE5zT05FV3hqVnQ3aFMzMFhZUkcwUDQ3bG5uSUFDaXlzTE1MNXNCNDF4dUE5VTdDRFlqNGw1RU0yLTNKUTlQTmVxSFJWeFNfdDdPMUJrWmxpbDBidHFmWjh4bWVNSG9RUVdNYUdpd1p3SDVyWG0wRDZqT2psdlBmN2ctTzVXTWpnRGJyQ0FKTmw5Vk1FeEpXZWFiZl94MA?oc=5" target="_blank" rel="noopener">Moreld announces NOK 0.50 dividend distribution - TradingView</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>05 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=MORLD.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=MORLD" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/MORLD" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=MORLD" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">TEL</span>
+    <span class="signal-badge badge-sell">
+      Reduction/exit review setup — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/TEL.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=TEL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>136.00 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">69.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">39.6</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">94.2</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.5875</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+6.7%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Down-close met; SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 221,196,136; NOK 100k / 500k orders = 0.05% / 0.23% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>4.8%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxQZHVsQWt4SVZoZnVnb3YyNEMtdzhpWWFmUXJBeExCLUxYeHBNTXRmaXRSc2VmVXcycE9zTnJvTEFMbUw1eTVOXzNZMWt6NHg0LVpRZVJSV3kzcHU1M21VMktGWHBiYnBHcTVuS010bDAxMTk1eVZrR3d4cXpKTWtNVGl4RnhqbmJ1bjU5dGtXR2J6aDRfNUFnYU5ka0dkeFNzcExfbkN5V0daTjJTU1N5YUtISXpkdlNQVF8yTUZ5WnRpM0l4VVE?oc=5" target="_blank" rel="noopener">Elopak ASA: Mandatory notification of trade by primary insider - TradingView</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>10 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=TEL.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=TEL" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/TEL" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=TEL" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">NAS</span>
+    <span class="signal-badge badge-sell">
+      Reduction/exit review setup — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/NAS.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=NAS"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>13.41 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">71.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">37.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">84.1</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.2730</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+12.3%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Down-close met; SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 95,812,446; NOK 100k / 500k orders = 0.10% / 0.52% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>1.3%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxQUHVMWmtxUkVOdDdaMGxXeDlJbEM1VEVkUjd0NmNoNlRmZGdYelNYLTVqVDBuLXJxVHVNakhzbGNYekEtVVh1dlhtNFRIMGI3VlJyUjc1aEZpak94ZzNBcTVuRjZQTnY5LVpORVVqLTVwUnBTYkVIWnZDdFZoU2R4VkpTeWEtUEFST0NSUHJaeWJnU2pRSWdmT0VQZVdveGU2VXd2cmk1VXMyQS0wY3dweF9n?oc=5" target="_blank" rel="noopener">Norway stocks lower at close of trade; Oslo OBX down 1.33% - Investing.com</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>06 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-14d">
+          14d
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxQSFdHOVNKYVhuc2lMaVpBNGxJUDFjLUVUU1lESDN6TmZMczJnNXlPMnhHaVUwVTJXYld5dkc0c0xkMkNiLUZXM3M0UmRFc3ZUM2tHUDQ2RGo3cktiRGhvMENlWm0xcGRaOFlHbGpBTVIzVXVySFFDejAwa09LOXpjZDJoRllyUEFpcC1fV2dPVW1fUXlwMFFtOGFQRFZhcVNVbWRUaTBQTXJzMjM5NjUwa2Z3?oc=5" target="_blank" rel="noopener">Norway stocks lower at close of trade; Oslo OBX down 1.24% - Investing.com</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>02 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=NAS.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=NAS" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/NAS" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=NAS" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">MOWI</span>
+    <span class="signal-badge badge-sell">
+      Reduction/exit review setup — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/MOWI.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=MOWI"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>225.80 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">71.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">39.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">63.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.6025</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+8.1%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Down-close met; SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 255,425,518; NOK 100k / 500k orders = 0.04% / 0.20% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-14d">
+          14d
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxPZE01ek5Qb1NabDkybWltVHpkcmowYXQ2cGdWQkNTSV9NbnNvS0tJQzdfeGJaX0JheXV6R3lERFVQZWUxVE9wNldWamtfRWptWl9jb2dyZnRjN1Y1ZzNkWURBbW9FT0FxNUpNY0VPRHNZcW1vTVpZMUFkSWR5U2NHRzk5ZGNtcm9PdVlfWDdjb0MxcmJzSGZSR3dFcjRKdnZJUDFocmlMaTVJUV9BTG1Ka3IzbFhnY0U?oc=5" target="_blank" rel="noopener">Mowi ASA (OSE: MOWI): Quarterly dividend - NTB Kommunikasjon</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>04 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=MOWI.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=MOWI" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/MOWI" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=MOWI" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">AUSS</span>
+    <span class="signal-badge badge-sell">
+      Reduction/exit review setup — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/AUSS.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=AUSS"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>89.50 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">71.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">18.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">68.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">1.0023</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+7.5%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-low">
+        LOW
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Down-close met; SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 9,155,602; NOK 100k / 500k orders = 1.09% / 5.46% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>1.3%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=AUSS.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=AUSS" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/AUSS" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=AUSS" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">ORK</span>
+    <span class="signal-badge badge-sell">
+      Reduction/exit review setup — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/ORK.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=ORK"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>104.60 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">72.3</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">50.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">73.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.7217</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+10.0%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Down-close met; SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 147,558,801; NOK 100k / 500k orders = 0.07% / 0.34% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>3.3%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=ORK.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=ORK" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/ORK" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=ORK" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">KID</span>
+    <span class="signal-badge badge-sell">
+      Reduction/exit review setup — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/KID.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=KID"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>148.40 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">72.6</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">37.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">49.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.7286</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+14.6%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Down-close met; SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 7,509,440; NOK 100k / 500k orders = 1.33% / 6.66% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=KID.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=KID" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/KID" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=KID" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">NKR</span>
+    <span class="signal-badge badge-sell">
+      Reduction/exit review setup — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/NKR.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=NKR"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>19.55 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">77.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">42.6</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">95.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.3422</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+26.6%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Down-close met; SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 2,398,943; NOK 100k / 500k orders = 4.17% / 20.84% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYUd2M0hYbTBWN0dBZkkzdmthY3lpSEVoSnJFbDJHMGtsZUlvUHU5akpJZnB3U01lZG13bGxpS0JpMUhTTlFhdXhORWs4Ym5KUVE3ZzktblZxNXNSZmVYX09EVXVCS21hN2djZ3VIT1hhVzV4bkUwZ09YMGgycjg3VHhJLVdab2NxM0R6amMzeEhnTHEzWkZxekNhdExoWTFzXzM1SXFDZ2hJLTZIWFhuUUd4djZoX2xzemJCNU5MSHN5QQ?oc=5" target="_blank" rel="noopener">Nekkar Q3 Review: Turning the Tide with Record Order Intake - TradingView</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>10 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=NKR.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=NKR" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/NKR" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=NKR" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div></div>
     
   </details>
 
@@ -301,7 +1494,7 @@
     <summary>
       Rebound watch (legacy BUY-watch)
       <span class="section-count">
-        0 stocks
+        10 stocks
         — oversold, reversal not yet confirmed
       </span>
     </summary>
@@ -311,7 +1504,953 @@
       SMA50/MACD support changes the confirmation count, not that rule.
     </p>
     
-    <div class="empty-state">Candidates withheld because source data is blocked.</div>
+    <div class="stock-list"><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">PHO</span>
+    <span class="signal-badge badge-buy-watch">
+      Rebound watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/PHO.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=PHO"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>41.90 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">21.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">34.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">11.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.4807</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-14.6%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Needs up-close (current down); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 3,635,681; NOK 100k / 500k orders = 2.75% / 13.75% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxQcTZuR0ZKN1R3aGVjdmllcGNUR3Q0LW9HajJHNXpIekI2Mm16a2VHbnhOME12dmgxX1ZEOENfZk9najNPejhiMmJMUWdYRWlra1Q5d0l6TFhQZ1IwbHVyZ01VR1ktamkzVVFqUmZUMWpMbzZsSlRwTTJVQ1VtWUg1bUE3bGNfOXFtR0RWUDFJc0ZLejdUenNkRTdGb0tXNUpsUTg1NHJsY2pxMkhMUDB2bjFkRXRCaDAzU3BTVXBib0JuWUdER3ZKdllKckJmYmhjdGpJbWhwR1lVQQ?oc=5" target="_blank" rel="noopener">Photocure Provides Update on AssureMDx and Anticipated Medicare Coverage Timeline - TradingView</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>09 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=PHO.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=PHO" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/PHO" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=PHO" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">HAVI</span>
+    <span class="signal-badge badge-buy-watch">
+      Rebound watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/HAVI.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=HAVI"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>0.76 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">29.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">44.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">39.3</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.0023</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-24.4%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Needs up-close (current down); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 181,221; NOK 100k / 500k orders = 55.18% / 275.91% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>4.1%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=HAVI.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=HAVI" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/HAVI" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=HAVI" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">EQVA</span>
+    <span class="signal-badge badge-buy-watch">
+      Rebound watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/EQVA.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=EQVA"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>2.34 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">30.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">36.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">11.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.0209</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-15.0%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Needs up-close (current down); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 111,868; NOK 100k / 500k orders = 89.39% / 446.95% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=EQVA.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=EQVA" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/EQVA" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=EQVA" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">ARCH</span>
+    <span class="signal-badge badge-buy-watch">
+      Rebound watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/ARCH.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=ARCH"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>17.08 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">31.3</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">32.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">33.1</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.0214</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-18.0%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Needs up-close (current down); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 4,544,205; NOK 100k / 500k orders = 2.20% / 11.00% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=ARCH.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=ARCH" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/ARCH" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=ARCH" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">NOL</span>
+    <span class="signal-badge badge-buy-watch">
+      Rebound watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/NOL.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=NOL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>6.42 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">33.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">24.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">18.2</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.0012</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-7.4%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Needs up-close (current down); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 169,437; NOK 100k / 500k orders = 59.02% / 295.09% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=NOL.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=NOL" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/NOL" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=NOL" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">NAVA</span>
+    <span class="signal-badge badge-buy-watch">
+      Rebound watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/NAVA.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=NAVA"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>10.45 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">33.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">32.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">33.3</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.0849</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-17.6%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Needs up-close (current down); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 593,065; NOK 100k / 500k orders = 16.86% / 84.31% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>7.0%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=NAVA.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=NAVA" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/NAVA" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=NAVA" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">WSTEP</span>
+    <span class="signal-badge badge-buy-watch">
+      Rebound watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/WSTEP.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=WSTEP"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>11.55 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">34.2</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">25.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">12.2</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.0301</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-7.8%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Needs up-close (current down); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 207,433; NOK 100k / 500k orders = 48.21% / 241.04% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-14d">
+          14d
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNc3BDSC1QRHVjNTE2Rmo2VDhRWUpmbThuZkhaRWZiTGtuQkI4WUgtQ2hzZWx6UkdEd0UwNGYtSDd5SnN4Q241dTFNQmtUZlF4cm9fTERkbUZkdzk5am15aElKZ05TZUlVWWtXcUhnLTA0MVZnMmF6UUdLUHJyb1ZhUUJXRWttRnh1OWZZU2NfbnhQNjFfMXR2MmNoVmo2ZGdiU2RiQjgwRW5iNFVzUzZyQ3k1RWFTMUE?oc=5" target="_blank" rel="noopener">Webstep ASA: Anne Kristine Lund to step down as CEO - TradingView</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>02 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=WSTEP.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=WSTEP" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/WSTEP" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=WSTEP" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">NYKD</span>
+    <span class="signal-badge badge-buy-watch">
+      Rebound watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/NYKD.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=NYKD"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>2.89 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">34.3</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">22.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">15.6</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.0104</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-16.5%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Needs up-close (current down); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 2,174,744; NOK 100k / 500k orders = 4.60% / 22.99% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>4.1%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=NYKD.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=NYKD" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/NYKD" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=NYKD" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">HBC</span>
+    <span class="signal-badge badge-buy-watch">
+      Rebound watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/HBC.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=HBC"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>1.11 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">34.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">26.6</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">31.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.0094</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-14.2%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Needs up-close (current down); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Ineligible under daily-trading requirement: vendor reports 1/60 zero-volume sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 75,172; NOK 100k / 500k orders = 133.03% / 665.14% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>1.9%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQcUhwZm5DNDBrMVh5UHoxWTc3SUd1bW92bGZYYWZPZWhUVEdfMFo5THRyTVlVdnN5ZU5JaW9KWFpqbEFKUXBWYVZVLUVKTWFNcWdIaEhUMWYzTmp5QUJiWHlNZmhPRVJTRHpLenJTeWNJMnFERGpTcE1RaW90b0tFX19QRHpOWUVXT012TUFSZDZuaTE3dE1xMmhDSldrdnJhQmlHek9Bbk1CLXpQaGxjWDAyd05GVHA4cmI1dA?oc=5" target="_blank" rel="noopener">Kremlin not aware of request to seize Coca-Cola HBC&#39;s Russian assets, spokesman says - Euronext Markets: Real-time Stock Market Data | live</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>09 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMi3gFBVV95cUxPdl95T1RXMFJNZWM4bGhsM1d0eW5UeEx2Nzl2dXVsdzFCcjhWaXQ5MnJXMWVzSnc5aDJVYm80d1JnRnJfd1BvOEFpcGFsZkFUMHgybXFNN3VheF81SGZFUWZUcjVtQS1YWkw2dmg1YnFhZ0VSMGNVbWtQTTdnVGV5Mmg0QVFCNEFsQTlBcFhEdkgyNlByblhoNnhxS0dJYkdLUVNEalpTOFU5d0xIbjQ2cTdveGE1NDZhVkdjOEw3RDd5VzdiSjVSSDJfNmlObjBtdDlDMF90Vlgtc2d4NVE?oc=5" target="_blank" rel="noopener">Hofseth BioCare ASA: THIRD QUARTER 2026 FINANCIAL REPORT - Finansavisen</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>06 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxQY19SZjM1MkVhODVLeWZ3Mm0yZFBkZURyYXlUZkY2QzlfQXlPTUw1cTNuTWViMm1RZUY1em8zbDlaYXZ0U3RzZXZ0eVZ1T2JXWUNRbjBVOEplUGg0VzVhcWFpU3I1MUhvODROS2VjdExxeDhUSmJvWWR1RWt4amhMNXpvNFBkQXpXWE4zTFpCWUQ5cUFTOUpCc0FyWk1CYzd2d0NpVmE3OGZOU3c?oc=5" target="_blank" rel="noopener">Bottler Coca-Cola HBC says no notification from Russia on asset changes - Euronext Markets: Real-time Stock Market Data | live</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>06 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-14d">
+          14d
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxPSkxIM1RNTTU0SXRvTHNxYm85NWdfVUNsN0VkOVUzeURYX2NVb3lKWllXaTNHamxhcVJpOUI1NDRhMDd4LXdZUlQ3NG5oNFFkcUpPV256czAzX2Zpelo1dkNuOE9nWWp1NUFTQ3VWRFloWmJzRzhrTjIzeUtKcTZQN2pLTlFvdkhzeWhwMTNmLWdCekJVd2hZMzNvbHBZbDkyRml1T0J0dFZ0WnNROXpUQVEyZ2pvNmM?oc=5" target="_blank" rel="noopener">FTSE slips as bank, defence stocks fall; BoE delivers first rate hike in 3 years - Euronext Markets: Real-time Stock Market Data | live</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>05 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-14d">
+          14d
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMikgJBVV95cUxPdW5ZRDRXN2d5S1FLMThfUGNTdFZwbG1FOTM3VFFjdTJXbWhyX2pjOFpBZTBzNHVIZVU3TVhpRE9TRndvZGRuOG96dDc3OGhtYTRITm1wWEhVYm5FbG1jYnhTcms0M2tHWnBVWkhjY2x5dHhfNEg2dkxLaFFLTk43dkM2Y0hmdzU4NmhPQ2NibGFJcFNGR1p2dDVCVXZvN2RhaENOUHZoTlRoak5oVHFuUDZWVURyYnUxYlFJUkdXRG4tdm5jOW5EeEtpZkpaejJjaFlKU3djT0JxcVRTc25fSk1LeTBQejVoN2VQRXJucEJpbTYtWnczaDBzU2pZa2pHWkxxQ2U5Z1BDMnhCZVUyM0x30gGXAkFVX3lxTE81TVN5S1poVWtRcUZlRUp4Mk82RjZnY2hDLTJpdGliRmlwa052OFhBT0RKM1o0WnpwY3kweGhCWVlHeUd4S1J3OWpEY3NlWjAxY2laMTBlX3oxYkNUQmFKUVV4VkVkVGl6VWVEdG9mVTdsME9TdjdaN3VXUEM3UmhCZm5KRzhQeWF2c2ZHN29yZnZpbElnaXl5dWcycmhJZkdBTzFVMmRSYVprYnI2SXY4U1BjbFlMU29XY3ByNTRRN082ZUxhcGFoV1FNM0FxdjBfdFNUM2pRR29sUlF2N1dVSnhSbVdONDllNjlKRUVrOXczMG5xaE9NVmFKNDZ3eHJZWk9Ya0cxN0h4aHZnOHNfQlVrWGlCbw?oc=5" target="_blank" rel="noopener">Hofseth BioCare ASA: AECORBIO APPOINTS PROF. KARL G. SYLVESTER AS CO-FOUNDER AND CONSULTING CHIEF MEDICAL OFFICER - The Manila Times</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>03 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=HBC.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=HBC" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/HBC" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=HBC" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">VOIM</span>
+    <span class="signal-badge badge-buy-watch">
+      Rebound watch
+    </span>
+    <a href="https://finance.yahoo.com/quote/VOIM.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=VOIM"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>0.13 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">34.6</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">21.3</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">36.3</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.0009</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">-51.0%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &lt;=35 met; Needs up-close (current down); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 98,356; NOK 100k / 500k orders = 101.67% / 508.36% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>59.6%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSEMtam80TXl3MG1CYTlXVno3Q0dlUjdMeGNRMmdDMVRQcjJpSDF6SXJ6aWdQRXlxeW1FZ2dSdDlRVno4dU00enhteTZxUEFVUlpfTjNDdW81WmU5THlkaVVGQjQzV1pMc0ZZa1JxSjlIeFZZTzVXLTlpc1hCZWRPLUltRTQ5ZDlURHozSC11eDBRMEp2aFQzdlZVdzJGRUZKTFJ1YVRVZXdCQQ?oc=5" target="_blank" rel="noopener">Voim ASA Calls Meeting on Proposed Oslo Børs Delisting - TipRanks</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>06 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=VOIM.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=VOIM" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/VOIM" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=VOIM" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div></div>
     
   </details>
 
@@ -320,7 +2459,7 @@
     <summary>
       Reduction/exit watch — not short (legacy SELL-watch)
       <span class="section-count">
-        0 stocks
+        14 stocks
         — overbought, reversal not yet confirmed
       </span>
     </summary>
@@ -330,7 +2469,1311 @@
       SMA50/MACD support changes the confirmation count, not that rule.
     </p>
     
-    <div class="empty-state">Candidates withheld because source data is blocked.</div>
+    <div class="stock-list"><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">CLOUD</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/CLOUD.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=CLOUD"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>13.26 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">65.1</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">30.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">57.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.0631</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+7.8%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current up); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 2,185,747; NOK 100k / 500k orders = 4.58% / 22.88% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>1.6%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNd3VON01EYmZtS3F2UDRSRjV1R2NMeUcza0xfTDZ1RnhqcndETW9ycEt0anV2X09renptVGR4TWw1SDNDNWV5eXU0cXZ4eXBJUmtXQWZFZTEzdk53S2hZYUpJNE5kdG9XVU1tSk0tem1kMGx2QTRYMmhwS093OXQyZFdWR25iNWhiOFlaX0w2bUgtZXJaMDZXWUhxRGpmNEV5?oc=5" target="_blank" rel="noopener">Yanmar launches €560m AKVA takeover offer with 92% of shares pledged - Salmon Business</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>09 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=CLOUD.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=CLOUD" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/CLOUD" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=CLOUD" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">AZT</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/AZT.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=AZT"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>22.70 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">65.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">34.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">83.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.1910</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+10.4%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current up); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 990,092; NOK 100k / 500k orders = 10.10% / 50.50% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>1.4%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=AZT.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=AZT" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/AZT" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=AZT" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">NONG</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/NONG.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=NONG"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>184.86 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">66.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">17.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">65.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.5132</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+5.8%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-low">
+        LOW
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current up); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 11,988,952; NOK 100k / 500k orders = 0.83% / 4.17% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>1.75%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=NONG.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=NONG" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/NONG" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=NONG" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">SNTIA</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/SNTIA.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=SNTIA"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>91.60 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">67.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">23.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">56.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.8670</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+8.5%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current up); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 5,367,940; NOK 100k / 500k orders = 1.86% / 9.31% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=SNTIA.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=SNTIA" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/SNTIA" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=SNTIA" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">STB</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/STB.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=STB"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>207.20 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">67.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">28.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">76.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">1.5771</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+5.8%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current up); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 111,147,107; NOK 100k / 500k orders = 0.09% / 0.45% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>1.2%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxQT1JFd2lVZ0FaMGNnQzlZUzQ0RVJZSVpEUHFmbDM0Rjh6SEFHZERTWnJJU3d4aU0ySVVCWndUQ3FRQ05EM0hhNzhoZEZGRWJhX0ljSzVtUlRUalBUQjh0UlVsUS0xNE1fZnkyMWdmMldLNjVXWjdNcHZ2aG9sQU14TjVvTXhaUDdBRDIySnRyU2xLa1RMRlpOdkh4WW1MTktVdlZwN2lnRDNKNVlpdVhQb1ZB?oc=5" target="_blank" rel="noopener">Norway stocks lower at close of trade; Oslo OBX down 0.17% - Investing.com</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>12 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOVTZYTC1YV2JhSV9nbVJOeGd3MWVPcGNTLW5zUXo4ZjRoeXg1RDNDeWpjVGh5T3FzVW1GVGR0LWZnQnpIdEVDY0dlUERuaHpqaDJZWW9FUVJQYTE1S3RiN2poSGFZTDJjalBXdTlVYWV6SlBBS0VsclNON2cwZHZIcVNqaGF4Z3RSaTQtSlJ5czVBU0M2WnFpN0NnMVhlbS1KeDdJYnFDcWJFby10OVQ3Zw?oc=5" target="_blank" rel="noopener">Norway shares lower at close of trade; Oslo OBX down 0.17% By Investing.com - Investing.com India</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>12 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-14d">
+          14d
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOc2EzZl8zUVZ5N3cwZ0Qtcy11X2RYV0VSb29mamI0blR6N2xCS2ZUNGJxTkFqLXFOYjlqUlRPZnF3RXJuT2Rjc1ZwelVxalk3QjdyclprREpyTkcwUFNYT1dXTjZLZ1BTdkVkdF80MWdjTEFzRkV1dXIxZnQwZFZKQVFPNWgya2xuVjJ6eW1LQ29PS1F6cmVFQzhFZGo0Wmw2X1JrNnJfemFqVVFIWF9VcmR3?oc=5" target="_blank" rel="noopener">Norway stocks lower at close of trade; Oslo OBX down 0.67% - Investing.com</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>03 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=STB.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=STB" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/STB" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=STB" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">MEDI</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/MEDI.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=MEDI"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>315.00 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">68.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">43.2</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">76.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.1938</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+15.5%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current up); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 4,646,331; NOK 100k / 500k orders = 2.15% / 10.76% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=MEDI.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=MEDI" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/MEDI" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=MEDI" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">MORG</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/MORG.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=MORG"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>114.90 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">68.6</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">19.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">67.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.7847</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+5.0%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-low">
+        LOW
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current up); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 1,936,555; NOK 100k / 500k orders = 5.16% / 25.82% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>1.9%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=MORG.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=MORG" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/MORG" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=MORG" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">AFG</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/AFG.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=AFG"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>205.00 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">71.1</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">18.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">58.3</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">1.2043</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+6.3%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-low">
+        LOW
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current flat); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 5,252,822; NOK 100k / 500k orders = 1.90% / 9.52% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>1.75%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=AFG.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=AFG" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/AFG" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=AFG" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">NORBT</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/NORBT.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=NORBT"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>186.80 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">71.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">13.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">76.3</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">1.5971</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+15.4%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-low">
+        LOW
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current up); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 18,895,184; NOK 100k / 500k orders = 0.53% / 2.65% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>3.7%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=NORBT.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=NORBT" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/NORBT" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=NORBT" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">BONHR</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/BONHR.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=BONHR"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>284.50 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">71.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">19.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">77.6</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">2.7919</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+9.4%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-low">
+        LOW
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current up); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 7,854,296; NOK 100k / 500k orders = 1.27% / 6.37% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>1.75%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=BONHR.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=BONHR" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/BONHR" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=BONHR" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">PROT</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/PROT.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=PROT"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>478.60 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">71.9</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">39.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">64.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">3.5820</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+8.9%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current up); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 38,408,041; NOK 100k / 500k orders = 0.26% / 1.30% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>3.3%</b>
+      <span class="sl-basis sl-basis-s/r">S/R</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      <p class="no-news">News coverage is incomplete; absence of headlines is not evidence of no relevant events.</p>
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=PROT.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=PROT" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/PROT" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=PROT" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">VEI</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/VEI.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=VEI"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>226.00 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">72.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">25.8</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">72.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">1.5755</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+6.9%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-mod">
+        MODERATE
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current up); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 16,016,322; NOK 100k / 500k orders = 0.62% / 3.12% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>3.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxPWHJkWUR3d2lEVVFlcWdScWthX0tEM2xXbndraGNOeUN1RWRzWWtESHdEd0FpZUdYajZQZU1ac1NHTVViVGdaMjdVNzV3M2xxSzFLR0EyV1FMSkM5eHVka1laNk1iVktDTzhBWEdpTUZkYXJtR0VSbUJ4M2x0X0lNT1k1TzZsNzBaejVaWUhkQWdiaWthdWU4ZXNzSUxsNWxVSVRZQUFrc0ZlUEY4MTBobVZsOEU?oc=5" target="_blank" rel="noopener">Veidekke: Q3 2026 results - Finansavisen</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>12 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=VEI.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=VEI" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/VEI" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=VEI" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">AKVA</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/AKVA.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=AKVA"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>159.50 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">74.5</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">51.4</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">31.2</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">-0.4169</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+5.1%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">2/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current flat); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 527,668; NOK 100k / 500k orders = 18.95% / 94.76% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNd3VON01EYmZtS3F2UDRSRjV1R2NMeUcza0xfTDZ1RnhqcndETW9ycEt0anV2X09renptVGR4TWw1SDNDNWV5eXU0cXZ4eXBJUmtXQWZFZTEzdk53S2hZYUpJNE5kdG9XVU1tSk0tem1kMGx2QTRYMmhwS093OXQyZFdWR25iNWhiOFlaX0w2bUgtZXJaMDZXWUhxRGpmNEV5?oc=5" target="_blank" rel="noopener">Yanmar launches €560m AKVA takeover offer with 92% of shares pledged - Salmon Business</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>09 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxPRUZKTXp3c01BU19scll3dVpGQ1UzaVU2QjNxUlBuYVpPSXk5YmlnVFRnRFBZVGVZdUxSRjQ5Ylg0RWlydVEtLWN1dEEzMmlmdU1DS0t3WWZibXhOeDlXQmhIMWdtRU9WZi02NTAzbzUyOGMybDhDQjdfSlBkeDJwQVlEdDNiTGZrNzRydXNZQUVCRGFOZ2RDVXZ0R3lWM2pVOERjQTJVNEZKOTJpNjVaTXRGV3pPUldnZ1lEWlVGUkF5TkFncjFPVVhLQXA3V05wcjhtOFBUMUE?oc=5" target="_blank" rel="noopener">Akva Group moves a step closer to stock market exit - Fishfarming expert</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>09 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMixAJBVV95cUxQYWh1ZExqR0hxUjM3VE5VeU05blBLVDlTMTZoaUVOZ2w3eHAtMzQ5Z2c5SDV0WUxnaUd6eTJ6M0JTb1owZG5xdE9iVU8ybFltVkUtX1hRTXFwOXlnMzd4SUQyTlpST2hmckNwSDB4aVdrX0Z3eWtISjVBUWZRWmVyRGVEaDgxS1VWNC1CWXpUNC1CcHNtaUJUVjhlcE9LcnpENmNPNjZjemdXSkVicnpTQTQyYm1uNGltMU1Nc3dKZ1dLWFVNLWF3V2sxMHpaTk5lQ1hPT251eWRtNnJMeVA1MXJoajRWS09sS1JzeTR0RGNXVTlLQnJ5QmdFTFlrTk41OWFnVE1PbTRXejFXaFpXcVVzNEw3dlVMQlFQcDIxZFhEdkQ4bUQtcWNKOW0yVERiWmlVa0NGYy1tRTFsYUlrbDk1cjE?oc=5" target="_blank" rel="noopener">AKVA group ASA: Launch of recommended voluntary cash offer to acquire all outstanding shares of AKVA group ASA and commencement of offer period - NTB Kommunikasjon</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>06 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=AKVA.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=AKVA" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/AKVA" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=AKVA" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div><div class="stock-card">
+  <div class="stock-header">
+    <span class="stock-ticker">ENDUR</span>
+    <span class="signal-badge badge-sell-watch">
+      Reduction/exit watch — not short
+    </span>
+    <a href="https://finance.yahoo.com/quote/ENDUR.OL"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">YF ↗</a>
+    <a href="https://newsweb.oslobors.no/search?issuer=ENDUR"
+       target="_blank" rel="noopener"
+       style="font-size:0.72rem;color:var(--text-dim);">OB ↗</a>
+    <span class="stock-price"><small>As of 2026-11-12 · </small>140.80 NOK</span>
+  </div>
+
+  <div class="indicators">
+    <div class="ind">
+      <span class="ind-label">RSI 14</span>
+      <span class="ind-value">78.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX 14</span>
+      <span class="ind-value">34.7</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MFI 14</span>
+      <span class="ind-value">89.0</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">MACD hist</span>
+      <span class="ind-value">0.8707</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">vs SMA50</span>
+      <span class="ind-value">+21.6%</span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">ADX band</span>
+      <span class="ind-value ind-risk-high">
+        HIGH
+      </span>
+    </div>
+    <div class="ind">
+      <span class="ind-label">Confirmations</span>
+      <span class="ind-value">1/3</span>
+    </div>
+  </div>
+
+  <p class="setup-gates">RSI &gt;=65 met; Needs down-close (current up); SMA50/MACD are confirmations only, not missing hard gates</p>
+  <p class="setup-gates suitability-evidence">KE suitability: Daily activity: vendor reports positive volume on 60/60 expected open sessions (window 2026-08-21 to 2026-11-12, Yahoo Finance). 20-session median unadjusted-close × volume proxy NOK 13,850,850; NOK 100k / 500k orders = 0.72% / 3.61% of proxy. Execution suitability unverified; not exchange-confirmed turnover, depth or guaranteed fills. No safe participation cutoff assumed.</p>
+  <div class="risk-row">
+    <span>Research reference distance (not an executable stop):
+      <b>5.0%</b>
+      <span class="sl-basis sl-basis-fixed percentage">Fixed percentage</span>
+    </span>
+  </div>
+
+  <div class="news-section">
+    <div class="news-label">News — last 14 days</div>
+
+    
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxOQWZndHNrQUlsdXc2N0RUWUVVSENRQ2dPbEVxeUFhTU53eEtYQzc3dGs4MVJIUU9DRnlxaVduajRsVmU3bmhfLXozT29jNklvODdrSS1VM2UwUGNodEc1aG82Z0ttZl9mQV9RV2t1VmJabEhmdjRlZUk1TXFQYmRheHRWZE1Qa1hNV2V3VU5lMGNvYURHRkxrdlJjc3FUNmJyNkpwMTVOTjNZY2lsNEdRZXJn?oc=5" target="_blank" rel="noopener">Endúr Announces Planned Acquisition of Romarheim Entreprenør - TipRanks</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>12 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="news-age age-new">
+          NEW
+        </span>
+        <div class="news-body">
+          <div class="news-title">
+            <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxOb05odWpJNzI2NGxVeGlfQ0hVUFJMVEhxd2JtNXJKaEdfQ0xWS1RBWUk2QjVmb21QdFFqQ2dFREhqekZ3bVp3QkJXZTRvUGNDX2RlNzRpWU9XVVVIbFdGRXV0MkFWOFFZUVNnRlhrQTRYTWtkd0l4U2E5QUp0Smo5R0pscUlyZUNXdHpOTFE2ZFB5Mno3OGcyakI4T3U3TDNLVnc?oc=5" target="_blank" rel="noopener">Endúr Purchased 18,274 Shares in Week 45 Buy-back - TipRanks</a>
+          </div>
+          <div class="news-source">
+            Google News
+            
+              · <time>10 Nov 2026</time>
+            
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+      
+        <p class="news-error">⚠ Oslo Bors unavailable: Expecting value: line 1 column 1 (char 0)</p>
+      
+        <p class="news-error">⚠ Yahoo Finance unavailable: 429 Client Error: Too Many Requests for url: https://feeds.finance.yahoo.com/rss/2.0/headline?s=ENDUR.OL&amp;region=US&amp;lang=en-US</p>
+      
+    
+
+    <div class="news-manual-link">
+      Search manually:
+      <a href="https://newsweb.oslobors.no/search?issuer=ENDUR" target="_blank" rel="noopener">Oslo Bors ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://e24.no/s/ENDUR" target="_blank" rel="noopener">E24 ↗</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.dn.no/sok?q=ENDUR" target="_blank" rel="noopener">DN ↗</a>
+    </div>
+  </div>
+</div></div>
     
   </details>
 
@@ -343,7 +3786,7 @@
         ✕
       </span>
       <span>Screener (oslo-screener)</span>
-      <span class="source-detail">— blocked; completed session 2026-11-12; current observations 0/200</span>
+      <span class="source-detail">— degraded; completed session 2026-11-12; current observations 194/200</span>
     </div>
     
     <div class="source-row">
@@ -351,7 +3794,7 @@
         ✕
       </span>
       <span>Oslo Bors Newspoint</span>
-      <span class="source-detail">— not checked: no eligible signal rows</span>
+      <span class="source-detail">— 36/36 failed; 0 with dated items</span>
     </div>
     
     <div class="source-row">
@@ -359,15 +3802,15 @@
         ✕
       </span>
       <span>Yahoo Finance RSS</span>
-      <span class="source-detail">— not checked: no eligible signal rows</span>
+      <span class="source-detail">— 36/36 failed; 0 with dated items</span>
     </div>
     
     <div class="source-row">
-      <span class="dot-fail">
-        ✕
+      <span class="dot-ok">
+        ●
       </span>
       <span>Google News RSS</span>
-      <span class="source-detail">— not checked: no eligible signal rows</span>
+      <span class="source-detail">— 0/36 failed; 15 with dated items</span>
     </div>
     
     <div class="source-row">
@@ -398,7 +3841,7 @@
 
 </main>
 <script>
-const renderedSnapshot = "49c31a61870846679b08b579578c98f7";
+const renderedSnapshot = "cd894bfa1099453b9b5d43e78ef56255";
 const banner = document.getElementById('trust-banner');
 const initialBanner = banner.innerHTML;
 async function verifyObservationHealth() {
