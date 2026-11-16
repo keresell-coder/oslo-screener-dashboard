@@ -42,3 +42,31 @@ The shared calendar was checked against official Euronext hours and the 2026 hol
 Technical BUY/SELL/watch classifications are unchanged. `liquidity.py` reports the last 60 expected completed Oslo open sessions, not the last 60 available bars. Explicit vendor zero volume means ineligible under the daily-trading requirement; absent, negative/nonfinite volume, duplicate dates or unverified calendars remain unknown. Positive volume on all sessions is vendor evidence, not independent exchange verification. The existing annual calendar validity boundary is preserved.
 
 Capacity is a separate descriptive comparison: NOK 100,000 and NOK 500,000 divided by the median of unadjusted close × volume on all 20 expected sessions. Confirmed NOK quote currency is required; otherwise no NOK ratio is emitted. This is a price-volume turnover proxy, not actual exchange turnover, order-book depth, execution cost or guaranteed fills. No safe participation threshold is invented, and passing activity never certifies executable capacity. Legacy snapshots show unknown evidence. No schedule, signal threshold or capture job changes.
+
+## Refresh and publication reliability
+
+A successful push to `gh-pages` is not proof that the public page updated. The
+workflow now waits up to ten minutes for public `health.json` **and** `index.html`
+to match the generated files byte for byte. Propagation delay or HTTP failure is
+retried within that bound; a timeout fails the run explicitly. Delivery of a safe
+blocked page can pass this delivery check, but the following observation-health
+gate still fails the run. No expiry or market-data guard is relaxed.
+
+A producer-triggered `workflow_dispatch` can supply the optional `snapshot_id`
+input. In that case generation accepts only that exact producer snapshot: an
+older coherent Pages cache is rejected and the existing Raw fallback is checked.
+Manual refreshes may leave the input empty, and scheduled refresh behavior is
+unchanged. If the requested snapshot cannot be fetched, the existing fail-closed
+path publishes a blocked page rather than silently presenting an older snapshot.
+
+The three weekday schedules remain a credential-free fallback, not an on-time
+service guarantee: GitHub can delay or drop scheduled events. A manual **Run
+workflow** on `main` requests a refresh without waiting for cron, but is still
+subject to runner availability and does not repair unattended triggering. `workflow_run` does not observe another repository,
+and the producer's built-in `GITHUB_TOKEN` is scoped to the producer repository.
+Reliable producer-to-dashboard dispatch therefore needs separately authorized,
+scoped cross-repository access (for example, an existing GitHub App installation
+or a fine-grained token with Actions write access to this dashboard). No new
+credentials or repository settings are created by this change. Verify a real
+producer-triggered run, the public snapshot, and the next unattended run before
+calling the complete refresh chain repaired.
