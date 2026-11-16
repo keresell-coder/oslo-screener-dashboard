@@ -188,6 +188,7 @@ def _freshness_label(health: dict) -> str:
 def fetch_screener_csv() -> tuple[pd.DataFrame, str, dict, dict]:
     """Fetch CSV and manifest from the same host; reject mixed publications."""
     headers = {"User-Agent": "oslo-screener-dashboard/1.0", "Cache-Control": "no-cache"}
+    expected_snapshot_id = os.environ.get("EXPECTED_SNAPSHOT_ID", "").strip()
     errors = []
     for url in SCREENER_URLS:
         try:
@@ -200,6 +201,8 @@ def fetch_screener_csv() -> tuple[pd.DataFrame, str, dict, dict]:
             metadata = parse_metadata(resp.text)
             if not metadata.get("snapshot_id") or metadata["snapshot_id"] != manifest.get("snapshot_id"):
                 raise ValueError("CSV/health snapshot mismatch")
+            if expected_snapshot_id and metadata["snapshot_id"] != expected_snapshot_id:
+                raise ValueError("source does not match requested snapshot_id")
             if hashlib.sha256(resp.content).hexdigest() != manifest.get("artifacts", {}).get("latest.csv"):
                 raise ValueError("CSV/health checksum mismatch")
             df = pd.read_csv(io.StringIO(_strip_comments(resp.text)), keep_default_na=False)

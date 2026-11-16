@@ -14,6 +14,7 @@ on:
       - "site/hmm-regime-monitor/**"
       - ".github/workflows/daily.yml"
       - "generate.py"
+      - "scripts/verify_publication.py"
       - "market_health.py"
       - "templates/**"
       - "requirements*.txt"
@@ -21,7 +22,12 @@ on:
     - cron: "30 9 * * 1-5"   # 09:30 UTC weekdays, after oslo-screener usually publishes
     - cron: "30 17 * * 1-5"  # refresh after completed-session producer run
     - cron: "30 12 * * 1-5"  # backup refresh in case GitHub Actions queues the screener run
-  workflow_dispatch:          # Manual trigger from GitHub Actions
+  workflow_dispatch:          # Manual trigger or producer refresh
+    inputs:
+      snapshot_id:
+        description: "Expected producer snapshot ID (optional for manual refresh)"
+        required: false
+        type: string
   repository_dispatch:
     types: [screener-updated]
 
@@ -59,6 +65,7 @@ jobs:
       - name: Generate dashboard
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EXPECTED_SNAPSHOT_ID: ${{ inputs.snapshot_id }}
         run: python generate.py --output site/index.html
 
       - name: Verify dashboard and observation health
@@ -88,6 +95,9 @@ jobs:
           publish_branch: gh-pages
           commit_message: "deploy: update dashboard [skip ci]"
           force_orphan: false
+
+      - name: Verify the generated dashboard is live on Pages
+        run: python scripts/verify_publication.py --directory site --timeout 600
 
       - name: Fail run when source health is blocked
         run: |

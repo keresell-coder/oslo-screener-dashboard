@@ -225,3 +225,31 @@ def test_suitability_evidence_is_prominent_in_rendered_card(tmp_path, monkeypatc
     assert '100.00% / 500.00%' in page
     assert 'Execution suitability unverified' in page
     assert 'Rebound setup' in page
+
+
+def test_requested_snapshot_uses_raw_when_pages_is_coherent_but_older(monkeypatch):
+    monkeypatch.setenv('EXPECTED_SNAPSHOT_ID', 'requested')
+    calls = []
+    def get(url, **kwargs):
+        calls.append(url)
+        snapshot_id = 'old' if 'github.io' in url else 'requested'
+        frame, _, metadata, manifest = source(snapshot_id=snapshot_id)
+        frame['snapshot_id'] = snapshot_id
+        text = '# oslo-screener ' + ' '.join(f'{k}={v}' for k,v in metadata.items()) + '\n' + frame.to_csv(index=False)
+        manifest['artifacts'] = {'latest.csv': hashlib.sha256(text.encode()).hexdigest()}
+        return Response(json_data=manifest) if url.endswith('health.json') else Response(text=text)
+    monkeypatch.setattr(generate.requests, 'get', get)
+    frame, label, metadata, manifest = generate.fetch_screener_csv()
+    assert metadata['snapshot_id'] == 'requested'
+    assert label == 'GitHub Raw'
+    assert len(calls) == 4
+
+
+def test_requested_snapshot_rejects_otherwise_coherent_old_sources(monkeypatch):
+    monkeypatch.setenv('EXPECTED_SNAPSHOT_ID', 'requested')
+    frame, _, metadata, manifest = source()
+    text = '# oslo-screener ' + ' '.join(f'{k}={v}' for k,v in metadata.items()) + '\n' + frame.to_csv(index=False)
+    manifest['artifacts'] = {'latest.csv': hashlib.sha256(text.encode()).hexdigest()}
+    monkeypatch.setattr(generate.requests, 'get', lambda url, **kw: Response(json_data=manifest) if url.endswith('health.json') else Response(text=text))
+    with pytest.raises(RuntimeError, match='does not match requested snapshot_id'):
+        generate.fetch_screener_csv()
