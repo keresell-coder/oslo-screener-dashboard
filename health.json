@@ -1,8 +1,8 @@
 {
   "schema": "oslo_screener.health.v1",
-  "snapshot_id": "b70630f9aeaa4fa4bf0172caedaa44ac",
-  "generated_at": "2026-11-18T22:57:25Z",
-  "evaluated_at": "2026-11-18T23:27:56.139956+00:00",
+  "snapshot_id": "a26dd68e59614697a62a65678b49e85e",
+  "generated_at": "2026-11-19T15:41:02Z",
+  "evaluated_at": "2026-11-19T15:41:56.509045+00:00",
   "market_data_as_of": "2026-11-18",
   "expected_session": "2026-11-18",
   "valid_until": "2026-11-19T16:45:00+01:00",
@@ -14,13 +14,13 @@
   "coverage": {
     "universe_count": 198,
     "received_count": 198,
-    "current": 192,
-    "stale": 5,
+    "current": 196,
+    "stale": 1,
     "missing": 0,
     "invalid": 1,
-    "current_ratio": 0.9696969696969697,
+    "current_ratio": 0.98989898989899,
     "min_current_ratio": 0.005050505050505051,
-    "actionable_count": 192
+    "actionable_count": 196
   },
   "eligible_tickers": [
     "QEC.OL",
@@ -48,6 +48,7 @@
     "GENO.OL",
     "ZLNA.OL",
     "AKER.OL",
+    "GYL.OL",
     "TRSB.OL",
     "CONTX.OL",
     "SATS.OL",
@@ -96,7 +97,9 @@
     "AGLX.OL",
     "SNOR.OL",
     "IWS.OL",
+    "INIFY.OL",
     "PLT.OL",
+    "ENH.OL",
     "EQNR.OL",
     "DELIA.OL",
     "KIT.OL",
@@ -113,6 +116,7 @@
     "ININ.OL",
     "DFENS.OL",
     "ENVIP.OL",
+    "HERMA.OL",
     "CMBTO.OL",
     "AKSO.OL",
     "TECH.OL",
@@ -163,7 +167,6 @@
     "GOD.OL",
     "SOAG.OL",
     "POL.OL",
-    "ENH.OL",
     "WAWI.OL",
     "AUTO.OL",
     "VVL.OL",
@@ -179,6 +182,7 @@
     "ITERA.OL",
     "ATEA.OL",
     "VEND.OL",
+    "HSPG.OL",
     "JAREN.OL",
     "HEX.OL",
     "NOD.OL",
@@ -224,30 +228,6 @@
       "reason": "missing_expected_completed_session"
     },
     {
-      "ticker": "GYL.OL",
-      "market_data_as_of": "2026-11-17",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "HERMA.OL",
-      "market_data_as_of": "2026-11-17",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "HSPG.OL",
-      "market_data_as_of": "2026-11-17",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
-      "ticker": "INIFY.OL",
-      "market_data_as_of": "2026-11-17",
-      "data_status": "stale",
-      "reason": "missing_expected_completed_session"
-    },
-    {
       "ticker": "OUTLT.OL",
       "market_data_as_of": "2026-11-18",
       "data_status": "invalid",
@@ -255,37 +235,36 @@
     }
   ],
   "observation_dates": {
-    "2026-11-18": 193,
-    "2026-11-05": 1,
-    "2026-11-17": 4
+    "2026-11-18": 197,
+    "2026-11-05": 1
   },
   "calendar_verified_through": 2026,
   "session_policy": "Completed Oslo cash session plus 15-minute feed buffer; never intraday.",
   "market_status": "degraded",
   "news_coverage": {
     "Oslo Bors": {
-      "attempted": 39,
-      "failed": 39,
+      "attempted": 40,
+      "failed": 40,
       "stocks_with_items": 0
     },
     "Yahoo Finance": {
-      "attempted": 39,
-      "failed": 39,
+      "attempted": 40,
+      "failed": 40,
       "stocks_with_items": 0
     },
     "Google News": {
-      "attempted": 39,
-      "failed": 0,
-      "stocks_with_items": 14
+      "attempted": 40,
+      "failed": 1,
+      "stocks_with_items": 13
     }
   },
   "macro_news_status": "unavailable",
-  "dashboard_generated_at": "2026-11-18T23:27:56.139956+00:00",
+  "dashboard_generated_at": "2026-11-19T15:41:56.509045+00:00",
   "source": "GitHub Pages",
   "signal_counts": {
     "BUY": 5,
     "SELL": 7,
-    "BUY-watch": 15,
+    "BUY-watch": 16,
     "SELL-watch": 12
   }
 }
