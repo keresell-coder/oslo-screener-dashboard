@@ -2,7 +2,7 @@
   "schema": "oslo_screener.health.v1",
   "snapshot_id": "a9ab0f72df884dfe8077c183b9b31c65",
   "generated_at": "2026-11-20T22:40:41Z",
-  "evaluated_at": "2026-11-20T22:41:47.716335+00:00",
+  "evaluated_at": "2026-11-20T23:13:24.450159+00:00",
   "market_data_as_of": "2026-11-20",
   "expected_session": "2026-11-20",
   "valid_until": "2026-11-23T16:45:00+01:00",
@@ -266,11 +266,11 @@
     "Google News": {
       "attempted": 43,
       "failed": 0,
-      "stocks_with_items": 15
+      "stocks_with_items": 13
     }
   },
   "macro_news_status": "unavailable",
-  "dashboard_generated_at": "2026-11-20T22:41:47.716335+00:00",
+  "dashboard_generated_at": "2026-11-20T23:13:24.450159+00:00",
   "source": "GitHub Pages",
   "signal_counts": {
     "BUY": 0,
